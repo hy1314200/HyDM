@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Frame.Define.RibbonCommandInfo,Frame" table="T_CommandInfo" lazy="false">
+
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+		<property column="Page" type="String" name="Page"/>
+		<property column="PageGroup" type="String" name="PageGroup"  />
+		<property column="Caption" type="String" name="Caption" />
+    <property name="IconByte" column="Icon" type="System.Byte[]"/>
+    <property name="Order" column="OrderIndex" type ="string"/>
+    <property name="Type" column="Type" type="int"/>
+		<many-to-one name="CommandClass" column="Class" class="Frame.Define.ClassInfo,Frame" />
+    <many-to-one name ="Parent" column="Parent" class="Frame.Define.RibbonCommandInfo,Frame"/>
+		
+	</class>
+</hibernate-mapping>

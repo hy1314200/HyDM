@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC291C55-4DAF-4891-A062-1A98B18D9033}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skyline.Commands</RootNamespace>
+    <AssemblyName>Skyline.Commands</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Out\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Out\Bin\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Define, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Out\Bin\Define.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\CommandAnalysisBestPath.cs" />
+    <Compile Include="Analysis\Slope\CommandAnalysisSlop.cs" />
+    <Compile Include="Analysis\Slope\CommandAnalysisSlopDirect.cs" />
+    <Compile Include="Analysis\Slope\CommandAnalysisSlopLegend.cs" />
+    <Compile Include="Analysis\Volume\CommandAnalysisVolume.cs" />
+    <Compile Include="Analysis\Volume\CommandAnalysisVolumeEx.cs" />
+    <Compile Include="Analysis\CommandAnalysisFlood.cs" />
+    <Compile Include="Analysis\CommandAnalysisTerrainArea.cs" />
+    <Compile Include="Analysis\CommandAnalysisBuffer.cs" />
+    <Compile Include="Analysis\CommandAnalysisTerrainModify.cs" />
+    <Compile Include="Analysis\CommandAnalysisViewshed.cs" />
+    <Compile Include="Analysis\CommandAnalysisShadow.cs" />
+    <Compile Include="CommandOpenFly.cs" />
+    <Compile Include="CommandInfoTree.cs" />
+    <Compile Include="Analysis\CommandAnalysisLandformLine.cs" />
+    <Compile Include="View\CommandViewPan.cs" />
+    <Compile Include="View\CommandViewZoom.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkylineBaseCommand.cs" />
+    <Compile Include="View\CommandViewSlide.cs" />
+    <Compile Include="View\CommandViewRotation.cs" />
+    <Compile Include="Measure\ToolCoordsInfo.cs" />
+    <Compile Include="View\CommandViewNorthDirect.cs" />
+    <Compile Include="View\CommandViewStop.cs" />
+    <Compile Include="View\CommandViewPrint.cs" />
+    <Compile Include="View\CommandViewSwitchCollision.cs" />
+    <Compile Include="Effect\CommandEffectSwitchTime.cs" />
+    <Compile Include="Effect\CommandEffectSwitchSun.cs" />
+    <Compile Include="Effect\CommandEffectSwitchUnderGround.cs" />
+    <Compile Include="Effect\CommandEffectHole.cs" />
+    <Compile Include="Effect\CommandEffectHoleEx.cs" />
+    <Compile Include="Effect\CommandEffectSwitchWater.cs" />
+    <Compile Include="Effect\CommandEffectSwitchCloud.cs" />
+    <Compile Include="Effect\CommandEffectParticle.cs" />
+    <Compile Include="Measure\ToolMeasureVertical.cs" />
+    <Compile Include="Measure\ToolMeasureHorizontal.cs" />
+    <Compile Include="Measure\ToolMeasure3DDistance.cs" />
+    <Compile Include="Measure\ToolMeasureArea.cs" />
+    <Compile Include="SkylineBaseTool.cs" />
+    <Compile Include="Analysis\Contour\CommandAnalysisContour.cs" />
+    <Compile Include="Analysis\Contour\CommandAnalysisContourGenerate.cs" />
+    <Compile Include="Analysis\Contour\CommandAnalysisContourRationality.cs" />
+    <Compile Include="Analysis\Contour\CommandAnalysisContourLegend.cs" />
+    <Compile Include="Analysis\Profile\CommandAnalysisProfile.cs" />
+    <Compile Include="Analysis\Profile\CommandAnalysisProfileEx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxTerraExplorerX">
+      <Guid>{B87695B0-65AD-11D5-85C1-0001023952C1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="TerraExplorerX">
+      <Guid>{B87695B0-65AD-11D5-85C1-0001023952C1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Skyline.Core\Skyline.Core.csproj">
+      <Project>{D2701198-129A-4C97-87F5-134D2D289EF7}</Project>
+      <Name>Skyline.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skyline.Define\Skyline.Define.csproj">
+      <Project>{D502011C-A1FF-4564-9CE0-8FDD2D774DE5}</Project>
+      <Name>Skyline.Define</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

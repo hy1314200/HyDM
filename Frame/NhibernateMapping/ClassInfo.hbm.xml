@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Frame.Define.ClassInfo,Frame" table="T_ClassInfo" lazy="false" >
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+		<property column="ClassName" type="String" name="ClassName"/>
+		<property column="DllName" type="String" name="DllName"/>
+    <property column="Category" type="String" name="Category"/>
+		<property column="Description" type="String" name="Description" />
+		<property column="Type" type="Int32" name="Type" />		
+	</class>
+</hibernate-mapping>
