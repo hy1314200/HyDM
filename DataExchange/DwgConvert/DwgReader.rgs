@@ -1,0 +1,27 @@
+HKCR
+{
+	DwgConvert.DwgReader.1 = s 'DwgReader Class'
+	{
+		CLSID = s '{B3665367-4710-4C99-A375-802CDC116EA1}'
+	}
+	DwgConvert.DwgReader = s 'DwgReader Class'
+	{
+		CLSID = s '{B3665367-4710-4C99-A375-802CDC116EA1}'
+		CurVer = s 'DwgConvert.DwgReader.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B3665367-4710-4C99-A375-802CDC116EA1} = s 'DwgReader Class'
+		{
+			ProgID = s 'DwgConvert.DwgReader.1'
+			VersionIndependentProgID = s 'DwgConvert.DwgReader'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{3DEEF6BD-BEB8-468C-90F7-330F7717AF18}'
+		}
+	}
+}

@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'DwgConvert'
+		'DwgConvert.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

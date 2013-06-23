@@ -1,0 +1,27 @@
+HKCR
+{
+	DwgConvert.DwgWriter.1 = s 'DwgWriter Class'
+	{
+		CLSID = s '{BE2255C9-F951-416F-9E71-BF0E42995C55}'
+	}
+	DwgConvert.DwgWriter = s 'DwgWriter Class'
+	{
+		CLSID = s '{BE2255C9-F951-416F-9E71-BF0E42995C55}'
+		CurVer = s 'DwgConvert.DwgWriter.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BE2255C9-F951-416F-9E71-BF0E42995C55} = s 'DwgWriter Class'
+		{
+			ProgID = s 'DwgConvert.DwgWriter.1'
+			VersionIndependentProgID = s 'DwgConvert.DwgWriter'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{3DEEF6BD-BEB8-468C-90F7-330F7717AF18}'
+		}
+	}
+}

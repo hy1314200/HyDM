@@ -1,0 +1,995 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<METADATA Version="1.0">
+<TABLES>
+    <TABLE Name="行政区" Code="1000600100" GeometryType="Polygon" AtrTBName="XZQ" Limit="M" class="境界与行政区" GraphPerformance="XZQ">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区名称" FieldType="other" Code="XZQMC" Type="Char" Length="100" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="描述" FieldType="other" Code="MS" Type="Varbin" Length="" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+      <TABLELINKS Count="1">
+        <TABLELINK TableName="行政区界线" Code="1000600200"/>
+      </TABLELINKS>
+    </TABLE>
+
+    <TABLE Name="行政区界线" Code="1000600200" GeometryType="Line" AtrTBName="XZQJX" Limit="M" class="境界与行政区">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="界线类型" FieldType="other" Code="JXLX" Type="Char" Length="6" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="界线类型代码表"/>
+        <FIELD Name="界线性质" FieldType="other" Code="JXXZ" Type="Char" Length="6" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="界线性质代码表"/>
+        <FIELD Name="界线说明" FieldType="other" Code="JXSM" Type="Char" Length="100" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="等高线" Code="1000710000" GeometryType="Line" AtrTBName="DGX" Limit="O" class="地貌">
+      <FIELDS Fieldcount="4">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="等高线类型" FieldType="other" Code="DGXLX" Type="Char" Length="6" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="等高线类型代码表"/>
+        <FIELD Name="标示高程" FieldType="other" Code="BSGC" Type="Int" Length="4" Precision="" ValueRange="(-160,8850)" Limit="M" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="高程注记点" Code="1000720000" GeometryType="Point" AtrTBName="GCZJD" Limit="O" class="地貌">
+      <FIELDS Fieldcount="3">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="标示高程" FieldType="other" Code="BSGC" Type="Float" Length="7" Precision="2" ValueRange="(-160,8850)" Limit="M" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="风景旅游资源" Code="2003030100" GeometryType="Polygon" AtrTBName="FJLYZY" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="面状基础设施" Code="2003030210" GeometryType="Polygon" AtrTBName="MZJCSS" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="线状基础设施" Code="2003030220" GeometryType="Line" AtrTBName="XZJCSS" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="点状基础设施" Code="2003030230" GeometryType="Point" AtrTBName="DZJCSS" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="主要矿产存储区" Code="2003030300" GeometryType="Polygon" AtrTBName="ZYKCCCQ" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="蓄滞洪区" Code="2003030400" GeometryType="Polygon" AtrTBName="XZHQ" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="地质灾害易发区" Code="2003030500" GeometryType="Polygon" AtrTBName="DZZHYFQ" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="名称" FieldType="other" Code="MC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="基期地类图斑" Code="2003010100" GeometryType="Polygon" AtrTBName="JQDLTB" Limit="M" class="基期现状">
+      <FIELDS Fieldcount="8">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="图斑编号" FieldType="other" Code="TBBH" Type="Char" Length="8" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""  Versions="XZJBZ"/>
+        <FIELD Name="地类名称" FieldType="other" Code="DLMC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Classify=""/>
+        <FIELD Name="图斑面积" FieldType="other" Code="TBMJ" Type="Double" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="图斑面积" FieldType="other" Code="TBMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XJBZ:SJBZ"/>
+        <FIELD Name="图斑地类面积" FieldType="other" Code="TBDLMJ" Type="Double" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""  Versions="XZJBZ"/>
+        <FIELD Name="地类备注" FieldType="other" Code="DLBZ" Type="Char" Length="2" Precision="" ValueRange="" Limit="O" Remark=""  CodeTalble="地类备注取值代码表"  Versions="XZJBZ"/>
+      </FIELDS>
+      <TABLELINKS Count="1">
+        <TABLELINK TableName="基期地类界线" Code="2003010700"/>
+      </TABLELINKS>
+    </TABLE>
+
+    <TABLE Name="基期线状地物" Code="2003010300" GeometryType="Line" AtrTBName="JQXZDW" Limit="M" class="基期现状">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="地类名称" FieldType="other" Code="DLMC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Classify=""/>
+        <FIELD Name="线状地物面积" FieldType="other" Code="XZDWMJ" Type="Double" Length="16" Precision="" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""  Versions="XZJBZ"/>
+        <FIELD Name="线状地物名称" FieldType="other" Code="XZDWMC" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="基期零星地物" Code="2003010500" GeometryType="Point" AtrTBName="JQLXDW" Limit="M" class="基期现状">
+      <FIELDS Fieldcount="4">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="地类名称" FieldType="other" Code="DLMC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Classify=""/>
+        <FIELD Name="零星地物面积" FieldType="other" Code="LXDWMJ" Type="Double" Length="16" Precision="" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""  Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="基期地类界线" Code="2003010700" GeometryType="Line" AtrTBName="JQDLJX" Limit="M" class="基期现状">
+      <FIELDS Fieldcount="2">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地用途区" Code="2003020110" GeometryType="Polygon" AtrTBName="TDYTQ" Limit="C" class="目标年规划" Versions="XZJBZ;XJBZ">
+      <FIELDS Fieldcount="6">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码" FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地用途区类型代码" FieldType="other" Code="TDYTQLXDM" Type="Char" Length="3" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="土地用途区类型代码表" Versions="XZJBZ"/>
+        <FIELD Name="土地用途区类型代码" FieldType="other" Code="TDYTQLXDM" Type="Char" Length="3" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="用途分区类型代码表" Versions="XJBZ"/>
+        <FIELD Name="土地用途区编号" FieldType="other" Code="TDYTQBH" Type="Char" Length="5" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地用途区面积" FieldType="other" Code="TDYTQMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地利用功能分区" Code="2003020710" GeometryType="Polygon" AtrTBName="TDLYGNFQ" Limit="M" class="目标年规划" Versions="SJBZ">
+      <FIELDS Fieldcount="6">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地利用功能分区类型代码" FieldType="other" Code="GNFQLXDM" Type="Char" Length="3" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="土地利用功能分区类型代码表"/>
+        <FIELD Name="土地利用功能分区编号" FieldType="other" Code="TDLYGNFQBH" Type="Char" Length="5" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="功能分区面积" FieldType="other" Code="GNFQMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地规划地类" Code="2003020210" GeometryType="Polygon" AtrTBName="TDGHDL" Limit="C" class="目标年规划"  Versions="XZJBZ">
+      <FIELDS Fieldcount="6">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="图斑编号" FieldType="other" Code="TBBH" Type="Char" Length="8" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="规划地类名称" FieldType="other" Code="GHDLMC" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Classify=""/>
+        <FIELD Name="规划地类面积" FieldType="other" Code="GHDLMJ" Type="Double" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="规划基本农田集中区" Code="2003020350" GeometryType="Polygon" AtrTBName="GHJBNTJZQ" Limit="M" class="目标年规划"  Versions="SJBZ">
+      <FIELDS Fieldcount="7">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="耕地面积" FieldType="other" Code="GDMJ" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="农用地面积" FieldType="other" Code="NYDMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="O" Remark=""  CodeTalble="" />
+        <FIELD Name="集中区面积" FieldType="other" Code="JZQMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="基本农田面积" FieldType="other" Code="JBNTMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="规划基本农田保护区" Code="2003020310" GeometryType="Polygon" AtrTBName="GHJBNTBHQ" Limit="M" class="目标年规划">
+      <FIELDS Fieldcount="9">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="保护区编号" FieldType="other" Code="BHQBH" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="保护区面积" FieldType="other" Code="BHQMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" />
+        <FIELD Name="农用地等别代码" FieldType="other" Code="NYDDBDM" Type="Char" Length="2" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="农用地等别代码表"  Versions="XZJBZ"/>
+        <FIELD Name="农用地面积" FieldType="other" Code="NYDMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="耕地面积" FieldType="other" Code="GDMJ" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="M" Remark=""  CodeTalble="" />
+        <FIELD Name="基本农田面积" FieldType="other" Code="JBNTMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="规划基本农田调整" Code="2003020330" GeometryType="Polygon" AtrTBName="GHJBNTTZ" Limit="M" class="目标年规划">
+      <FIELDS Fieldcount="7">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="调整类型代码" FieldType="other" Code="TZLXDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="基本农田调整类型代码表"/>
+        <FIELD Name="农用地等别代码" FieldType="other" Code="NYDDBDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="O" Remark=""  CodeTalble="农用地等别代码表"  Versions="XZJBZ"/>
+        <FIELD Name="基期年地类" FieldType="other" Code="JQNDL" Type="Char" Length="30" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Classify="" Versions="XZJBZ"/>
+        <FIELD Name="调整面积" FieldType="other" Code="TZMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" />
+        <FIELD Name="调整面积" FieldType="other" Code="TZMJ" Type="Int" Length="16" Precision="0" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="建设用地管制边界" Code="2003020410" GeometryType="Line" AtrTBName="JSYDGZBJ" Limit="M" class="目标年规划">
+      <FIELDS Fieldcount="4">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="管制边界类型代码" FieldType="other" Code="GZBJLXDM" Type="Char" Length="3" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="建设用地管制边界类型代码表"/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="建设用地管制区" Code="2003020420" GeometryType="Polygon" AtrTBName="JSYDGZQ" Limit="M" class="目标年规划">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="管制区类型代码" FieldType="other" Code="GZQLXDM" Type="Char" Length="3" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="建设用地管制区类型代码表"/>
+        <FIELD Name="管制区面积" FieldType="other" Code="GZQMJ" Type="Double" Length="16" Precision="2" ValueRange="" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="管制区面积" FieldType="other" Code="GZQMJ" Type="Int" Length="16" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="面状重点建设项目" Code="2003020610" GeometryType="Polygon" AtrTBName="MZZDJSXM" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="11">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="项目类型代码" FieldType="other" Code="XMLXDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="重点建设项目类型代码表"/>
+        <FIELD Name="项目名称" FieldType="other" Code="XMMC" Type="Char" Length="100" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="建设性质代码" FieldType="other" Code="JSXZDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="重点建设项目建设性质代码表"/>
+        <FIELD Name="建设年限" FieldType="other" Code="JSNX" Type="Char" Length="10" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="用地总规模" FieldType="other" Code="YDZGM" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="新增建设用地" FieldType="other" Code="XZJSYD" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+
+        <FIELD Name="建设占用耕地" FieldType="other" Code="JSZYGD" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        
+        <FIELD Name="用地总规模" FieldType="other" Code="YDZGM" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="新增建设用地" FieldType="other" Code="XZJSYD" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="建设占用耕地" FieldType="other" Code="JSZYGD" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+        <FIELD Name="描述" FieldType="other" Code="MS" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="线状重点建设项目" Code="2003020630" GeometryType="Line" AtrTBName="XZZDJSXM" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="11">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="项目类型代码" FieldType="other" Code="XMLXDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="重点建设项目类型代码表"/>
+        <FIELD Name="项目名称" FieldType="other" Code="XMMC" Type="Char" Length="100" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="建设性质代码" FieldType="other" Code="JSXZDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="重点建设项目建设性质代码表"/>
+        <FIELD Name="建设年限" FieldType="other" Code="JSNX" Type="Char" Length="10" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="用地总规模" FieldType="other" Code="YDZGM" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="新增建设用地" FieldType="other" Code="XZJSYD" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+
+        <FIELD Name="建设占用耕地" FieldType="other" Code="JSZYGD" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        
+         <FIELD Name="用地总规模" FieldType="other" Code="YDZGM" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="新增建设用地" FieldType="other" Code="XZJSYD" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="建设占用耕地" FieldType="other" Code="JSZYGD" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+        <FIELD Name="描述" FieldType="other" Code="MS" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="点状重点建设项目" Code="2003020650" GeometryType="Point" AtrTBName="DZZDJSXM" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="11">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="项目类型代码" FieldType="other" Code="XMLXDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="重点建设项目类型代码表"/>
+        <FIELD Name="项目名称" FieldType="other" Code="XMMC" Type="Char" Length="100" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="建设性质代码" FieldType="other" Code="JSXZDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="重点建设项目建设性质代码表"/>
+        <FIELD Name="建设年限" FieldType="other" Code="JSNX" Type="Char" Length="10" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="用地总规模" FieldType="other" Code="YDZGM" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="新增建设用地" FieldType="other" Code="XZJSYD" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+
+        <FIELD Name="建设占用耕地" FieldType="other" Code="JSZYGD" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        
+         <FIELD Name="用地总规模" FieldType="other" Code="YDZGM" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="新增建设用地" FieldType="other" Code="XZJSYD" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="建设占用耕地" FieldType="other" Code="JSZYGD" Type="Int" Length="16" Precision="" ValueRange=">=0" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        <FIELD Name="涉及村(镇)" FieldType="other" Code="SJCZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+        <FIELD Name="描述" Code="MS" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地整治重点区域" Code="2003020510" GeometryType="Polygon" AtrTBName="TDZZZDQY" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="7">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地整治类型代码" FieldType="other" Code="TDZZLXDM" Type="Char" Length="2" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble="土地整治类型代码表"/>
+        <FIELD Name="整治区编号" FieldType="other" Code="ZZQBH" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="整治区面积" FieldType="other" Code="ZZQMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="整治区面积" FieldType="other" Code="ZZQMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="净增耕地面积" FieldType="other" Code="JZGDMJ" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="C" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="村镇建设控制区" Code="2003020530" GeometryType="Polygon" AtrTBName="CZJSKZQ" Limit="O" class="目标年规划"  Versions="XZJBZ">
+      <FIELDS Fieldcount="5">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="控制区编号" FieldType="other" Code="KZQBH" Type="Char" Length="3" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="控制区面积" FieldType="other" Code="KZQMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="基本农田整备区" Code="2003020550" GeometryType="Polygon" AtrTBName="JBNTZBQ" Limit="O" class="目标年规划"  Versions="XZJBZ">
+      <FIELDS Fieldcount="8">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="整备区编号" FieldType="other" Code="ZBQBH" Type="Char" Length="3" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="整备区面积" FieldType="other" Code="ZBQMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="农用地面积" FieldType="other" Code="NYDMJ" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="耕地面积" FieldType="other" Code="GDMJ" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="基本农田面积" FieldType="other" Code="JBNTMJ" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="面状土地整治重点项目" Code="2003020571" GeometryType="Polygon" AtrTBName="MZTDZZZDXM" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="6">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地整治类型代码" FieldType="other" Code="ZBQBH" Type="Char" Length="2" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="土地整治类型代码表"/>
+        <FIELD Name="土地整治面积" FieldType="other" Code="ZBQMJ" Type="Double" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="土地整治面积" FieldType="other" Code="ZBQMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+        <FIELD Name="净增耕地面积" FieldType="other" Code="JZGDMJ" Type="Double" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+        <FIELD Name="行政区代码" FieldType="other" Code="XZQDM" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ"/>
+
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="线状土地整治重点项目" Code="2003020573" GeometryType="Line" AtrTBName="XZTDZZZDXM" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="6">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地整治类型代码" FieldType="other" Code="ZBQBH" Type="Char" Length="2" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="土地整治类型代码表"/>
+        <FIELD Name="土地整治面积" FieldType="other" Code="ZBQMJ" Type="Float" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="土地整治面积" FieldType="other" Code="ZBQMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+        <FIELD Name="净增耕地面积" FieldType="other" Code="JZGDMJ" Type="Float" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="点状土地整治重点项目" Code="2003020575" GeometryType="Point" AtrTBName="DZTDZZZDXM" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="6">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="土地整治类型代码" FieldType="other" Code="ZBQBH" Type="Char" Length="2" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble="土地整治类型代码表"/>
+        <FIELD Name="土地整治面积" FieldType="other" Code="ZBQMJ" Type="Float" Length="16" Precision="2" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="XZJBZ;XJBZ"/>
+        <FIELD Name="土地整治面积" FieldType="other" Code="ZBQMJ" Type="Int" Length="16" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+        <FIELD Name="净增耕地面积" FieldType="other" Code="JZGDMJ" Type="Float" Length="16" Precision="2" ValueRange=">=0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="说明" FieldType="other" Code="SM" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="涉及乡(镇)" FieldType="other" Code="SJXZ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="XJBZ"/>
+        
+        <FIELD Name="涉及县(区)" FieldType="other" Code="SJXQ" Type="Char" Length="200" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble="" Versions="SJBZ"/>
+
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="行政区注记" Code="1000609000" GeometryType="Point" AtrTBName="XZQZJ" Limit="O" class="境界与行政区">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="地理名称注记" Code="1000900000" GeometryType="Point" AtrTBName="DLMCZJ" Limit="M" class="地理注记">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="规划基础信息注记" Code="2003030000" GeometryType="Point" AtrTBName="GHJCXXZJ" Limit="O" class="规划基础信息">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="基期现状注记" Code="2003010000" GeometryType="Point" AtrTBName="JQXZZJ" Limit="O" class="基期现状" >
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地用途区注记" Code="2003020120" GeometryType="Point" AtrTBName="TDYTQZJ" Limit="O" class="目标年规划" Versions="XJBZ;XZJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+    <TABLE Name="土地整治重点区域注记" Code="2003020520" GeometryType="Point" AtrTBName="TDZZZDQYZJ" Limit="O" class="目标年规划" >
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+    <TABLE Name="土地利用功能分区注记" Code="2003020720" GeometryType="Point" AtrTBName="TDLYGNQZJ" Limit="O" class="目标年规划" Versions="SJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地规划地类注记" Code="2003020220" GeometryType="Point" AtrTBName="TDGHDLZJ" Limit="O" class="目标年规划"  Versions="XZJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="规划基本农田保护区注记" Code="2003020320" GeometryType="Point" AtrTBName="GHJBNTBHQZJ" Limit="O" class="目标年规划"  Versions="XZJBZ;XJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="规划基本农田集中区注记" Code="2003020360" GeometryType="Point" AtrTBName="GHJBNTJZQZJ" Limit="O" class="目标年规划"  Versions="SJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="建设用地管制区注记" Code="2003020430" GeometryType="Point" AtrTBName="JSYDGZQZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="面状重点建设项目注记" Code="2003020620" GeometryType="Point" AtrTBName="MZZDJSXMZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="点状重点建设项目注记" Code="2003020660" GeometryType="Point" AtrTBName="DZZDJSXMZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="土地重点整治区域注记" Code="2003020520" GeometryType="Point" AtrTBName="TDZDZZQYZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="村镇建设控制区注记" Code="2003020530" GeometryType="Point" AtrTBName="CZJSKZQZJ" Limit="O" class="目标年规划"  Versions="XZJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="基本农田整备区注记" Code="2003020560" GeometryType="Point" AtrTBName="JBNTZBQZJ" Limit="O" class="目标年规划"  Versions="XZJBZ">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+    <TABLE Name="面状土地整治重点项目注记" Code="2003020572" GeometryType="Point" AtrTBName="MZTDZZZDXMZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+    <TABLE Name="线状土地整治重点项目注记" Code="2003020574" GeometryType="Point" AtrTBName="XZTDZZZDXMZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+ 
+    <TABLE Name="线状重点建设项目注记" Code="2003020640" GeometryType="Point" AtrTBName="XZZDJSXMZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Float" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Float" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Float" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+
+<TABLE Name="规划基本农田调整注记" Code="2003020340" GeometryType="Point" AtrTBName="GHJBNTTZZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Float" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Float" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Float" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+    
+    <TABLE Name="点状土地整治重点项目注记" Code="2003020576" GeometryType="Point" AtrTBName="DZTDZZZDXMZJ" Limit="O" class="目标年规划">
+      <FIELDS Fieldcount="14">
+        <FIELD Name="标识码" FieldType="bsm" Code="BSM" Type="Int" Length="10" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="要素代码"  FieldType="ysdm" Code="YSDM" Type="Char" Length="10" Precision="" ValueRange="" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记内容" FieldType="other" Code="ZJNR" Type="Char" Length="60" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="字体" FieldType="other" Code="ZT" Type="Char" Length="4" Precision="" ValueRange="非空" Limit="M" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="颜色" FieldType="other" Code="YS" Type="Char" Length="12" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="磅数" FieldType="other" Code="BS" Type="Int" Length="4" Precision="" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="形状" FieldType="other" Code="XZ" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="下划线" FieldType="other" Code="XHX" Type="Char" Length="1" Precision="" ValueRange="非空" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="宽度" FieldType="other" Code="KD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="高度" FieldType="other" Code="GD" Type="Double" Length="15" Precision="1" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+        <FIELD Name="间隔" FieldType="other" Code="JG" Type="Double" Length="6" Precision="2" ValueRange=">0" Limit="O" Remark=""  CodeTalble=""/>
+
+        <FIELD Name="注记点左下角X坐标" FieldType="other" Code="ZJDZXJXZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记点左下角Y坐标" FieldType="other" Code="ZJDZXJYZB" Type="Double" Length="15" Precision="3" ValueRange=">0" Limit="M" Remark=""  CodeTalble=""/>
+        <FIELD Name="注记方向" FieldType="other" Code="ZJFX" Type="Double" Length="10" Precision="6" ValueRange="(0,2t)" Limit="O" Remark=""  CodeTalble=""/>
+      </FIELDS>
+    </TABLE>
+  </TABLES>
+  <Description >
+    <HEAD Name="头文件">
+      <COORDINATESYSTEMTYPE  Symbol="Coordinate" AlisName="坐标系统类型" Defualt="C" Mark="CoordinateSystemType">
+        <TYPE Symbol="C" AlisName="笛卡尔(Cartesian)坐标系" Mark="CartesianCoordinateSys"/>
+        <TYPE Symbol="D" AlisName="大地坐标系" Mark="EarthCoordinateSys"/>
+        <TYPE Symbol="P" AlisName="投影坐标系" Mark="ProjectCoordinateSys"/>
+      </COORDINATESYSTEMTYPE>
+      <COORDINATEDIM  Symbol="Dim" AlisName="坐标维数" Defualt="2" Mark="Dim">
+        <TYPE Symbol="2" AlisName="二维坐标" Mark="TwoDimenCoordinate"/>
+        <TYPE Symbol="3" AlisName="三维坐标" Mark="TreeDimenCoordinate"/>
+      </COORDINATEDIM>
+      <XAXISDIRECTION Symbol="XAxisDirection" AlisName="X坐标轴方向" Defualt="N" Mark="XAxisDirection">
+        <TYPE Symbol="E" AlisName="向东" Mark="EastWard"/>
+        <TYPE Symbol="N" AlisName="向北" Mark="NorthWard"/>
+        <TYPE Symbol="W" AlisName="向西" Mark="WestWard"/>
+        <TYPE Symbol="S" AlisName="向南" Mark="SouthWard"/>
+      </XAXISDIRECTION>
+      <YAXISDIRECTION Symbol="YAxisDirection" AlisName="Y坐标轴方向" Defualt="E" Mark="YAxisDirection">
+        <TYPE Symbol="E" AlisName="向东" Mark="EastWard"/>
+        <TYPE Symbol="N" AlisName="向北" Mark="NorthWard"/>
+        <TYPE Symbol="W" AlisName="向西" Mark="WestWard"/>
+        <TYPE Symbol="S" AlisName="向南" Mark="SouthWard"/>
+      </YAXISDIRECTION>
+      <COORDINATEUNIT  Symbol="XYUnit" AlisName="平面坐标单位" Defualt="M" Mark="Unit">
+        <TYPE Symbol="M" AlisName="米" Mark="Meter"/>
+        <TYPE Symbol="D" AlisName="经纬度" Mark="Coordinate"/>
+      </COORDINATEUNIT>
+     <VERSION Symbol="Version" AlisName="版本" Defualt="TD1028-2010" Mark="Version">
+        <TYPE Symbol="TD1028-2010" AlisName="乡镇级标准" Mark="XZJBZ"/>
+        <TYPE Symbol="TD1027-2010" AlisName="县级标准" Mark="XJBZ"/>
+        <TYPE Symbol="TD1026-2010" AlisName="市级标准" Mark="SJBZ"/>
+      </VERSION>
+      <SEPARATOR Symbol="Separator" AlisName="分隔符" Mark="Separator" Value=","/>
+      <HEADSEPARATOR Symbol="：" AlisName="头信息分隔符" Mark="HEADSEPARATOR" Value="："/>
+      <DATAMERK Symbol="Datamark" AlisName="数据标识" Mark="Datamark" Value="LUP-VCT"/>
+      <PRIMEMERIDIAN Symbol="Meridinan" AlisName="首子午线" Mark="PrimeMeridian" Value="Greenwich"/>
+      <SPHEROID Symbol="Spheroid" AlisName="参考椭球" Mark="Spheroid" Value="IAG-75,6378140,298.257"/>
+      <PROJECTION Symbol="Projection" AlisName="投影类型" Mark="Projection" Value="Gauss-Krueger"/>
+      <PROJECTIONPARAMETOR    Symbol="Parameters" AlisName="投影参数" Mark="Parameters" Value="117.14,,,,,1,0,0,3,14"/>
+      <VERTICAL Symbol="VerticalDum" AlisName="高程基准" Mark="Vertical" Value="1985国家高程基准"/>
+      <TEMPORALREFERENCESYSTEM   Symbol="TemporalReferenceSystem" AlisName="时间参考系" Mark="TemporalReferenceSystem" Value="北京时间,+800"/>
+      <MAXLOCAL Symbol="ExtentMax" AlisName="最大坐标" Mark="MajorMax"/>
+      <MINLOCAL Symbol="ExtentMin" AlisName="最小坐标" Mark="MajorMin"/>
+      <SCALE Symbol="Scale" AlisName="比例尺" Mark="Scale" Value="50000"/>
+      <EXCURSION  Symbol="Offset" AlisName="偏移量" Mark="Excursion" Value="0,0"/>
+      <PASSTIME  Symbol="Date" AlisName="土地规划批准时间" Mark="Date"/>
+    </HEAD>
+    <GRAPH Name="图形要素">
+        <POINTFEATURETYPE Name="点的特征类型">
+          <TYPE Symbol="1" AlisName="独立点" Mark="SinglePoint"/>
+          <TYPE Symbol="2" AlisName="结点" Mark="Node"/>
+        </POINTFEATURETYPE>
+        <LINEFEATURETYPE Name="线的特征类型">
+          <TYPE Symbol="1" AlisName="直接坐标线" Mark="DirectLine"/>
+          <TYPE Symbol="100" AlisName="间接坐标线" Mark="InDirectLine"/>
+        </LINEFEATURETYPE>
+      <LINETYPE Name="线段类型" >
+        <TYPE  Symbol="11" AlisName="折线" Mark="BrokenLine"/>
+        <TYPE  Symbol="12" AlisName="三点圆弧" Mark="TreePointArcs"/>
+        <TYPE  Symbol="13" AlisName="圆心弧" Mark="CircleArcs"/>
+        <TYPE  Symbol="14" AlisName="椭圆弧" Mark="EllipticArcs"/>
+        <TYPE  Symbol="15" AlisName="三次样条曲线" Mark="TripleCurve"/>
+        <TYPE  Symbol="16" AlisName="B样条曲线" Mark="BSpline"/>
+        <TYPE  Symbol="17" AlisName="贝塞尔曲线" Mark="Bezier"/>
+       </LINETYPE>
+        <POLYGONFEATURETYPE Name="面的特征类型">
+          <TYPE Symbol="1" AlisName="直接坐标表示的面对象" Mark="DireCoordinatePolygon"/>
+          <TYPE Symbol="100" AlisName="间接坐标表示的面对象" Mark="InDireCoordinatePolygon"/>
+        </POLYGONFEATURETYPE>
+      <POLYGONTYPE Name="间接坐标面的构成类型">
+        <TYPE  Symbol="21" AlisName="引用线对象构成的面" Mark="LineStructPolygon"/>
+        <TYPE  Symbol="22" AlisName="引用面对象构成的面" Mark="PolygonStructPolygon"/>
+      </POLYGONTYPE>
+        <ANNOTATIONFEATURETYPE Name="注记的特征类型">
+          <TYPE Symbol="1" AlisName="单点注记" Mark="SingPointAnnotation"/>
+          <TYPE Symbol="2" AlisName="多点注记" Mark="MultiPointAnnotation"/>
+        </ANNOTATIONFEATURETYPE>
+      <GRAPHSTYLE Name="要素特征值">
+        <TYPE  Symbol="Point" AlisName="点要素" Mark="Point"/>
+        <TYPE  Symbol="Line" AlisName="线要素" Mark="Line"/>
+        <TYPE  Symbol="Polygon" AlisName="面要素" Mark="Polygon"/>
+        <TYPE  Symbol="Annotation" AlisName="注记要素" Mark="Annotation"/>
+        <TYPE  Symbol="NoneGeometry" AlisName="属性表" Mark="NoneGeometry"/>
+        <TYPE  Symbol="Grid" AlisName="栅格要素" Mark="Grid"/>
+      </GRAPHSTYLE>
+    </GRAPH>
+  </Description>
+</METADATA>

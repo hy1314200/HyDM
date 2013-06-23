@@ -1,0 +1,123 @@
+// DwgConvert.idl : DwgConvert 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(DwgConvert.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+[
+	uuid(3DEEF6BD-BEB8-468C-90F7-330F7717AF18),
+	version(1.2),
+	helpstring("DwgConvert 1.2 类型库")
+]
+
+
+//////////////////////////////////////////////////////////////////////////////
+library DwgConvertLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("C:\Program Files\ArcGIS\Desktop10.0\com\esriSystem.olb");
+	importlib("C:\Program Files\ArcGIS\Desktop10.0\com\esriGeometry.olb");
+	importlib("C:\Program Files\ArcGIS\Desktop10.0\com\esriGeodatabase.olb");
+
+
+
+	///////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(9F1A9E88-4B96-4F8C-8CE2-1A07041DA3EA),
+		dual,
+		nonextensible,
+		helpstring("IDwgReader 接口"),
+		pointer_default(unique)
+	]
+	interface IDwgReader : IDispatch{
+		[propget, id(6), helpstring("属性 BreakBlock")] HRESULT BreakBlock([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(6), helpstring("属性 BreakBlock")] HRESULT BreakBlock([in] VARIANT_BOOL newVal);
+		[propget, id(7), helpstring("属性 ReadInvisible")] HRESULT ReadInvisible([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(7), helpstring("属性 ReadInvisible")] HRESULT ReadInvisible([in] VARIANT_BOOL newVal);
+		[propget, id(8), helpstring("属性 ReadPolygon")] HRESULT ReadPolygon([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(8), helpstring("属性 ReadPolygon")] HRESULT ReadPolygon([in] VARIANT_BOOL newVal);
+		[propget, id(9), helpstring("属性 Line2Polygon")] HRESULT Line2Polygon([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(9), helpstring("属性 Line2Polygon")] HRESULT Line2Polygon([in] VARIANT_BOOL newVal);
+		[propget, id(10), helpstring("属性 ReadBlockPoint")] HRESULT ReadBlockPoint([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(10), helpstring("属性 ReadBlockPoint")] HRESULT ReadBlockPoint([in] VARIANT_BOOL newVal);
+		[propget, id(11), helpstring("属性 JoinXDataAttrib")] HRESULT JoinXDataAttrib([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(11), helpstring("属性 JoinXDataAttrib")] HRESULT JoinXDataAttrib([in] VARIANT_BOOL newVal);
+		[propget, id(12), helpstring("属性 XDataRegAppNames")] HRESULT XDataRegAppNames([out, retval] BSTR* pVal);
+		[propput, id(12), helpstring("属性 XDataRegAppNames")] HRESULT XDataRegAppNames([in] BSTR newVal);
+		[propget, id(13), helpstring("属性 AnnoScale")] HRESULT AnnoScale([out, retval] SHORT* pVal);
+		[propput, id(13), helpstring("属性 AnnoScale")] HRESULT AnnoScale([in] SHORT newVal);
+		[propget, id(14), helpstring("属性 UnBreakBlocks")] HRESULT UnBreakBlocks([out, retval] BSTR* pVal);
+		[propput, id(14), helpstring("属性 UnBreakBlocks")] HRESULT UnBreakBlocks([in] BSTR newVal);
+		[id(15), helpstring("方法InitReadDwg")] HRESULT InitReadDwg([in] IWorkspace* targetGDB, [in] ISpatialReference* spRef);
+		[id(16), helpstring("方法ReadDwgFile")] HRESULT ReadDwgFile([in] BSTR sDwgFile);
+		[id(17), helpstring("方法Close")] HRESULT Close(void);
+		[propget, id(18), helpstring("属性 LogFilePath")] HRESULT LogFilePath([out, retval] BSTR* pVal);
+		[propput, id(18), helpstring("属性 LogFilePath")] HRESULT LogFilePath([in] BSTR newVal);
+		[propget, id(19), helpstring("属性 ParentHandle")] HRESULT ParentHandle([out, retval] LONG* pVal);
+		[propput, id(19), helpstring("属性 ParentHandle")] HRESULT ParentHandle([in] LONG newVal);
+		[propget, id(20), helpstring("属性 CreateAnnotation")] HRESULT CreateAnnotation([out, retval] VARIANT_BOOL* pVal);
+		[propput, id(20), helpstring("属性 CreateAnnotation")] HRESULT CreateAnnotation([in] VARIANT_BOOL newVal);
+		[propget, id(21), helpstring("属性 UnbreakblockMode")] HRESULT UnbreakblockMode([out, retval] SHORT* pVal);
+		[propput, id(21), helpstring("属性 UnbreakblockMode")] HRESULT UnbreakblockMode([in] SHORT newVal);
+	};
+
+
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(8C1C207C-D53F-4965-8DEF-223AA1EBE0EC),
+		dual,
+		nonextensible,
+		helpstring("IDwgWriter 接口"),
+		pointer_default(unique)
+	]
+	interface IDwgWriter : IDispatch{
+		[id(1), helpstring("方法InitWriteDwg")] HRESULT InitWriteDwg([in] BSTR sDwgFile, [in] BSTR sTemplateFile);
+		[id(2), helpstring("方法FeatureClass2Dwgfile")] HRESULT FeatureClass2Dwgfile([in] IFeatureClass* pFtCls);
+		[id(3), helpstring("方法SetCompareTable")] HRESULT SetCompareTable([in] BSTR sCompareField, [in] ITable* pCompareTable);
+		[propput, id(8), helpstring("属性 XDataXMLConfigFile")] HRESULT XDataXMLConfigFile([in] BSTR sConfigFile);
+		[propput, id(9), helpstring("属性 LogFilePath")] HRESULT LogFilePath([in] BSTR sLogFile);
+		[id(10), helpstring("方法Close")] HRESULT Close(void);
+		[id(11), helpstring("方法Cursor2Dwgfile")] HRESULT Cursor2Dwgfile([in] BSTR sFeatureClass, [in] IFeatureCursor* pFtCur, [in] LONG numFeatures);
+		[id(12), helpstring("方法Cursor2DwgLayer")] HRESULT Cursor2DwgLayer([in] BSTR sFeatureClass, [in] IFeatureCursor* pFtCur, LONG numFeatures, [in] BSTR sDwgLayer);
+		[id(13), helpstring("方法SetCompareField2")] HRESULT SetCompareField2([in] BSTR sConfigField, [in] BSTR sGdbField);
+	};
+
+
+
+
+	/////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(BE2255C9-F951-416F-9E71-BF0E42995C55),
+		helpstring("DwgWriter Class")
+	]
+	coclass DwgWriter
+	{
+		[default] interface IDwgWriter;
+	};
+
+	/////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(B3665367-4710-4C99-A375-802CDC116EA1),
+		helpstring("DwgReader Class")
+	]
+	coclass DwgReader
+	{
+		[default] interface IDwgReader;
+	};
+};

@@ -1,0 +1,149 @@
+///////////////////////////////////////////////////////////////////////////////
+// Copyright © 2002, Open Design Alliance Inc. ("Open Design") 
+// 
+// This software is owned by Open Design, and may only be incorporated into 
+// application programs owned by members of Open Design subject to a signed 
+// Membership Agreement and Supplemental Software License Agreement with 
+// Open Design. The structure and organization of this Software are the valuable 
+// trade secrets of Open Design and its suppliers. The Software is also protected 
+// by copyright law and international treaty provisions. You agree not to 
+// modify, adapt, translate, reverse engineer, decompile, disassemble or 
+// otherwise attempt to discover the source code of the Software. Application 
+// programs incorporating this software must include the following statement 
+// with their copyright notices:
+//
+//      DWGdirect © 2002 by Open Design Alliance Inc. All rights reserved. 
+//
+// By use of this software, you acknowledge and accept the terms of this 
+// agreement.
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef _OD_DB_ALIGNED_DIMENSION_
+#define _OD_DB_ALIGNED_DIMENSION_
+
+#include "DD_PackPush.h"
+
+#include "DbDimension.h"
+
+/** Description
+    This class represents Aligned Dimension entities in an OdDbDatabase instance.
+
+    Remarks:
+    An Aligned Dimension entity dimensions the distance between between any two points in space.
+    The *normal* of the Dimension entity must be perpendicular to the line between said points. 
+
+    Library:
+    Db
+
+    {group:OdDb_Classes}
+*/
+class TOOLKIT_EXPORT OdDbAlignedDimension : public OdDbDimension
+{
+public:
+  ODDB_DECLARE_MEMBERS(OdDbAlignedDimension);
+  
+  OdDbAlignedDimension();
+  
+  /** Description:
+    Returns the WCS start point of the first extension line of this Dimension entity (DXF 13).
+  */
+  OdGePoint3d xLine1Point() const;
+
+  /** Description:
+    Sets the WCS start point of the first extension line of this Dimension entity (DXF 13).
+  
+    Arguments:
+    xLine1Point (I) Start point.
+  */
+  void setXLine1Point(
+    const OdGePoint3d& xLine1Point);
+
+  /** Description:
+    Returns the WCS start point of the second extension line of this Dimension entity (DXF 14).
+  */
+  OdGePoint3d xLine2Point() const;
+
+  /** Description:
+    Sets the WCS start point of the second extension line of this Dimension entity (DXF 14).
+  
+    Arguments:
+    xLine2Point (I) Start point.
+  */
+  void setXLine2Point(
+    const OdGePoint3d& xLine2Point);
+  
+  /** Description:
+    Returns the WCS point defining the location of dimension line for this Dimension entity (DXF 10).
+  */
+  OdGePoint3d dimLinePoint() const;
+
+  /** Description:
+    Sets the WCS point defining the location of dimension line for this Dimension entity (DXF 10).
+    
+    Arguments:
+    dimLinePoint (I) Dimension line point.
+  */
+  void setDimLinePoint(
+    const OdGePoint3d& dimLinePoint);
+  
+  /** Description:
+    Returns the obliquing angle for this Dimension entity (DXF 52).
+    
+    Note:
+    All angles are expressed in radians.
+  */
+  double oblique() const;
+
+  /** Description:
+    Sets the obliquing angle for this Dimension entity (DXF 52).
+    
+    Arguments:
+    oblique (I) Obliquing angle.
+    
+    Note:
+    All angles are expressed in radians.
+  */
+  void setOblique(
+    double oblique);
+
+  virtual OdResult dwgInFields(
+    OdDbDwgFiler* pFiler);
+
+  virtual void dwgOutFields(
+    OdDbDwgFiler* pFiler) const;
+
+  virtual OdResult dxfInFields(
+    OdDbDxfFiler* pFiler);
+
+  virtual void dxfOutFields(
+    OdDbDxfFiler* pFiler) const;
+
+  virtual OdResult dxfInFields_R12(
+    OdDbDxfFiler* pFiler);
+
+  virtual void dxfOutFields_R12(
+    OdDbDxfFiler* pFiler) const;
+  
+  virtual void getClassID(
+    void** pClsid) const;
+  
+  /* OdDbAlignedDimension(
+    const OdGePoint3d& xLine1Point,
+    const OdGePoint3d& xLine2Point,
+    const OdGePoint3d& dimLinePoint,
+    const char* dimText = NULL,
+    OdDbObjectId dimStyle = OdDbObjectId::kNull);*/
+  
+};
+
+/** Description:
+  This template class is a specialization of the OdSmartPtr class for OdDbAlignedDimension object pointers.
+*/
+typedef OdSmartPtr<OdDbAlignedDimension> OdDbAlignedDimensionPtr;
+
+#include "DD_PackPop.h"
+
+#endif
+

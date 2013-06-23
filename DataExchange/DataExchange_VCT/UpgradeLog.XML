@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="DataExchange_vct">
+</Property><Property Name="解决方案文件" Value="E:\Cresh\hydm\DataExchange\DataExchange_VCT\DataExchange_vct.sln">
+</Property><Property Name="Date" Value="2013年6月23日">
+</Property><Property Name="Time" Value="20:13">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="DataExchange_vct.sln" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\DataExchange_vct.sln">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\VCT.csproj" Description="项目文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\VCT.csproj">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\EsriDataSource.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\EsriDataSource.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\AnnotationEntity.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\AnnotationEntity.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\AnnotationLayer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\AnnotationLayer.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\Dataset.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\Dataset.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\FeatureEntity.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\FeatureEntity.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\FeatureLayer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\FeatureLayer.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\FeatureLayerFactory.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\FeatureLayerFactory.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\LineEntity.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\LineEntity.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\LineLayer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\LineLayer.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\PointEntity.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\PointEntity.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\PointLayer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\PointLayer.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\PolygonEntity.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\PolygonEntity.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\PolygonLayer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\PolygonLayer.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\Projection.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\Projection.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\ESRIData\TableLayer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\ESRIData\TableLayer.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FGDBFile.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FGDBFile.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\AnnotationNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\AnnotationNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\AttributeNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\AttributeNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\BellCurveNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\BellCurveNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\BrokenLineNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\BrokenLineNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\CenterArcNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\CenterArcNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\ConstantNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\ConstantNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\EntityNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\EntityNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\FeatureCodeNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\FeatureCodeNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\FieldNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\FieldNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\HeadNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\HeadNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\LineNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\LineNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\OvalArcNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\OvalArcNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\PointInfoNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\PointInfoNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\PointNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\PointNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\PolygonNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\PolygonNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\RecordNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\RecordNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\RelationTableNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\RelationTableNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\RepresentationNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\RepresentationNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\SegmentNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\SegmentNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\SplineNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\SplineNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\StreamWriterEx.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\StreamWriterEx.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\StyleNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\StyleNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\TableNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\TableNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\TableStructureNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\TableStructureNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\ThreePointArcNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\ThreePointArcNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\ThreeSplineNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\ThreeSplineNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\FileData\VarcharNode.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\FileData\VarcharNode.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\LogAPI.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\LogAPI.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\MDB2VCT.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\MDB2VCT.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\MDBFile.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\MDBFile.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\Metadata\GraphConfig.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\Metadata\GraphConfig.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\Metadata\HeadConfig.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\Metadata\HeadConfig.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\Metadata\MetaDataField.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\Metadata\MetaDataField.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\Metadata\MetaDataFile.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\Metadata\MetaDataFile.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\Metadata\MetaTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\Metadata\MetaTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\Properties\AssemblyInfo.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\BaseTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\BaseTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\LineNodeExTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\LineNodeExTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\LineNodeExView.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\LineNodeExView.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\LineNodeTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\LineNodeTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\MatchLineNodeExTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\MatchLineNodeExTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\MatchLineNodeExView.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\MatchLineNodeExView.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\MatchLineNodeTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\MatchLineNodeTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\ModifyLineIndexTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\ModifyLineIndexTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\PolygonNodeTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\PolygonNodeTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\ReverseLineNodeTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\ReverseLineNodeTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\ModifyEntityIDTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\ModifyEntityIDTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\TempFile.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\TempFile.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\TempData\EntityNodeTable.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\TempData\EntityNodeTable.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\VCT2MDB.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\VCT2MDB.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\VCTFile.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\VCTFile.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\WritePolygonNodes.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCT\WritePolygonNodes.cs">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\VCT.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="VCT" Source="VCT\VCT.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\VCTUI.csproj" Description="项目文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\VCTUI.csproj">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\MDB2VCTForm.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\MDB2VCTForm.cs">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\Program.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\Program.cs">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\Properties\AssemblyInfo.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\Properties\Resources.Designer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\Properties\Settings.Designer.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\VCT2MDBForm.cs" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\VCT2MDBForm.cs">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\Properties\Settings.settings" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\MDB2VCTForm.resx" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\MDB2VCTForm.resx">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\Properties\Resources.resx" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\VCT2MDBForm.resx" Description="文件已成功备份为 E:\Cresh\hydm\DataExchange\DataExchange_VCT\Backup\VCTUI\VCT2MDBForm.resx">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\VCTUI.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="VCTUI" Source="VCTUI\VCTUI.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="DataExchange_vct.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="DataExchange_vct.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="VCT" Source="VCT\VCT.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="VCTUI" Source="VCTUI\VCTUI.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
