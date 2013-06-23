@@ -73,6 +73,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +83,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuilderObject.cs" />
+    <Compile Include="BuilderObjectBiz.cs" />
+    <Compile Include="File3dattribute.cs" />
+    <Compile Include="Helper\ADODBHelper.cs" />
+    <Compile Include="Helper\DBConnectionFactory.cs" />
+    <Compile Include="Helper\SqlConn.cs" />
+    <Compile Include="Helper\SqlHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="UI\FrmAttributeMapQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAttributeMapQuery.designer.cs">
+      <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmQueryCoordinate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmQueryCoordinate.designer.cs">
+      <DependentUpon>FrmQueryCoordinate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmQueryObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmQueryObject.designer.cs">
+      <DependentUpon>FrmQueryObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSearchByAttribute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSearchByAttribute.designer.cs">
+      <DependentUpon>FrmSearchByAttribute.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Frmshadow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +124,8 @@
     <Compile Include="Helper\ArcGISDataManager.cs" />
     <Compile Include="Helper\CreateContour.cs" />
     <Compile Include="Helper\CSharpAPIsClass.cs" />
-    <Compile Include="InvokeMenuNumber.cs" />
-    <Compile Include="MenuIDCommand.cs" />
+    <Compile Include="Helper\InvokeMenuNumber.cs" />
+    <Compile Include="Helper\MenuIDCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\FrmAddModelShape.cs">
       <SubType>Form</SubType>
@@ -190,10 +223,23 @@
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="UI\FrmAttributeMapQuery.resx">
+      <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmQueryCoordinate.resx">
+      <DependentUpon>FrmQueryCoordinate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmQueryObject.resx">
+      <DependentUpon>FrmQueryObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSearchByAttribute.resx">
+      <DependentUpon>FrmSearchByAttribute.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Frmshadow.resx">
       <DependentUpon>Frmshadow.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmWriteDataCreatContour.resx">
       <DependentUpon>FrmWriteDataCreatContour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

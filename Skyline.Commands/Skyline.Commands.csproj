@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analysis\CommandAnalysisBestPath.cs" />
+    <Compile Include="Analysis\Sight\CommandAnalysisMultiSightLine.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlop.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlopDirect.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlopLegend.cs" />
@@ -65,9 +66,13 @@
     <Compile Include="Analysis\CommandAnalysisTerrainModify.cs" />
     <Compile Include="Analysis\CommandAnalysisViewshed.cs" />
     <Compile Include="Analysis\CommandAnalysisShadow.cs" />
+    <Compile Include="Analysis\Sight\CommandAnalysisSightLine.cs" />
     <Compile Include="CommandOpenFly.cs" />
     <Compile Include="CommandInfoTree.cs" />
     <Compile Include="Analysis\CommandAnalysisLandformLine.cs" />
+    <Compile Include="Query\CommandQueryBoth.cs" />
+    <Compile Include="Query\CommandQueryProperty.cs" />
+    <Compile Include="Query\CommandQuerySQL.cs" />
     <Compile Include="View\CommandViewPan.cs" />
     <Compile Include="View\CommandViewZoom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +103,7 @@
     <Compile Include="Analysis\Contour\CommandAnalysisContourLegend.cs" />
     <Compile Include="Analysis\Profile\CommandAnalysisProfile.cs" />
     <Compile Include="Analysis\Profile\CommandAnalysisProfileEx.cs" />
+    <Compile Include="Query\CommandQueryPointInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxTerraExplorerX">
