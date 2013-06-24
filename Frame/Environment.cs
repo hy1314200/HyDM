@@ -19,8 +19,11 @@ namespace Frame
         {
             get
             {
-                if(m_SysDbConnection==null || m_SysDbConnection.State==ConnectionState.Closed)
-                    m_SysDbConnection=  DataFactory.GetConnection(ConfigManager.ADOType, ConfigManager.ADOConnection);
+                if (m_SysDbConnection == null || m_SysDbConnection.State == ConnectionState.Closed)
+                {
+                    
+                    m_SysDbConnection = DataFactory.GetConnection(ConfigManager.ADOType, ConfigManager.ADOConnection);
+                }
 
                 return m_SysDbConnection;
             }
