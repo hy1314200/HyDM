@@ -7,6 +7,7 @@ using NHibernate.Cfg;
 using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.Data.OracleClient;
+using System.Data.Common;
 
 namespace Utility
 {
@@ -46,11 +47,10 @@ namespace Utility
         }
 
         /// <summary>
-        /// 根据app.config或web.config配置文件中的
-        /// zgis.dbtype、zgis.connection两项来判定使用什么连接来获取系统数据
+        /// 根据数据类型描述和连接字符串获取数据库连接
         /// </summary>
         /// <returns></returns>
-        public static IDbConnection GetConnection(string strType, string strConnection)
+        public static IDbConnection GetConnection(string strType, string strConnection,ref System.Data.Common.DbProviderFactory dbFactory)
         {
             IDbConnection db = null;
 
@@ -59,6 +59,7 @@ namespace Utility
                 case "ORACLE":
                     db = new OracleConnection(strConnection);
                     db.Open();
+                    dbFactory = System.Data.OracleClient.OracleClientFactory.Instance;
                     break;
 
                 case "MSSQL":
@@ -66,10 +67,12 @@ namespace Utility
                 case "SQL SERVER":
                     db = new SqlConnection(strConnection);
                     db.Open();
+                    dbFactory = System.Data.SqlClient.SqlClientFactory.Instance;
                     break;
 
                 case "MDB":
                 case "ACCESS":
+                    dbFactory = System.Data.OleDb.OleDbFactory.Instance;
                     db = new OleDbConnection(strConnection);
                     db.Open();
                     break;

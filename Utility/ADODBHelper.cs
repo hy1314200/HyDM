@@ -25,6 +25,7 @@ namespace Utility
             if (m_DbConnection.State == ConnectionState.Closed)
             {
                 m_DbConnection.Open();
+                
             }
         }
         public void BeginTrans()
@@ -67,7 +68,8 @@ namespace Utility
 
             m_Command = m_DbConnection.CreateCommand();
             m_Command.CommandText = strSql;
-throw new NotImplementedException(); 
+
+            throw new NotImplementedException(); 
         }
 
         public System.Data.DataTable ExecuteDataTable(string strSql)
@@ -97,18 +99,19 @@ throw new NotImplementedException();
 
         public System.Data.DataTable OpenTable(string strTable)
         {
-            throw new NotImplementedException(); 
+            return this.ExecuteDataTable(string.Format("select * from {0}", strTable)); 
         }
 
         public bool TableExists(string strTable)
         {
             Verify();
-throw new NotImplementedException(); 
+
+            return (this.m_DbConnection as DbConnection).GetSchema("Tables", new string[] { strTable }).Rows.Count > 0;
         }
 
         public System.Data.IDbConnection ADOConnection
         {
-            get { throw new NotImplementedException(); }
+            get { return this.m_DbConnection; }
         }
     }
 }
