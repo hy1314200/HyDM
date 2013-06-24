@@ -34,7 +34,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esri.Define", "Esri.Define\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6C899FBF-3BD9-4B8A-8080-4C899354B946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DGeoViewerSystem", "..\..\Sunztech\ThreeDemain\3DGeoViewerSystem\3DGeoViewerSystem.csproj", "{80305047-7FD2-4AE7-8A5E-59225626CDF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DGeoViewerSystem", "..\..\..\Sunztech\ThreeDemain\3DGeoViewerSystem\3DGeoViewerSystem.csproj", "{80305047-7FD2-4AE7-8A5E-59225626CDF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
