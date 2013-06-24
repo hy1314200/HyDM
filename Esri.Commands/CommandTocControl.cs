@@ -19,7 +19,8 @@ namespace Esri.Commands
         private ESRI.ArcGIS.Controls.AxTOCControl m_TocControl = null;
         protected override Control CreateControl()
         {
-            return new AxTOCControl();
+            m_TocControl= new AxTOCControl();
+            return m_TocControl;
         }
 
         protected override Common.Operate.CommandDockable.enumDockPosition DockPosition

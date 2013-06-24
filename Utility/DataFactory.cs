@@ -54,7 +54,7 @@ namespace Utility
         {
             IDbConnection db = null;
 
-            switch (strType)
+            switch (strType.ToUpper())
             {
                 case "ORACLE":
                     db = new OracleConnection(strConnection);
