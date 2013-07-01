@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98316DA7-69A0-4EA2-8C2C-A15285D6CE5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Check.UI</RootNamespace>
+    <AssemblyName>Check.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Out\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.1.UI, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\ArcGIS\DeveloperKit10.0\DotNet\ESRI.ArcGIS.AxControls.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FeaturesStatistic.cs" />
+    <Compile Include="Forms\frmAddRemark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddRemark.Designer.cs">
+      <DependentUpon>frmAddRemark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAppraise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAppraise.designer.cs">
+      <DependentUpon>frmAppraise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBatchTasksWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBatchTasksWizard.Designer.cs">
+      <DependentUpon>FrmBatchTasksWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCheckTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCheckTask.designer.cs">
+      <DependentUpon>FrmCheckTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFtAttr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFtAttr.designer.cs">
+      <DependentUpon>FrmFtAttr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLayerTransparency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLayerTransparency.Designer.cs">
+      <DependentUpon>frmLayerTransparency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmOpenTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmOpenTask.Designer.cs">
+      <DependentUpon>FrmOpenTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPreCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPreCheck.Designer.cs">
+      <DependentUpon>FrmPreCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmShowFeatureStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShowFeatureStatistic.Designer.cs">
+      <DependentUpon>FrmShowFeatureStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSQLSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSQLSearch.Designer.cs">
+      <DependentUpon>FrmSQLSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTaskWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTaskWizard.Designer.cs">
+      <DependentUpon>FrmTaskWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxApi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TopoOperAPI.cs" />
+    <Compile Include="UC\Sundary\ErrorHelper.cs" />
+    <Compile Include="UC\Sundary\ResultDbOper.cs" />
+    <Compile Include="UC\Sundary\Structions.cs" />
+    <Compile Include="UC\UCAttribute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAttribute.Designer.cs">
+      <DependentUpon>UCAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UC\UCMapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMapControl.designer.cs">
+      <DependentUpon>UCMapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMapNavigate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMapNavigate.designer.cs">
+      <DependentUpon>UCMapNavigate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCNavigate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCNavigate.Designer.cs">
+      <DependentUpon>UCNavigate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCResult.Designer.cs">
+      <DependentUpon>UCResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCRulesTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCRulesTree.Designer.cs">
+      <DependentUpon>UCRulesTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCSQLSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCSQLSearch.designer.cs">
+      <DependentUpon>UCSQLSearch.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\frmAddRemark.resx">
+      <DependentUpon>frmAddRemark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAppraise.resx">
+      <DependentUpon>frmAppraise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBatchTasksWizard.resx">
+      <DependentUpon>FrmBatchTasksWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCheckTask.resx">
+      <DependentUpon>FrmCheckTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFtAttr.resx">
+      <DependentUpon>FrmFtAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLayerTransparency.resx">
+      <DependentUpon>frmLayerTransparency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmOpenTask.resx">
+      <DependentUpon>FrmOpenTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPreCheck.resx">
+      <DependentUpon>FrmPreCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmShowFeatureStatistic.resx">
+      <DependentUpon>FrmShowFeatureStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSQLSearch.resx">
+      <DependentUpon>FrmSQLSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTaskWizard.resx">
+      <DependentUpon>FrmTaskWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCAttribute.resx">
+      <DependentUpon>UCAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMap.resx">
+      <DependentUpon>UCMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMapControl.resx">
+      <DependentUpon>UCMapControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMapNavigate.resx">
+      <DependentUpon>UCMapNavigate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCNavigate.resx">
+      <DependentUpon>UCNavigate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCResult.resx">
+      <DependentUpon>UCResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCRulesTree.resx">
+      <DependentUpon>UCRulesTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCSQLSearch.resx">
+      <DependentUpon>UCSQLSearch.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Check.Define\Check.Define.csproj">
+      <Project>{50A09A01-30AA-4975-BE34-04351C7FA419}</Project>
+      <Name>Check.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Check.Engine\Check.Engine.csproj">
+      <Project>{940D329A-3A10-4BA3-BF56-F3157619CB4D}</Project>
+      <Name>Check.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Check.Task\Check.Task.csproj">
+      <Project>{FB2C931E-C06F-4A29-BA4C-983526479DC1}</Project>
+      <Name>Check.Task</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Check.Utility\Check.Utility.csproj">
+      <Project>{B2D8CC75-A5CF-4D60-8E74-E2D7598E8DED}</Project>
+      <Name>Check.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.UI\Common.UI.csproj">
+      <Project>{41D7EA57-1E49-4C79-951D-F2DD20F1A63D}</Project>
+      <Name>Common.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
+      <Project>{A302D069-4F52-4886-9633-662D993DE362}</Project>
+      <Name>Common.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapnav2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapnav21.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\暗色.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\箭头3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\红色.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\绿色.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
