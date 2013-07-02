@@ -1,0 +1,71 @@
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<?altova_sps C:\Program Files\Altova\XMLSpy2006\Examples\Conditional.sps?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Content">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CheckTaskS">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="CheckTask">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SchemaID" type="xsd:string" nillable="true"/>
+										<xsd:element name="TimeElapse" type="xsd:double" nillable="true"/>
+										<xsd:element name="StandardID" nillable="false"/>
+										<xsd:element name="LibraryName" nillable="false"/>
+										<xsd:element name="TaskPath" nillable="false"/>
+										<xsd:element name="Institution" type="xsd:string"/>
+										<xsd:element name="Person" type="xsd:string"/>
+										<xsd:element name="CreateTime" type="xsd:string"/>
+										<xsd:element name="Remark" type="xsd:string"/>
+										<!--<xsd:element name="ExecuteHistory">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="HistoryVersion" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:attribute name="RunNumber" type="xsd:integer" use="required"/>
+															<xsd:attribute name="RunTime" type="xsd:string" use="required"/>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										-->
+										<xsd:element name="AppraiseResult">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="LightBug" nillable="false"/>
+													<xsd:element name="WeightBug" nillable="false"/>
+													<xsd:element name="GravenessBug" nillable="false"/>
+												</xsd:sequence>
+												<xsd:attribute name="Mark" type="xsd:string" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="TaskID" type="xsd:string" use="required"/>
+									<xsd:attribute name="TaskName" type="xsd:string" use="required"/>
+									<xsd:attribute name="ExeState" type="xsd:integer" use="required"/>
+									<xsd:attribute name="RunNumber" type="xsd:integer" use="required"/>
+									<xsd:attribute name="GJEDType" type="xsd:string" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="SystemParameter">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="BrokenArea" type="xsd:string" nillable="false"/>
+							<xsd:element name="BrokenLine" type="xsd:string" nillable="false"/>
+							<xsd:element name="SampleScale" type="xsd:string" nillable="false"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
