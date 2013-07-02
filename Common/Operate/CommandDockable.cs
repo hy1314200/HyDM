@@ -57,7 +57,7 @@ namespace Common.Operate
                     //m_DockPanel.Controls.Add(dockLeft.Container as Control);
                     //m_DockPanel.DockTo(dockLeft);             
                 }
-                if (m_DockPanel.Visibility==DockVisibility.Visible && m_Control != null)
+                if (m_DockPanel.Visibility == DockVisibility.Visible && m_Control != null && m_Control.Visible)
                 {
                     m_DockPanel.Visibility = DockVisibility.Hidden;
                 }
@@ -67,10 +67,14 @@ namespace Common.Operate
                     {
                         m_Control = this.CreateControl();
 
-                        ((System.ComponentModel.ISupportInitialize)(m_Control)).BeginInit();
+                        if (m_Control is System.ComponentModel.ISupportInitialize)
+                            ((System.ComponentModel.ISupportInitialize)(m_Control)).BeginInit();
+
                         m_DockPanel.Controls.Add(m_Control);
                         m_Control.Dock = System.Windows.Forms.DockStyle.Fill;
-                        ((System.ComponentModel.ISupportInitialize)(m_Control)).EndInit();
+
+                        if (m_Control is System.ComponentModel.ISupportInitialize)
+                            ((System.ComponentModel.ISupportInitialize)(m_Control)).EndInit();
                     }
                     else
                     {

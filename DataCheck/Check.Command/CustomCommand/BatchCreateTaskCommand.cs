@@ -5,14 +5,14 @@ using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for BatchCreateTaskCommand.
     /// </summary>
-    [Guid("23b8df5b-b4d8-49d4-a98a-e4aa4c1f2a36")]
+    [Guid("23b8df5b-b4d8-49d4-a98a-e4aa4c1f2a46")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.BatchCreateTaskCommand")]
+    [ProgId("Check.Command.CustomCommand.BatchCreateTaskCommand")]
     public sealed class BatchCreateTaskCommand : BaseCommand
     {
         #region COM Registration Function(s)

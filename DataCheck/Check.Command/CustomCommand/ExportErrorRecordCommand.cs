@@ -11,14 +11,14 @@ using ESRI.ArcGIS.Geodatabase;
 using Check.Utility;
 using Common.Utility.Esri;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ExportErrorRecordCommand.
     /// </summary>
-    [Guid("cadce9ae-99fd-489e-9ee8-857283d0f674")]
+    [Guid("cadce9ae-99fd-489e-9ee8-857248d0f674")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ExportErrorRecordCommand")]
+    [ProgId("Check.Command.CustomCommand.ExportErrorRecordCommand")]
     public sealed class ExportErrorRecordCommand : BaseCommand
     {
         #region COM Registration Function(s)

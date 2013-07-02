@@ -60,6 +60,13 @@ namespace Frame.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap DefaultIcon {
+            get {
+                object obj = ResourceManager.GetObject("DefaultIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Icon DefaultLogo {
             get {
                 object obj = ResourceManager.GetObject("DefaultLogo", resourceCulture);

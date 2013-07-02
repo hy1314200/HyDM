@@ -87,7 +87,7 @@ namespace Frame
                 }
             }
             barItem.Caption = string.IsNullOrWhiteSpace(caption) ? cmd.Caption : caption;
-            barItem.Glyph = (icon == null ? cmd.Icon : icon);
+            barItem.Glyph = icon;// (icon == null ? cmd.Icon : icon);
             barItem.Hint = cmd.Tooltip;
             barItem.Tag = cmd.Name;
             barItem.RibbonStyle = RibbonItemStyles.Large;

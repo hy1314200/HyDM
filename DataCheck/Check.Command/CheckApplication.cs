@@ -6,7 +6,7 @@ using Check.Task;
 using Check.Engine;
 using Check.Utility;
 
-namespace CheckCommand
+namespace Check.Command
 {
     /// <summary>
     /// 存储主窗体中的全局变量
@@ -68,7 +68,7 @@ namespace CheckCommand
         /// 任务改变时触发，一个系统只单独存在一个任务
         /// </summary>
         /// <param name="NewTask"></param>
-        public static void TaskChanged(Task NewTask)
+        public static void TaskChanged(Check.Task.Task NewTask)
         {
             //先将当前质检软件中的任务清空，然后再加载其他质检任务
             //m_UCDataMap.SetTask(null);

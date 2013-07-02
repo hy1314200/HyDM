@@ -7,14 +7,14 @@ using ESRI.ArcGIS.Controls;
 using Check.Engine;
 using Check.Utility;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ExcuteTaskCommand.
     /// </summary>
-    [Guid("932fc2a3-6ed4-4447-9156-2d8f62c9252e")]
+    [Guid("932fc2a3-6ed4-4447-9156-2d8f62c9262e")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ExcuteTaskCommand")]
+    [ProgId("Check.Command.CustomCommand.ExcuteTaskCommand")]
     public sealed class ExcuteTaskCommand : BaseCommand
     {
         #region COM Registration Function(s)
@@ -98,7 +98,7 @@ namespace CheckCommand.CustomCommand
 
         public override void OnClick()
         {
-            Check.Task.Task task = CheckCommand.CheckApplication.CurrentTask;
+            Check.Task.Task task = Check.Command.CheckApplication.CurrentTask;
             if (task == null)
                 return;
 

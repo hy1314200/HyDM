@@ -10,14 +10,14 @@ using ESRI.ArcGIS.Display;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace CheckCommand.MeasureCommand
+namespace Check.Command.MeasureCommand
 {
     /// <summary>
     /// Summary description for ToolMeasureArea.
     /// </summary>
-    [Guid("c7f187da-4a00-40a5-b942-c06d6a5de1bf")]
+    [Guid("c7f187da-4a00-40a5-b942-c06d6a5de1cf")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.MeasureCommand.ToolMeasureArea")]
+    [ProgId("Check.Command.MeasureCommand.ToolMeasureArea")]
     public sealed class ToolMeasureArea : BaseTool
     {
         #region COM Registration Function(s)
@@ -94,7 +94,7 @@ namespace CheckCommand.MeasureCommand
                 Assembly thisExe = Assembly.GetExecutingAssembly();
 
                 base.m_cursor =
-                    new Cursor(thisExe.GetManifestResourceStream("CheckCommand.Resources.ToolMeasureArea.cur"));
+                    new Cursor(thisExe.GetManifestResourceStream("Check.Command.Resources.ToolMeasureArea.cur"));
             }
             catch (Exception ex)
             {

@@ -5,14 +5,14 @@ using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for OpenTaskCommand.
     /// </summary>
-    [Guid("3d31264e-4b0f-48f7-b48f-ecf64d4d6c08")]
+    [Guid("3d31264e-4b0f-48f7-b48f-ecf64d4d6cb8")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.OpenTaskCommand")]
+    [ProgId("Check.Command.CustomCommand.OpenTaskCommand")]
     public sealed class OpenTaskCommand : BaseCommand
     {
         #region COM Registration Function(s)

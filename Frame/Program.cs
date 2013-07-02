@@ -45,7 +45,15 @@ namespace Frame
             //rcInfo2.CommandClass = rcInfo.CommandClass;
             //rcInfo2.Caption = "Asdfasdf";
             //nhHelper.SaveObject(rcInfo2);
-            
+
+            //应用dev的主题
+            DevExpress.UserSkins.OfficeSkins.Register();
+            DevExpress.UserSkins.BonusSkins.Register();
+            if (!DevExpress.Skins.SkinManager.AllowFormSkins ||
+               !DevExpress.Utils.Drawing.Helpers.NativeVista.IsVista)
+            {
+                DevExpress.Skins.SkinManager.EnableFormSkins();
+            }
 
             Form frmStart = null;
             if (args != null && args.Length>0)

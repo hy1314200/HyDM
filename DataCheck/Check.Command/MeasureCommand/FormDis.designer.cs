@@ -1,4 +1,4 @@
-namespace CheckCommand.MeasureCommand
+namespace Check.Command.MeasureCommand
 {
     partial class FormDis
     {

@@ -250,18 +250,33 @@ namespace Frame
         {
             if (m_SelectedCommandNode != null)
             {
-                if (m_SelectedCommandNode.Tag is RibbonCommandInfo)
-                {
-                    m_HibernateHelper.DeleteObject(m_SelectedCommandNode.Tag);
-                    m_HibernateHelper.Flush();
-                }
+                //if (m_SelectedCommandNode.Tag is RibbonCommandInfo)
+                //{
+                //    m_HibernateHelper.DeleteObject(m_SelectedCommandNode.Tag);
+                //    m_HibernateHelper.Flush();
+                //}
 
+                //tlRibbon.DeleteNode(m_SelectedCommandNode);
+
+                //m_SelectedCommandNode = null;
+
+                DeleteNode(m_SelectedCommandNode);
+                m_HibernateHelper.Flush();
                 tlRibbon.DeleteNode(m_SelectedCommandNode);
-
-                m_SelectedCommandNode = null;
             }
         }
 
+        private void DeleteNode(TreeListNode nodeTarget)
+        {
+            foreach (TreeListNode nodeSub in nodeTarget.Nodes)
+            {
+                DeleteNode(nodeSub);
+            }
+            if (nodeTarget.Tag is RibbonCommandInfo)
+            {
+                m_HibernateHelper.DeleteObject(nodeTarget.Tag);
+            }
+        }
 
         private void barBtnUnRegister_Click(object sender, EventArgs e)
         {
@@ -297,8 +312,9 @@ namespace Frame
                 {
                     foreach (TreeListNode nodeCommand in nodeGroup.Nodes)
                     {
-                        if (nodeCommand.Tag is RibbonCommandInfo)
-                            m_HibernateHelper.DeleteObject(nodeCommand.Tag);
+                        DeleteNode(nodeCommand);
+                        //if (nodeCommand.Tag is RibbonCommandInfo)
+                        //    m_HibernateHelper.DeleteObject(nodeCommand.Tag);
                     }
                 }
                 m_HibernateHelper.Flush();
@@ -384,8 +400,9 @@ namespace Frame
             rcInfo.PageGroup = nodeGroup.GetValue(tlColCaption) as string;
             rcInfo.Caption = nodeCommand.GetValue(tlColCaption) as string;
             rcInfo.CommandClass = nodeCommand.GetValue(tlColContent) as ClassInfo;
-            rcInfo.Icon = nodeCommand.GetValue(tlColIcon) as Image;
-            rcInfo.Parent = nodeCommand.ParentNode.Tag is RibbonCommandInfo ? nodeCommand.ParentNode.Tag as RibbonCommandInfo : null;
+            object objIcon= nodeCommand.GetValue(tlColIcon);
+            rcInfo.Icon =objIcon is byte[]?Image.FromStream(new System.IO.MemoryStream(objIcon as byte[])):objIcon as Image;
+            rcInfo.Parent = nodeCommand.ParentNode.Tag as RibbonCommandInfo;// nodeCommand.ParentNode.Tag is RibbonCommandInfo ? nodeCommand.ParentNode.Tag as RibbonCommandInfo : null;
             if (rcInfo.Parent != null)
             {
                 rcInfo.Order = rcInfo.Parent.Order + cmdOrder.ToString("00");
@@ -410,10 +427,15 @@ namespace Frame
             m_HibernateHelper.SaveObject(rcInfo);
             nodeCommand.Tag = rcInfo;
             //m_HibernateHelper.RefreshObject(rcInfo);
-            foreach (TreeListNode nodeSub in nodeCommand.Nodes)
+            for (int i = 0; i < nodeCommand.Nodes.Count;i++ )
             {
-                SaveCommandNode(nodeSub, nodePage, nodeGroup, pageOrder, groupOrder, cmdOrder);
+                SaveCommandNode(nodeCommand.Nodes[i], nodePage, nodeGroup, pageOrder, groupOrder, i+1);
+
             }
+            //foreach (TreeListNode nodeSub in nodeCommand.Nodes)
+            //{
+            //    SaveCommandNode(nodeSub, nodePage, nodeGroup, pageOrder, groupOrder, cmdOrder);
+            //}
         }
 
         private void barBtnRefresh_Click(object sender, EventArgs e)

@@ -9,14 +9,14 @@ using ESRI.ArcGIS.SystemUI;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for MapIdentifyCommand.
     /// </summary>
-    [Guid("6ed31625-6b8c-4c0e-9758-02d3d7faff5d")]
+    [Guid("6ed31625-6b8c-4c0e-9758-02d3d7faffad")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.MapIdentifyCommand")]
+    [ProgId("Check.Command.CustomCommand.MapIdentifyCommand")]
     public sealed class MapIdentifyCommand : BaseCommand, ICommandSubType
     {
         #region COM Registration Function(s)

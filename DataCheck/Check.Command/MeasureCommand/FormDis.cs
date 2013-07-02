@@ -13,7 +13,7 @@ using ESRI.ArcGIS.SystemUI;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.esriSystem;
 
-namespace CheckCommand.MeasureCommand
+namespace Check.Command.MeasureCommand
 {
     /// <summary>
     /// 测量类型，Length长度，Area面积

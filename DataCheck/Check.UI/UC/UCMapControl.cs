@@ -81,7 +81,7 @@ namespace Check.UI.UC
         /// <summary>
         /// 当前的临时规则列表
         /// </summary>
-        private DataTable dtSchema = null;
+        private DataTable m_DtSchema = null;
 
         private IFeatureDataset m_pDatasetSon = null;
 
@@ -463,7 +463,7 @@ namespace Check.UI.UC
             {
                 double dou = (double)e.RulesCount / COMMONCONST.MAX_ROWS;
                 this.ucResult.PageCount =(int)Math.Ceiling(dou);
-                dtSchema=e.SubRules as DataTable;
+                m_DtSchema=e.SubRules as DataTable;
                 errCount = e.RulesCount;
 
                 this.ucResult.DataSource = GetError(0);
@@ -475,15 +475,15 @@ namespace Check.UI.UC
             //2012-07-17 靳军杰 修改
             //如果没有错误时，依然要返回一个空间的datatable结构
 
-            if (dtSchema == null || dtSchema.Rows.Count == 0)
+            if (m_DtSchema == null || m_DtSchema.Rows.Count == 0)
             {
                 return ErrorHelper.GenerateStandardErrorDt();
             }
 
             string strRuleIDs = "";
-            for (int i = 0; i < dtSchema.Rows.Count; i++)
+            for (int i = 0; i < m_DtSchema.Rows.Count; i++)
             {
-                strRuleIDs += dtSchema.Rows[i]["RuleInstID"] as string + ",";
+                strRuleIDs += m_DtSchema.Rows[i]["RuleInstID"] as string + ",";
             }
             if (!string.IsNullOrEmpty(strRuleIDs))
             {
@@ -492,7 +492,7 @@ namespace Check.UI.UC
 
             ErrorHelper errHelper = new ErrorHelper();
             errHelper.ResultConnection = this.m_CurrentTask.ResultConnection;           
-            return errHelper.GetErrors((Check.Define.enumErrorType)dtSchema.Rows[0]["ErrorType"], strRuleIDs, COMMONCONST.MAX_ROWS,pageIndex, ref errCount);
+            return errHelper.GetErrors((Check.Define.enumErrorType)m_DtSchema.Rows[0]["ErrorType"], strRuleIDs, COMMONCONST.MAX_ROWS,pageIndex, ref errCount);
 
         }
 

@@ -152,7 +152,6 @@ namespace Check.UI.UC
                 //gvResult.BestFitColumns();
                 gcResult.EndUpdate();
 
-                //gcResult.Refresh();
 
                 gvResult.OptionsBehavior.Editable = false;
 
@@ -163,7 +162,7 @@ namespace Check.UI.UC
                 {
                     for (int i = 0; i < gvResult.Columns.Count; i++)
                     {
-                        if (!this.m_FieldList.Contains(gvResult.Columns[i].Caption))
+                        if (!this.m_FieldList.Contains(m_DataSource.Columns[i].Caption))
                         {
                             gvResult.Columns[i].Visible = false;
 
@@ -325,6 +324,7 @@ namespace Check.UI.UC
         // 对缺陷级别做控制--不允许修改的
         private void gvResult_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            // 允许编辑的只有例外
             if (e.Column != gvResult.Columns[Field_Name_Exception])
                 return;
 
@@ -332,16 +332,16 @@ namespace Check.UI.UC
             if (rowError == null)
                 return;
 
-            // 允许编辑的只有例外
-            if ((int)rowError["DefectLevel"] == (int)this.m_ExeptionDefectLevel)
-            {
-                XtraMessageBox.Show("此类缺陷级别的错误不允许例外");
-                rowError[Field_Name_Exception] = false;
-                gcResult.RefreshDataSource();
-            }
 
             if ((bool)e.Value)
             {
+                if ((int)rowError["DefectLevel"] == (int)this.m_ExeptionDefectLevel)
+                {
+                    XtraMessageBox.Show("此类缺陷级别的错误不允许例外");
+                    rowError[Field_Name_Exception] = false;
+                    gcResult.RefreshDataSource();
+                    return;
+                }
                 if (m_FrmRemark.ShowDialog() == DialogResult.OK)
                 {
                     rowError[Field_Name_Remark] = m_FrmRemark.m_strRemark;

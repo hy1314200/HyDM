@@ -16,7 +16,7 @@ namespace Check.Engine.Helper
     {
         private static Dictionary<string, Assembly> m_DictAssembly = new Dictionary<string, Assembly>();
 
-        public static string DefaultRuleDllPath = System.Windows.Forms.Application.StartupPath + "\\Plugin";
+        public static string DefaultRuleDllPath = System.Windows.Forms.Application.StartupPath;
 
         ///// <summary>
         ///// 从规则类信息创建规则实例

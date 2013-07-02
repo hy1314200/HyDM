@@ -5,14 +5,14 @@ using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ViewTaskCheckLogCommand.
     /// </summary>
-    [Guid("9ff972e2-767e-4ce2-8538-ceb92466edf5")]
+    [Guid("9ff972e2-767e-4ce2-8538-ceb92466edc5")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ViewTaskCheckLogCommand")]
+    [ProgId("Check.Command.CustomCommand.ViewTaskCheckLogCommand")]
     public sealed class ViewTaskCheckLogCommand : BaseCommand
     {
         #region COM Registration Function(s)

@@ -6,7 +6,7 @@ using System.Xml;
 using Common.Utility.Encryption;
 using System.IO;
 using Common.UI;
-using CheckCommand;
+using Check.Command;
 using Check.Utility;
 using Common.Utility;
 

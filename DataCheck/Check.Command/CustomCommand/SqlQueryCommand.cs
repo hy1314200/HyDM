@@ -6,14 +6,14 @@ using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 using Check.UI.Forms;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for SqlQueryCommand.
     /// </summary>
-    [Guid("94fd0139-078e-4c00-b1ea-802a38369cbd")]
+    [Guid("94fd0139-078e-4c00-b1ea-802a38369cdd")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.SqlQueryCommand")]
+    [ProgId("Check.Command.CustomCommand.SqlQueryCommand")]
     public sealed class SqlQueryCommand : BaseCommand
     {
         #region COM Registration Function(s)

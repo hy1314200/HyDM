@@ -11,10 +11,12 @@ namespace Utility
     {
         private IDbConnection m_DbConnection = null;
         private IDbTransaction m_Transaction = null;
+        private DbProviderFactory m_ProviderFactory = null;
 
-        public ADODBHelper(IDbConnection dbConnection)
+        internal ADODBHelper(IDbConnection dbConnection,DbProviderFactory dbFactory)
         {
             this.m_DbConnection = dbConnection;
+            this.m_ProviderFactory = dbFactory;
 
             if (m_DbConnection == null)
                 throw new Exception("内部错误：ADO连接没有初始化");
@@ -74,7 +76,16 @@ namespace Utility
 
         public System.Data.DataTable ExecuteDataTable(string strSql)
         {
-            throw new NotImplementedException(); 
+            DbDataAdapter dataAdapter = this.m_ProviderFactory.CreateDataAdapter();
+
+            m_Command = m_DbConnection.CreateCommand();
+            m_Command.CommandText = strSql;
+            dataAdapter.SelectCommand = m_Command as DbCommand;
+
+            DataTable dtResult=new DataTable();
+            dataAdapter.Fill(dtResult);
+
+            return dtResult;
         }
 
         public object ExecuteScalar(string strSql)

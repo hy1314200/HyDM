@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfig));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -67,7 +68,7 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
@@ -210,7 +211,7 @@
             this.xtraTabPage2.Controls.Add(this.ribbonControl1);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage2.Size = new System.Drawing.Size(839, 526);
+            this.xtraTabPage2.Size = new System.Drawing.Size(839, 525);
             this.xtraTabPage2.Text = "工具栏命令配置";
             this.xtraTabPage2.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -234,7 +235,7 @@
             this.splitContainerControl2.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel1;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 217);
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 218);
             this.splitContainerControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.splitContainerControl2.Name = "splitContainerControl2";
             this.splitContainerControl2.Panel1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -268,7 +269,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.tlRibbon);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
-            this.splitContainerControl2.Size = new System.Drawing.Size(839, 309);
+            this.splitContainerControl2.Size = new System.Drawing.Size(839, 307);
             this.splitContainerControl2.SplitterPosition = 276;
             this.splitContainerControl2.TabIndex = 6;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -286,7 +287,7 @@
             this.ucCommandCategory2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.ucCommandCategory2.Name = "ucCommandCategory2";
             this.ucCommandCategory2.SelectedClassInfo = null;
-            this.ucCommandCategory2.Size = new System.Drawing.Size(276, 309);
+            this.ucCommandCategory2.Size = new System.Drawing.Size(276, 307);
             this.ucCommandCategory2.TabIndex = 0;
             this.ucCommandCategory2.SelectedClassInfoChanged += new Frame.ClassInfoEventHandler(this.ucCommandCategory2_SelectedClassInfoChanged);
             this.ucCommandCategory2.ClassInfoDoubleClicked += new Frame.ClassInfoEventHandler(this.ucCommandCategory2_ClassInfoDoubleClicked);
@@ -469,7 +470,7 @@
             this.repositoryItemImageEdit2,
             this.repositoryItemComboBox1});
             this.tlRibbon.ShowButtonMode = DevExpress.XtraTreeList.ShowButtonModeEnum.ShowForFocusedCell;
-            this.tlRibbon.Size = new System.Drawing.Size(557, 309);
+            this.tlRibbon.Size = new System.Drawing.Size(557, 307);
             this.tlRibbon.TabIndex = 0;
             this.tlRibbon.TreeLineStyle = DevExpress.XtraTreeList.LineStyle.Percent50;
             this.tlRibbon.VertScrollVisibility = DevExpress.XtraTreeList.ScrollVisibility.Auto;
@@ -570,9 +571,9 @@
             this.repositoryItemImageEdit2.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemImageEdit2.AutoHeight = false;
             this.repositoryItemImageEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemImageEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.repositoryItemImageEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemImageEdit2.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemImageEdit2.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -705,9 +706,9 @@
             this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject6.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.repositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -782,14 +783,14 @@
             this.repositoryItemButtonEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            serializableAppearanceObject3.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            serializableAppearanceObject3.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            serializableAppearanceObject3.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            serializableAppearanceObject3.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            serializableAppearanceObject3.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            serializableAppearanceObject7.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject7.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            serializableAppearanceObject7.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            serializableAppearanceObject7.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            serializableAppearanceObject7.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            serializableAppearanceObject7.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
             this.repositoryItemButtonEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemButtonEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.repositoryItemButtonEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
@@ -836,9 +837,9 @@
             this.repositoryItemImageEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemImageEdit1.AutoHeight = false;
             this.repositoryItemImageEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject8.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
             this.repositoryItemImageEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemImageEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemImageEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -868,9 +869,9 @@
             this.barBtnSave,
             this.toolStripSeparator4,
             this.barBtnRefresh});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 174);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 170);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(839, 43);
+            this.toolStrip2.Size = new System.Drawing.Size(839, 48);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -879,7 +880,7 @@
             this.barBtnAddPage.Image = ((System.Drawing.Image)(resources.GetObject("barBtnAddPage.Image")));
             this.barBtnAddPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnAddPage.Name = "barBtnAddPage";
-            this.barBtnAddPage.Size = new System.Drawing.Size(93, 40);
+            this.barBtnAddPage.Size = new System.Drawing.Size(107, 45);
             this.barBtnAddPage.Text = "添加RibbonPage";
             this.barBtnAddPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnAddPage.Click += new System.EventHandler(this.barBtnAddPage_Click);
@@ -889,7 +890,7 @@
             this.barBtnDeletePage.Image = ((System.Drawing.Image)(resources.GetObject("barBtnDeletePage.Image")));
             this.barBtnDeletePage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnDeletePage.Name = "barBtnDeletePage";
-            this.barBtnDeletePage.Size = new System.Drawing.Size(57, 40);
+            this.barBtnDeletePage.Size = new System.Drawing.Size(65, 45);
             this.barBtnDeletePage.Text = "删除Page";
             this.barBtnDeletePage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnDeletePage.Click += new System.EventHandler(this.barBtnDeletePage_Click);
@@ -897,14 +898,14 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 43);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
             // 
             // barBtnAddGroup
             // 
             this.barBtnAddGroup.Image = ((System.Drawing.Image)(resources.GetObject("barBtnAddGroup.Image")));
             this.barBtnAddGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnAddGroup.Name = "barBtnAddGroup";
-            this.barBtnAddGroup.Size = new System.Drawing.Size(87, 40);
+            this.barBtnAddGroup.Size = new System.Drawing.Size(102, 45);
             this.barBtnAddGroup.Text = "添加PageGroup";
             this.barBtnAddGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnAddGroup.Click += new System.EventHandler(this.barBtnAddGroup_Click);
@@ -914,7 +915,7 @@
             this.barBtnDeleteGroup.Image = ((System.Drawing.Image)(resources.GetObject("barBtnDeleteGroup.Image")));
             this.barBtnDeleteGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnDeleteGroup.Name = "barBtnDeleteGroup";
-            this.barBtnDeleteGroup.Size = new System.Drawing.Size(63, 40);
+            this.barBtnDeleteGroup.Size = new System.Drawing.Size(73, 45);
             this.barBtnDeleteGroup.Text = "删除Group";
             this.barBtnDeleteGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnDeleteGroup.Click += new System.EventHandler(this.DeleteGroup);
@@ -922,14 +923,14 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 43);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 48);
             // 
             // barBtnAddCommand
             // 
             this.barBtnAddCommand.Image = ((System.Drawing.Image)(resources.GetObject("barBtnAddCommand.Image")));
             this.barBtnAddCommand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnAddCommand.Name = "barBtnAddCommand";
-            this.barBtnAddCommand.Size = new System.Drawing.Size(93, 40);
+            this.barBtnAddCommand.Size = new System.Drawing.Size(102, 45);
             this.barBtnAddCommand.Text = "添加到工具栏>>";
             this.barBtnAddCommand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnAddCommand.Click += new System.EventHandler(this.AddCommand);
@@ -939,7 +940,7 @@
             this.barBtnDeleteCommand.Image = ((System.Drawing.Image)(resources.GetObject("barBtnDeleteCommand.Image")));
             this.barBtnDeleteCommand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnDeleteCommand.Name = "barBtnDeleteCommand";
-            this.barBtnDeleteCommand.Size = new System.Drawing.Size(93, 40);
+            this.barBtnDeleteCommand.Size = new System.Drawing.Size(102, 45);
             this.barBtnDeleteCommand.Text = "<<从工具栏删除";
             this.barBtnDeleteCommand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnDeleteCommand.Click += new System.EventHandler(this.DeleteCommand);
@@ -949,7 +950,7 @@
             this.barBtnUp.Image = ((System.Drawing.Image)(resources.GetObject("barBtnUp.Image")));
             this.barBtnUp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnUp.Name = "barBtnUp";
-            this.barBtnUp.Size = new System.Drawing.Size(57, 40);
+            this.barBtnUp.Size = new System.Drawing.Size(60, 45);
             this.barBtnUp.Text = "提升顺序";
             this.barBtnUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnUp.Click += new System.EventHandler(this.barBtnUp_Click);
@@ -959,7 +960,7 @@
             this.barBtnDown.Image = ((System.Drawing.Image)(resources.GetObject("barBtnDown.Image")));
             this.barBtnDown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnDown.Name = "barBtnDown";
-            this.barBtnDown.Size = new System.Drawing.Size(57, 40);
+            this.barBtnDown.Size = new System.Drawing.Size(60, 45);
             this.barBtnDown.Text = "降低顺序";
             this.barBtnDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnDown.Click += new System.EventHandler(this.barBtnDown_Click);
@@ -967,14 +968,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 48);
             // 
             // barBtnSave
             // 
             this.barBtnSave.Image = ((System.Drawing.Image)(resources.GetObject("barBtnSave.Image")));
             this.barBtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnSave.Name = "barBtnSave";
-            this.barBtnSave.Size = new System.Drawing.Size(33, 40);
+            this.barBtnSave.Size = new System.Drawing.Size(36, 45);
             this.barBtnSave.Text = "保存";
             this.barBtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnSave.Click += new System.EventHandler(this.barBtnSave_Click);
@@ -982,14 +983,14 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 43);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 48);
             // 
             // barBtnRefresh
             // 
             this.barBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("barBtnRefresh.Image")));
             this.barBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnRefresh.Name = "barBtnRefresh";
-            this.barBtnRefresh.Size = new System.Drawing.Size(57, 40);
+            this.barBtnRefresh.Size = new System.Drawing.Size(60, 45);
             this.barBtnRefresh.Text = "刷新预览";
             this.barBtnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnRefresh.Click += new System.EventHandler(this.barBtnRefresh_Click);
@@ -997,7 +998,7 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 149);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 145);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(839, 25);
@@ -1020,7 +1021,7 @@
             this.ribbonControl1.SelectedPage = this.ribbonPage1;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.Default;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
-            this.ribbonControl1.Size = new System.Drawing.Size(839, 149);
+            this.ribbonControl1.Size = new System.Drawing.Size(839, 145);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Default;
             // 
@@ -1106,7 +1107,7 @@
             this.xtraTabPage1.Controls.Add(this.toolStrip1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage1.Size = new System.Drawing.Size(839, 526);
+            this.xtraTabPage1.Size = new System.Drawing.Size(839, 525);
             this.xtraTabPage1.Text = "资源注册";
             this.xtraTabPage1.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -1130,7 +1131,7 @@
             this.splitContainerControl1.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel1;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 43);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 48);
             this.splitContainerControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -1164,7 +1165,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
-            this.splitContainerControl1.Size = new System.Drawing.Size(839, 483);
+            this.splitContainerControl1.Size = new System.Drawing.Size(839, 477);
             this.splitContainerControl1.SplitterPosition = 263;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -1225,7 +1226,7 @@
             this.xtraTabControl2.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.Default;
             this.xtraTabControl2.ShowTabHeader = DevExpress.Utils.DefaultBoolean.Default;
             this.xtraTabControl2.ShowToolTips = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabControl2.Size = new System.Drawing.Size(263, 483);
+            this.xtraTabControl2.Size = new System.Drawing.Size(263, 477);
             this.xtraTabControl2.TabIndex = 0;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -1267,7 +1268,7 @@
             this.xtraTabPage3.Controls.Add(this.ucCommandCategory1);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage3.Size = new System.Drawing.Size(256, 454);
+            this.xtraTabPage3.Size = new System.Drawing.Size(256, 447);
             this.xtraTabPage3.Text = "命令";
             this.xtraTabPage3.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -1284,7 +1285,7 @@
             this.ucCommandCategory1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.ucCommandCategory1.Name = "ucCommandCategory1";
             this.ucCommandCategory1.SelectedClassInfo = null;
-            this.ucCommandCategory1.Size = new System.Drawing.Size(256, 454);
+            this.ucCommandCategory1.Size = new System.Drawing.Size(256, 447);
             this.ucCommandCategory1.TabIndex = 0;
             this.ucCommandCategory1.SelectedClassInfoChanged += new Frame.ClassInfoEventHandler(this.SelectedResourceChanged);
             // 
@@ -1324,7 +1325,7 @@
             this.xtraTabPage4.Controls.Add(this.lbPlugins);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage4.Size = new System.Drawing.Size(256, 454);
+            this.xtraTabPage4.Size = new System.Drawing.Size(256, 447);
             this.xtraTabPage4.Text = "插件";
             this.xtraTabPage4.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -1344,7 +1345,7 @@
             this.lbPlugins.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.lbPlugins.Name = "lbPlugins";
             this.lbPlugins.SelectionMode = System.Windows.Forms.SelectionMode.One;
-            this.lbPlugins.Size = new System.Drawing.Size(256, 454);
+            this.lbPlugins.Size = new System.Drawing.Size(256, 447);
             this.lbPlugins.SortOrder = System.Windows.Forms.SortOrder.None;
             this.lbPlugins.TabIndex = 0;
             this.lbPlugins.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
@@ -1372,7 +1373,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(570, 483);
+            this.groupControl1.Size = new System.Drawing.Size(570, 477);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "信息";
             // 
@@ -1391,7 +1392,7 @@
             this.barBtnUnRegister});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(839, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(839, 48);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1400,7 +1401,7 @@
             this.barBtnRegister.Image = ((System.Drawing.Image)(resources.GetObject("barBtnRegister.Image")));
             this.barBtnRegister.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnRegister.Name = "barBtnRegister";
-            this.barBtnRegister.Size = new System.Drawing.Size(57, 40);
+            this.barBtnRegister.Size = new System.Drawing.Size(60, 45);
             this.barBtnRegister.Text = "添加注册";
             this.barBtnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnRegister.Click += new System.EventHandler(this.barBtnRegister_Click);
@@ -1410,7 +1411,7 @@
             this.barBtnUnRegister.Image = ((System.Drawing.Image)(resources.GetObject("barBtnUnRegister.Image")));
             this.barBtnUnRegister.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barBtnUnRegister.Name = "barBtnUnRegister";
-            this.barBtnUnRegister.Size = new System.Drawing.Size(57, 40);
+            this.barBtnUnRegister.Size = new System.Drawing.Size(60, 45);
             this.barBtnUnRegister.Text = "删除注册";
             this.barBtnUnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.barBtnUnRegister.Click += new System.EventHandler(this.barBtnUnRegister_Click);
@@ -1428,7 +1429,7 @@
             // txtStatus
             // 
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(29, 17);
+            this.txtStatus.Size = new System.Drawing.Size(32, 17);
             this.txtStatus.Text = "消息";
             // 
             // FrmConfig
@@ -1440,7 +1441,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "FrmConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "三维展示系统配置端";
+            this.Text = "配置端";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);

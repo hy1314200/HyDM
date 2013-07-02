@@ -6,14 +6,14 @@ using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 using Check.Utility;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ExportToVCTCommand.
     /// </summary>
-    [Guid("11c6c2e2-3716-4a69-979b-0aee369ffb7c")]
+    [Guid("11c6c2e2-3716-4a69-979b-0aee369ffb8c")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ExportToVCTCommand")]
+    [ProgId("Check.Command.CustomCommand.ExportToVCTCommand")]
     public sealed class ExportToVCTCommand : BaseCommand
     {
         #region COM Registration Function(s)

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using Check.Define;
 using System.Collections.Generic;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for PreCheckCommand.
     /// </summary>
-    [Guid("46b91a85-8aa4-4a2a-beeb-f7b806a0c09a")]
+    [Guid("46b91a85-8aa4-4a2a-beeb-f7b806a0c0ca")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.PreCheckCommand")]
+    [ProgId("Check.Command.CustomCommand.PreCheckCommand")]
     public sealed class PreCheckCommand : BaseCommand
     {
         #region COM Registration Function(s)
@@ -119,7 +119,7 @@ namespace CheckCommand.CustomCommand
             frmPreCheck.SchemaRulesSelection = ruleSelection;
             if (frmPreCheck.ShowDialog() == DialogResult.Yes)
             {
-                Check.Task.Task task = CheckCommand.CheckApplication.CurrentTask;
+                Check.Task.Task task = Check.Command.CheckApplication.CurrentTask;
                 task.ReadyForCheck(false);
                 ruleSelection = frmPreCheck.SchemaRulesSelection;
                 CheckApplication.TaskChanged(null);

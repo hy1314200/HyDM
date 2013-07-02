@@ -10,14 +10,14 @@ using ESRI.ArcGIS.Display;
 using Check.UI.Forms;
 using ESRI.ArcGIS.Geometry;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for Identify.
     /// </summary>
-    [Guid("a7d4bac8-4a8f-459a-879a-209c6d8d61ad")]
+    [Guid("a7d4bac8-4a8f-459a-879a-209c6d8d64ad")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.Identify")]
+    [ProgId("Check.Command.CustomCommand.Identify")]
     public sealed class Identify : BaseTool
     {
         #region COM Registration Function(s)

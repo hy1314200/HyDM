@@ -10,14 +10,14 @@ using Check.UI;
 using System.Data;
 using Check.UI.Forms;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ViewFeaturesStatisticCommand.
     /// </summary>
-    [Guid("efdccda7-5a69-4929-8f94-d455ddbc2721")]
+    [Guid("efdccda7-5a69-4929-8f94-d455ddbc27e1")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ViewFeaturesStatisticCommand")]
+    [ProgId("Check.Command.CustomCommand.ViewFeaturesStatisticCommand")]
     public sealed class ViewFeaturesStatisticCommand : BaseCommand
     {
         #region COM Registration Function(s)

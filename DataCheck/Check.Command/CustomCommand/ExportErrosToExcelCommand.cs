@@ -9,14 +9,14 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using Check.Utility;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ExportErrosToExcelCommand.
     /// </summary>
-    [Guid("2d3194e1-3bc0-4d01-be87-d810b1965a94")]
+    [Guid("2d3194e1-3bc0-4d01-be87-d810b1965a64")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ExportErrosToExcelCommand")]
+    [ProgId("Check.Command.CustomCommand.ExportErrosToExcelCommand")]
     public sealed class ExportErrosToExcelCommand : BaseCommand
     {
         #region COM Registration Function(s)

@@ -6,14 +6,14 @@ using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Carto;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for ClearSelectionCommand.
     /// </summary>
-    [Guid("2831a3d3-66f2-444a-ba67-e49930d9d775")]
+    [Guid("2831a3d3-66f2-444a-ba67-e49930d9d755")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.ClearSelectionCommand")]
+    [ProgId("Check.Command.CustomCommand.ClearSelectionCommand")]
     public sealed class ClearSelectionCommand : BaseCommand
     {
         #region COM Registration Function(s)

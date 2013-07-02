@@ -11,7 +11,7 @@ namespace Check.Command
     /// <summary>
     /// Summary description for Tool1.
     /// </summary>
-    [Guid("239d2c63-3ffd-48d5-b0ba-4ee6c877bf45")]
+    [Guid("239d2c63-3ffd-48d5-b0ba-4ee6c877bf35")]
     [ClassInterface(ClassInterfaceType.None)]
     [ProgId("Check.Command.Tool1")]
     public sealed class Tool1 : BaseTool

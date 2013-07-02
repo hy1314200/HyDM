@@ -168,9 +168,6 @@
     <None Include="Resources\DataSample.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dist1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\excutetask.gif" />
   </ItemGroup>
   <ItemGroup>

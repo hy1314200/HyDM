@@ -50,8 +50,9 @@ namespace Utility
         /// 根据数据类型描述和连接字符串获取数据库连接
         /// </summary>
         /// <returns></returns>
-        public static IDbConnection GetConnection(string strType, string strConnection,ref System.Data.Common.DbProviderFactory dbFactory)
+        public static IDbConnection GetConnection(string strType, string strConnection )
         {
+            System.Data.Common.DbProviderFactory dbFactory;
             IDbConnection db = null;
 
             switch (strType.ToUpper())

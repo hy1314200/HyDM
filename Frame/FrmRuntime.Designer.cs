@@ -28,44 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRuntime));
+            this.splitControlMain = new DevExpress.XtraEditors.SplitContainerControl();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.mainMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            this.mainMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.statusBarMessage = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
-            this.splitControlMain = new DevExpress.XtraEditors.SplitContainerControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanelRight = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanelBottom = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer2 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanelLeft = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitControlMain)).BeginInit();
+            this.splitControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).BeginInit();
             this.clientPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitControlMain)).BeginInit();
-            this.splitControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanelRight.SuspendLayout();
             this.dockPanelBottom.SuspendLayout();
             this.dockPanelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
+            // splitControlMain
+            // 
+            this.splitControlMain.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.splitControlMain.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.splitControlMain.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.splitControlMain.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.splitControlMain.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.splitControlMain.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.splitControlMain.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.splitControlMain.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.splitControlMain.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.splitControlMain.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.splitControlMain.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.splitControlMain.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.splitControlMain.CaptionImageLocation = DevExpress.Utils.GroupElementLocation.Default;
+            this.splitControlMain.CaptionLocation = DevExpress.Utils.Locations.Default;
+            this.splitControlMain.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.None;
+            this.splitControlMain.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            resources.ApplyResources(this.splitControlMain, "splitControlMain");
+            this.splitControlMain.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel1;
+            this.splitControlMain.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.splitControlMain.Name = "splitControlMain";
+            this.splitControlMain.Panel1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.splitControlMain.Panel1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.splitControlMain.Panel1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.splitControlMain.Panel1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.splitControlMain.Panel1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.splitControlMain.Panel1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.splitControlMain.Panel1.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.splitControlMain.Panel1.CaptionLocation = DevExpress.Utils.Locations.Default;
+            resources.ApplyResources(this.splitControlMain.Panel1, "splitControlMain.Panel1");
+            this.splitControlMain.Panel2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.splitControlMain.Panel2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.splitControlMain.Panel2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.splitControlMain.Panel2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.splitControlMain.Panel2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.splitControlMain.Panel2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.splitControlMain.Panel2.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.splitControlMain.Panel2.CaptionLocation = DevExpress.Utils.Locations.Default;
+            resources.ApplyResources(this.splitControlMain.Panel2, "splitControlMain.Panel2");
+            this.splitControlMain.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
+            this.splitControlMain.SplitterPosition = 393;
+            // 
             // ribbon
             // 
             this.ribbon.ApplicationButtonDropDownControl = this.mainMenu;
-            this.ribbon.ApplicationButtonText = null;
-            this.ribbon.ApplicationIcon = ((System.Drawing.Bitmap)(resources.GetObject("ribbon.ApplicationIcon")));
+            resources.ApplyResources(this.ribbon, "ribbon");
             this.ribbon.ButtonGroupsVertAlign = DevExpress.Utils.VertAlignment.Default;
-            this.ribbon.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.statusBarMessage});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Default;
-            this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 22;
             this.ribbon.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Default;
             this.ribbon.Name = "ribbon";
@@ -73,7 +124,6 @@
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Default;
             this.ribbon.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.Default;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Default;
-            this.ribbon.Size = new System.Drawing.Size(830, 53);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Default;
             // 
@@ -115,7 +165,7 @@
             this.statusBarMessage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.statusBarMessage.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.statusBarMessage.AutoSize = DevExpress.XtraBars.BarStaticItemSize.Content;
-            this.statusBarMessage.Caption = "消息";
+            resources.ApplyResources(this.statusBarMessage, "statusBarMessage");
             this.statusBarMessage.Id = 20;
             this.statusBarMessage.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.statusBarMessage.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
@@ -125,12 +175,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            resources.ApplyResources(this.ribbonStatusBar, "ribbonStatusBar");
             this.ribbonStatusBar.ItemLinks.Add(this.statusBarMessage, true);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 543);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(830, 24);
             // 
             // clientPanel
             // 
@@ -143,73 +191,13 @@
             this.clientPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.clientPanel.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.clientPanel.Controls.Add(this.splitControlMain);
-            this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clientPanel.Location = new System.Drawing.Point(0, 53);
+            resources.ApplyResources(this.clientPanel, "clientPanel");
             this.clientPanel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(830, 490);
-            this.clientPanel.TabIndex = 2;
-            // 
-            // splitControlMain
-            // 
-            this.splitControlMain.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.splitControlMain.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.splitControlMain.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.splitControlMain.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.splitControlMain.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.splitControlMain.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.splitControlMain.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.splitControlMain.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.splitControlMain.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.splitControlMain.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.splitControlMain.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.splitControlMain.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.splitControlMain.CaptionImageLocation = DevExpress.Utils.GroupElementLocation.Default;
-            this.splitControlMain.CaptionLocation = DevExpress.Utils.Locations.Default;
-            this.splitControlMain.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.None;
-            this.splitControlMain.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.splitControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitControlMain.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel1;
-            this.splitControlMain.Location = new System.Drawing.Point(0, 0);
-            this.splitControlMain.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.splitControlMain.Name = "splitControlMain";
-            this.splitControlMain.Panel1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.splitControlMain.Panel1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.splitControlMain.Panel1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.splitControlMain.Panel1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.splitControlMain.Panel1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.splitControlMain.Panel1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.splitControlMain.Panel1.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.splitControlMain.Panel1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.splitControlMain.Panel1.CaptionLocation = DevExpress.Utils.Locations.Default;
-            this.splitControlMain.Panel1.Text = "Panel1";
-            this.splitControlMain.Panel2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.splitControlMain.Panel2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.splitControlMain.Panel2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.splitControlMain.Panel2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.splitControlMain.Panel2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.splitControlMain.Panel2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.splitControlMain.Panel2.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.splitControlMain.Panel2.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.splitControlMain.Panel2.CaptionLocation = DevExpress.Utils.Locations.Default;
-            this.splitControlMain.Panel2.Text = "Panel2";
-            this.splitControlMain.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
-            this.splitControlMain.Size = new System.Drawing.Size(830, 490);
-            this.splitControlMain.SplitterPosition = 393;
-            this.splitControlMain.TabIndex = 0;
-            this.splitControlMain.Text = "splitContainerControl1";
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Black";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
             this.defaultLookAndFeel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             // 
             // dockManager1
@@ -239,21 +227,18 @@
             this.dockPanelRight.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanelRight.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
             this.dockPanelRight.ID = new System.Guid("f8a7e763-f770-491f-bb4f-fba48459b60f");
-            this.dockPanelRight.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.dockPanelRight, "dockPanelRight");
             this.dockPanelRight.Name = "dockPanelRight";
             this.dockPanelRight.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanelRight.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanelRight.SavedIndex = 0;
-            this.dockPanelRight.Size = new System.Drawing.Size(200, 490);
             this.dockPanelRight.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
             this.dockPanelRight.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // controlContainer1
             // 
-            this.controlContainer1.Location = new System.Drawing.Point(3, 29);
+            resources.ApplyResources(this.controlContainer1, "controlContainer1");
             this.controlContainer1.Name = "controlContainer1";
-            this.controlContainer1.Size = new System.Drawing.Size(194, 458);
-            this.controlContainer1.TabIndex = 0;
             // 
             // dockPanelBottom
             // 
@@ -267,22 +252,18 @@
             this.dockPanelBottom.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.dockPanelBottom.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
             this.dockPanelBottom.ID = new System.Guid("211bbdb2-749f-4c90-94ed-b7ef62c7e8ab");
-            this.dockPanelBottom.Location = new System.Drawing.Point(0, 395);
+            resources.ApplyResources(this.dockPanelBottom, "dockPanelBottom");
             this.dockPanelBottom.Name = "dockPanelBottom";
             this.dockPanelBottom.OriginalSize = new System.Drawing.Size(200, 148);
             this.dockPanelBottom.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.dockPanelBottom.SavedIndex = 0;
-            this.dockPanelBottom.Size = new System.Drawing.Size(830, 148);
             this.dockPanelBottom.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelBottom.Text = "dockPanel1";
             this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // controlContainer2
             // 
-            this.controlContainer2.Location = new System.Drawing.Point(3, 29);
+            resources.ApplyResources(this.controlContainer2, "controlContainer2");
             this.controlContainer2.Name = "controlContainer2";
-            this.controlContainer2.Size = new System.Drawing.Size(824, 116);
-            this.controlContainer2.TabIndex = 0;
             // 
             // dockPanelLeft
             // 
@@ -296,21 +277,18 @@
             this.dockPanelLeft.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanelLeft.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
             this.dockPanelLeft.ID = new System.Guid("6f43f807-6609-4263-b57a-1b15bfaddd11");
-            this.dockPanelLeft.Location = new System.Drawing.Point(0, 53);
+            resources.ApplyResources(this.dockPanelLeft, "dockPanelLeft");
             this.dockPanelLeft.Name = "dockPanelLeft";
             this.dockPanelLeft.OriginalSize = new System.Drawing.Size(187, 200);
             this.dockPanelLeft.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanelLeft.SavedIndex = 0;
-            this.dockPanelLeft.Size = new System.Drawing.Size(187, 490);
             this.dockPanelLeft.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
             this.dockPanelLeft.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // dockPanel1_Container
             // 
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 29);
+            resources.ApplyResources(this.dockPanel1_Container, "dockPanel1_Container");
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 458);
-            this.dockPanel1_Container.TabIndex = 0;
             // 
             // FrmRuntime
             // 
@@ -320,25 +298,22 @@
             this.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
             this.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 567);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmRuntime";
             this.Ribbon = this.ribbon;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "FrmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.splitControlMain)).EndInit();
+            this.splitControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).EndInit();
             this.clientPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitControlMain)).EndInit();
-            this.splitControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanelRight.ResumeLayout(false);
             this.dockPanelBottom.ResumeLayout(false);

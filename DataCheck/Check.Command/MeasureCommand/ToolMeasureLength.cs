@@ -10,14 +10,14 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Geometry;
 using System.Reflection;
 
-namespace CheckCommand.MeasureCommand
+namespace Check.Command.MeasureCommand
 {
     /// <summary>
     /// Summary description for ToolMeasureLength.
     /// </summary>
-    [Guid("d082f72c-fd81-444c-8625-8e2e2c884364")]
+    [Guid("d082f72c-fd81-444c-8625-8e2e2c884344")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.MeasureCommand.ToolMeasureLength")]
+    [ProgId("Check.Command.MeasureCommand.ToolMeasureLength")]
     public sealed class ToolMeasureLength : BaseTool
     {
         #region COM Registration Function(s)
@@ -100,7 +100,7 @@ namespace CheckCommand.MeasureCommand
                 Assembly thisExe = Assembly.GetExecutingAssembly();
 
                 base.m_cursor =
-                    new Cursor(thisExe.GetManifestResourceStream("CheckCommand.Resources.ToolMeasureLength.cur"));
+                    new Cursor(thisExe.GetManifestResourceStream("Check.Command.Resources.ToolMeasureLength.cur"));
             }
             catch (Exception ex)
             {

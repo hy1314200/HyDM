@@ -5,14 +5,14 @@ using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for CheckWorkFlowCommand.
     /// </summary>
-    [Guid("45a26e72-68e6-4c01-b331-af849a87ec39")]
+    [Guid("45a26e72-68e6-4c01-b331-af849a87ec79")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.CheckWorkFlowCommand")]
+    [ProgId("Check.Command.CustomCommand.CheckWorkFlowCommand")]
     public sealed class CheckWorkFlowCommand : BaseCommand
     {
         #region COM Registration Function(s)

@@ -13,7 +13,7 @@ using DevExpress.XtraTreeList.Localization;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Geometry;
 using Common.UI;
-using CheckCommand;
+using Check.Command;
 using Check.Demo.Helper;
 
 namespace Check.Demo
@@ -32,27 +32,27 @@ namespace Check.Demo
         private readonly string[] strprogids =
         {
             //任务管理
-            "CheckCommand.CustomCommand.CreateTaskCommand",
-             "CheckCommand.CustomCommand.OpenTaskCommand",
-             "CheckCommand.CustomCommand.BatchCreateTaskCommand",
-             "CheckCommand.CustomCommand.ExcuteTaskCommand",
-             "CheckCommand.CustomCommand.CheckWorkFlowCommand",
-             "CheckCommand.CustomCommand.PreCheckCommand",
-             "CheckCommand.CustomCommand.CheckErrorsEvaluate",
-             "CheckCommand.CustomCommand.SqlQueryCommand",
-             "CheckCommand.CustomCommand.SystemHelpCommand",
-             "CheckCommand.CustomCommand.ExportErrosToExcelCommand",
-             "CheckCommand.CustomCommand.ExportErrorRecordCommand",
-             "CheckCommand.CustomCommand.ExportToVCTCommand",
-             "CheckCommand.CustomCommand.ViewTaskCheckLogCommand",
-             "CheckCommand.CustomCommand.ViewFeaturesStatisticCommand",
+            "Check.Command.CustomCommand.CreateTaskCommand",
+             "Check.Command.CustomCommand.OpenTaskCommand",
+             "Check.Command.CustomCommand.BatchCreateTaskCommand",
+             "Check.Command.CustomCommand.ExcuteTaskCommand",
+             "Check.Command.CustomCommand.CheckWorkFlowCommand",
+             "Check.Command.CustomCommand.PreCheckCommand",
+             "Check.Command.CustomCommand.CheckErrorsEvaluate",
+             "Check.Command.CustomCommand.SqlQueryCommand",
+             "Check.Command.CustomCommand.SystemHelpCommand",
+             "Check.Command.CustomCommand.ExportErrosToExcelCommand",
+             "Check.Command.CustomCommand.ExportErrorRecordCommand",
+             "Check.Command.CustomCommand.ExportToVCTCommand",
+             "Check.Command.CustomCommand.ViewTaskCheckLogCommand",
+             "Check.Command.CustomCommand.ViewFeaturesStatisticCommand",
 
             //地图工具
-            "CheckCommand.CustomCommand.Identify",
-            "CheckCommand.MeasureCommand.ToolMeasureArea",
-            "CheckCommand.MeasureCommand.ToolMeasureLength",
-            "CheckCommand.CustomCommand.MapIdentifyCommand",
-            "CheckCommand.CustomCommand.ClearSelectionCommand"
+            "Check.Command.CustomCommand.Identify",
+            "Check.Command.MeasureCommand.ToolMeasureArea",
+            "Check.Command.MeasureCommand.ToolMeasureLength",
+            "Check.Command.CustomCommand.MapIdentifyCommand",
+            "Check.Command.CustomCommand.ClearSelectionCommand"
         };
 
         /// <summary>

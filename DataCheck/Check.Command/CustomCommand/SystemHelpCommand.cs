@@ -5,14 +5,14 @@ using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Controls;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for SystemHelpCommand.
     /// </summary>
-    [Guid("410b6717-5745-42fa-836a-e9c353f083ec")]
+    [Guid("410b6717-5745-42fa-836a-e9c353f083fc")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.SystemHelpCommand")]
+    [ProgId("Check.Command.CustomCommand.SystemHelpCommand")]
     public sealed class SystemHelpCommand : BaseCommand
     {
         #region COM Registration Function(s)

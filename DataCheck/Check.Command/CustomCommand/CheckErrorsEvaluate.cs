@@ -7,14 +7,14 @@ using ESRI.ArcGIS.Controls;
 
 using Check.UI.Forms;
 
-namespace CheckCommand.CustomCommand
+namespace Check.Command.CustomCommand
 {
     /// <summary>
     /// Summary description for CheckErrorsEvaluate.
     /// </summary>
-    [Guid("84d08911-b89e-4c41-a6e6-c4928a2374fd")]
+    [Guid("84d08911-b89e-4c41-a6e6-c4928a23746d")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("CheckCommand.CustomCommand.CheckErrorsEvaluate")]
+    [ProgId("Check.Command.CustomCommand.CheckErrorsEvaluate")]
     public sealed class CheckErrorsEvaluate : BaseCommand
     {
         #region COM Registration Function(s)

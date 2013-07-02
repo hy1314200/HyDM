@@ -28,6 +28,7 @@ namespace Check.Demo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RibbonFrmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonCreakTask = new DevExpress.XtraBars.BarButtonItem();
@@ -73,7 +74,7 @@ namespace Check.Demo
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
             this.pnlMapCheck = new DevExpress.XtraEditors.PanelControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
@@ -155,7 +156,7 @@ namespace Check.Demo
             this.barButtonCreakTask.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonCreakTask.LargeGlyph")));
             this.barButtonCreakTask.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonCreakTask.Name = "barButtonCreakTask";
-            this.barButtonCreakTask.Tag = "CheckCommand.CustomCommand.CreateTaskCommand";
+            this.barButtonCreakTask.Tag = "Check.Command.CustomCommand.CreateTaskCommand";
             this.barButtonCreakTask.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonOpenTask
@@ -170,7 +171,7 @@ namespace Check.Demo
             this.barButtonOpenTask.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonOpenTask.LargeGlyph")));
             this.barButtonOpenTask.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonOpenTask.Name = "barButtonOpenTask";
-            this.barButtonOpenTask.Tag = "CheckCommand.CustomCommand.OpenTaskCommand";
+            this.barButtonOpenTask.Tag = "Check.Command.CustomCommand.OpenTaskCommand";
             this.barButtonOpenTask.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonExecuteTask
@@ -185,7 +186,7 @@ namespace Check.Demo
             this.barButtonExecuteTask.LargeGlyph = global::Check.Demo.Properties.Resources.ExcuteTask;
             this.barButtonExecuteTask.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonExecuteTask.Name = "barButtonExecuteTask";
-            this.barButtonExecuteTask.Tag = "CheckCommand.CustomCommand.ExcuteTaskCommand";
+            this.barButtonExecuteTask.Tag = "Check.Command.CustomCommand.ExcuteTaskCommand";
             this.barButtonExecuteTask.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barButtonIdentify
@@ -201,7 +202,7 @@ namespace Check.Demo
             this.barButtonIdentify.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonIdentify.LargeGlyph")));
             this.barButtonIdentify.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonIdentify.Name = "barButtonIdentify";
-            this.barButtonIdentify.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:1";
+            this.barButtonIdentify.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:1";
             this.barButtonIdentify.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barStaticTask
@@ -229,7 +230,7 @@ namespace Check.Demo
             this.barButtonAutoTask.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonAutoTask.LargeGlyph")));
             this.barButtonAutoTask.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonAutoTask.Name = "barButtonAutoTask";
-            this.barButtonAutoTask.Tag = "CheckCommand.CustomCommand.ExcuteTaskCommand";
+            this.barButtonAutoTask.Tag = "Check.Command.CustomCommand.ExcuteTaskCommand";
             this.barButtonAutoTask.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonExportToExcel
@@ -244,7 +245,7 @@ namespace Check.Demo
             this.barButtonExportToExcel.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonExportToExcel.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonExportToExcel.Name = "barButtonExportToExcel";
-            this.barButtonExportToExcel.Tag = "CheckCommand.CustomCommand.ExportErrosToExcelCommand";
+            this.barButtonExportToExcel.Tag = "Check.Command.CustomCommand.ExportErrosToExcelCommand";
             this.barButtonExportToExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonShpToMDB
@@ -274,7 +275,7 @@ namespace Check.Demo
             this.barButtonExportToShp.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonExportToShp.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonExportToShp.Name = "barButtonExportToShp";
-            this.barButtonExportToShp.Tag = "CheckCommand.CustomCommand.ExportErrorRecordCommand";
+            this.barButtonExportToShp.Tag = "Check.Command.CustomCommand.ExportErrorRecordCommand";
             this.barButtonExportToShp.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barSubExportError
@@ -338,7 +339,7 @@ namespace Check.Demo
             this.barButtonExportToVCT.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonExportToVCT.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonExportToVCT.Name = "barButtonExportToVCT";
-            this.barButtonExportToVCT.Tag = "CheckCommand.CustomCommand.ExportToVCTCommand";
+            this.barButtonExportToVCT.Tag = "Check.Command.CustomCommand.ExportToVCTCommand";
             this.barButtonExportToVCT.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barButtonPreCheck
@@ -353,7 +354,7 @@ namespace Check.Demo
             this.barButtonPreCheck.LargeGlyph = global::Check.Demo.Properties.Resources.ExcuteTask;
             this.barButtonPreCheck.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonPreCheck.Name = "barButtonPreCheck";
-            this.barButtonPreCheck.Tag = "CheckCommand.CustomCommand.PreCheckCommand";
+            this.barButtonPreCheck.Tag = "Check.Command.CustomCommand.PreCheckCommand";
             this.barButtonPreCheck.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem4
@@ -369,7 +370,7 @@ namespace Check.Demo
             this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
             this.barButtonItem4.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.Tag = "CheckCommand.CustomCommand.CheckWorkFlowCommand";
+            this.barButtonItem4.Tag = "Check.Command.CustomCommand.CheckWorkFlowCommand";
             this.barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barButtonItem6
@@ -384,7 +385,7 @@ namespace Check.Demo
             this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
             this.barButtonItem6.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.Tag = "CheckCommand.CustomCommand.CheckErrorsEvaluate";
+            this.barButtonItem6.Tag = "Check.Command.CustomCommand.CheckErrorsEvaluate";
             this.barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonClearElements
@@ -399,7 +400,7 @@ namespace Check.Demo
             this.barButtonClearElements.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonClearElements.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonClearElements.Name = "barButtonClearElements";
-            this.barButtonClearElements.Tag = "CheckCommand.CustomCommand.ClearSelectionCommand";
+            this.barButtonClearElements.Tag = "Check.Command.CustomCommand.ClearSelectionCommand";
             this.barButtonClearElements.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem8
@@ -415,7 +416,7 @@ namespace Check.Demo
             this.barButtonItem8.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem8.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:2";
+            this.barButtonItem8.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:2";
             this.barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem10
@@ -431,7 +432,7 @@ namespace Check.Demo
             this.barButtonItem10.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem10.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:3";
+            this.barButtonItem10.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:3";
             this.barButtonItem10.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem11
@@ -446,7 +447,7 @@ namespace Check.Demo
             this.barButtonItem11.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem11.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem11.Name = "barButtonItem11";
-            this.barButtonItem11.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:4";
+            this.barButtonItem11.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:4";
             this.barButtonItem11.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem12
@@ -462,7 +463,7 @@ namespace Check.Demo
             this.barButtonItem12.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem12.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem12.Name = "barButtonItem12";
-            this.barButtonItem12.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:5";
+            this.barButtonItem12.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:5";
             this.barButtonItem12.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem13
@@ -477,7 +478,7 @@ namespace Check.Demo
             this.barButtonItem13.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem13.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem13.Name = "barButtonItem13";
-            this.barButtonItem13.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:7";
+            this.barButtonItem13.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:7";
             this.barButtonItem13.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem14
@@ -492,7 +493,7 @@ namespace Check.Demo
             this.barButtonItem14.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem14.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem14.Name = "barButtonItem14";
-            this.barButtonItem14.Tag = "CheckCommand.CustomCommand.MapIdentifyCommand:6";
+            this.barButtonItem14.Tag = "Check.Command.CustomCommand.MapIdentifyCommand:6";
             this.barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonRuleTree
@@ -522,7 +523,7 @@ namespace Check.Demo
             this.barButtonSQLQuery.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonSQLQuery.LargeGlyph")));
             this.barButtonSQLQuery.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonSQLQuery.Name = "barButtonSQLQuery";
-            this.barButtonSQLQuery.Tag = "CheckCommand.CustomCommand.SqlQueryCommand";
+            this.barButtonSQLQuery.Tag = "Check.Command.CustomCommand.SqlQueryCommand";
             this.barButtonSQLQuery.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem17
@@ -537,7 +538,7 @@ namespace Check.Demo
             this.barButtonItem17.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem17.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem17.Name = "barButtonItem17";
-            this.barButtonItem17.Tag = "CheckCommand.CustomCommand.SystemHelpCommand";
+            this.barButtonItem17.Tag = "Check.Command.CustomCommand.SystemHelpCommand";
             this.barButtonItem17.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barStaticXY
@@ -610,7 +611,7 @@ namespace Check.Demo
             this.barButtonItem24.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem24.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem24.Name = "barButtonItem24";
-            this.barButtonItem24.Tag = "CheckCommand.MeasureCommand.ToolMeasureLength";
+            this.barButtonItem24.Tag = "Check.Command.MeasureCommand.ToolMeasureLength";
             this.barButtonItem24.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItem25
@@ -626,7 +627,7 @@ namespace Check.Demo
             this.barButtonItem25.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Default;
             this.barButtonItem25.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItem25.Name = "barButtonItem25";
-            this.barButtonItem25.Tag = "CheckCommand.MeasureCommand.ToolMeasureArea";
+            this.barButtonItem25.Tag = "Check.Command.MeasureCommand.ToolMeasureArea";
             this.barButtonItem25.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonItemBatch
@@ -641,7 +642,7 @@ namespace Check.Demo
             this.barButtonItemBatch.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItemBatch.LargeGlyph")));
             this.barButtonItemBatch.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barButtonItemBatch.Name = "barButtonItemBatch";
-            this.barButtonItemBatch.Tag = "CheckCommand.CustomCommand.BatchCreateTaskCommand";
+            this.barButtonItemBatch.Tag = "Check.Command.CustomCommand.BatchCreateTaskCommand";
             this.barButtonItemBatch.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barButtonSettings
@@ -669,7 +670,7 @@ namespace Check.Demo
             this.barBtnItemViewLogs.LargeGlyph = global::Check.Demo.Properties.Resources.RibbonUserDesigner_PasteLarge;
             this.barBtnItemViewLogs.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barBtnItemViewLogs.Name = "barBtnItemViewLogs";
-            this.barBtnItemViewLogs.Tag = "CheckCommand.CustomCommand.ViewTaskCheckLogCommand";
+            this.barBtnItemViewLogs.Tag = "Check.Command.CustomCommand.ViewTaskCheckLogCommand";
             this.barBtnItemViewLogs.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // barBtnItemFeatsStat
@@ -684,7 +685,7 @@ namespace Check.Demo
             this.barBtnItemFeatsStat.LargeGlyph = global::Check.Demo.Properties.Resources.RibbonUserDesigner_WindowsLarge;
             this.barBtnItemFeatsStat.MergeType = DevExpress.XtraBars.BarMenuMerge.Add;
             this.barBtnItemFeatsStat.Name = "barBtnItemFeatsStat";
-            this.barBtnItemFeatsStat.Tag = "CheckCommand.CustomCommand.ViewFeaturesStatisticCommand";
+            this.barBtnItemFeatsStat.Tag = "Check.Command.CustomCommand.ViewFeaturesStatisticCommand";
             this.barBtnItemFeatsStat.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             // 
             // rpDbCheck
@@ -773,6 +774,7 @@ namespace Check.Demo
             this.clientPanel.Controls.Add(this.pnlMapCheck);
             this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientPanel.Location = new System.Drawing.Point(0, 147);
+            this.clientPanel.LookAndFeel.SkinName = "iMaginary";
             this.clientPanel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.clientPanel.Name = "clientPanel";
             this.clientPanel.Size = new System.Drawing.Size(1429, 597);
