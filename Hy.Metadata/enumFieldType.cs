@@ -8,7 +8,7 @@ namespace Hy.Metadata
     /// <summary>
     /// 字段类型
     /// </summary>
-    enum enumFieldType
+    public enum enumFieldType
     {
         /// <summary>
         /// 字符串

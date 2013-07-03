@@ -32,6 +32,7 @@ namespace Define
         void DeleteObject(object obj);
         void SaveObject(object obj);
         void UpdateObject(object obj);
+        void Flush();
 
     }
 }

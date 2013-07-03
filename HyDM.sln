@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Dictionary", "Hy.Diction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Dictionary.Operate", "Hy.Dictionary.Operate\Hy.Dictionary.Operate.csproj", "{B908C32C-A130-4AB8-938B-8AAC31BBD7DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Dictionary.UI", "Hy.Dictionary.UI\Hy.Dictionary.UI.csproj", "{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -260,6 +262,16 @@ Global
 		{B908C32C-A130-4AB8-938B-8AAC31BBD7DD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B908C32C-A130-4AB8-938B-8AAC31BBD7DD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B908C32C-A130-4AB8-938B-8AAC31BBD7DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Debug|x86.ActiveCfg = Debug|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Debug|x86.Build.0 = Debug|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Release|Any CPU.ActiveCfg = Release|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Release|x86.ActiveCfg = Release|x86
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -279,5 +291,6 @@ Global
 		{547A2C4A-957F-4B5D-B190-46B9D002B044} = {9DD2C727-8C88-4909-A805-9E89059380B3}
 		{84978032-05BC-473B-BEFE-BB5E55C9DE4D} = {A9C3EF2D-DFEE-47D5-8AEF-F9CA4E2122D8}
 		{B908C32C-A130-4AB8-938B-8AAC31BBD7DD} = {A9C3EF2D-DFEE-47D5-8AEF-F9CA4E2122D8}
+		{1BE543A9-6E54-4532-8B1C-DE52AFE4449F} = {A9C3EF2D-DFEE-47D5-8AEF-F9CA4E2122D8}
 	EndGlobalSection
 EndGlobal
