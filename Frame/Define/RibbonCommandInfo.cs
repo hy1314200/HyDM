@@ -74,7 +74,7 @@ namespace Frame.Define
         }
         private Image m_Icon;
 
-        internal virtual byte[] IconByte { get; set; }
+        private  byte[] IconByte { get; set; }
 
         /// <summary>
         /// 允许自定义标题

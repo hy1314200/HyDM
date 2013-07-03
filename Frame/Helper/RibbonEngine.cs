@@ -22,7 +22,7 @@ namespace Frame
 
         public ApplicationMenu MainMenu { set; private get; }
 
-        public List<RibbonCommandInfo> CommandInfoList { set; private get; }
+        public IList<RibbonCommandInfo> CommandInfoList { set; private get; }
 
         public event MessageHandler OnMessageChanged;
 

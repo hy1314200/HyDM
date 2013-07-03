@@ -112,9 +112,9 @@ namespace Utility
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public IList GetAll(Type type)
+        public IList<T> GetAll<T>()
         {
-            return GetAll(type, null);
+            return GetAll<T>(null);
         }
 
         /// <summary>
@@ -125,9 +125,9 @@ namespace Utility
         /// <remarks>Sorting is Ascending order. Construct a specific query/method when the sort order
         /// should be different.</remarks>
         /// <returns></returns>
-        public IList GetAll(Type type, params string[] sortProperties)
+        public IList<T> GetAll<T>( params string[] sortProperties)
         {
-            ICriteria crit = this.m_Session.CreateCriteria(type);
+            ICriteria crit = this.m_Session.CreateCriteria(typeof(T));
             if (sortProperties != null)
             {
                 foreach (string sortProperty in sortProperties)
@@ -135,10 +135,10 @@ namespace Utility
                     crit.AddOrder(Order.Asc(sortProperty));
                 }
             }
-            return crit.List();
+            return crit.List<T>();
         }
 
-        public IList GetByParams(string hql, Hashtable paramlist)
+        public IList<T> GetByParams<T>(string hql, Hashtable paramlist)
         {
             IQuery query = this.m_Session.CreateQuery(hql);
             if (paramlist != null)
@@ -146,14 +146,14 @@ namespace Utility
                 {
                     query.SetParameter(ParamName, paramlist[ParamName]);
                 }
-            return query.List();
+            return query.List<T>();
         }
 
-        public IList GetObjectByCondition(String hql)
+        public IList<T> GetObjectByCondition<T>(String hql)
         {
             if (this.m_Session != null)
             {
-                return this.m_Session.CreateQuery(hql).List();
+                return this.m_Session.CreateQuery(hql).List<T>();
             }
             else
             {

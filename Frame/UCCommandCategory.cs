@@ -24,7 +24,7 @@ namespace Frame
         /// <summary>
         /// 要求已经排序
         /// </summary>
-        public IList ClassInfos
+        public IList<ClassInfo> ClassInfos
         {
             set
             {
@@ -38,7 +38,7 @@ namespace Frame
                 string curCategory = null;
                 for (int i = 0; i < count; i++)
                 {
-                    ClassInfo cInfo = value[i] as ClassInfo;
+                    ClassInfo cInfo = value[i];
                     if (cInfo == null)
                         continue;
 

@@ -27,8 +27,7 @@ namespace Frame
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            IList existList = Environment.NHibernateHelper.GetAll(typeof(ClassInfo));
-            IEnumerable<ClassInfo> eList = existList.Cast<ClassInfo>();
+            IList<ClassInfo> existList = Environment.NHibernateHelper.GetAll<ClassInfo>();            
             int count = existList.Count;
 
             List<ClassInfo> infoList = ucResourceRegister1.SelectedClasses;
@@ -40,7 +39,7 @@ namespace Frame
                 bool flag = true;
                 for (int i = 0; i < count; i++)
                 {
-                    ClassInfo eInfo = eList.ElementAt(i);
+                    ClassInfo eInfo = existList.ElementAt(i);
                     if (eInfo.ClassName == info.ClassName && eInfo.DllName == info.DllName)
                     {
                         flag = false;

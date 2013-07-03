@@ -32,6 +32,8 @@ namespace Frame
             }
             Environment.ResourceManager = rManager; 
 
+            IList<string> li=Environment.NHibernateHelper.GetObjectByCondition<string>("select cInfo.ClassName from ClassInfo cInfo");
+
             //IDbConnection sysConnection = Utility.DataFactory.GetConnection(ConfigManager.ADOType, ConfigManager.ADOConnection);
             //NhibernateHelper nhHelper = Utility.DataFactory.GetNhibernateHelper(sysConnection, ConfigManager.HibernateAssemblys);// new NHibernate.JetDriver.JetDbConnection(sysConnection as System.Data.OleDb.OleDbConnection), ConfigManager.HibernateAssemblys);
 

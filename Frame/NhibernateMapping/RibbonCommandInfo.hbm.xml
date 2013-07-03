@@ -13,6 +13,6 @@
     <property name="Type" column="Type" type="int"/>
 		<many-to-one name="CommandClass" column="Class" class="Frame.Define.ClassInfo,Frame" />
     <many-to-one name ="Parent" column="Parent" class="Frame.Define.RibbonCommandInfo,Frame"/>
-		
+
 	</class>
 </hibernate-mapping>

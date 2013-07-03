@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Define\ClassInfo.cs" />
     <Compile Include="Define\enumCommandType.cs" />
+    <Compile Include="Define\ILogin.cs" />
     <Compile Include="Define\IResourceManager.cs" />
     <Compile Include="Define\RibbonCommandInfo.cs" />
     <Compile Include="FrmRuntime.cs">
@@ -89,11 +90,11 @@
     <Compile Include="FrmConfig.Designer.cs">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLoging.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLoging.Designer.cs">
-      <DependentUpon>FrmLoging.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmResourceRegister.cs">
       <SubType>Form</SubType>
@@ -128,8 +129,8 @@
     <EmbeddedResource Include="FrmConfig.resx">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLoging.resx">
-      <DependentUpon>FrmLoging.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmResourceRegister.resx">
       <DependentUpon>FrmResourceRegister.cs</DependentUpon>

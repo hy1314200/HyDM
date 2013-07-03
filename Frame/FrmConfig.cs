@@ -38,26 +38,26 @@ namespace Frame
         {
             lbPlugins.Items.Clear();
 
-            IList listResource = m_HibernateHelper.GetObjectByCondition("from ClassInfo cInfo order by Category,Description asc");
+            IList<ClassInfo> listResource = m_HibernateHelper.GetObjectByCondition<ClassInfo>("from ClassInfo cInfo order by Category,Description asc");
             this.ucCommandCategory1.ClassInfos = listResource;
             this.ucCommandCategory2.ClassInfos = listResource;
-            //int count = listResource.Count;
-            //for (int i = 0; i < count; i++)
-            //{
-            //    ClassInfo cInfo = listResource[i] as ClassInfo;
-            //    if (cInfo == null)
-            //        continue;
+            int count = listResource.Count;
+            for (int i = 0; i < count; i++)
+            {
+                ClassInfo cInfo = listResource[i];
+                if (cInfo == null)
+                    continue;
 
-            //    if (cInfo.Type == enumResourceType.Plugin)
-            //    {
-            //        lbPlugins.Items.Add(cInfo);
-            //    }
-            //    else
-            //    {
-            //        lbCommands.Items.Add(cInfo);
-            //        lbPreCommands.Items.Add(cInfo);
-            //    }
-            //}
+                if (cInfo.Type == enumResourceType.Plugin)
+                {
+                    lbPlugins.Items.Add(cInfo);
+                }
+                //else
+                //{
+                //    lbCommands.Items.Add(cInfo);
+                //    lbPreCommands.Items.Add(cInfo);
+                //}
+            }
 
         }
 
@@ -65,14 +65,15 @@ namespace Frame
         List<RibbonCommandInfo> m_CommandList = null;
         private void InitRibbon()
         {
-            IList listCommand = m_HibernateHelper.GetObjectByCondition("from RibbonCommandInfo rcInfo order by Order asc");//from RibbonCommandInfo rcInfo order by Page,PageGroup asc");
-
-            m_CommandList = new List<RibbonCommandInfo>();
+            IList<RibbonCommandInfo> listCommand = m_HibernateHelper.GetObjectByCondition<RibbonCommandInfo>("from RibbonCommandInfo rcInfo order by Order asc");//from RibbonCommandInfo rcInfo order by Page,PageGroup asc");
             int count = listCommand.Count;
-            for (int i = 0; i < count; i++)
-            {
-                m_CommandList.Add(listCommand[i] as RibbonCommandInfo);
-            }
+
+            //m_CommandList = new List<RibbonCommandInfo>();
+            //for (int i = 0; i < count; i++)
+            //{
+            //    m_CommandList.Add(listCommand[i] as RibbonCommandInfo);
+            //}
+            m_CommandList = listCommand as List<RibbonCommandInfo>;
 
             // 工具栏预览
             this.applicationMenu1.ItemLinks.Clear();

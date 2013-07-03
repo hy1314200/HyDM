@@ -19,10 +19,10 @@ namespace Define
         void CommitTransaction();
         void Rollback();
 
-        System.Collections.IList GetAll(Type type);
-        System.Collections.IList GetAll(Type type, params string[] sortProperties);
-        System.Collections.IList GetByParams(string hql, System.Collections.Hashtable paramlist);
-        System.Collections.IList GetObjectByCondition(string hql);
+        IList<T> GetAll<T>();
+        IList<T> GetAll<T>(params string[] sortProperties);
+        IList<T> GetByParams<T>(string hql, System.Collections.Hashtable paramlist);
+        IList<T> GetObjectByCondition<T>(string hql);
         object GetObjectById(Type type, object id);
 
         bool Initialize(object proxy);

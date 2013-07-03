@@ -13,6 +13,11 @@ namespace Define
     public interface IPlugin
     {
         /// <summary>
+        /// 插件描述
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
         /// 系统ADO连接
         /// </summary>
         IDbConnection SysConnection { set; }

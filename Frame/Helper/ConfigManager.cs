@@ -76,7 +76,7 @@ namespace Frame
         {
             get
             {
-                return ConfigurationManager.AppSettings["WorkspaceArgs"];
+                return string.Format(ConfigurationManager.AppSettings["WorkspaceArgs"],System.Windows.Forms.Application.StartupPath);
             }
         }
 
@@ -92,11 +92,41 @@ namespace Frame
             }
         }
 
+        /// <summary>
+        /// 资源管理器
+        /// </summary>
         public static string ResourceManager
         {
             get
             {
                 return ConfigurationManager.AppSettings["ResourceManager"];
+            }
+        }
+
+        /// <summary>
+        /// 登陆器
+        /// </summary>
+        public static string Loginor
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["Loginor"];
+            }
+        }
+
+        public static string LoginBackground
+        {
+            get
+            {
+                return string.Format(ConfigurationManager.AppSettings["LoginBackground"], System.Windows.Forms.Application.StartupPath);
+            }
+        }
+
+        public static string LoginSize
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["LoginSize"];
             }
         }
     }
