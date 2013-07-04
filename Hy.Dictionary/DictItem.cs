@@ -33,7 +33,7 @@ namespace Hy.Dictionary
         /// <summary>
         /// 子项集合
         /// </summary>
-        public List<DictItem> SubItems { get; private set; }
+        public List<DictItem> SubItems { get; set; }
 
         private System.Collections.IEnumerable m_SubItemsEnumerator;
         private System.Collections.IEnumerable SubItemsEnumerator

@@ -16,6 +16,11 @@ namespace Hy.Metadata
         public string ID { get; set; }
 
         /// <summary>
+        /// 所在图层（或表）
+        /// </summary>
+        public string Layer { get; set; }
+
+        /// <summary>
         /// 字段名
         /// </summary>
         public string Name { get; set; }

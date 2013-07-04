@@ -64,8 +64,13 @@ namespace Hy.Dictionary
         {
             try
             {
+                //if (dItem.Parent != null)
+                //    dItem.Parent.SubItems.Remove(dItem);
+
                 m_NhibernateHelper.DeleteObject(dItem);
                 m_NhibernateHelper.Flush();
+                if (dItem.Parent != null)
+                    ReLoadItem(dItem.Parent);
 
                 return true;
             }
@@ -89,6 +94,9 @@ namespace Hy.Dictionary
                 m_NhibernateHelper.SaveObject(dItem);
                 m_NhibernateHelper.Flush();
 
+                if (dItem.Parent != null)
+                    ReLoadItem(dItem.Parent);
+
                 return true;
             }
             catch(Exception exp)
@@ -99,6 +107,10 @@ namespace Hy.Dictionary
             }
         }
 
+        public static void ReLoadItem(DictItem dItem)
+        {
+            m_NhibernateHelper.RefreshObject(dItem, enumLockMode.UpgradeNoWait);
+        }
 
         public System.Data.IDbConnection SysConnection
         {

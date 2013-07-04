@@ -29,6 +29,7 @@ namespace Hy.Dictionary.UI
             {
                 BoundDictItem(di, m_NodeRoot);
             }
+            m_NodeRoot.Expanded = true;
         }
 
         private void BoundDictItem(DictItem dictItem,TreeListNode nodeParent)
@@ -57,11 +58,11 @@ namespace Hy.Dictionary.UI
             m_SaveIndex = 0;
             foreach (TreeListNode nodeItem in m_NodeRoot.Nodes)
             {
-                SaveNode(m_NodeRoot);
+                SaveNode(nodeItem);
             }
-            SendMessage(string.Format("保存成功，共{0}个命令", m_SaveIndex));
+            SendMessage(string.Format("保存成功，共{0}个字典项", m_SaveIndex));
 
-            Init();
+            //Init();
         }
         private int m_SaveIndex = 0;
         private void SendMessage(string strMsg)
@@ -71,10 +72,16 @@ namespace Hy.Dictionary.UI
         }
         private void SaveNode(TreeListNode nodeItem)
         {
-            SendMessage(string.Format("正在保存第{0}个命令...", ++m_SaveIndex));
+            SendMessage(string.Format("正在保存第{0}个字典项...", ++m_SaveIndex));
             DictItem dItem = CollectItem(nodeItem);
             if (dItem != null)
+            {
                 DictHelper.SaveItem(dItem);
+                //if (dItem.Parent != null)
+                //{
+                //    DictHelper.ReLoadItem(dItem.Parent);
+                //}
+            }
 
             foreach (TreeListNode nodeSub in nodeItem.Nodes)
             {
@@ -95,7 +102,9 @@ namespace Hy.Dictionary.UI
             dItem.Name=nodeItem.GetValue(tlColName) as string;
             dItem.Code=nodeItem.GetValue(tlColCode) as string;
             dItem.Parent = nodeItem.ParentNode == null ? null : nodeItem.ParentNode.Tag as DictItem;
+            nodeItem.Tag = dItem;
 
+            
             return dItem;
         }
 
@@ -105,13 +114,32 @@ namespace Hy.Dictionary.UI
                 return;
 
             tlDictionary.AppendNode(new object[] { "新名称", "新编码" }, tlDictionary.FocusedNode);
+            tlDictionary.FocusedNode.Expanded = true;
         }
 
+        private void DeleteNode(TreeListNode nodeItem)
+        {
+            if (nodeItem == null)
+                return;
+
+            DictItem dItem = nodeItem.Tag as DictItem;
+            if (dItem != null)
+            {
+                //int count=nodeItem.Nodes.Count;
+                //for(int i=0;i<count;i++) 
+                //{
+                //    TreeListNode nodeSub = nodeItem.Nodes[i];
+                //    DeleteNode(nodeSub);
+                //}
+                if (DictHelper.DeleteItem(dItem))
+                {
+                    tlDictionary.DeleteNode(nodeItem);
+                }
+            }
+        }
         private void barBtnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DictItem dItem = tlDictionary.FocusedNode.Tag as DictItem;
-            if (dItem != null)
-                DictHelper.DeleteItem(dItem);
+            DeleteNode(tlDictionary.FocusedNode);
         }
 
         private void tlDictionary_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)

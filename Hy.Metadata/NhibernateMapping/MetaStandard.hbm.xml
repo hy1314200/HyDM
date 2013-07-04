@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Hy.Metadata.MetaStandard,Hy.Metadata" table="T_MetaStandard" lazy="false">
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+		<property column="Name" type="String" name="Name"/>
+    <property column="TableName" type="String" name="TableName"/>
+    <property column="Description" type="String" name="Description"/>
+    <property column="Creator" type="String" name="Creator"/>
+    <property column="CreateTime" type="DateTime" name="CreateTime"/>    
+    <set name="FieldsEnumerator" inverse="false" lazy="false" cascade="delete-orphan">
+      <key column="Layer" />
+      <one-to-many class="Hy.Dictionary.DictItem,Hy.Dictionary"/>
+    </set>
+	</class>
+</hibernate-mapping>
