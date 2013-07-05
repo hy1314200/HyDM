@@ -38,7 +38,7 @@ namespace Frame
         {
             lbPlugins.Items.Clear();
 
-            IList<ClassInfo> listResource = m_HibernateHelper.GetObjectByCondition<ClassInfo>("from ClassInfo cInfo order by Category,Description asc");
+            IList<ClassInfo> listResource = m_HibernateHelper.GetObjectsByCondition<ClassInfo>("from ClassInfo cInfo order by Category,Description asc");
             this.ucCommandCategory1.ClassInfos = listResource;
             this.ucCommandCategory2.ClassInfos = listResource;
             int count = listResource.Count;
@@ -65,7 +65,7 @@ namespace Frame
         List<RibbonCommandInfo> m_CommandList = null;
         private void InitRibbon()
         {
-            IList<RibbonCommandInfo> listCommand = m_HibernateHelper.GetObjectByCondition<RibbonCommandInfo>("from RibbonCommandInfo rcInfo order by Order asc");//from RibbonCommandInfo rcInfo order by Page,PageGroup asc");
+            IList<RibbonCommandInfo> listCommand = m_HibernateHelper.GetObjectsByCondition<RibbonCommandInfo>("from RibbonCommandInfo rcInfo order by Order asc");//from RibbonCommandInfo rcInfo order by Page,PageGroup asc");
             int count = listCommand.Count;
 
             //m_CommandList = new List<RibbonCommandInfo>();

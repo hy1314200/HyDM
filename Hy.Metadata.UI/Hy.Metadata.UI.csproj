@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{547A2C4A-957F-4B5D-B190-46B9D002B044}</ProjectGuid>
+    <ProjectGuid>{D276D29E-02E9-409B-B3C2-05C97DEF5D77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hy.Metadata</RootNamespace>
-    <AssemblyName>Hy.Metadata</AssemblyName>
+    <RootNamespace>Hy.Metadata.UI</RootNamespace>
+    <AssemblyName>Hy.Metadata.UI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,39 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigItem.cs" />
-    <Compile Include="ConstDefine.cs" />
-    <Compile Include="enumFieldType.cs" />
-    <Compile Include="Environment.cs" />
-    <Compile Include="FieldInfo.cs" />
-    <Compile Include="MappingHelper.cs" />
-    <Compile Include="MetaStandard.cs" />
-    <Compile Include="MetaStandardHelper.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Define\Define.csproj">
-      <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
-      <Name>Define</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hy.Dictionary\Hy.Dictionary.csproj">
-      <Project>{84978032-05BC-473B-BEFE-BB5E55C9DE4D}</Project>
-      <Name>Hy.Dictionary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utility\Utility.csproj">
-      <Project>{7F639C43-8332-4593-95B4-703E806F399C}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="NhibernateMapping\FieldInfo.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="NhibernateMapping\MetaStandard.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

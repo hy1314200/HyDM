@@ -6,7 +6,7 @@
 		</id>
 		<property column="Name" type="String" name="Name"/>
 		<property column="Code" type="String" name="Code"/>
-    <many-to-one column="Parent" class="Hy.Dictionary.DictItem,Hy.Dictionary" cascade="none" lazy="false" name="Parent" update="true"/>
+    <many-to-one column="Parent" class="Hy.Dictionary.DictItem,Hy.Dictionary" not-found="ignore" cascade="none" lazy="false" name="Parent" update="true"/>
     <set name="SubItemsEnumerator" inverse="false" lazy="false" cascade="delete-orphan">
       <key column="Parent" />
       <one-to-many class="Hy.Dictionary.DictItem,Hy.Dictionary"/>

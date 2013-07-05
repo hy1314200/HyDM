@@ -66,7 +66,7 @@ namespace Frame
             IHook hook = Environment.ResourceManager.CreateHook(this, this.dockPanelLeft, this.dockPanelRight, this.dockPanelBottom);
          
             loginor.ShowMessage("正在加载插件...");
-            IList<Define.ClassInfo> listPlugin = Environment.NHibernateHelper.GetObjectByCondition<Define.ClassInfo>("from ClassInfo cInfo where cInfo.Type=1");
+            IList<Define.ClassInfo> listPlugin = Environment.NHibernateHelper.GetObjectsByCondition<Define.ClassInfo>("from ClassInfo cInfo where cInfo.Type=1");
             foreach (Define.ClassInfo cInfo in listPlugin)
             {
                 IPlugin plugin= Utility.ResourceFactory.CreatePlugin(cInfo);
@@ -80,7 +80,7 @@ namespace Frame
             }
            
             loginor.ShowMessage("正在读取界面配置...");
-            IList<RibbonCommandInfo> listCommand = Environment.NHibernateHelper. GetObjectByCondition<RibbonCommandInfo>("from RibbonCommandInfo rcInfo order by Order asc"); ;
+            IList<RibbonCommandInfo> listCommand = Environment.NHibernateHelper. GetObjectsByCondition<RibbonCommandInfo>("from RibbonCommandInfo rcInfo order by Order asc"); ;
 
             m_CommandInfoList = new List<RibbonCommandInfo>();
             int count = listCommand.Count;

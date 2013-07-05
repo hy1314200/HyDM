@@ -52,7 +52,6 @@ namespace Utility
         /// <returns></returns>
         public static IDbConnection GetConnection(string strType, string strConnection )
         {
-            System.Data.Common.DbProviderFactory dbFactory;
             IDbConnection db = null;
 
             switch (strType.ToUpper())
@@ -60,7 +59,6 @@ namespace Utility
                 case "ORACLE":
                     db = new OracleConnection(strConnection);
                     db.Open();
-                    dbFactory = System.Data.OracleClient.OracleClientFactory.Instance;
                     break;
 
                 case "MSSQL":
@@ -68,12 +66,10 @@ namespace Utility
                 case "SQL SERVER":
                     db = new SqlConnection(strConnection);
                     db.Open();
-                    dbFactory = System.Data.SqlClient.SqlClientFactory.Instance;
                     break;
 
                 case "MDB":
                 case "ACCESS":
-                    dbFactory = System.Data.OleDb.OleDbFactory.Instance;
                     db = new OleDbConnection(strConnection);
                     db.Open();
                     break;

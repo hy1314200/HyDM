@@ -22,6 +22,7 @@ namespace Define
 
         bool TableExists(string strTable);
 
+        DateTime GetServerTime();
 
         IDbConnection ADOConnection { get; }
     }

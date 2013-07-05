@@ -11,7 +11,7 @@
     <property name="IconByte" column="Icon" type="System.Byte[]"/>
     <property name="Order" column="OrderIndex" type ="string"/>
     <property name="Type" column="Type" type="int"/>
-		<many-to-one name="CommandClass" column="Class" class="Frame.Define.ClassInfo,Frame" />
+		<many-to-one name="CommandClass" column="Class" class="Frame.Define.ClassInfo,Frame" not-found="ignore" />
     <many-to-one name ="Parent" column="Parent" class="Frame.Define.RibbonCommandInfo,Frame"/>
 
 	</class>

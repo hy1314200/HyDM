@@ -2,20 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Define;
 using System.Data;
 
 namespace Hy.Dictionary
 {
-    public class DictHelper:Define.IPlugin
+    public class DictHelper
     {
-        internal const string DictTableName = "T_Dictionary";
-
-        internal static INhibernateHelper m_NhibernateHelper{get;set;}
-
-        internal static IADODBHelper m_AdodbHelper{get;set;}
-
-        internal static ILogger m_Logger { get; set; }
 
         /// <summary>
         /// 获取所有“根类型”名称列表
@@ -23,7 +15,7 @@ namespace Hy.Dictionary
         /// <returns></returns>
         public static IList<string> GetRootTypeNameList()
         {
-            return m_NhibernateHelper.GetObjectByCondition<string>("select dItem.Name from DictItem dItem where dItem.Parent = null");
+            return Environment.NhibernateHelper.GetObjectsByCondition<string>("select dItem.Name from DictItem dItem where dItem.Parent = null");
         }
 
         /// <summary>
@@ -32,7 +24,7 @@ namespace Hy.Dictionary
         /// <returns></returns>
         public static IList<DictItem> GetRootTypeList()
         {
-            return m_NhibernateHelper.GetObjectByCondition<DictItem>("from DictItem dItem where dItem.Parent = null");
+            return Environment.NhibernateHelper.GetObjectsByCondition<DictItem>("from DictItem dItem where dItem.Parent = null");
         }
 
 
@@ -43,7 +35,17 @@ namespace Hy.Dictionary
         /// <returns></returns>
         public static IList<DictItem> GetSubItems(string strType)
         {
-            return m_NhibernateHelper.GetObjectByCondition<DictItem>(string.Format("from DictItem dItem where dItem.Parent.Name='{0}'", strType));
+            return Environment.NhibernateHelper.GetObjectsByCondition<DictItem>(string.Format("from DictItem dItem where dItem.Parent.Name='{0}'", strType));
+        }
+
+        public static IList<DictItem> GetItemsByName(string strName)
+        {
+            return Environment.NhibernateHelper.GetObjectsByCondition<DictItem>(string.Format("from DictItem dItem where dItem.Name='{0}'", strName));
+        }
+
+        public static DictItem GetItemById(string id)
+        {
+            return Environment.NhibernateHelper.GetObjectById<DictItem>(id);
         }
 
         /// <summary>
@@ -52,7 +54,7 @@ namespace Hy.Dictionary
         /// <returns></returns>
         public static IList<DictItem> GetAll()
         {
-            return m_NhibernateHelper.GetObjectByCondition<DictItem>("from DictItem dItem");
+            return Environment.NhibernateHelper.GetObjectsByCondition<DictItem>("from DictItem dItem");
         }
 
         /// <summary>
@@ -67,8 +69,8 @@ namespace Hy.Dictionary
                 //if (dItem.Parent != null)
                 //    dItem.Parent.SubItems.Remove(dItem);
 
-                m_NhibernateHelper.DeleteObject(dItem);
-                m_NhibernateHelper.Flush();
+                Environment.NhibernateHelper.DeleteObject(dItem);
+                Environment.NhibernateHelper.Flush();
                 if (dItem.Parent != null)
                     ReLoadItem(dItem.Parent);
 
@@ -76,7 +78,7 @@ namespace Hy.Dictionary
             }
             catch(Exception exp)
             {
-                m_Logger.AppendMessage(enumLogType.Error, string.Format("保存字典时出错：{0}", exp.ToString()));
+                Environment.Logger.AppendMessage(Define.enumLogType.Error, string.Format("删除字典时出错：{0}", exp.ToString()));
                 
                 return false;
             }
@@ -91,8 +93,8 @@ namespace Hy.Dictionary
         {
             try
             {
-                m_NhibernateHelper.SaveObject(dItem);
-                m_NhibernateHelper.Flush();
+                Environment.NhibernateHelper.SaveObject(dItem);
+                Environment.NhibernateHelper.Flush();
 
                 if (dItem.Parent != null)
                     ReLoadItem(dItem.Parent);
@@ -101,7 +103,7 @@ namespace Hy.Dictionary
             }
             catch(Exception exp)
             {
-                m_Logger.AppendMessage(enumLogType.Error, string.Format("保存字典时出错：{0}", exp.ToString()));
+                Environment.Logger.AppendMessage(Define.enumLogType.Error, string.Format("保存字典时出错：{0}", exp.ToString()));
                 
                 return false;
             }
@@ -109,53 +111,10 @@ namespace Hy.Dictionary
 
         public static void ReLoadItem(DictItem dItem)
         {
-            m_NhibernateHelper.RefreshObject(dItem, enumLockMode.UpgradeNoWait);
+            Environment.NhibernateHelper.RefreshObject(dItem, Define.enumLockMode.UpgradeNoWait);
         }
 
-        public System.Data.IDbConnection SysConnection
-        {
-            set 
-            {
-                //IDbCommand dbCmd = value.CreateCommand();
-                //dbCmd.CommandText = string.Format("select 0 from {0} where 1=2", DictHelper.DictTableName);
-                //try
-                //{
-                //    dbCmd.ExecuteNonQuery();
-                //}
-                //catch
-                //{
-                //}
-            }
-        }
 
-        public object GisWorkspace
-        {
-            set {  }
-        }
 
-        public INhibernateHelper NhibernateHelper
-        {
-            set { 
-                DictHelper.m_NhibernateHelper = value;
-                try
-                {
-                    DictHelper.GetAll();
-                }
-                catch
-                {
-                    throw new Exception("数据库中无字典表");
-                }
-            }
-        }
-
-        public ILogger Logger
-        {
-            set { DictHelper.m_Logger = value; }
-        }
-
-        public string Description
-        {
-            get { return "字典数据库连接环境"; }
-        }
     }
 }

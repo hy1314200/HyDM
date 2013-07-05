@@ -106,6 +106,11 @@ namespace Utility
         {
             return this.m_Session.Get(type, id);
         }
+
+        public T GetObjectById<T>(object id)
+        {
+            return this.m_Session.Get<T>(id);
+        }
         
         /// <summary>
         /// Get all objects of a given type.
@@ -149,7 +154,7 @@ namespace Utility
             return query.List<T>();
         }
 
-        public IList<T> GetObjectByCondition<T>(String hql)
+        public IList<T> GetObjectsByCondition<T>(String hql)
         {
             if (this.m_Session != null)
             {

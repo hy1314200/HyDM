@@ -26,6 +26,12 @@ namespace Hy.Metadata
         public string TableName { get; set; }
 
         /// <summary>
+        /// 字段名映射表的字典项
+        /// 解决对非标准命名的数据项入库容错
+        /// </summary>
+        public string MappingDict { get; set; }
+
+        /// <summary>
         /// 描述
         /// </summary>
         public string Description { get; set; }

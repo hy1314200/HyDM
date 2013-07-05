@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DictHelper.cs" />
     <Compile Include="DictItem.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -124,5 +124,15 @@ namespace Utility
         {
             get { return this.m_DbConnection; }
         }
+
+        private static string m_GetServerTimeSQL = null;
+        public DateTime GetServerTime()
+        {
+            if (m_GetServerTimeSQL == null)
+            {
+                m_GetServerTimeSQL = this.ExecuteScalar("select ItemValue from T_Parameter where ItemKey='GetServerTimeSQL'") as string;
+            }
+            return Convert.ToDateTime(this.ExecuteScalar(m_GetServerTimeSQL));
+        }
     }
 }

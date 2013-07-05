@@ -6,40 +6,46 @@ using System.Data;
 using Define;
 
 
-namespace Frame
+namespace Hy.Metadata
 {
     public class Environment:IPlugin
     {
-        internal static ILogger Logger { get; private set; }
 
-        internal static IDbConnection DbConnection { get; private set; }
+        public static INhibernateHelper NhibernateHelper { internal get; set; }
 
-        internal static INhibernateHelper NHibernateHelper { get; private set; }
+        public static IADODBHelper AdodbHelper { internal get; set; }
+
+        public static ILogger Logger { internal get; set; }
 
 
-        public string Description
+        public System.Data.IDbConnection SysConnection
         {
-            get { return "元数据管理数据连接环境"; }
-        }
-
-        public IDbConnection SysConnection
-        {
-            set { DbConnection = value; }
+            set
+            {
+            }
         }
 
         public object GisWorkspace
         {
-            set {  }
+            set { }
         }
 
-        public INhibernateHelper NhibernateHelper
+        INhibernateHelper IPlugin.NhibernateHelper
         {
-            set { Environment.NHibernateHelper = value; }
+            set
+            {
+                Environment.NhibernateHelper = value;
+            }
         }
 
         ILogger IPlugin.Logger
         {
-            set { Logger = value; }
+            set { Environment.Logger = value; }
+        }
+
+        public string Description
+        {
+            get { return "元数据管理数据连接环境"; }
         }
     }
 }
