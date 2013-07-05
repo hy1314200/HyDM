@@ -1,0 +1,11 @@
+E:\HyDM\Out\Bin\Esri.Commands.dll
+E:\HyDM\Out\Bin\Esri.Commands.pdb
+E:\HyDM\Out\Bin\Esri.Commands.tlb
+E:\HyDM\Commands\obj\Debug\ResolveAssemblyReference.cache
+E:\HyDM\Commands\obj\Debug\Esri.Commands.csproj.ResolveComReference.cache
+E:\HyDM\Commands\obj\Debug\Esri.Commands.dll
+E:\HyDM\Commands\obj\Debug\Esri.Commands.pdb
+E:\HyDM\Esri.Commands\obj\Debug\ResolveAssemblyReference.cache
+E:\HyDM\Esri.Commands\obj\Debug\Esri.Commands.csproj.ResolveComReference.cache
+E:\HyDM\Esri.Commands\obj\Debug\Esri.Commands.dll
+E:\HyDM\Esri.Commands\obj\Debug\Esri.Commands.pdb
