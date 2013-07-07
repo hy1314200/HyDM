@@ -306,5 +306,15 @@ namespace Utility
             }
             return false;
         }
+
+
+        public T GetObject<T>(string hql)
+        {
+            IList<T> list = GetObjectsByCondition<T>(hql);
+            if (list == null || list.Count == 0)
+                return default(T);
+
+            return list[0];
+        }
     }
 }

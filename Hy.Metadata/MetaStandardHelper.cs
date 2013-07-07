@@ -102,7 +102,110 @@ namespace Hy.Metadata
 
         public static DataTable GetMetaData(MetaStandard standard)
         {
-            Environment.AdodbHelper.ExecuteDataTable(
+           return Environment.AdodbHelper.ExecuteDataTable(string.Format("select * from {0}",standard.TableName));
+        }
+
+        public static string GetSQLFromField(FieldInfo fInfo)
+        {
+            if (fInfo == null)
+                return null;
+
+            string strSQL="";
+            string strTypeKey = GetTypeKey(fInfo.Type);
+            switch (fInfo.Type)
+            {
+                case enumFieldType.String:
+                    if (string.IsNullOrEmpty(strTypeKey ))
+                        strTypeKey = "varchar";
+
+                    strSQL=string.Format("{0}({1}) {2}",strTypeKey,
+                        fInfo.Length>0?fInfo.Length:50,fInfo.NullAble?"":"Not Null");
+                    break;
+
+                case enumFieldType.Int:
+                    if (string.IsNullOrEmpty(strTypeKey))
+                        strTypeKey = "Int";
+                    strSQL = strTypeKey;
+                    break;
+
+                case enumFieldType.Decimal:
+                    if (string.IsNullOrEmpty(strTypeKey))
+                        return "numeric";
+
+                    int fLen= fInfo.Length>0?fInfo.Length:5;
+                    strSQL = string.Format("{0}({1},{2})", strTypeKey,
+                       fLen,
+                       fInfo.Precision > fLen ? fLen : fInfo.Precision);                    
+
+                    break;
+
+                case enumFieldType.DateTime:
+                    if (string.IsNullOrEmpty(strTypeKey))
+                        strTypeKey = "DateTime";
+
+                    strSQL = strTypeKey;
+
+                    break;
+
+                case enumFieldType.Image:
+                case enumFieldType.Binary:
+                    if (string.IsNullOrEmpty(strTypeKey))
+                        strTypeKey = "Image";
+
+                    strSQL = strTypeKey;
+                    break;
+
+                default:
+                    return "varchar";
+            }
+
+            return strSQL;
+        }
+
+        private static string[] m_TypeItemKey =
+        {
+            ConstDefine.Type_Key_String,
+            ConstDefine.Type_Key_Int,
+            ConstDefine.Type_Key_Decimal,
+            ConstDefine.Type_Key_DateTime,
+            ConstDefine.Type_Key_Binary,
+            ConstDefine.Type_Key_Binary
+        };
+        private static string GetTypeKey(enumFieldType fType)
+        {
+            return Environment.NhibernateHelper.GetObject<string>(
+                string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemName='{0}'",m_TypeItemKey[(int)fType]));
+        }
+
+        public static DataTable GetMetadata(string strTable, string strClause, int countPerPage, int pageIndex, ref int errCount)
+        {
+            if (errCount < 0)
+            {
+                errCount = Convert.ToInt32(Environment.AdodbHelper.ExecuteScalar(string.Format("select count(0) from {0}", strTable)));
+            }
+
+            int resultCount = countPerPage;
+            if (countPerPage * (pageIndex + 1) > errCount)
+                resultCount = errCount - countPerPage * pageIndex;
+
+            string strSQL = Environment.NhibernateHelper.GetObject<string>(string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemName='{0}'", strTable));
+            if (string.IsNullOrEmpty(strSQL))
+            {
+                strSQL = "select top {3} * from (select top {1}*({2}-1) * from {0} where {4} order by id acs) order by id desc";
+            }
+
+            object[] objParams = { strTable, countPerPage, pageIndex, resultCount, strClause };
+            strSQL = string.Format(strSQL, objParams);
+
+            return Environment.AdodbHelper.ExecuteDataTable(strSQL);
+        }
+
+        public static bool UpdateMeatadata(MetaStandard standard, DataTable dtData)
+        {
+            if (standard == null)
+                return false;
+
+            return Environment.AdodbHelper.UpdateTable(standard.TableName, dtData);
         }
     }
 }

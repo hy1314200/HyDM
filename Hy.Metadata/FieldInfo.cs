@@ -41,6 +41,11 @@ namespace Hy.Metadata
         public int Length { get; set; }
 
         /// <summary>
+        /// 是否可空
+        /// </summary>
+        public bool NullAble { get; set; }
+
+        /// <summary>
         /// 别名
         /// </summary>
         public string AliasName { get; set; }

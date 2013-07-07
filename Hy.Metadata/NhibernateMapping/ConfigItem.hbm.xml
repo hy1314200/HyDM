@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Hy.Metadata.ConfigItem,Hy.Metadata" table="T_Parameter" lazy="false">
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+    <property column="ItemName" type="String" name="ItemName"/>
+    <property column="ItemValue" type="String" name="ItemValue"/>
+    <property column="Description" type="String" name="Description"/>
+	</class>
+</hibernate-mapping>

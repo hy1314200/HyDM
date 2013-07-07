@@ -24,6 +24,7 @@ namespace Define
         IList<T> GetByParams<T>(string hql, System.Collections.Hashtable paramlist);
         IList<T> GetObjectsByCondition<T>(string hql);
         T GetObjectById<T>(object id);
+        T GetObject<T>(string hql);
 
         bool Initialize(object proxy);
         void LockObject(object obj, enumLockMode lockMode);

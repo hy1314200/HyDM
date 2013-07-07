@@ -134,5 +134,71 @@ namespace Utility
             }
             return Convert.ToDateTime(this.ExecuteScalar(m_GetServerTimeSQL));
         }
+
+
+        public bool UpdateTable(string strTable, DataTable dtData)
+        {
+        //    DbDataAdapter oleDataAdapter = null;
+        //    DbCommandBuilder cb = null;
+        //    try
+        //    {
+        //        if (pConnection == null)
+        //        {
+        //            return false;
+        //        }
+
+        //        if (pConnection.State == ConnectionState.Closed)
+        //        {
+        //            pConnection.Open();
+        //        }
+        //        string str = string.Format("select  *  from {0}", strTableName);
+
+        //        oleDataAdapter = GetDbDataAdapter(pConnection, str);
+
+        //        cb =m_Dbfactory.CreateCommandBuilder();
+        //        cb.DataAdapter=oleDataAdapter;
+
+        //        oleDataAdapter.Update(pRecordset);
+
+        //        return true;
+        //    }
+        //    catch (Exception exp)
+        //    {
+        //        Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        if (oleDataAdapter != null)
+        //        {
+        //            oleDataAdapter.Dispose();
+        //        }
+
+        //        if (cb != null)
+        //        {
+        //            cb.Dispose();
+        //        }
+        //    }
+        //     /// <summary>
+        ///// 返回OleDbDataAdapter
+        ///// </summary>
+        ///// <param name="SqlString"></param>
+        ///// <returns></returns>
+        //public static DbDataAdapter GetDbDataAdapter(IDbConnection pAdoConn,string strSql)
+        //{
+        //    if (pAdoConn == null)
+        //    {
+        //        return null;
+        //    }
+
+        //    DbDataAdapter oleDataAdapter = m_Dbfactory.CreateDataAdapter();
+
+        //    oleDataAdapter.SelectCommand = CreatCmd(pAdoConn, strSql) as DbCommand;
+
+        //    return oleDataAdapter;
+        //}
+            throw new NotImplementedException();
+        }
     }
 }

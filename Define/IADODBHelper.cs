@@ -19,6 +19,7 @@ namespace Define
         IDataReader ExecuteReader(string strSql);
 
         DataTable OpenTable(string strTable);
+        bool UpdateTable(string strTable, DataTable dtData);
 
         bool TableExists(string strTable);
 
