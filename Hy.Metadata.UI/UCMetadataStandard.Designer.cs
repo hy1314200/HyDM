@@ -41,14 +41,14 @@
             this.gvFields = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcolName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolAliasName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcolDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gcolLength = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolPrecision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolNullAble = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.gcolDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTableName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDictItem.Properties)).BeginInit();
@@ -606,6 +606,7 @@
             this.gvFields.OptionsView.ShowGroupPanel = false;
             this.gvFields.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowForFocusedCell;
             this.gvFields.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
+            this.gvFields.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvFields_FocusedRowChanged);
             this.gvFields.FocusedColumnChanged += new DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventHandler(this.gvFields_FocusedColumnChanged);
             // 
             // gcolName
@@ -678,41 +679,6 @@
             this.gcolAliasName.VisibleIndex = 1;
             this.gcolAliasName.Width = 58;
             // 
-            // gcolDescription
-            // 
-            this.gcolDescription.AppearanceCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.gcolDescription.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.gcolDescription.AppearanceCell.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.gcolDescription.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.gcolDescription.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.gcolDescription.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.gcolDescription.AppearanceHeader.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.gcolDescription.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.gcolDescription.AppearanceHeader.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.gcolDescription.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.gcolDescription.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.gcolDescription.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.gcolDescription.Caption = "说明";
-            this.gcolDescription.FieldName = "Description";
-            this.gcolDescription.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.Value;
-            this.gcolDescription.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.None;
-            this.gcolDescription.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Default;
-            this.gcolDescription.ImageAlignment = System.Drawing.StringAlignment.Near;
-            this.gcolDescription.Name = "gcolDescription";
-            this.gcolDescription.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.Default;
-            this.gcolDescription.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.Default;
-            this.gcolDescription.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.Default;
-            this.gcolDescription.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Default;
-            this.gcolDescription.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.Default;
-            this.gcolDescription.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.Default;
-            this.gcolDescription.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.Default;
-            this.gcolDescription.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.Default;
-            this.gcolDescription.SortMode = DevExpress.XtraGrid.ColumnSortMode.Default;
-            this.gcolDescription.UnboundType = DevExpress.Data.UnboundColumnType.Bound;
-            this.gcolDescription.Visible = true;
-            this.gcolDescription.VisibleIndex = 6;
-            this.gcolDescription.Width = 76;
-            // 
             // gcolType
             // 
             this.gcolType.AppearanceCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -747,33 +713,6 @@
             this.gcolType.Visible = true;
             this.gcolType.VisibleIndex = 2;
             this.gcolType.Width = 65;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.groupControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.groupControl1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.groupControl1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.groupControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.groupControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.groupControl1.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.groupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.groupControl1.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.groupControl1.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.groupControl1.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.groupControl1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.groupControl1.CaptionImageLocation = DevExpress.Utils.GroupElementLocation.Default;
-            this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Default;
-            this.groupControl1.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.simpleButton1);
-            this.groupControl1.Controls.Add(this.gcFields);
-            this.groupControl1.Location = new System.Drawing.Point(18, 142);
-            this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(463, 269);
-            this.groupControl1.TabIndex = 6;
-            this.groupControl1.Text = "字段信息";
             // 
             // gcolLength
             // 
@@ -880,25 +819,67 @@
             this.gcolNullAble.VisibleIndex = 5;
             this.gcolNullAble.Width = 56;
             // 
-            // simpleButton1
+            // gcolDescription
             // 
-            this.simpleButton1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.simpleButton1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.simpleButton1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.simpleButton1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton1.Location = new System.Drawing.Point(341, 1);
-            this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(46, 23);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "添加";
-            this.simpleButton1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            this.gcolDescription.AppearanceCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.gcolDescription.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.gcolDescription.AppearanceCell.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.gcolDescription.AppearanceCell.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.gcolDescription.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.gcolDescription.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.gcolDescription.AppearanceHeader.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.gcolDescription.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.gcolDescription.AppearanceHeader.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.gcolDescription.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.gcolDescription.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.gcolDescription.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.gcolDescription.Caption = "说明";
+            this.gcolDescription.FieldName = "Description";
+            this.gcolDescription.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.Value;
+            this.gcolDescription.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.None;
+            this.gcolDescription.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Default;
+            this.gcolDescription.ImageAlignment = System.Drawing.StringAlignment.Near;
+            this.gcolDescription.Name = "gcolDescription";
+            this.gcolDescription.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.Default;
+            this.gcolDescription.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.Default;
+            this.gcolDescription.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.Default;
+            this.gcolDescription.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Default;
+            this.gcolDescription.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.Default;
+            this.gcolDescription.OptionsFilter.ImmediateUpdatePopupDateFilterOnCheck = DevExpress.Utils.DefaultBoolean.Default;
+            this.gcolDescription.OptionsFilter.ImmediateUpdatePopupDateFilterOnDateChange = DevExpress.Utils.DefaultBoolean.Default;
+            this.gcolDescription.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.Default;
+            this.gcolDescription.SortMode = DevExpress.XtraGrid.ColumnSortMode.Default;
+            this.gcolDescription.UnboundType = DevExpress.Data.UnboundColumnType.Bound;
+            this.gcolDescription.Visible = true;
+            this.gcolDescription.VisibleIndex = 6;
+            this.gcolDescription.Width = 76;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.groupControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.groupControl1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.groupControl1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.groupControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.groupControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.groupControl1.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.groupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.groupControl1.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.groupControl1.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.groupControl1.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.groupControl1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.groupControl1.CaptionImageLocation = DevExpress.Utils.GroupElementLocation.Default;
+            this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Default;
+            this.groupControl1.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupControl1.Controls.Add(this.simpleButton2);
+            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.gcFields);
+            this.groupControl1.Location = new System.Drawing.Point(18, 142);
+            this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(463, 269);
+            this.groupControl1.TabIndex = 6;
+            this.groupControl1.Text = "字段信息";
             // 
             // simpleButton2
             // 
@@ -919,6 +900,28 @@
             this.simpleButton2.TabIndex = 6;
             this.simpleButton2.Text = "删除";
             this.simpleButton2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.simpleButton1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.simpleButton1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.simpleButton1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
+            this.simpleButton1.Location = new System.Drawing.Point(341, 1);
+            this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(46, 23);
+            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.Text = "添加";
+            this.simpleButton1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // UCMetadataStandard
             // 

@@ -47,9 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandParameterSetting.cs" />
+    <Compile Include="CommandStandard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6C899FBF-3BD9-4B8A-8080-4C899354B946}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Define\Define.csproj">
       <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
       <Name>Define</Name>
@@ -57,6 +62,10 @@
     <ProjectReference Include="..\Hy.Metadata.UI\Hy.Metadata.UI.csproj">
       <Project>{D276D29E-02E9-409B-B3C2-05C97DEF5D77}</Project>
       <Name>Hy.Metadata.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hy.Metadata\Hy.Metadata.csproj">
+      <Project>{547A2C4A-957F-4B5D-B190-46B9D002B044}</Project>
+      <Name>Hy.Metadata</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
