@@ -14,11 +14,15 @@ namespace Hy.Metadata
 
         public static MetaStandard GetStandardByName(string strName)
         {
-            IList<MetaStandard> standardList = Environment.NhibernateHelper.GetObjectsByCondition<MetaStandard>(string.Format("from MetaStandard mStandard where mStandard.Name='{0}'", strName));
-            if (standardList == null || standardList.Count == 0)
-                return null;
+            //IList<MetaStandard> standardList = Environment.NhibernateHelper.GetObjectsByCondition<MetaStandard>(string.Format("from MetaStandard mStandard where mStandard.Name='{0}'", strName));
+            //if (standardList == null || standardList.Count == 0)
+            //{
+            //    return null;
+            //}
 
-            return standardList[0];
+            //return standardList[0];
+
+            return Environment.NhibernateHelper.GetObject<MetaStandard>(string.Format("from MetaStandard mStandard where mStandard.Name='{0}'", strName));
         }
 
         public static MetaStandard GetStandardById(string id)
@@ -40,6 +44,9 @@ namespace Hy.Metadata
         /// <returns></returns>
         public static bool DeleteStandard(MetaStandard standard)
         {
+            if (standard == null)
+                return false;
+
             try
             {
                 // 记录
@@ -72,6 +79,9 @@ namespace Hy.Metadata
         /// <returns></returns>
         public static bool SaveStandard(MetaStandard standard)
         {
+            if (standard == null)
+                return false           ;
+
             try
             {
                 // 记录
@@ -81,8 +91,17 @@ namespace Hy.Metadata
                 // 创建表
                 if (Environment.AdodbHelper.TableExists(standard.TableName))
                 {
-                    Environment.AdodbHelper.ExecuteSQL(string.Format("Drop table {0}", standard.TableName));
-
+                    int eCount= Environment.AdodbHelper.ExecuteSQL(string.Format("Drop table {0}", standard.TableName));
+                    if (eCount < 1)
+                    {
+                        ErrorMessage = "删除原有数据表时出错";
+                        return false;
+                    }
+                    if (!CreateTable(standard))
+                    {
+                        ErrorMessage = "创建新数据表时出错";
+                        return false;
+                    }
                 }
 
                 return true;
@@ -97,6 +116,9 @@ namespace Hy.Metadata
 
         public static void ReLoadItem(MetaStandard standard)
         {
+            if (standard == null)
+                return;
+
             Environment.NhibernateHelper.RefreshObject(standard, Define.enumLockMode.UpgradeNoWait);
         }
 
@@ -104,6 +126,47 @@ namespace Hy.Metadata
         {
            return Environment.AdodbHelper.ExecuteDataTable(string.Format("select * from {0}",standard.TableName));
         }
+
+        public static bool CreateTable(MetaStandard standard)
+        {
+            if (standard == null)
+                return false;
+
+            StringBuilder strSQL = new StringBuilder("Create Table ");
+            strSQL.Append( standard.TableName);
+            strSQL.Append(" (");
+            strSQL.Append(GetSQLFromField(IDFieldInfo));
+            strSQL.Append(",");
+            foreach(FieldInfo fInfo in standard.FieldsInfo)
+            {
+                strSQL.Append(GetSQLFromField(fInfo));
+                strSQL.Append(",");
+            }
+            strSQL.Remove(strSQL.Length-1,1);
+            strSQL.Append(")");
+
+            int eCount= Environment.AdodbHelper.ExecuteSQL(strSQL.ToString());
+            return eCount>0;
+        }
+
+        private static FieldInfo m_IDFieldInfo;
+        private static FieldInfo IDFieldInfo
+        {
+            get
+            {
+                if (m_IDFieldInfo == null)
+                {
+                    m_IDFieldInfo = new FieldInfo();
+                    m_IDFieldInfo.Name = "ID";
+                    m_IDFieldInfo.NullAble = false;
+                    m_IDFieldInfo.Type = enumFieldType.String;
+                    m_IDFieldInfo.Length = 32;
+                    m_IDFieldInfo.AliasName = "标识符";
+                }
+                return m_IDFieldInfo;
+            }
+        }
+
 
         public static string GetSQLFromField(FieldInfo fInfo)
         {
@@ -130,13 +193,14 @@ namespace Hy.Metadata
 
                 case enumFieldType.Decimal:
                     if (string.IsNullOrEmpty(strTypeKey))
-                        return "numeric";
-
-                    int fLen= fInfo.Length>0?fInfo.Length:5;
-                    strSQL = string.Format("{0}({1},{2})", strTypeKey,
-                       fLen,
-                       fInfo.Precision > fLen ? fLen : fInfo.Precision);                    
-
+                        strSQL = "numeric";
+                    else
+                    {
+                        int fLen = fInfo.Length > 0 ? fInfo.Length : 5;
+                        strSQL = string.Format("{0}({1},{2})", strTypeKey,
+                           fLen,
+                           fInfo.Precision > fLen ? fLen : fInfo.Precision);
+                    }
                     break;
 
                 case enumFieldType.DateTime:
@@ -159,7 +223,7 @@ namespace Hy.Metadata
                     return "varchar";
             }
 
-            return strSQL;
+            return string.Format("{0} {1}",fInfo.Name, strSQL);
         }
 
         private static string[] m_TypeItemKey =

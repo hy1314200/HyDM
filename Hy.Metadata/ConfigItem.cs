@@ -16,9 +16,9 @@ namespace Hy.Metadata
         public string ID { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 名称(配置项键)
         /// </summary>
-        public string ItemName { get; set; }
+        public string ItemKey { get; set; }
 
         /// <summary>
         /// 值

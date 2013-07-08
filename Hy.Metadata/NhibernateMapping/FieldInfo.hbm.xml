@@ -10,6 +10,8 @@
     <property column="Precision" type="Int32" name="Precision"/>
     <property column="Length" type="Int32" name="Length"/>
     <property column="AliasName" type="String" name="AliasName"/>
+    <property column="NullAble" type="Boolean" name="NullAble"/>
+    <property column="Description" type="String" name="Description"/>
     <property column="Linkage" type="String" name="Linkage"/>    
 	</class>
 </hibernate-mapping>

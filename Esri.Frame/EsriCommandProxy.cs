@@ -30,7 +30,7 @@ namespace Esri.Frame
         public override void OnCreate(object Hook)
         {
             base.OnCreate(Hook);
-            IEsriHook esriHook = m_Hooker as IEsriHook;
+            IEsriHook esriHook = m_Hook as IEsriHook;
             this.m_EsriHooker = esriHook.HookHelper.Hook as IToolbarBuddy;
 
             if ((esriHook ==null) || (m_EsriHooker == null))
@@ -40,7 +40,7 @@ namespace Esri.Frame
 
             try
             {
-                m_EsriCommand.OnCreate((m_Hooker as IEsriHook).HookHelper.Hook);
+                m_EsriCommand.OnCreate((m_Hook as IEsriHook).HookHelper.Hook);
             }
             catch
             {
@@ -153,7 +153,7 @@ namespace Esri.Frame
 
         public object Resource
         {
-            get { return (m_Hooker as IEsriHook).HookHelper.Hook; }
+            get { return (m_Hook as IEsriHook).HookHelper.Hook; }
         }
     }
 

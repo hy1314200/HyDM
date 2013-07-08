@@ -51,6 +51,11 @@ namespace Hy.Metadata
         public string AliasName { get; set; }
 
         /// <summary>
+        /// 描述
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
         /// 联动项（可跟字典项关联）
         /// </summary>
         public string Linkage { get; set; }

@@ -15,7 +15,15 @@ namespace Utility
 	{
         private ISession m_Session = null;
         private ITransaction m_Transaction = null;
-        
+
+        public IDbConnection DbConnection
+        {
+            get
+            {
+                return m_Session.Connection;
+            }
+        }
+
         /// <summary>
         /// 构造函数
         /// </summary>

@@ -22,14 +22,14 @@ namespace Skyline.Commands
 
         public override void OnClick()
         {            
-            FrmTerrainModifier fmTerrModifier = new FrmTerrainModifier(base.m_Hooker.MainForm);
+            FrmTerrainModifier fmTerrModifier = new FrmTerrainModifier(base.m_Hook.MainForm);
             fmTerrModifier.SgWorld=this.m_SkylineHook.SGWorld;
             fmTerrModifier.TerraExplorer=this.m_SkylineHook.TerraExplorer;
             try
             {
                 if (!fmTerrModifier.IsDisposed)
                 {
-                    this.m_Hooker.MainForm.AddOwnedForm(fmTerrModifier);
+                    this.m_Hook.MainForm.AddOwnedForm(fmTerrModifier);
                     fmTerrModifier.Show();
                 }
             }

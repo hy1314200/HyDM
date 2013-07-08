@@ -10,7 +10,7 @@ namespace Hy.Dictionary.Operate
     {
         public CommandDictionary()
         {
-            this.m_Caption = "字典测试";
+            this.m_Caption = "字典管理";
             this.m_Category = "字典";
         }
 
@@ -26,7 +26,7 @@ namespace Hy.Dictionary.Operate
         {
             UI.FrmDictionary frmDict = new UI.FrmDictionary();
             frmDict.Init();
-            frmDict.Show(base.m_Hooker.MainForm);
+            frmDict.Show(base.m_Hook.MainForm);
         }
     }
 }

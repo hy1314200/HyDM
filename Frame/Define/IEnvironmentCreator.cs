@@ -2,43 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Define;
 using System.Data;
+using Define;
 
 namespace Frame.Define
 {
-    public interface ILogin
+    /// <summary>
+    /// 应用程序环境创建者
+    /// </summary>
+    public interface IEnvironmentCreator
     {
         /// <summary>
         /// 系统ADO连接
         /// </summary>
-        IDbConnection SysConnection { set; }
-
+        IDbConnection SysConnection { get; }
+        
         /// <summary>
         /// NHibernate连接接口
         /// </summary>
-        INhibernateHelper NhibernateHelper { set; }
+        INhibernateHelper NhibernateHelper { get; }
 
         /// <summary>
         /// 日志写入接口
         /// </summary>
-        ILogWriter Logger { set; }
+        ILogWriter LogWriter { get; }
 
         /// <summary>
-        /// 登陆
+        /// 应用程序信息接口
         /// </summary>
-        /// <returns></returns>
-        bool Login(ref IApplication application);
+        IApplication Application { get; }
 
         /// <summary>
-        /// 显示消息
+        /// 释放
         /// </summary>
-        /// <param name="strMsg"></param>
-        void ShowMessage(string strMsg);
-
-        /// <summary>
-        /// 销毁
-        /// </summary>
-        void Dispose();
+        void Release();
     }
 }

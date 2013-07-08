@@ -53,6 +53,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Metadata.UI", "Hy.Metadata.UI\Hy.Metadata.UI.csproj", "{D276D29E-02E9-409B-B3C2-05C97DEF5D77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Metadata.Operate", "Hy.Metadata.Operate\Hy.Metadata.Operate.csproj", "{4EF934D9-82E4-4897-BBED-D5F953AD949C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{547A2C4A-957F-4B5D-B190-46B9D002B044} = {547A2C4A-957F-4B5D-B190-46B9D002B044}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

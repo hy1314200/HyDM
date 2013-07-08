@@ -70,8 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultApplication.cs" />
     <Compile Include="Define\ClassInfo.cs" />
     <Compile Include="Define\enumCommandType.cs" />
+    <Compile Include="Define\IEnvironmentCreator.cs" />
     <Compile Include="Define\ILogin.cs" />
     <Compile Include="Define\IResourceManager.cs" />
     <Compile Include="Define\RibbonCommandInfo.cs" />
@@ -102,12 +104,14 @@
     <Compile Include="FrmResourceRegister.Designer.cs">
       <DependentUpon>FrmResourceRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DefaultEnvironmentCreator.cs" />
     <Compile Include="Helper\Logger.cs" />
     <Compile Include="Helper\ResourceFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\RibbonCommandAdapter.cs" />
     <Compile Include="Helper\RibbonEngine.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="UCClassInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +142,7 @@
     <EmbeddedResource Include="FrmRuntime.resx">
       <DependentUpon>FrmRuntime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

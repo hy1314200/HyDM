@@ -28,14 +28,16 @@ namespace Frame
             if (loginor == null)
                 loginor = new FrmLogin();
 
-            loginor.Logger = Environment.Logger;
+            loginor.Logger = Environment.LogWriter;
             loginor.NhibernateHelper = Environment.NHibernateHelper;
             loginor.SysConnection = Environment.SysDbConnection;
-            if (!loginor.Login())
+            global::Define.IApplication app = Environment.Application;
+            if (!loginor.Login(ref app))
             {
                 Application.Exit();
                 return;
             }
+            Environment.Application = app;
 
             loginor.ShowMessage("正在验证GIS控件权限...");
             string errMsg = null;
@@ -51,7 +53,7 @@ namespace Frame
             InitializeComponent();
             this.Text = ConfigManager.AppName;
             this.Icon = ConfigManager.Logo;
-            splitControlMain.PanelVisibility = SplitPanelVisibility.Panel1;
+            //splitControlMain.PanelVisibility = SplitPanelVisibility.Panel1;
 
 
             loginor.ShowMessage("正在创建GIS控件对象...");
@@ -59,7 +61,8 @@ namespace Frame
             if (hookControl != null)
             {
                 if (hookControl is System.ComponentModel.ISupportInitialize) ((System.ComponentModel.ISupportInitialize)(hookControl)).BeginInit();
-                this.splitControlMain.Panel1.Controls.Add(hookControl);
+                //this.splitControlMain.Panel1.Controls.Add(hookControl);
+                this.dockPanelCenter.Controls.Add(hookControl);
                 hookControl.Dock = DockStyle.Fill;
                 if (hookControl is System.ComponentModel.ISupportInitialize) ((System.ComponentModel.ISupportInitialize)(hookControl)).EndInit();
             }
@@ -72,7 +75,7 @@ namespace Frame
                 IPlugin plugin= Utility.ResourceFactory.CreatePlugin(cInfo);
                 if (plugin != null)
                 {
-                    plugin.Logger = Environment.Logger;
+                    plugin.Logger = Environment.LogWriter;
                     plugin.NhibernateHelper = Environment.NHibernateHelper;
                     plugin.SysConnection = Environment.SysDbConnection;
                     plugin.GisWorkspace = Environment.Workspace;

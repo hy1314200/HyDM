@@ -37,7 +37,7 @@ namespace Common.Operate
 
         public override void OnClick()
         {
-            IUIHook uiHook = m_Hooker as IUIHook;
+            IUIHook uiHook = m_Hook as IUIHook;
             if (uiHook != null && uiHook.LeftDockPanel != null)
             {
                 bool panelCreateFlag = (m_DockPanel == null);

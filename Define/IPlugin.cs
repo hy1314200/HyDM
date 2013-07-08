@@ -35,7 +35,12 @@ namespace Define
         /// <summary>
         /// 日志写入接口
         /// </summary>
-        ILogger Logger { set; }
+        ILogWriter Logger { set; }
+
+        /// <summary>
+        /// 应用程序信息接口
+        /// </summary>
+        IApplication Application {set;}
 
     }
 }

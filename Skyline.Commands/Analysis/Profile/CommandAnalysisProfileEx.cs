@@ -23,12 +23,12 @@ namespace Skyline.Commands
         public override void OnClick()
         {
 
-            FrmTerrainProfileArrPoints fTeerArr = new FrmTerrainProfileArrPoints(this.m_SkylineHook.SGWorld,base.m_Hooker.MainForm);
+            FrmTerrainProfileArrPoints fTeerArr = new FrmTerrainProfileArrPoints(this.m_SkylineHook.SGWorld,base.m_Hook.MainForm);
             try
             {
                 if (!fTeerArr.IsDisposed)
                 {
-                    base.m_Hooker.MainForm.AddOwnedForm(fTeerArr);
+                    base.m_Hook.MainForm.AddOwnedForm(fTeerArr);
                     fTeerArr.Show();
                 }
             }

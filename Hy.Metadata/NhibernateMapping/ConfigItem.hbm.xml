@@ -4,7 +4,7 @@
 		<id name="ID" column="ID" type="string">
 			<generator class="uuid.hex"/>
 		</id>
-    <property column="ItemName" type="String" name="ItemName"/>
+    <property column="ItemKey" type="String" name="ItemKey"/>
     <property column="ItemValue" type="String" name="ItemValue"/>
     <property column="Description" type="String" name="Description"/>
 	</class>

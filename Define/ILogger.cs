@@ -8,7 +8,7 @@ namespace Define
     /// <summary>
     /// 日志接口
     /// </summary>
-    public interface ILogger 
+    public interface ILogWriter 
     { 
 
         /// <summary>

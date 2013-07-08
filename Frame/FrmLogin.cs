@@ -28,7 +28,7 @@ namespace Frame
         }
                
 
-        public bool Login()
+        public bool Login(ref global::Define.IApplication application)
         {
             ThreadStart d = delegate { this.ShowDialog(); };
             Thread t = new Thread(d);
@@ -65,7 +65,7 @@ namespace Frame
             set {  }
         }
 
-        public global::Define.ILogger Logger
+        public global::Define.ILogWriter Logger
         {
             set {  }
         }

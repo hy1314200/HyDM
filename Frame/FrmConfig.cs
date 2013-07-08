@@ -28,7 +28,7 @@ namespace Frame
             InitRibbon();
         }
 
-        NhibernateHelper m_HibernateHelper = Environment.NHibernateHelper;
+        INhibernateHelper m_HibernateHelper = Environment.NHibernateHelper;
         List<ClassInfo> m_ResourceList = null;
 
         /// <summary>

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Frame.Define
 {
     /// <summary>
-    /// 资源管理器接口
+    /// (GIS)资源管理器接口
     /// 1.负责GIS控件及Hook对象的创建及消毁
     /// 2.负责资源（接口）识别
     /// 3.允许对Command进行封装
@@ -51,7 +51,7 @@ namespace Frame.Define
         ICommand CommandProxy(object objCommand);
 
         /// <summary>
-        /// 创建GIS连接
+        /// 创建(GIS)连接
         /// </summary>
         /// <param name="strType"></param>
         /// <param name="strArgs"></param>

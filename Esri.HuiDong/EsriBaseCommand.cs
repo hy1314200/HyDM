@@ -43,7 +43,7 @@ namespace Esri.HuiDong
         public override void OnClick()
         {
             m_Form = this.CreateForm();
-            m_Form.ShowDialog(base.m_Hooker.MainForm);
+            m_Form.ShowDialog(base.m_Hook.MainForm);
         }
         public abstract System.Windows.Forms.Form CreateForm();
     }

@@ -7,7 +7,7 @@ using Define;
 
 namespace Frame
 {
-    internal class Logger:ILogger
+    internal class Logger:ILogWriter
     {
         private Logger()
         {
@@ -33,5 +33,9 @@ namespace Frame
             Utility.Log.AppendMessage(logType, strMsg);
         }
 
+        public void Close()
+        {
+            Utility.Log.Close();
+        }
     }
 }

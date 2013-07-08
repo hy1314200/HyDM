@@ -21,12 +21,12 @@ namespace Skyline.Commands
 
         public override void OnClick()
         {
-            FrmQueryCoordinate fqc = new FrmQueryCoordinate(base.m_Hooker.MainForm);
+            FrmQueryCoordinate fqc = new FrmQueryCoordinate(base.m_Hook.MainForm);
             try
             {
                 if (!fqc.IsDisposed)
                 {
-                    base.m_Hooker.MainForm.AddOwnedForm(fqc);
+                    base.m_Hook.MainForm.AddOwnedForm(fqc);
                     fqc.Show();
                 }
             }

@@ -18,24 +18,16 @@ namespace Frame
                 return ConfigurationManager.AppSettings["AppName"];
             }
         }
-
         /// <summary>
-        /// Logo文件
+        /// 版本
         /// </summary>
-        public static System.Drawing.Icon Logo
+        public static string Version
         {
             get
             {
-                string strLogoFile=string.Format(ConfigurationManager.AppSettings["Logo"],System.Windows.Forms.Application.StartupPath);
-                if (System.IO.File.Exists(strLogoFile))
-                {
-                    return new System.Drawing.Icon(strLogoFile);
-                }
-
-                return Properties.Resources.DefaultLogo;
+                return ConfigurationManager.AppSettings["Version"];
             }
         }
-
         /// <summary>
         /// ADO数据库类型
         /// </summary>
@@ -103,6 +95,35 @@ namespace Frame
             }
         }
 
+
+        /// <summary>
+        /// 单位
+        /// </summary>
+        public static string Enterprise
+        {
+            get
+            {
+                return Properties.Settings.Default.Enterprise;// ConfigurationManager.AppSettings["Enterprise"];
+            }
+        }
+
+        /// <summary>
+        /// Logo文件
+        /// </summary>
+        public static System.Drawing.Icon Logo
+        {
+            get
+            {
+                string strLogoFile = string.Format(Properties.Settings.Default.Logo/* ConfigurationManager.AppSettings["Logo"]*/, System.Windows.Forms.Application.StartupPath);
+                if (System.IO.File.Exists(strLogoFile))
+                {
+                    return new System.Drawing.Icon(strLogoFile);
+                }
+
+                return Properties.Resources.DefaultLogo;
+            }
+        }
+
         /// <summary>
         /// 登陆器
         /// </summary>
@@ -110,7 +131,7 @@ namespace Frame
         {
             get
             {
-                return ConfigurationManager.AppSettings["Loginor"];
+                return Properties.Settings.Default.Loginor;// ConfigurationManager.AppSettings["Loginor"];
             }
         }
 
@@ -118,7 +139,7 @@ namespace Frame
         {
             get
             {
-                return string.Format(ConfigurationManager.AppSettings["LoginBackground"], System.Windows.Forms.Application.StartupPath);
+                return Properties.Settings.Default.LoginBackground;// string.Format(ConfigurationManager.AppSettings["LoginBackground"], System.Windows.Forms.Application.StartupPath);
             }
         }
 
@@ -126,7 +147,16 @@ namespace Frame
         {
             get
             {
-                return ConfigurationManager.AppSettings["LoginSize"];
+                return Properties.Settings.Default.LoginSize;
+                //return ConfigurationManager.AppSettings["LoginSize"];
+            }
+        }
+
+        public static string EnvironmentCreator
+        {
+            get
+            {
+                return Properties.Settings.Default.EnvironmentCreator;
             }
         }
     }

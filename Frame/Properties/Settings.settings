@@ -1,7 +1,27 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Frame.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Logo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{0}\Logo.ico</Value>
+    </Setting>
+    <Setting Name="Loginor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Frame.exe, Frame.FrmLogin</Value>
+    </Setting>
+    <Setting Name="LoginBackground" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{0}\Login.jpg</Value>
+    </Setting>
+    <Setting Name="LoginSize" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">400,300</Value>
+    </Setting>
+    <Setting Name="EnvironmentCreator" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Frame.exe, Frame.DefaultEnvironmentCreator</Value>
+    </Setting>
+    <Setting Name="Enterprise" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Hy-Xingzhe</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.1</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

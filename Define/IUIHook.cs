@@ -24,5 +24,15 @@ namespace Define
         /// 下边的DockPanel
         /// </summary>
         System.Windows.Forms.Control BottomDockPanel { get; }
+
+    }
+
+    public enum enumDockPosition
+    {
+        Left = 0,
+        Right = 1,
+        Bottom = 2,
+        Top=3,
+        Center=4
     }
 }

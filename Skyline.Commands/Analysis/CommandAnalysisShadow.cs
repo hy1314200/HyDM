@@ -27,13 +27,13 @@ namespace Skyline.Commands
             //  labelControl1.Text = "单击模型创建阴影,按ESC结束";
             //labelControl1.Visible = true;
             //   Program.sgworld.Command.Execute(1149,14);
-            Frmshadow pFrmshaow = new Frmshadow(base.m_Hooker.MainForm);
+            Frmshadow pFrmshaow = new Frmshadow(base.m_Hook.MainForm);
 
             try
             {
                 if (!pFrmshaow.IsDisposed)
                 {
-                    base.m_Hooker.MainForm.AddOwnedForm(pFrmshaow);
+                    base.m_Hook.MainForm.AddOwnedForm(pFrmshaow);
                     pFrmshaow.Show();
                 }
             }

@@ -17,7 +17,7 @@ namespace Define
         protected string m_Caption = null;
         protected string m_Message = null;
         protected string m_Tooltip = null;
-        protected IHook m_Hooker;
+        protected IHook m_Hook;
 
         public virtual System.Drawing.Image Icon
         {
@@ -79,14 +79,14 @@ namespace Define
         {
             get
             {
-                return (m_Hooker != null);
+                return (m_Hook != null);
             }
         }
 
 
         public virtual void OnCreate(object Hook)
         {
-            this.m_Hooker = Hook as IHook;
+            this.m_Hook = Hook as IHook;
         }
 
         public abstract void OnClick();
@@ -102,5 +102,7 @@ namespace Define
             if (this.OnMessage != null)
                 this.OnMessage.Invoke(strMsg);
         }
+
+       
     }
 }

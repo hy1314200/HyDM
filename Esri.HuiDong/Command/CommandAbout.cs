@@ -20,7 +20,7 @@ namespace Esri.HuiDong
         public override void OnClick()
         {
             Esri.HuiDong.UI.FrmAbout frmAbout = new Esri.HuiDong.UI.FrmAbout();
-            frmAbout.ShowDialog(m_Hooker.MainForm);
+            frmAbout.ShowDialog(m_Hook.MainForm);
         }
     }
 }

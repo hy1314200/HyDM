@@ -11,12 +11,13 @@ namespace Hy.Metadata
     public class Environment:IPlugin
     {
 
-        public static INhibernateHelper NhibernateHelper { internal get; set; }
+        public static INhibernateHelper NhibernateHelper { get; set; }
 
         public static IADODBHelper AdodbHelper { internal get; set; }
 
-        public static ILogger Logger { internal get; set; }
+        public static ILogWriter Logger { internal get; set; }
 
+        public static IApplication Application { internal get; set; }
 
         public System.Data.IDbConnection SysConnection
         {
@@ -38,7 +39,7 @@ namespace Hy.Metadata
             }
         }
 
-        ILogger IPlugin.Logger
+        ILogWriter IPlugin.Logger
         {
             set { Environment.Logger = value; }
         }
@@ -46,6 +47,12 @@ namespace Hy.Metadata
         public string Description
         {
             get { return "元数据管理数据连接环境"; }
+        }
+
+
+        IApplication IPlugin.Application
+        {
+            set { Environment.Application = value; }
         }
     }
 }

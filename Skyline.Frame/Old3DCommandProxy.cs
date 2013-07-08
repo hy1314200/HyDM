@@ -74,7 +74,7 @@ namespace Skyline.Frame
             if (application3D == null)
             {
                 application3D = new Application3D(null);
-                application3D.MainForm = (this.m_Hooker).MainForm;
+                application3D.MainForm = (this.m_Hook).MainForm;
             }
             this.m_OldCommand.Application = application3D;
         }

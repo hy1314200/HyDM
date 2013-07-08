@@ -21,12 +21,12 @@ namespace Skyline.Commands
 
         public override void OnClick()
         {
-            FrmSearchByAttribute pFrmSearch = new FrmSearchByAttribute(base.m_Hooker.MainForm);
+            FrmSearchByAttribute pFrmSearch = new FrmSearchByAttribute(base.m_Hook.MainForm);
             try
             {
                 if (!pFrmSearch.IsDisposed)
                 {
-                    base.m_Hooker.MainForm.AddOwnedForm(pFrmSearch);
+                    base.m_Hook.MainForm.AddOwnedForm(pFrmSearch);
                     pFrmSearch.Show();
                 }
             }

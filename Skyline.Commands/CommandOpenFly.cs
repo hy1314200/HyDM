@@ -24,7 +24,7 @@ namespace Skyline.Commands
         {
             get
             {
-                return m_Hooker != null && m_SkylineHook != null && m_SkylineHook.TerraExplorer != null;
+                return m_Hook != null && m_SkylineHook != null && m_SkylineHook.TerraExplorer != null;
             }
         }
 

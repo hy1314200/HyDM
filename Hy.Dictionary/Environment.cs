@@ -14,7 +14,9 @@ namespace Hy.Dictionary
 
         public static IADODBHelper AdodbHelper { internal get; set; }
 
-        public static ILogger Logger { internal get; set; }
+        public static ILogWriter Logger { internal get; set; }
+
+        public static IApplication Application { internal get; set; }
 
 
         public System.Data.IDbConnection SysConnection
@@ -46,7 +48,7 @@ namespace Hy.Dictionary
             }
         }
 
-        ILogger IPlugin.Logger
+        ILogWriter IPlugin.Logger
         {
             set { Environment.Logger = value; }
         }
@@ -54,6 +56,12 @@ namespace Hy.Dictionary
         public string Description
         {
             get { return "字典数据库连接环境"; }
+        }
+
+
+        IApplication IPlugin.Application
+        {
+            set { Environment.Application = value; }
         }
     }
 }
