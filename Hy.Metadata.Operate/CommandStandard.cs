@@ -14,13 +14,13 @@ namespace Hy.Metadata.Operate
             this.m_Category = "元数据";
             this.m_Caption = "元数据";
         }
-        private Hy.Metadata.UI.UCMetadataStandard m_TocControl;
+        private Hy.Metadata.UI.UCStandardManager m_UcManager;
      
         public override bool Checked
         {
             get
             {
-                return (m_TocControl != null && m_TocControl.Visible);
+                return (m_UcManager != null && m_UcManager.Visible);
             }
         }
 
@@ -35,7 +35,7 @@ namespace Hy.Metadata.Operate
 
         private class MetadataHooker : IHooker
         {
-            public MetadataHooker(Hy.Metadata.UI.UCMetadataStandard uc)
+            public MetadataHooker(Hy.Metadata.UI.UCStandardManager uc)
             {
                 this.m_UcMetadata = uc;
             }
@@ -50,7 +50,7 @@ namespace Hy.Metadata.Operate
                 get { return m_Guid; }
             }
 
-            private Hy.Metadata.UI.UCMetadataStandard m_UcMetadata;
+            private Hy.Metadata.UI.UCStandardManager m_UcMetadata;
 
             public Control Control
             {
@@ -62,24 +62,23 @@ namespace Hy.Metadata.Operate
 
             public object Hook
             {
-                get { return null; }
+                get { return m_UcMetadata; }
             }
         }
 
         private Guid m_Guid = Guid.Empty;
         public override void OnClick()
         {
-            if (m_TocControl != null && m_TocControl.Visible)
+            if (m_UcManager != null && m_UcManager.Visible)
             { 
                 this.m_Hook.UIHook.CloseHookControl(m_Guid);
             }
             else
             {
-                if (m_TocControl == null)
+                if (m_UcManager == null)
                 {
-                    m_TocControl = new UI.UCMetadataStandard();
-                    m_TocControl.CurrentStandard = new MetaStandard();
-                    IHooker hooker= new MetadataHooker(m_TocControl);
+                    m_UcManager = new Hy.Metadata.UI.UCStandardManager();
+                    IHooker hooker= new MetadataHooker(m_UcManager);
                     m_Guid=hooker.ID;
                     base.m_Hook.UIHook.AddHooker(hooker, enumDockPosition.Center);
                 }

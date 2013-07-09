@@ -49,6 +49,12 @@
     <Compile Include="CommandParameterSetting.cs" />
     <Compile Include="CommandStandard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardBaseCommand.cs" />
+    <Compile Include="CommandStandardRefresh.cs" />
+    <Compile Include="CommandStandardAddNew.cs" />
+    <Compile Include="CommandStandardEdit.cs" />
+    <Compile Include="CommandStandardDelete.cs" />
+    <Compile Include="CommandStandardSave.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

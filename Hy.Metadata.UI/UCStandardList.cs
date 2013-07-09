@@ -15,7 +15,27 @@ namespace Hy.Metadata.UI
         {
             InitializeComponent();
 
+            this.Refresh();
+        }
+
+        public void Refresh()
+        {
             lbStandards.DataSource = MetaStandardHelper.GetAll();
+        }
+
+        public MetaStandard NewStandard()
+        {
+            //IList<MetaStandard> dsSource=lbStandards.DataSource as IList<MetaStandard>;
+            //if (dsSource == null)
+            //{
+            //    dsSource = new List<MetaStandard>();
+            //    lbStandards.DataSource = dsSource;
+            //}
+            MetaStandard standard = new MetaStandard();
+            lbStandards.Items.Add(standard);
+            lbStandards.SelectedItem = standard;
+
+            return standard;
         }
 
         public MetaStandard SelectedStandard
@@ -27,6 +47,14 @@ namespace Hy.Metadata.UI
             set
             {
                 lbStandards.SelectedItem = value;
+            }
+        }
+
+        public IList<MetaStandard> AllStandard
+        {
+            get
+            {
+                return lbStandards.DataSource as IList<MetaStandard>;
             }
         }
 

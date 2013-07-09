@@ -39,6 +39,7 @@
     <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd" />
     <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="Hy.Metadata.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -56,12 +57,13 @@
     <Compile Include="FrmParameterSetting.Designer.cs">
       <DependentUpon>FrmParameterSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="IStandardManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCMetadataStandard.cs">
+    <Compile Include="UCStandardProperty.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCMetadataStandard.Designer.cs">
-      <DependentUpon>UCMetadataStandard.cs</DependentUpon>
+    <Compile Include="UCStandardProperty.Designer.cs">
+      <DependentUpon>UCStandardProperty.cs</DependentUpon>
     </Compile>
     <Compile Include="UCStandardList.cs">
       <SubType>UserControl</SubType>
@@ -69,11 +71,11 @@
     <Compile Include="UCStandardList.Designer.cs">
       <DependentUpon>UCStandardList.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraUserControl1.cs">
+    <Compile Include="UCStandardManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="XtraUserControl1.Designer.cs">
-      <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    <Compile Include="UCStandardManager.Designer.cs">
+      <DependentUpon>UCStandardManager.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -81,14 +83,14 @@
       <DependentUpon>FrmParameterSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="UCMetadataStandard.resx">
-      <DependentUpon>UCMetadataStandard.cs</DependentUpon>
+    <EmbeddedResource Include="UCStandardProperty.resx">
+      <DependentUpon>UCStandardProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCStandardList.resx">
       <DependentUpon>UCStandardList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XtraUserControl1.resx">
-      <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="UCStandardManager.resx">
+      <DependentUpon>UCStandardManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
