@@ -31,7 +31,7 @@ namespace Skyline.Commands
 
                 }
                 //frmViewshed.ControlHook = uc3DWindow.teTopLeft;
-                base.m_Hook.MainForm.AddOwnedForm(m_FrmViewshed);
+                base.m_Hook.UIHook.MainForm.AddOwnedForm(m_FrmViewshed);
                 m_FrmViewshed.Show();
             }
             catch

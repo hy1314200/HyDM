@@ -18,16 +18,8 @@ namespace Common.Operate
             this.m_Tooltip = string.Format("点击以打开或关闭{0}", this.Caption); 
         }
 
-        private Control m_Control;
-        DockPanel m_DockPanel;
-
-        public enum enumDockPosition
-        {
-            Left=0,
-            Right=1,
-            Bottom=2
-
-        }
+        protected Control m_Control;
+        protected Control m_DockPanel;
 
         protected virtual string DockCaption { get { return this.Caption; } }
         protected abstract Control CreateControl();
@@ -37,63 +29,83 @@ namespace Common.Operate
 
         public override void OnClick()
         {
-            IUIHook uiHook = m_Hook as IUIHook;
-            if (uiHook != null && uiHook.LeftDockPanel != null)
+            if (this.m_Control != null && this.m_Control.Visible)
             {
-                bool panelCreateFlag = (m_DockPanel == null);
-                if (panelCreateFlag)
-                {
-                    DockPanel dockContianer = uiHook.LeftDockPanel as DockPanel;
-                    if (this.DockPosition == enumDockPosition.Right)
-                    {
-                        dockContianer = uiHook.RightDockPanel as DockPanel;
-                    }
-                    if (this.DockPosition == enumDockPosition.Bottom)
-                    {
-                        dockContianer = uiHook.BottomDockPanel as DockPanel;
-                    }
-                    m_DockPanel = dockContianer.AddPanel();
-                    m_DockPanel.Text = this.DockCaption;
-                    //m_DockPanel.Controls.Add(dockLeft.Container as Control);
-                    //m_DockPanel.DockTo(dockLeft);             
-                }
-                if (m_DockPanel.Visibility == DockVisibility.Visible && m_Control != null && m_Control.Visible)
-                {
-                    m_DockPanel.Visibility = DockVisibility.Hidden;
-                }
-                else
-                {
-                    if (m_Control == null)
-                    {
-                        m_Control = this.CreateControl();
-
-                        if (m_Control is System.ComponentModel.ISupportInitialize)
-                            ((System.ComponentModel.ISupportInitialize)(m_Control)).BeginInit();
-
-                        m_DockPanel.Controls.Add(m_Control);
-                        m_Control.Dock = System.Windows.Forms.DockStyle.Fill;
-
-                        if (m_Control is System.ComponentModel.ISupportInitialize)
-                            ((System.ComponentModel.ISupportInitialize)(m_Control)).EndInit();
-                    }
-                    else
-                    {
-                        m_DockPanel.Controls.Add(m_Control);
-                        m_Control.Dock = System.Windows.Forms.DockStyle.Fill;
-                    }
-
-                    this.Init();
-
-                    m_DockPanel.Visibility = DockVisibility.Visible;
-                    if (panelCreateFlag)
-                    {
-                        m_DockPanel.Visibility = DockVisibility.Hidden;
-                        m_DockPanel.Visibility = DockVisibility.Visible;
-                    }                
-                    //m_DockPanel.BringToFront();
-                    m_DockPanel.Show();
-                }
+                this.m_DockPanel.Hide();
+                if (m_DockPanel is DockPanel)
+                    (m_DockPanel as DockPanel).Hide();
             }
+            else
+            {
+                if (this.m_Control == null)
+                {
+                    this.m_Control = this.CreateControl();
+                    m_DockPanel = m_Hook.UIHook.AddControl(m_Control, this.DockPosition);
+                    m_DockPanel.Text = this.DockCaption;
+                    this.Init();
+                }
+                m_DockPanel.Show();
+                if (m_DockPanel is DockPanel)
+                    (m_DockPanel as DockPanel).Show();
+            }
+            
+            //IUIHook uiHook = m_Hook as IUIHook;
+            //if (uiHook != null && uiHook.LeftDockPanel != null)
+            //{
+            //    bool panelCreateFlag = (m_DockPanel == null);
+            //    if (panelCreateFlag)
+            //    {
+            //        DockPanel dockContianer = uiHook.LeftDockPanel as DockPanel;
+            //        if (this.DockPosition == enumDockPosition.Right)
+            //        {
+            //            dockContianer = uiHook.RightDockPanel as DockPanel;
+            //        }
+            //        if (this.DockPosition == enumDockPosition.Bottom)
+            //        {
+            //            dockContianer = uiHook.BottomDockPanel as DockPanel;
+            //        }
+            //        m_DockPanel = dockContianer.AddPanel();
+            //        m_DockPanel.Text = this.DockCaption;
+            //        //m_DockPanel.Controls.Add(dockLeft.Container as Control);
+            //        //m_DockPanel.DockTo(dockLeft);             
+            //    }
+            //    if (m_DockPanel.Visibility == DockVisibility.Visible && m_Control != null && m_Control.Visible)
+            //    {
+            //        m_DockPanel.Visibility = DockVisibility.Hidden;
+            //    }
+            //    else
+            //    {
+            //        if (m_Control == null)
+            //        {
+            //            m_Control = this.CreateControl();
+
+            //            if (m_Control is System.ComponentModel.ISupportInitialize)
+            //                ((System.ComponentModel.ISupportInitialize)(m_Control)).BeginInit();
+
+            //            m_DockPanel.Controls.Add(m_Control);
+            //            m_Control.Dock = System.Windows.Forms.DockStyle.Fill;
+
+            //            if (m_Control is System.ComponentModel.ISupportInitialize)
+            //                ((System.ComponentModel.ISupportInitialize)(m_Control)).EndInit();
+            //        }
+            //        else
+            //        {
+            //            m_DockPanel.Controls.Add(m_Control);
+            //            m_Control.Dock = System.Windows.Forms.DockStyle.Fill;
+            //        }
+
+            //        this.Init();
+
+            //        m_DockPanel.Visibility = DockVisibility.Visible;
+            //        if (panelCreateFlag)
+            //        {
+            //            m_DockPanel.Visibility = DockVisibility.Hidden;
+            //            m_DockPanel.Visibility = DockVisibility.Visible;
+            //        }                
+            //        //m_DockPanel.BringToFront();
+            //        m_DockPanel.Show();
+            //    }
+            //}
         }
 
         public override bool Enabled

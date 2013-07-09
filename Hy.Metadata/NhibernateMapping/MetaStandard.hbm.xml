@@ -9,7 +9,7 @@
     <property column="Description" type="String" name="Description"/>
     <property column="Creator" type="String" name="Creator"/>
     <property column="CreateTime" type="DateTime" name="CreateTime"/>    
-    <set name="FieldsEnumerator" inverse="false" lazy="false" cascade="all-delete-orphan">
+    <set name="FieldsEnumerator" inverse="false"  lazy="false" cascade="all-delete-orphan">
       <key column="Layer" />
       <one-to-many class="Hy.Dictionary.DictItem,Hy.Dictionary"/>
     </set>

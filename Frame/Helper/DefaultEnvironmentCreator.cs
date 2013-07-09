@@ -7,12 +7,13 @@ namespace Frame
 {
     internal class DefaultEnvironmentCreator:Define.IEnvironmentCreator
     {
-        public System.Data.IDbConnection SysConnection
+        public global::Define.IAdodbHelper AdodbHelper
         {
-            get { return (this.NhibernateHelper as Utility.NhibernateHelper).DbConnection; }
-                //Utility.DataFactory.GetConnection(ConfigManager.ADOType, ConfigManager.ADOConnection); }
+            get
+            {
+                return new Utility.AdodbHelper(NhibernateHelper.DbConnection,Utility.DataFactory.GetProviderFactory(ConfigManager.ADOType));
+            }
         }
-
         private Utility.NhibernateHelper m_NHibernateHelper;
         public global::Define.INhibernateHelper NhibernateHelper
         {

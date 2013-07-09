@@ -27,7 +27,7 @@ namespace Hy.Metadata.Operate
             Hy.Metadata.UI.FrmParameterSetting frmSetting = new Metadata.UI.FrmParameterSetting();
             frmSetting.Init();
             frmSetting.MessageHandler = base.SendMessage;
-            frmSetting.Show(base.m_Hook.MainForm);
+            frmSetting.Show(base.m_Hook.UIHook.MainForm);
         }
     }
 }

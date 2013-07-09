@@ -25,7 +25,7 @@ namespace Skyline.Commands
         public override void OnCreate(object Hook)
         {
             base.OnCreate(Hook);
-            this.m_SkylineHook = Hook as ISkylineHook;
+            this.m_SkylineHook = base.m_Hook.Hook as ISkylineHook;
         }
 
         public abstract override void OnClick();

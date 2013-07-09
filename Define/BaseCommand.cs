@@ -79,7 +79,7 @@ namespace Define
         {
             get
             {
-                return (m_Hook != null);
+                return (m_Hook != null && m_Hook.Hook!=null);
             }
         }
 

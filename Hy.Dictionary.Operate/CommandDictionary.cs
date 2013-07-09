@@ -26,7 +26,7 @@ namespace Hy.Dictionary.Operate
         {
             UI.FrmDictionary frmDict = new UI.FrmDictionary();
             frmDict.Init();
-            frmDict.Show(base.m_Hook.MainForm);
+            frmDict.Show(base.m_Hook.UIHook.MainForm);
         }
     }
 }

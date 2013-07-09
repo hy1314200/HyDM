@@ -38,18 +38,6 @@ namespace Skyline.Frame
         }
 
 
-        AxTerraExplorerX.AxTE3DWindow m_TeWindow = null;
-        public virtual System.Windows.Forms.Control GetHookControl()
-        {
-            m_TeWindow = new AxTerraExplorerX.AxTE3DWindow();
-            return m_TeWindow;
-        }
-
-        public virtual IHook CreateHook(System.Windows.Forms.Form frmMain, System.Windows.Forms.Control leftDock, System.Windows.Forms.Control rightDock, System.Windows.Forms.Control bottomDock)
-        {
-            return new SkylineFrameHook(frmMain,m_TeWindow, new TerraExplorerX.TerraExplorerClass(), new TerraExplorerX.SGWorld61Class(), leftDock, rightDock, bottomDock);
-        }
-
 
         public virtual ICommand CommandProxy(object objCommand)
         {
@@ -101,33 +89,14 @@ namespace Skyline.Frame
             return strInterfaceName == "ThreeDimension.BasicEngine.ICommand";
         }
 
-        private class SkylineFrameHook : IHook, IUIHook, ISkylineHook
+        private class SkylineFrameHook : ISkylineHook,IHooker
         {
-            public SkylineFrameHook(
-                Form frmMain,
-                Control teWindow,
-                TerraExplorerX.TerraExplorerClass te,
-                TerraExplorerX.ISGWorld61 sgWorld,
-                Control leftPanel,
-                Control rightPanel,
-                Control bottomPanel
+            public SkylineFrameHook(               
                 )
             {
-                this.MainForm = frmMain;
-                this.Window = teWindow;
-                this.SGWorld = sgWorld;
-                this.TerraExplorer = te;
-                this.LeftDockPanel = leftPanel;
-                this.RightDockPanel = rightPanel;
-                this.BottomDockPanel = bottomPanel;
+                this.SGWorld = new TerraExplorerX.SGWorld61Class();
+                this.TerraExplorer = new TerraExplorerX.TerraExplorerClass();
             }
-
-            public Form MainForm
-            {
-                get ;private set;
-            }
-
-            public Control Window { get; private set; }
 
             public TerraExplorerX.TerraExplorerClass TerraExplorer
             {
@@ -139,32 +108,46 @@ namespace Skyline.Frame
             {
                 get; private set;
             }
-       
 
-            public Control RightDockPanel
+
+            AxTerraExplorerX.AxTE3DWindow m_TeWindow = null;
+            public Control Control
             {
-                get; private set;
+                get
+                {
+                    if (m_TeWindow == null)
+                        m_TeWindow = new AxTerraExplorerX.AxTE3DWindow();
+
+                    return m_TeWindow;
+                }
             }
 
-
-            public object Tag
+            public object Hook
             {
-                get;
-                set;
+                get { return this; }
             }
 
-            public Control LeftDockPanel
+            private Guid m_Guid = Guid.NewGuid();
+            public Guid ID
             {
-                get;
-                private set;
+                get { return m_Guid; }
             }
 
-            public Control BottomDockPanel
+            public Control Window
             {
-                get;
-                private set;
+                get { return m_TeWindow; }
+            }
+
+            public string Caption
+            {
+                get { return "三维"; }
             }
         }
 
+        
+        public IHooker GetHooker()
+        {
+            return new SkylineFrameHook();
+        }
     }
 }

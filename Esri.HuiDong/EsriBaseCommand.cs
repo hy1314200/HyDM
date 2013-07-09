@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Define;
-using Esri.Define;
+
 using ESRI.ArcGIS.Controls;
 
 namespace Esri.HuiDong
@@ -34,16 +34,15 @@ namespace Esri.HuiDong
         public override void OnCreate(object Hook)
         {
             base.OnCreate(Hook);
-            IEsriHook esriHook = Hook as IEsriHook;
-            if (esriHook != null)
-                m_hookHelper = esriHook.HookHelper;
+
+            m_hookHelper = base.m_Hook.Hook as IHookHelper;
         }
 
         System.Windows.Forms.Form m_Form = null;
         public override void OnClick()
         {
             m_Form = this.CreateForm();
-            m_Form.ShowDialog(base.m_Hook.MainForm);
+            m_Form.ShowDialog(base.m_Hook.UIHook.MainForm);
         }
         public abstract System.Windows.Forms.Form CreateForm();
     }

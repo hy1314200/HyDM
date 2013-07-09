@@ -5,7 +5,7 @@ using System.Text;
 using ESRI.ArcGIS.esriSystem;
 using System.Windows.Forms;
 using Define;
-using Esri.Define;
+
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesGDB;
 using ESRI.ArcGIS.DataSourcesFile;
@@ -86,49 +86,57 @@ namespace Esri.Frame
 
             return m_SystemWorkspace;
         }
-
-        public Control GetHookControl()
-        {
-            m_MapControl = new ESRI.ArcGIS.Controls.AxMapControl();
-            return m_MapControl;
-        }
-
-        ESRI.ArcGIS.Controls.AxMapControl m_MapControl;
-        public IHook CreateHook(Form frmMain, Control leftDock, Control rightDock, Control bottomDock)
-        {
-            return new EsriFrameHook(frmMain, m_MapControl.Object as ESRI.ArcGIS.Controls.IMapControl4, leftDock, rightDock, bottomDock);
-        }
-        private class EsriFrameHook : IHook, IUIHook, IEsriHook
-        {
-            public EsriFrameHook(Form frmMain, ESRI.ArcGIS.Controls.IMapControl4 mapControl, Control leftPanel, Control rightPanel, Control bottomPanel)
-            {
-                this.MainForm = frmMain;
-                ESRI.ArcGIS.Controls.IHookHelper esriHookHelper = new ESRI.ArcGIS.Controls.HookHelperClass();
-                esriHookHelper.Hook = mapControl.Object;
-                this.HookHelper = esriHookHelper;
-                this.RightDockPanel = rightPanel;
-                this.LeftDockPanel = leftPanel;
-                this.BottomDockPanel = bottomPanel;
-            }
-
-            public Form MainForm { get;private set; }
-
-            public object Tag { get; set; }
-
-            public Control LeftDockPanel { get; private set; }
-
-            public Control RightDockPanel { get; private set; }
-
-            public Control BottomDockPanel { get; private set; }
-
-            public ESRI.ArcGIS.Controls.IHookHelper HookHelper { get; private set; }
-        }
-
-
-
+        
         public bool IsResource(string strInterfaceName)
         {
             return strInterfaceName == "ESRI.ArcGIS.SystemUI.ICommand";
+        }
+
+        private class EsriHooker : IHooker
+        {
+
+            private Guid m_Guid = Guid.NewGuid();
+            public Guid ID
+            {
+                get { return m_Guid; }
+            }
+
+            ESRI.ArcGIS.Controls.AxMapControl m_MapControl;
+            public Control Control
+            {
+                get
+                {
+                    if (m_MapControl == null)
+                        m_MapControl = new ESRI.ArcGIS.Controls.AxMapControl();
+
+                    return m_MapControl;
+                }
+            }
+
+            
+            ESRI.ArcGIS.Controls.IHookHelper m_HookHelper;
+              
+            public object Hook
+            {
+                get {
+                    if (m_HookHelper == null)
+                    {
+                        m_HookHelper = new ESRI.ArcGIS.Controls.HookHelperClass();
+                        m_HookHelper.Hook = m_MapControl.Object;
+                    }
+                    return m_HookHelper;
+                }
+            }
+
+            public string Caption
+            {
+                get { return "地图"; }
+            }
+        }
+
+        public IHooker GetHooker()
+        {
+            return new EsriHooker();
         }
     }
 }

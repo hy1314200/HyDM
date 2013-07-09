@@ -47,6 +47,16 @@ namespace Utility
         }
 
         /// <summary>
+        /// 获取DbProviderFactory（用来创建连接，命令等）
+        /// </summary>
+        /// <param name="factoryName"></param>
+        /// <returns></returns>
+        public static DbProviderFactory GetProviderFactory(string factoryName)
+        {
+            return DbProviderFactories.GetFactory(factoryName);
+        }
+
+        /// <summary>
         /// 根据数据类型描述和连接字符串获取数据库连接
         /// </summary>
         /// <returns></returns>

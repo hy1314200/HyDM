@@ -48,11 +48,6 @@ namespace Skyline.Commands
                 return base.Enabled;
             }
         }
-        public override void OnCreate(object Hook)
-        {
-            base.OnCreate(Hook);
-        }
-
 
         private BarSubItem m_Control=new BarSubItem();
         public object ExControl

@@ -11,10 +11,14 @@ namespace Define
     public interface IHook
     {
         /// <summary>
-        /// 主窗体
+        /// 界面Hook
         /// </summary>
-        System.Windows.Forms.Form MainForm { get; }
+        IUIHook UIHook { get; }
 
+        /// <summary>
+        /// (GIS)Hook
+        /// </summary>
+        object Hook { get; }
       
         /// <summary>
         /// Tag，允许Command绑定对象以进行共享

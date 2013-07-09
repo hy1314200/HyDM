@@ -15,7 +15,7 @@ namespace Frame.Define
         /// <summary>
         /// 系统ADO连接
         /// </summary>
-        IDbConnection SysConnection { get; }
+        IAdodbHelper AdodbHelper { get; }
         
         /// <summary>
         /// NHibernate连接接口

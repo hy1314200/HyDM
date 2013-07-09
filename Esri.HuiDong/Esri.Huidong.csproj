@@ -167,10 +167,6 @@
       <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
       <Name>Define</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Esri.Define\Esri.Define.csproj">
-      <Project>{2461F54B-F840-43FF-8831-62994423BF41}</Project>
-      <Name>Esri.Define</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

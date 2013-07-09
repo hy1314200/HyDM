@@ -10,28 +10,20 @@ namespace Hy.Dictionary
     public class Environment:IPlugin
     {
 
-        public static INhibernateHelper NhibernateHelper {internal get; set; }
+        public static INhibernateHelper NhibernateHelper { get; set; }
 
-        public static IADODBHelper AdodbHelper { internal get; set; }
+        public static IAdodbHelper AdodbHelper {  get; set; }
 
-        public static ILogWriter Logger { internal get; set; }
+        public static ILogWriter Logger {  get; set; }
 
-        public static IApplication Application { internal get; set; }
+        public static IApplication Application {  get; set; }
 
 
-        public System.Data.IDbConnection SysConnection
+        IAdodbHelper IPlugin.AdodbHelper
         {
             set
             {
-                //IDbCommand dbCmd = value.CreateCommand();
-                //dbCmd.CommandText = string.Format("select 0 from {0} where 1=2", DictHelper.DictTableName);
-                //try
-                //{
-                //    dbCmd.ExecuteNonQuery();
-                //}
-                //catch
-                //{
-                //}
+                Environment.AdodbHelper = value;
             }
         }
 

@@ -55,7 +55,7 @@ namespace Frame
 
         //internal static Define.IResourceManager ResourceManager { get; set; }
 
-        internal static IDbConnection SysDbConnection { get; set; }
+        internal static global::Define.IAdodbHelper AdodbHelper { get; set; }
         internal static global::Define.INhibernateHelper NHibernateHelper { get; set; }
         public static global::Define.ILogWriter LogWriter { get; set; }
 

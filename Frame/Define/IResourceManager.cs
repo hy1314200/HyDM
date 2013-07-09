@@ -22,22 +22,28 @@ namespace Frame.Define
         /// <returns></returns>
         bool LicenseVerify(ref string errMsg);
 
-        /// <summary>
-        /// 创建返回的GIS控件
-        /// </summary>
-        /// <returns></returns>
-        Control GetHookControl();
+        ///// <summary>
+        ///// 创建返回的GIS控件
+        ///// </summary>
+        ///// <returns></returns>
+        //Control GetHookControl();
+
+        ///// <summary>
+        ///// 创建Hook对象
+        ///// </summary>
+        ///// <param name="frmMain">环境主窗口</param>
+        ///// <param name="leftDock">环境左面版</param>
+        ///// <param name="rightDock">环境右面版</param>
+        ///// <param name="bottomDock">环境下面版</param>
+        ///// <returns></returns>
+        //IHook CreateHook(Form frmMain,Control leftDock,Control rightDock,Control bottomDock);
 
         /// <summary>
-        /// 创建Hook对象
+        /// 返回Hooker
         /// </summary>
-        /// <param name="frmMain">环境主窗口</param>
-        /// <param name="leftDock">环境左面版</param>
-        /// <param name="rightDock">环境右面版</param>
-        /// <param name="bottomDock">环境下面版</param>
         /// <returns></returns>
-        IHook CreateHook(Form frmMain,Control leftDock,Control rightDock,Control bottomDock);
-        
+        IHooker GetHooker();
+
         /// <summary>
         /// 资源消毁
         /// </summary>

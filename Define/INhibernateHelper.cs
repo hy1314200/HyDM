@@ -15,6 +15,7 @@ namespace Define
     }
     public interface INhibernateHelper
     {
+        System.Data.IDbConnection DbConnection { get; }
         void StartTransaction();
         void CommitTransaction();
         void Rollback();

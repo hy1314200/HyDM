@@ -50,6 +50,13 @@ namespace Hy.Metadata
             try
             {
                 // 记录
+                if (standard.FieldsInfo != null)
+                {
+                    foreach (FieldInfo fInfo in standard.FieldsInfo)
+                    {
+                        Environment.NhibernateHelper.DeleteObject(fInfo);
+                    }
+                }
                 Environment.NhibernateHelper.DeleteObject(standard);
                 Environment.NhibernateHelper.Flush();
 
@@ -85,23 +92,31 @@ namespace Hy.Metadata
             try
             {
                 // 记录
+                if (standard.FieldsInfo != null)
+                {
+                    foreach (FieldInfo fInfo in standard.FieldsInfo)
+                    {
+                        Environment.NhibernateHelper.SaveObject(fInfo);
+                    }
+                }
+
                 Environment.NhibernateHelper.SaveObject(standard);
                 Environment.NhibernateHelper.Flush();
 
                 // 创建表
                 if (Environment.AdodbHelper.TableExists(standard.TableName))
                 {
-                    int eCount= Environment.AdodbHelper.ExecuteSQL(string.Format("Drop table {0}", standard.TableName));
+                    int eCount = Environment.AdodbHelper.ExecuteSQL(string.Format("Drop table {0}", standard.TableName));
                     if (eCount < 1)
                     {
                         ErrorMessage = "删除原有数据表时出错";
                         return false;
                     }
-                    if (!CreateTable(standard))
-                    {
-                        ErrorMessage = "创建新数据表时出错";
-                        return false;
-                    }
+                }
+                if (!CreateTable(standard))
+                {
+                    ErrorMessage = "创建新数据表时出错";
+                    return false;
                 }
 
                 return true;
@@ -122,31 +137,33 @@ namespace Hy.Metadata
             Environment.NhibernateHelper.RefreshObject(standard, Define.enumLockMode.UpgradeNoWait);
         }
 
-        public static DataTable GetMetaData(MetaStandard standard)
-        {
-           return Environment.AdodbHelper.ExecuteDataTable(string.Format("select * from {0}",standard.TableName));
-        }
-
         public static bool CreateTable(MetaStandard standard)
         {
             if (standard == null)
                 return false;
 
-            StringBuilder strSQL = new StringBuilder("Create Table ");
-            strSQL.Append( standard.TableName);
-            strSQL.Append(" (");
-            strSQL.Append(GetSQLFromField(IDFieldInfo));
-            strSQL.Append(",");
-            foreach(FieldInfo fInfo in standard.FieldsInfo)
+            try
             {
-                strSQL.Append(GetSQLFromField(fInfo));
+                StringBuilder strSQL = new StringBuilder("Create Table ");
+                strSQL.Append(standard.TableName);
+                strSQL.Append(" (");
+                strSQL.Append(GetSQLFromField(IDFieldInfo));
                 strSQL.Append(",");
-            }
-            strSQL.Remove(strSQL.Length-1,1);
-            strSQL.Append(")");
+                foreach (FieldInfo fInfo in standard.FieldsInfo)
+                {
+                    strSQL.Append(GetSQLFromField(fInfo));
+                    strSQL.Append(",");
+                }
+                strSQL.Remove(strSQL.Length - 1, 1);
+                strSQL.Append(")");
 
-            int eCount= Environment.AdodbHelper.ExecuteSQL(strSQL.ToString());
-            return eCount>0;
+                Environment.AdodbHelper.ExecuteSQL(strSQL.ToString());
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private static FieldInfo m_IDFieldInfo;
@@ -238,27 +255,60 @@ namespace Hy.Metadata
         private static string GetTypeKey(enumFieldType fType)
         {
             return Environment.NhibernateHelper.GetObject<string>(
-                string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemName='{0}'",m_TypeItemKey[(int)fType]));
+                string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemKey='{0}'",m_TypeItemKey[(int)fType]));
         }
 
-        public static DataTable GetMetadata(string strTable, string strClause, int countPerPage, int pageIndex, ref int errCount)
+        private static void TransCaption(DataTable dtSource, Dictionary<string, string> dictCaption)
         {
-            if (errCount < 0)
+            if (dictCaption == null || dtSource == null)
+                return;
+
+            int count = dtSource.Columns.Count;
+            for (int i = 0; i < count; i++)
             {
-                errCount = Convert.ToInt32(Environment.AdodbHelper.ExecuteScalar(string.Format("select count(0) from {0}", strTable)));
+                if (dictCaption.ContainsKey(dtSource.Columns[i].ColumnName))
+                    dtSource.Columns[i].Caption = dictCaption[dtSource.Columns[i].ColumnName];
+            }
+        }
+        public static DataTable GetAllMetaData(MetaStandard standard)
+        {
+           DataTable dtResult= Environment.AdodbHelper.ExecuteDataTable(string.Format("select * from {0}",standard.TableName));
+           TransCaption(dtResult, standard.GetFieldNameDictionary());
+
+           return dtResult;
+        }
+
+        public static DataTable GetMetadata(MetaStandard standard, string strClause, int countPerPage, int pageIndex, ref int totalCount)
+        {
+            DataTable dtResult = GetMetadata(standard.TableName, strClause, countPerPage, pageIndex, ref totalCount);
+            TransCaption(dtResult, standard.GetFieldNameDictionary());
+
+            return dtResult;
+        }
+
+        public static DataTable GetMetadata(string strTable, string strClause, int countPerPage, int pageIndex, ref int totalCount)
+        {
+            string strWhereClause = "";
+            if (!string.IsNullOrWhiteSpace(strClause))
+            {
+                strWhereClause = string.Format(" where {0}", strClause);
+            }
+            if (totalCount < 0)
+            {
+                totalCount = Convert.ToInt32(Environment.AdodbHelper.ExecuteScalar(string.Format("select count(0) from {0} {1}", strTable,strWhereClause)));
             }
 
             int resultCount = countPerPage;
-            if (countPerPage * (pageIndex + 1) > errCount)
-                resultCount = errCount - countPerPage * pageIndex;
+            if (countPerPage * (pageIndex + 1) > totalCount)
+                resultCount = totalCount - countPerPage * pageIndex;
 
             string strSQL = Environment.NhibernateHelper.GetObject<string>(string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemName='{0}'", strTable));
             if (string.IsNullOrEmpty(strSQL))
             {
-                strSQL = "select top {3} * from (select top {1}*({2}-1) * from {0} where {4} order by id acs) order by id desc";
+                strSQL = "select top {3} * from (select top {1}*({2}-1) * from {0} {4} order by id acs) order by id desc";
             }
 
-            object[] objParams = { strTable, countPerPage, pageIndex, resultCount, strClause };
+            object[] objParams = { strTable, countPerPage, pageIndex, resultCount, strWhereClause };
             strSQL = string.Format(strSQL, objParams);
 
             return Environment.AdodbHelper.ExecuteDataTable(strSQL);

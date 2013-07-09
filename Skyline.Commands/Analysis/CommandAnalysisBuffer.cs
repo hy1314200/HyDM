@@ -22,14 +22,14 @@ namespace Skyline.Commands
 
         public override void OnClick()
         {
-            FrmBufferAnaylsis pFrmBuffer = new FrmBufferAnaylsis(base.m_Hook.MainForm);
+            FrmBufferAnaylsis pFrmBuffer = new FrmBufferAnaylsis(base.m_Hook.UIHook.MainForm);
             pFrmBuffer.SgWorld = this.m_SkylineHook.SGWorld;
             pFrmBuffer.TerraExplorer = this.m_SkylineHook.TerraExplorer;
             try
             {
                 if (!pFrmBuffer.IsDisposed)
                 {
-                    base.m_Hook.MainForm.AddOwnedForm(pFrmBuffer);
+                    base.m_Hook.UIHook.MainForm.AddOwnedForm(pFrmBuffer);
                     pFrmBuffer.Show();
                 }
             }

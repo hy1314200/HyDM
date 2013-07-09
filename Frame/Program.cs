@@ -28,7 +28,7 @@ namespace Frame
             Environment.Application = envCreator.Application;
             Environment.LogWriter = envCreator.LogWriter;
             Environment.NHibernateHelper = envCreator.NhibernateHelper;
-            Environment.SysDbConnection = envCreator.SysConnection;
+            Environment.AdodbHelper = envCreator.AdodbHelper;
 
             string[] strResources = ConfigManager.ResourceManager.Split(strSplit, StringSplitOptions.RemoveEmptyEntries);
             Frame.Define.IResourceManager rManager=ResourceFactory.CreateInstance(strResources[0],strResources[1]) as Frame.Define.IResourceManager;

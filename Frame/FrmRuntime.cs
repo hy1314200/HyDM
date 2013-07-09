@@ -14,10 +14,12 @@ using Utility;
 using System.Collections;
 using System.Threading;
 using Frame.Define;
+using DevExpress.XtraBars.Docking;
+using DevExpress.XtraTab;
 
 namespace Frame
 {
-    public partial class FrmRuntime : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FrmRuntime : DevExpress.XtraBars.Ribbon.RibbonForm,IUIHook,IHook
     {
         public FrmRuntime()
         {   
@@ -30,7 +32,7 @@ namespace Frame
 
             loginor.Logger = Environment.LogWriter;
             loginor.NhibernateHelper = Environment.NHibernateHelper;
-            loginor.SysConnection = Environment.SysDbConnection;
+            loginor.AdodbHelper = Environment.AdodbHelper;
             global::Define.IApplication app = Environment.Application;
             if (!loginor.Login(ref app))
             {
@@ -57,16 +59,21 @@ namespace Frame
 
 
             loginor.ShowMessage("正在创建GIS控件对象...");
-            Control hookControl = Environment.ResourceManager.GetHookControl();
-            if (hookControl != null)
-            {
-                if (hookControl is System.ComponentModel.ISupportInitialize) ((System.ComponentModel.ISupportInitialize)(hookControl)).BeginInit();
-                //this.splitControlMain.Panel1.Controls.Add(hookControl);
-                this.dockPanelCenter.Controls.Add(hookControl);
-                hookControl.Dock = DockStyle.Fill;
-                if (hookControl is System.ComponentModel.ISupportInitialize) ((System.ComponentModel.ISupportInitialize)(hookControl)).EndInit();
-            }
-            IHook hook = Environment.ResourceManager.CreateHook(this, this.dockPanelLeft, this.dockPanelRight, this.dockPanelBottom);
+            IHooker hooker = Environment.ResourceManager.GetHooker();
+            this.AddHooker(hooker, enumDockPosition.Center);
+            this.Hook = hooker.Hook;
+            //Control hookControl = hooker.Control;
+            //if (hookControl != null)
+            //{
+            //    if (hookControl is System.ComponentModel.ISupportInitialize) ((System.ComponentModel.ISupportInitialize)(hookControl)).BeginInit();
+            //    //this.splitControlMain.Panel1.Controls.Add(hookControl);
+            //    this.tpDefalut.Controls.Add(hookControl);
+            //    this.tpDefalut.Text = hooker.Caption;
+            //    hookControl.Dock = DockStyle.Fill;
+            //    if (hookControl is System.ComponentModel.ISupportInitialize) ((System.ComponentModel.ISupportInitialize)(hookControl)).EndInit();
+            //}
+            //this.Hook = hooker.Hook;
+            //this.m_DictHooker[hooker.ID] = this.tpDefalut;
          
             loginor.ShowMessage("正在加载插件...");
             IList<Define.ClassInfo> listPlugin = Environment.NHibernateHelper.GetObjectsByCondition<Define.ClassInfo>("from ClassInfo cInfo where cInfo.Type=1");
@@ -77,7 +84,7 @@ namespace Frame
                 {
                     plugin.Logger = Environment.LogWriter;
                     plugin.NhibernateHelper = Environment.NHibernateHelper;
-                    plugin.SysConnection = Environment.SysDbConnection;
+                    plugin.AdodbHelper = Environment.AdodbHelper;
                     plugin.GisWorkspace = Environment.Workspace;
                 }
             }
@@ -120,7 +127,7 @@ namespace Frame
             
             loginor.ShowMessage("正在绑定资源...");
             //RibbonCommandAdapter 
-                m_Adapter = new RibbonCommandAdapter(hook);
+                m_Adapter = new RibbonCommandAdapter(this);
             m_Adapter.OnMessageChanged += delegate(string strMsg)
             {
                 this.statusBarMessage.Caption = strMsg;
@@ -133,11 +140,139 @@ namespace Frame
             Thread.Sleep(1000);
 
             loginor.Dispose();
+          
         }
         List<RibbonCommandInfo> m_CommandInfoList = null;
         RibbonCommandAdapter m_Adapter = null;
         List<ICommand> m_CommandList = null;
         RibbonEngine ribbonEngine = null;
-        
+
+
+        public Form MainForm
+        {
+            get { return this; }
+        }
+
+        public Control AddControl(Control ctrlTarget, enumDockPosition dockPosition)
+        {
+            Control ctrlNew = null;
+            switch (dockPosition)
+            {
+                case enumDockPosition.Center:
+                    XtraTabPage tpNew = new XtraTabPage();
+                    this.tabCenter.TabPages.Add(tpNew);
+                    this.tabCenter.SelectedTabPage = tpNew;
+                    ctrlNew = tpNew;
+                    break;
+
+                case enumDockPosition.Left:
+                    ctrlNew =this.dockManager1.AddPanel(DockingStyle.Left);// this.dockPanelLeft.AddPanel();
+                    break;
+
+                case enumDockPosition.Right:
+                    ctrlNew =this.dockManager1.AddPanel(DockingStyle.Right);// this.dockPanelRight.AddPanel();
+                    break;
+
+                case enumDockPosition.Top:
+                    ctrlNew = this.dockManager1.AddPanel(DockingStyle.Top);
+                    break;
+                    
+                case enumDockPosition.Bottom:
+                    ctrlNew = this.dockManager1.AddPanel(DockingStyle.Bottom);
+                    break;
+
+                default:
+                    ctrlNew= this.dockManager1.AddPanel(DockingStyle.Float);
+                    break;
+            }
+
+            if (ctrlTarget is System.ComponentModel.ISupportInitialize)
+                ((System.ComponentModel.ISupportInitialize)(ctrlTarget)).BeginInit();
+
+            ctrlNew.Controls.Add(ctrlTarget);
+            ctrlTarget.Dock = System.Windows.Forms.DockStyle.Fill;
+
+            if (ctrlTarget is System.ComponentModel.ISupportInitialize)
+                ((System.ComponentModel.ISupportInitialize)(ctrlTarget)).EndInit();
+            
+            return ctrlNew;
+        }
+
+        private Dictionary<Guid, Control> m_DictHooker = new Dictionary<Guid, Control>();
+        public void AddHooker(IHooker hooker, enumDockPosition dockPosition)
+        {
+            if (hooker == null)
+                return;
+
+            Control ctrlParent= AddControl(hooker.Control, dockPosition);
+            ctrlParent.Text = hooker.Caption;
+            ctrlParent.Tag = hooker;
+            m_DictHooker[hooker.ID] = ctrlParent;
+
+            if (ctrlParent is DockPanel)
+                (ctrlParent as DockPanel).Enter+=new EventHandler(ChangeHook);
+
+            //hooker.Control .GotFocus += new EventHandler(ChangeHook);
+        }
+
+        private object m_Hook = null;
+        void ChangeHook(object sender, EventArgs e)
+        {
+            IHooker hooker= (sender as Control).Tag as IHooker;
+            if(hooker==null)
+                return;
+
+            m_Hook = hooker.Hook;
+            if (m_Hook == this.Hook)
+                return;
+
+            this.Hook = m_Hook;
+            this.m_Adapter.ChangeHook(this);
+        }
+
+        public void ActiveHookControl(Guid hookerID)
+        {
+            if (m_DictHooker.ContainsKey(hookerID))
+            {
+                Control ctrl = m_DictHooker[hookerID];
+                if (ctrl is DockPanel)
+                    (ctrl as DockPanel).Show();
+
+                if (ctrl is XtraTabPage)
+                    this.tabCenter.SelectedTabPage = (ctrl as XtraTabPage);
+            }
+        }
+
+        public void CloseHookControl(Guid hookerID)
+        {
+            if (m_DictHooker.ContainsKey(hookerID))
+            {
+                Control ctrl = m_DictHooker[hookerID];
+                if (ctrl is DockPanel)
+                    (ctrl as DockPanel).Hide();
+
+                if (ctrl is XtraTabPage)
+                    this.tabCenter.SelectedTabPage = m_PreSelectedPage;
+            }
+           
+        }
+
+        public object Hook
+        {
+            get;
+            private set;
+        }
+
+        public IUIHook UIHook
+        {
+            get { return this; }
+        }
+
+        private XtraTabPage m_PreSelectedPage = null;
+        private void tabCenter_SelectedPageChanged(object sender, TabPageChangedEventArgs e)
+        {
+            this.m_PreSelectedPage = e.PrevPage;
+            ChangeHook(e.Page, null);
+        }
     }
 }

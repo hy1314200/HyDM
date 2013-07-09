@@ -68,13 +68,13 @@ namespace Skyline.Frame
         public override void OnCreate(object Hook)
         {
             base.OnCreate(Hook);
-            this.m_SkylineHook = Hook as Skyline.Define.ISkylineHook;
+            this.m_SkylineHook = base.m_Hook.Hook as Skyline.Define.ISkylineHook;
 
             // For Old Command
             if (application3D == null)
             {
                 application3D = new Application3D(null);
-                application3D.MainForm = (this.m_Hook).MainForm;
+                application3D.MainForm = this.m_Hook.UIHook.MainForm;
             }
             this.m_OldCommand.Application = application3D;
         }

@@ -7,13 +7,13 @@ using System.Data.Common;
 
 namespace Utility
 {
-    public class ADODBHelper:Define.IADODBHelper
+    public class AdodbHelper:Define.IAdodbHelper
     {
         private IDbConnection m_DbConnection = null;
         private IDbTransaction m_Transaction = null;
         private DbProviderFactory m_ProviderFactory = null;
 
-        internal ADODBHelper(IDbConnection dbConnection,DbProviderFactory dbFactory)
+        public AdodbHelper(IDbConnection dbConnection,DbProviderFactory dbFactory)
         {
             this.m_DbConnection = dbConnection;
             this.m_ProviderFactory = dbFactory;
@@ -38,6 +38,7 @@ namespace Utility
 
         public void Commit()
         {
+            Verify();
             if (m_Transaction != null)
                 m_Transaction.Commit();
 
@@ -47,6 +48,7 @@ namespace Utility
 
         public void Rollback()
         {
+            Verify();
             if (m_Transaction != null)
                 m_Transaction.Rollback();
 
@@ -54,33 +56,44 @@ namespace Utility
             m_Transaction = null;
         }
 
-        private IDbCommand m_Command = null;
         public int ExecuteSQL(string strSql)
         {
             Verify();
 
-            m_Command = m_DbConnection.CreateCommand();
-            m_Command.CommandText = strSql;
-            return m_Command.ExecuteNonQuery();
+            return CreateCommand(strSql).ExecuteNonQuery();
         }
 
         public System.Data.DataSet ExecuteDataset(string strSql)
         {
             Verify();
 
-            m_Command = m_DbConnection.CreateCommand();
-            m_Command.CommandText = strSql;
+            DbDataAdapter dataAdapter = CreateAdapter(strSql);
 
-            throw new NotImplementedException(); 
+            DataSet dsResult = new DataSet();
+            dataAdapter.Fill(dsResult);
+
+            return dsResult;
+        }
+
+        private IDbCommand CreateCommand(string strSql)
+        {
+            IDbCommand cmd = m_DbConnection.CreateCommand();
+            cmd.CommandText = strSql;
+
+            return cmd;
+        }
+        private DbDataAdapter CreateAdapter(string strSql)
+        {            
+            DbDataAdapter dataAdapter = this.m_ProviderFactory.CreateDataAdapter();
+            dataAdapter.SelectCommand = CreateCommand(strSql) as DbCommand;
+
+            return dataAdapter;
         }
 
         public System.Data.DataTable ExecuteDataTable(string strSql)
         {
-            DbDataAdapter dataAdapter = this.m_ProviderFactory.CreateDataAdapter();
-
-            m_Command = m_DbConnection.CreateCommand();
-            m_Command.CommandText = strSql;
-            dataAdapter.SelectCommand = m_Command as DbCommand;
+            Verify();
+            DbDataAdapter dataAdapter = CreateAdapter(strSql);
 
             DataTable dtResult=new DataTable();
             dataAdapter.Fill(dtResult);
@@ -91,20 +104,14 @@ namespace Utility
         public object ExecuteScalar(string strSql)
         {
             Verify();
-
-            m_Command = m_DbConnection.CreateCommand();
-            m_Command.CommandText = strSql;
-            return m_Command.ExecuteScalar();
+            return CreateCommand(strSql).ExecuteScalar();
         }
 
         public System.Data.IDataReader ExecuteReader(string strSql)
         {
-
             Verify();
 
-            m_Command = m_DbConnection.CreateCommand();
-            m_Command.CommandText = strSql;
-            return m_Command.ExecuteReader();
+            return  CreateCommand(strSql).ExecuteReader();
         }
 
 
@@ -117,7 +124,7 @@ namespace Utility
         {
             Verify();
 
-            return (this.m_DbConnection as DbConnection).GetSchema("Tables", new string[] { strTable }).Rows.Count > 0;
+            return (this.m_DbConnection as DbConnection).GetSchema("Tables", new string[] {null,null, strTable }).Rows.Count > 0;
         }
 
         public System.Data.IDbConnection ADOConnection
@@ -138,67 +145,34 @@ namespace Utility
 
         public bool UpdateTable(string strTable, DataTable dtData)
         {
-        //    DbDataAdapter oleDataAdapter = null;
-        //    DbCommandBuilder cb = null;
-        //    try
-        //    {
-        //        if (pConnection == null)
-        //        {
-        //            return false;
-        //        }
+            DbDataAdapter oleDataAdapter = null;
+            DbCommandBuilder cb = null;
+            try
+            {
+                oleDataAdapter = CreateAdapter(string.Format("select * from {0}", strTable));
+                cb = m_ProviderFactory.CreateCommandBuilder();
+                cb.DataAdapter = oleDataAdapter;
+                oleDataAdapter.Update(dtData);
 
-        //        if (pConnection.State == ConnectionState.Closed)
-        //        {
-        //            pConnection.Open();
-        //        }
-        //        string str = string.Format("select  *  from {0}", strTableName);
+                return true;
+            }
+            catch (Exception exp)
+            {
+                throw exp;
+            }
+            finally
+            {
+                if (oleDataAdapter != null)
+                {
+                    oleDataAdapter.Dispose();
+                }
 
-        //        oleDataAdapter = GetDbDataAdapter(pConnection, str);
-
-        //        cb =m_Dbfactory.CreateCommandBuilder();
-        //        cb.DataAdapter=oleDataAdapter;
-
-        //        oleDataAdapter.Update(pRecordset);
-
-        //        return true;
-        //    }
-        //    catch (Exception exp)
-        //    {
-        //        Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
-
-        //        return false;
-        //    }
-        //    finally
-        //    {
-        //        if (oleDataAdapter != null)
-        //        {
-        //            oleDataAdapter.Dispose();
-        //        }
-
-        //        if (cb != null)
-        //        {
-        //            cb.Dispose();
-        //        }
-        //    }
-        //     /// <summary>
-        ///// 返回OleDbDataAdapter
-        ///// </summary>
-        ///// <param name="SqlString"></param>
-        ///// <returns></returns>
-        //public static DbDataAdapter GetDbDataAdapter(IDbConnection pAdoConn,string strSql)
-        //{
-        //    if (pAdoConn == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    DbDataAdapter oleDataAdapter = m_Dbfactory.CreateDataAdapter();
-
-        //    oleDataAdapter.SelectCommand = CreatCmd(pAdoConn, strSql) as DbCommand;
-
-        //    return oleDataAdapter;
-        //}
-            throw new NotImplementedException();
+                if (cb != null)
+                {
+                    cb.Dispose();
+                }
+            }
         }
+     
     }
 }

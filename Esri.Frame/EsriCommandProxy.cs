@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Define;
 using ESRI.ArcGIS.Controls;
-using Esri.Define;
 
 namespace Esri.Frame
 {
@@ -15,7 +14,8 @@ namespace Esri.Frame
     {
         private ESRI.ArcGIS.SystemUI.ICommand m_EsriCommand;
 
-        private IToolbarBuddy  m_EsriHooker;
+        private IToolbarBuddy  m_EsriBuddy;
+        private IHookHelper m_HookHelper = null;
         
 
         public EsriCommandProxy(ESRI.ArcGIS.SystemUI.ICommand cmdProxed)
@@ -30,21 +30,24 @@ namespace Esri.Frame
         public override void OnCreate(object Hook)
         {
             base.OnCreate(Hook);
-            IEsriHook esriHook = m_Hook as IEsriHook;
-            this.m_EsriHooker = esriHook.HookHelper.Hook as IToolbarBuddy;
+            m_HookHelper = m_Hook.Hook as IHookHelper;
+            if (m_HookHelper == null)
+                return;
 
-            if ((esriHook ==null) || (m_EsriHooker == null))
-            {
-                throw new Exception("ESRI命令代理类初始化错误：内部错误，Hook不是正确的ESRI MapControl或PageLayout对象。");
-            }
+            this.m_EsriBuddy = m_HookHelper.Hook as IToolbarBuddy;
+
+            //if ((esriHook ==null) || (m_EsriBuddy == null))
+            //{
+            //    throw new Exception("ESRI命令代理类初始化错误：内部错误，Hook不是正确的ESRI MapControl或PageLayout对象。");
+            //}
 
             try
             {
-                m_EsriCommand.OnCreate((m_Hook as IEsriHook).HookHelper.Hook);
+                m_EsriCommand.OnCreate(m_HookHelper.Hook);
             }
             catch
             {
-                throw new Exception(string.Format("当前Hook对象不是命令【{0}】的正确Hook。", m_EsriCommand.Name));
+                //throw new Exception(string.Format("当前Hook对象不是命令【{0}】的正确Hook。", m_EsriCommand.Name));
             }
         }
 
@@ -70,7 +73,10 @@ namespace Esri.Frame
             {
                 //return m_EsriCommand.Checked;
 
-                return (m_EsriCommand is ESRI.ArcGIS.SystemUI.ITool) && m_EsriHooker.CurrentTool == m_EsriCommand;
+                if (m_EsriBuddy != null && m_EsriCommand != null)
+                    return (m_EsriCommand is ESRI.ArcGIS.SystemUI.ITool) && m_EsriBuddy.CurrentTool == m_EsriCommand;
+                
+                return false;
                 //return (m_EsriCommand is ESRI.ArcGIS.SystemUI.ITool) && ((m_EsriHooker.HookHelper.Hook is ESRI.ArcGIS.Controls.IMapControl4?(m_EsriHooker.HookHelper.Hook as ESRI.ArcGIS.Controls.IMapControl4).CurrentTool:(m_EsriHooker.HookHelper.Hook as ESRI.ArcGIS.Controls.IPageLayoutControl).CurrentTool)==m_EsriCommand);
             }
         }
@@ -79,7 +85,10 @@ namespace Esri.Frame
         {
             get
             {
-                return m_EsriCommand.Enabled;
+                if (m_HookHelper != null && m_EsriCommand != null)
+                    return m_EsriCommand.Enabled;
+
+                return false;
             }
         }
 
@@ -130,30 +139,30 @@ namespace Esri.Frame
             if (m_EsriCommand is ESRI.ArcGIS.SystemUI.ITool)
             {
                 bool oldToolFlag = true;
-                if (m_EsriHooker.CurrentTool != null)
+                if (m_EsriBuddy.CurrentTool != null)
                 {
-                    oldToolFlag = m_EsriHooker.CurrentTool.Deactivate();
+                    oldToolFlag = m_EsriBuddy.CurrentTool.Deactivate();
                 }
                 if (oldToolFlag)
                 {
-                    m_EsriHooker.CurrentTool = (m_EsriCommand as ESRI.ArcGIS.SystemUI.ITool);
+                    m_EsriBuddy.CurrentTool = (m_EsriCommand as ESRI.ArcGIS.SystemUI.ITool);
                 }
                 else
                 {
                     // 当前的Tool不允许
-                    SendMessage(string.Format("正在进行“{0}”操作，当前操作无法完成", (m_EsriHooker.CurrentTool as ESRI.ArcGIS.SystemUI.ICommand).Caption));
+                    SendMessage(string.Format("正在进行“{0}”操作，当前操作无法完成", (m_EsriBuddy.CurrentTool as ESRI.ArcGIS.SystemUI.ICommand).Caption));
                 }
             }
         }
 
         public bool Release()
         {
-            return m_EsriHooker.CurrentTool.Deactivate();
+            return m_EsriBuddy.CurrentTool.Deactivate();
         }
 
         public object Resource
         {
-            get { return (m_Hook as IEsriHook).HookHelper.Hook; }
+            get { return m_HookHelper.Hook; }
         }
     }
 

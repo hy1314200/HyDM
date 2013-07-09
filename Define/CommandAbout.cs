@@ -18,7 +18,7 @@ namespace Define
         public override void OnClick()
         {
             FrmAbout frmAbout = new FrmAbout();
-            frmAbout.ShowDialog(m_Hook.MainForm);
+            frmAbout.ShowDialog(m_Hook.UIHook.MainForm);
         }
     }
 }

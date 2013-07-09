@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -42,7 +44,9 @@
             this.gcolName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolAliasName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gcolLength = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gcolPrecision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolNullAble = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcolDescription = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFields)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +79,7 @@
             this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl1.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl1.Location = new System.Drawing.Point(18, 12);
+            this.labelControl1.Location = new System.Drawing.Point(4, 7);
             this.labelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(36, 14);
@@ -84,7 +90,7 @@
             // txtName
             // 
             this.txtName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtName.Location = new System.Drawing.Point(85, 9);
+            this.txtName.Location = new System.Drawing.Point(71, 4);
             this.txtName.Name = "txtName";
             this.txtName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
             this.txtName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
@@ -137,7 +143,7 @@
             this.labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl2.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl2.Location = new System.Drawing.Point(18, 41);
+            this.labelControl2.Location = new System.Drawing.Point(4, 36);
             this.labelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
@@ -148,7 +154,7 @@
             // txtTableName
             // 
             this.txtTableName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtTableName.Location = new System.Drawing.Point(85, 37);
+            this.txtTableName.Location = new System.Drawing.Point(71, 32);
             this.txtTableName.Name = "txtTableName";
             this.txtTableName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
             this.txtTableName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
@@ -201,7 +207,7 @@
             this.labelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl3.Location = new System.Drawing.Point(18, 69);
+            this.labelControl3.Location = new System.Drawing.Point(4, 64);
             this.labelControl3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(60, 14);
@@ -223,7 +229,7 @@
             this.labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl4.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl4.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl4.Location = new System.Drawing.Point(18, 94);
+            this.labelControl4.Location = new System.Drawing.Point(4, 89);
             this.labelControl4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(36, 14);
@@ -234,7 +240,7 @@
             // cmbDictItem
             // 
             this.cmbDictItem.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.cmbDictItem.Location = new System.Drawing.Point(85, 65);
+            this.cmbDictItem.Location = new System.Drawing.Point(71, 60);
             this.cmbDictItem.Name = "cmbDictItem";
             this.cmbDictItem.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
             this.cmbDictItem.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
@@ -292,7 +298,7 @@
             // txtDescription
             // 
             this.txtDescription.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtDescription.Location = new System.Drawing.Point(85, 92);
+            this.txtDescription.Location = new System.Drawing.Point(71, 87);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
             this.txtDescription.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
@@ -348,6 +354,9 @@
             this.gcFields.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.gcFields.MainView = this.gvFields;
             this.gcFields.Name = "gcFields";
+            this.gcFields.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1,
+            this.repositoryItemSpinEdit1});
             this.gcFields.Size = new System.Drawing.Size(459, 244);
             this.gcFields.TabIndex = 5;
             this.gcFields.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -694,6 +703,7 @@
             this.gcolType.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.gcolType.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.gcolType.Caption = "数据类型";
+            this.gcolType.ColumnEdit = this.repositoryItemComboBox1;
             this.gcolType.FieldName = "Type";
             this.gcolType.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.Value;
             this.gcolType.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.None;
@@ -714,6 +724,55 @@
             this.gcolType.VisibleIndex = 2;
             this.gcolType.Width = 65;
             // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.repositoryItemComboBox1.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.repositoryItemComboBox1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemComboBox1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemComboBox1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemComboBox1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemComboBox1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemComboBox1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemComboBox1.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemComboBox1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemComboBox1.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemComboBox1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemComboBox1.AppearanceDropDown.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemComboBox1.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceDropDown.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemComboBox1.AppearanceDropDown.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemComboBox1.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceDropDown.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemComboBox1.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemComboBox1.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemComboBox1.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemComboBox1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemComboBox1.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            serializableAppearanceObject2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.repositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.repositoryItemComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.repositoryItemComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.repositoryItemComboBox1.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Default;
+            this.repositoryItemComboBox1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            this.repositoryItemComboBox1.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.Default;
+            this.repositoryItemComboBox1.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.SingleClick;
+            this.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
             // gcolLength
             // 
             this.gcolLength.AppearanceCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -729,6 +788,7 @@
             this.gcolLength.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.gcolLength.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.gcolLength.Caption = "数据长度";
+            this.gcolLength.ColumnEdit = this.repositoryItemSpinEdit1;
             this.gcolLength.FieldName = "Length";
             this.gcolLength.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.Value;
             this.gcolLength.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.None;
@@ -749,6 +809,49 @@
             this.gcolLength.VisibleIndex = 3;
             this.gcolLength.Width = 60;
             // 
+            // repositoryItemSpinEdit1
+            // 
+            this.repositoryItemSpinEdit1.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.repositoryItemSpinEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.repositoryItemSpinEdit1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemSpinEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemSpinEdit1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemSpinEdit1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemSpinEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemSpinEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemSpinEdit1.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemSpinEdit1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemSpinEdit1.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemSpinEdit1.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemSpinEdit1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemSpinEdit1.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemSpinEdit1.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemSpinEdit1.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemSpinEdit1.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemSpinEdit1.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemSpinEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemSpinEdit1.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemSpinEdit1.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemSpinEdit1.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemSpinEdit1.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemSpinEdit1.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemSpinEdit1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemSpinEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            this.repositoryItemSpinEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.repositoryItemSpinEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.repositoryItemSpinEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.repositoryItemSpinEdit1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.repositoryItemSpinEdit1.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
+            this.repositoryItemSpinEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
+            this.repositoryItemSpinEdit1.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Vertical;
+            this.repositoryItemSpinEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            // 
             // gcolPrecision
             // 
             this.gcolPrecision.AppearanceCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -764,6 +867,7 @@
             this.gcolPrecision.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.gcolPrecision.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.gcolPrecision.Caption = "数据精度";
+            this.gcolPrecision.ColumnEdit = this.repositoryItemSpinEdit1;
             this.gcolPrecision.FieldName = "Precision";
             this.gcolPrecision.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.Value;
             this.gcolPrecision.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.None;
@@ -874,7 +978,7 @@
             this.groupControl1.Controls.Add(this.simpleButton2);
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.gcFields);
-            this.groupControl1.Location = new System.Drawing.Point(18, 142);
+            this.groupControl1.Location = new System.Drawing.Point(4, 137);
             this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(463, 269);
@@ -893,10 +997,10 @@
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton2.Location = new System.Drawing.Point(412, 1);
+            this.simpleButton2.Location = new System.Drawing.Point(398, 0);
             this.simpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(46, 23);
+            this.simpleButton2.Size = new System.Drawing.Size(46, 20);
             this.simpleButton2.TabIndex = 6;
             this.simpleButton2.Text = "删除";
             this.simpleButton2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
@@ -914,10 +1018,10 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton1.Location = new System.Drawing.Point(341, 1);
+            this.simpleButton1.Location = new System.Drawing.Point(327, 0);
             this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(46, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(46, 20);
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "添加";
             this.simpleButton1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
@@ -937,13 +1041,15 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "UCMetadataStandard";
-            this.Size = new System.Drawing.Size(494, 414);
+            this.Size = new System.Drawing.Size(471, 409);
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTableName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDictItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFields)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFields)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -973,5 +1079,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
     }
 }

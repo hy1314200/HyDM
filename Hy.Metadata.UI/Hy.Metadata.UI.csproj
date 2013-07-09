@@ -63,6 +63,18 @@
     <Compile Include="UCMetadataStandard.Designer.cs">
       <DependentUpon>UCMetadataStandard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCStandardList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStandardList.Designer.cs">
+      <DependentUpon>UCStandardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XtraUserControl1.Designer.cs">
+      <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmParameterSetting.resx">
@@ -71,6 +83,12 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UCMetadataStandard.resx">
       <DependentUpon>UCMetadataStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStandardList.resx">
+      <DependentUpon>UCStandardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraUserControl1.resx">
+      <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

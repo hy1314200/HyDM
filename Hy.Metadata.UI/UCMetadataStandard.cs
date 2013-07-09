@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace Hy.Metadata.UI
 {
@@ -14,6 +15,41 @@ namespace Hy.Metadata.UI
         public UCMetadataStandard()
         {
             InitializeComponent();
+
+            string[] m_Captions =
+            {                 
+                "字符串",
+                "整数",
+                "小数",
+                "日期和时间",
+                "图片",
+                "二进制"
+            };
+            //ComboBoxEdit cmbFiels = this.repositoryItemComboBox1.OwnerEdit;
+            //for(int i=0;i<m_Captions.Length;i++)
+            //{
+            //    cmbFiels.Properties.Items.Add(new ComboItem((enumFieldType)i, m_Captions[i]));
+            //}
+            for (int i = 0; i <6; i++)
+            {
+                this.repositoryItemComboBox1.Items.Add((enumFieldType)i);
+            }
+        }
+
+        private class ComboItem
+        {
+            public ComboItem()
+            { }
+
+            public ComboItem(enumFieldType fType, string caption)
+            {
+                this.Type = fType;
+                this.Caption = caption;
+            }
+
+            public enumFieldType Type { get; set; }
+
+            public string Caption { get; set; }
         }
 
         public MetaStandard CurrentStandard
@@ -47,6 +83,8 @@ namespace Hy.Metadata.UI
 
                 gcFields.DataSource = m_CurrentStandard.FieldsInfo;
                 gvFields.RefreshData();
+
+                RefreshEnabled();
             }
         }
 
@@ -67,6 +105,7 @@ namespace Hy.Metadata.UI
             set
             {
                 this.m_EditAble = value;
+                RefreshEnabled();
             }
         }
 
@@ -81,7 +120,7 @@ namespace Hy.Metadata.UI
             if (m_EditAble)
             {
                 this.txtName.Enabled = true;
-                this.txtTableName.Enabled = true;
+                this.txtTableName.Enabled = (m_CurrentStandard != null && string.IsNullOrEmpty(m_CurrentStandard.ID));
                 this.cmbDictItem.Enabled = true;
                 this.txtDescription.Enabled = true;
                 simpleButton1.Enabled = true;
@@ -104,6 +143,7 @@ namespace Hy.Metadata.UI
         private void gvFields_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             m_SelectedFieldInfo = gvFields.GetFocusedRow() as FieldInfo;
+            RefreshEnabled();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -115,7 +155,14 @@ namespace Hy.Metadata.UI
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             if (m_SelectedFieldInfo != null)
+            {
                 m_CurrentStandard.FieldsInfo.Remove(m_SelectedFieldInfo);
+                if (!string.IsNullOrEmpty(m_CurrentStandard.ID))
+                {
+                    Hy.Metadata.Environment.NhibernateHelper.DeleteObject(m_CurrentStandard);
+                    Hy.Metadata.Environment.NhibernateHelper.Flush();
+                }
+            }
 
             gvFields.RefreshData();
         }

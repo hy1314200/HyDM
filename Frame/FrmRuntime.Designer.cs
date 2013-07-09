@@ -34,29 +34,30 @@
             this.statusBarMessage = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
+            this.tabCenter = new DevExpress.XtraTab.XtraTabControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.hideContainerBottom = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanelBottom = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer2 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanelRight = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanelLeft = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanelCenter = new DevExpress.XtraBars.Docking.DockPanel();
-            this.controlContainer3 = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.controlContainer4 = new DevExpress.XtraBars.Docking.ControlContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).BeginInit();
+            this.clientPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.hideContainerBottom.SuspendLayout();
             this.dockPanelBottom.SuspendLayout();
+            this.hideContainerRight.SuspendLayout();
             this.dockPanelRight.SuspendLayout();
+            this.hideContainerLeft.SuspendLayout();
             this.dockPanelLeft.SuspendLayout();
-            this.panelContainer1.SuspendLayout();
-            this.dockPanelCenter.SuspendLayout();
-            this.dockPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -140,9 +141,53 @@
             this.clientPanel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.clientPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.clientPanel.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clientPanel.Controls.Add(this.tabCenter);
             resources.ApplyResources(this.clientPanel, "clientPanel");
             this.clientPanel.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.clientPanel.Name = "clientPanel";
+            // 
+            // tabCenter
+            // 
+            this.tabCenter.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabCenter.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabCenter.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabCenter.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabCenter.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabCenter.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabCenter.AppearancePage.Header.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabCenter.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabCenter.AppearancePage.Header.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabCenter.AppearancePage.Header.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabCenter.AppearancePage.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabCenter.AppearancePage.Header.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabCenter.AppearancePage.HeaderActive.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabCenter.AppearancePage.HeaderActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabCenter.AppearancePage.HeaderActive.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabCenter.AppearancePage.HeaderActive.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabCenter.AppearancePage.HeaderActive.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabCenter.AppearancePage.HeaderActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabCenter.AppearancePage.HeaderDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabCenter.AppearancePage.HeaderDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabCenter.AppearancePage.HeaderDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabCenter.AppearancePage.HeaderDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabCenter.AppearancePage.HeaderDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabCenter.AppearancePage.HeaderDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabCenter.AppearancePage.HeaderHotTracked.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabCenter.AppearancePage.HeaderHotTracked.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabCenter.AppearancePage.HeaderHotTracked.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabCenter.AppearancePage.HeaderHotTracked.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabCenter.AppearancePage.HeaderHotTracked.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabCenter.AppearancePage.HeaderHotTracked.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabCenter.AppearancePage.PageClient.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabCenter.AppearancePage.PageClient.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabCenter.AppearancePage.PageClient.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabCenter.AppearancePage.PageClient.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabCenter.AppearancePage.PageClient.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabCenter.AppearancePage.PageClient.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            resources.ApplyResources(this.tabCenter, "tabCenter");
+            this.tabCenter.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.tabCenter.Name = "tabCenter";
+            this.tabCenter.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.tabCenter_SelectedPageChanged);
             // 
             // defaultLookAndFeel1
             // 
@@ -151,19 +196,25 @@
             // 
             // dockManager1
             // 
+            this.dockManager1.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
+            this.hideContainerBottom,
+            this.hideContainerRight,
+            this.hideContainerLeft});
             this.dockManager1.DockMode = DevExpress.XtraBars.Docking.Helpers.DockMode.VS2005;
             this.dockManager1.Form = this;
-            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanelBottom,
-            this.dockPanelRight,
-            this.dockPanelLeft,
-            this.panelContainer1});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
             "System.Windows.Forms.StatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
+            // 
+            // hideContainerBottom
+            // 
+            this.hideContainerBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.hideContainerBottom.Controls.Add(this.dockPanelBottom);
+            resources.ApplyResources(this.hideContainerBottom, "hideContainerBottom");
+            this.hideContainerBottom.Name = "hideContainerBottom";
             // 
             // dockPanelBottom
             // 
@@ -181,14 +232,22 @@
             resources.ApplyResources(this.dockPanelBottom, "dockPanelBottom");
             this.dockPanelBottom.Name = "dockPanelBottom";
             this.dockPanelBottom.OriginalSize = new System.Drawing.Size(415, 139);
-            this.dockPanelBottom.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Float;
+            this.dockPanelBottom.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanelBottom.SavedIndex = 0;
             this.dockPanelBottom.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // controlContainer2
             // 
             resources.ApplyResources(this.controlContainer2, "controlContainer2");
             this.controlContainer2.Name = "controlContainer2";
+            // 
+            // hideContainerRight
+            // 
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.hideContainerRight.Controls.Add(this.dockPanelRight);
+            resources.ApplyResources(this.hideContainerRight, "hideContainerRight");
+            this.hideContainerRight.Name = "hideContainerRight";
             // 
             // dockPanelRight
             // 
@@ -205,15 +264,23 @@
             this.dockPanelRight.ID = new System.Guid("f8a7e763-f770-491f-bb4f-fba48459b60f");
             resources.ApplyResources(this.dockPanelRight, "dockPanelRight");
             this.dockPanelRight.Name = "dockPanelRight";
-            this.dockPanelRight.OriginalSize = new System.Drawing.Size(415, 245);
-            this.dockPanelRight.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Float;
+            this.dockPanelRight.OriginalSize = new System.Drawing.Size(277, 245);
+            this.dockPanelRight.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanelRight.SavedIndex = 0;
             this.dockPanelRight.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelRight.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            this.dockPanelRight.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // controlContainer1
             // 
             resources.ApplyResources(this.controlContainer1, "controlContainer1");
             this.controlContainer1.Name = "controlContainer1";
+            // 
+            // hideContainerLeft
+            // 
+            this.hideContainerLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.hideContainerLeft.Controls.Add(this.dockPanelLeft);
+            resources.ApplyResources(this.hideContainerLeft, "hideContainerLeft");
+            this.hideContainerLeft.Name = "hideContainerLeft";
             // 
             // dockPanelLeft
             // 
@@ -230,93 +297,15 @@
             resources.ApplyResources(this.dockPanelLeft, "dockPanelLeft");
             this.dockPanelLeft.Name = "dockPanelLeft";
             this.dockPanelLeft.OriginalSize = new System.Drawing.Size(207, 245);
-            this.dockPanelLeft.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Float;
+            this.dockPanelLeft.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanelLeft.SavedIndex = 0;
             this.dockPanelLeft.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelLeft.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            this.dockPanelLeft.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // dockPanel1_Container
             // 
             resources.ApplyResources(this.dockPanel1_Container, "dockPanel1_Container");
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            // 
-            // panelContainer1
-            // 
-            this.panelContainer1.ActiveChild = this.dockPanelCenter;
-            this.panelContainer1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.panelContainer1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.panelContainer1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.panelContainer1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.panelContainer1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.panelContainer1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.panelContainer1.Controls.Add(this.dockPanel1);
-            this.panelContainer1.Controls.Add(this.dockPanelCenter);
-            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
-            this.panelContainer1.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
-            this.panelContainer1.FloatVertical = true;
-            this.panelContainer1.ID = new System.Guid("a8c78e02-094a-4d95-8b87-62e9892c4f0e");
-            resources.ApplyResources(this.panelContainer1, "panelContainer1");
-            this.panelContainer1.Name = "panelContainer1";
-            this.panelContainer1.OriginalSize = new System.Drawing.Size(200, 491);
-            this.panelContainer1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Float;
-            this.panelContainer1.Tabbed = true;
-            this.panelContainer1.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Top;
-            this.panelContainer1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
-            // 
-            // dockPanelCenter
-            // 
-            this.dockPanelCenter.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.dockPanelCenter.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.dockPanelCenter.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.dockPanelCenter.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.dockPanelCenter.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.dockPanelCenter.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.dockPanelCenter.Controls.Add(this.controlContainer3);
-            this.dockPanelCenter.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanelCenter.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
-            this.dockPanelCenter.FloatVertical = true;
-            this.dockPanelCenter.ID = new System.Guid("4437e72e-06b8-4bf3-9d9b-3b08e88feb46");
-            resources.ApplyResources(this.dockPanelCenter, "dockPanelCenter");
-            this.dockPanelCenter.Name = "dockPanelCenter";
-            this.dockPanelCenter.Options.AllowDockBottom = false;
-            this.dockPanelCenter.Options.AllowDockLeft = false;
-            this.dockPanelCenter.Options.AllowDockRight = false;
-            this.dockPanelCenter.Options.AllowFloating = false;
-            this.dockPanelCenter.Options.FloatOnDblClick = false;
-            this.dockPanelCenter.Options.ShowAutoHideButton = false;
-            this.dockPanelCenter.Options.ShowMaximizeButton = false;
-            this.dockPanelCenter.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanelCenter.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Float;
-            this.dockPanelCenter.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Top;
-            this.dockPanelCenter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
-            // 
-            // controlContainer3
-            // 
-            resources.ApplyResources(this.controlContainer3, "controlContainer3");
-            this.controlContainer3.Name = "controlContainer3";
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.dockPanel1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.dockPanel1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.dockPanel1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.dockPanel1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.dockPanel1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.dockPanel1.Controls.Add(this.controlContainer4);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanel1.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
-            this.dockPanel1.ID = new System.Guid("f0c42a7c-2cf5-4888-bfa3-c1f40979057b");
-            resources.ApplyResources(this.dockPanel1, "dockPanel1");
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Float;
-            this.dockPanel1.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
-            // 
-            // controlContainer4
-            // 
-            resources.ApplyResources(this.controlContainer4, "controlContainer4");
-            this.controlContainer4.Name = "controlContainer4";
             // 
             // FrmRuntime
             // 
@@ -329,13 +318,13 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.clientPanel);
-            this.Controls.Add(this.panelContainer1);
-            this.Controls.Add(this.dockPanelLeft);
-            this.Controls.Add(this.dockPanelRight);
-            this.Controls.Add(this.dockPanelBottom);
+            this.Controls.Add(this.hideContainerBottom);
+            this.Controls.Add(this.hideContainerLeft);
+            this.Controls.Add(this.hideContainerRight);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.IsMdiContainer = true;
             this.Name = "FrmRuntime";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
@@ -343,13 +332,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).EndInit();
+            this.clientPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.hideContainerBottom.ResumeLayout(false);
             this.dockPanelBottom.ResumeLayout(false);
+            this.hideContainerRight.ResumeLayout(false);
             this.dockPanelRight.ResumeLayout(false);
+            this.hideContainerLeft.ResumeLayout(false);
             this.dockPanelLeft.ResumeLayout(false);
-            this.panelContainer1.ResumeLayout(false);
-            this.dockPanelCenter.ResumeLayout(false);
-            this.dockPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -369,10 +360,9 @@
         private DevExpress.XtraBars.Docking.ControlContainer controlContainer2;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu mainMenu;
         private DevExpress.XtraBars.BarStaticItem statusBarMessage;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanelCenter;
-        private DevExpress.XtraBars.Docking.ControlContainer controlContainer3;
-        private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer controlContainer4;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerBottom;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
+        private DevExpress.XtraTab.XtraTabControl tabCenter;
     }
 }

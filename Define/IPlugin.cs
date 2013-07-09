@@ -20,7 +20,7 @@ namespace Define
         /// <summary>
         /// 系统ADO连接
         /// </summary>
-        IDbConnection SysConnection { set; }
+        IAdodbHelper AdodbHelper { set; }
 
         /// <summary>
         /// 系统ESRI连接

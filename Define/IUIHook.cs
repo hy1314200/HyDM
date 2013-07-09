@@ -2,37 +2,71 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Define
 {
     /// <summary>
     /// 需要使用UI（这里单指使用DockPanel,任何Command实现可以对这些Panel进行操作）
     /// </summary>
-    public interface IUIHook:IHook
+    public interface IUIHook
     {
         /// <summary>
-        /// 左边的DockPanel
+        /// 主窗体
         /// </summary>
-        System.Windows.Forms.Control LeftDockPanel { get; }
+        Form MainForm { get; }
 
         /// <summary>
-        /// 右边的DockPanel
+        /// 添加（Dock）控件
         /// </summary>
-        System.Windows.Forms.Control RightDockPanel { get; }
-        
+        /// <param name="ctrlTarget"></param>
+        /// <param name="dockPosition"></param>
+        /// <returns></returns>
+        Control AddControl(Control ctrlTarget, enumDockPosition dockPosition);
+
         /// <summary>
-        /// 下边的DockPanel
+        /// 添加Hooker
         /// </summary>
-        System.Windows.Forms.Control BottomDockPanel { get; }
+        /// <param name="hooker"></param>
+        void AddHooker(IHooker hooker,enumDockPosition dockPosition);
+
+        /// <summary>
+        /// 激活Hook控件
+        /// </summary>
+        void ActiveHookControl(Guid hookerID);
+
+        /// <summary>
+        /// 关闭Hook控件
+        /// </summary>
+        /// <param name="hookerID"></param>
+        void CloseHookControl(Guid hookerID);
 
     }
 
+    /// <summary>
+    /// 停靠位置
+    /// </summary>
     public enum enumDockPosition
     {
+        /// <summary>
+        /// 左
+        /// </summary>
         Left = 0,
+        /// <summary>
+        /// 右
+        /// </summary>
         Right = 1,
+        /// <summary>
+        /// 下
+        /// </summary>
         Bottom = 2,
+        /// <summary>
+        /// 上
+        /// </summary>
         Top=3,
+        /// <summary>
+        /// 中心
+        /// </summary>
         Center=4
     }
 }

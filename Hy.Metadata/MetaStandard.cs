@@ -74,5 +74,27 @@ namespace Hy.Metadata
                 return m_FieldsEnumerator;
             }
         }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
+        private Dictionary<string, string> m_FieldNameDictionary;
+        public Dictionary<string, string> GetFieldNameDictionary()
+        {
+            m_FieldNameDictionary = new Dictionary<string, string>();
+            m_FieldNameDictionary["ID"] = "标识符";
+
+            if (this.FieldsInfo != null)
+            {
+                foreach (FieldInfo fInfo in this.FieldsInfo)
+                {
+                    m_FieldNameDictionary[fInfo.Name] = fInfo.AliasName;
+                }
+            }
+
+            return m_FieldNameDictionary;
+        }
     }
 }

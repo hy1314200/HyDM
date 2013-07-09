@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADODBHelper.cs" />
+    <Compile Include="AdodbHelper.cs" />
     <Compile Include="DataFactory.cs" />
     <Compile Include="ExcelConfigReader.cs" />
     <Compile Include="ExcelHelper.cs" />

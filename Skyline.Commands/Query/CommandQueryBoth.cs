@@ -23,8 +23,8 @@ namespace Skyline.Commands
         {
             try
             {
-                FrmAttributeMapQuery frmAttMapQuery = new FrmAttributeMapQuery(base.m_Hook.MainForm);
-                base.m_Hook.MainForm.AddOwnedForm(frmAttMapQuery);
+                FrmAttributeMapQuery frmAttMapQuery = new FrmAttributeMapQuery(base.m_Hook.UIHook.MainForm);
+                base.m_Hook.UIHook.MainForm.AddOwnedForm(frmAttMapQuery);
                 frmAttMapQuery.Show();
             }
             catch

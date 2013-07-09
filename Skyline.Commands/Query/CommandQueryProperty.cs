@@ -21,12 +21,12 @@ namespace Skyline.Commands
 
         public override void OnClick()
         {
-            FrmQueryObject fqo = new FrmQueryObject(base.m_Hook.MainForm);
+            FrmQueryObject fqo = new FrmQueryObject(base.m_Hook.UIHook.MainForm);
             try
             {
                 if (!fqo.IsDisposed)
                 {
-                    base.m_Hook.MainForm.AddOwnedForm(fqo);
+                    base.m_Hook.UIHook.MainForm.AddOwnedForm(fqo);
                     fqo.Show();
                 }
             }

@@ -50,7 +50,7 @@ namespace Frame
             }            
         }
 
-        public IDbConnection SysConnection
+        public global::Define.IAdodbHelper AdodbHelper
         {
             set {  }
         }

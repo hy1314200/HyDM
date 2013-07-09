@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Define;
-using Esri.Define;
+
 using ESRI.ArcGIS.Controls;
 
 namespace Esri.Commands
@@ -30,9 +30,8 @@ namespace Esri.Commands
         public override void OnCreate(object Hook)
         {
             base.OnCreate(Hook);
-            IEsriHook esriHook = Hook as IEsriHook;
-            if (esriHook != null)
-                m_hookHelper = esriHook.HookHelper;
+
+            m_hookHelper = base.m_Hook.Hook as IHookHelper;
         }
         public abstract override void OnClick();
     }

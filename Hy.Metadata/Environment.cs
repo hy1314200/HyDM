@@ -13,16 +13,18 @@ namespace Hy.Metadata
 
         public static INhibernateHelper NhibernateHelper { get; set; }
 
-        public static IADODBHelper AdodbHelper { internal get; set; }
+        public static IAdodbHelper AdodbHelper {  get; set; }
 
-        public static ILogWriter Logger { internal get; set; }
+        public static ILogWriter Logger { get; set; }
 
-        public static IApplication Application { internal get; set; }
+        public static IApplication Application { get; set; }
 
-        public System.Data.IDbConnection SysConnection
+
+        IAdodbHelper IPlugin.AdodbHelper
         {
             set
             {
+                Environment.AdodbHelper = value;
             }
         }
 

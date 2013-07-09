@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Define
 {
-    public interface IADODBHelper
+    public interface IAdodbHelper
     {
         void BeginTrans();   
         void Commit(); 
