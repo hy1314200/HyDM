@@ -52,6 +52,7 @@ namespace Hy.Metadata.UI
             public string Caption { get; set; }
         }
 
+        [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public MetaStandard CurrentStandard
         {
             get
@@ -125,7 +126,7 @@ namespace Hy.Metadata.UI
                 this.txtDescription.Enabled = true;
                 simpleButton1.Enabled = true;
                 simpleButton2.Enabled = m_SelectedFieldInfo!=null;
-                gcFields.Enabled = true;
+                gvFields.OptionsBehavior.Editable = true;
             }
             else
             {
@@ -135,7 +136,7 @@ namespace Hy.Metadata.UI
                 this.txtDescription.Enabled = false;
                 simpleButton1.Enabled = false;
                 simpleButton2.Enabled = false;
-                gcFields.Enabled = false;
+                gvFields.OptionsBehavior.Editable = false;
             }
         }
 

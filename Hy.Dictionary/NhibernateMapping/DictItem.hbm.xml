@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
-	<class name="Hy.Dictionary.DictItem,Hy.Dictionary" table="T_Dictionary" lazy="false">
+	<class name="Hy.Dictionary.DictItem,Hy.Dictionary" table="T_Sys_Dictionary" lazy="false">
 		<id name="ID" column="ID" type="string">
 			<generator class="uuid.hex"/>
 		</id>

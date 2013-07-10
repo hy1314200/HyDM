@@ -5,6 +5,7 @@ using Define;
 using DevExpress.XtraBars.Docking;
 using System.Windows.Forms;
 using Hy.Metadata.UI;
+using DevExpress.XtraEditors;
 
 namespace Hy.Metadata.Operate
 {
@@ -14,22 +15,30 @@ namespace Hy.Metadata.Operate
         public CommandStandardDelete()
         {
             this.m_Category = "元数据";
-            this.m_Caption = "元数据";
+            this.m_Caption = "删除元数据标准";
+            this.m_Message = "删除元数据标准定义";
         }
 
         public override bool Enabled
         {
             get
             {
-                return base.Enabled && this.m_Manager.SelectedMetaStandard != null;
+                return base.Enabled && this.m_Manager.CurrentMetaStandard != null;
             }
         }
 
         public override void OnClick()
         {
-            if (DevExpress.XtraEditors.XtraMessageBox.Show("删除标准也将删除当前标准已有数据，您确定要修改吗？", "删除确认", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (XtraMessageBox.Show("删除标准也将删除当前标准已有数据，您确定要修改吗？", "删除确认", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.m_Manager.SetEditStandard(this.m_Manager.SelectedMetaStandard);
+                if (!MetaStandardHelper.DeleteStandard(m_Manager.CurrentMetaStandard))
+                {
+                    XtraMessageBox.Show(MetaStandardHelper.ErrorMessage);
+                }
+                else
+                {
+                    m_Manager.Refresh();
+                }
             }
         }
     }

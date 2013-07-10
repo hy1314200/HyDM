@@ -25,10 +25,10 @@ namespace Frame
             string[] strCreators=ConfigManager.EnvironmentCreator.Split(strSplit,StringSplitOptions.RemoveEmptyEntries);
 
             Define.IEnvironmentCreator envCreator = ResourceFactory.CreateInstance(strCreators[0], strCreators[1]) as Frame.Define.IEnvironmentCreator;
-            Environment.Application = envCreator.Application;
-            Environment.LogWriter = envCreator.LogWriter;
             Environment.NHibernateHelper = envCreator.NhibernateHelper;
             Environment.AdodbHelper = envCreator.AdodbHelper;
+            Environment.LogWriter = envCreator.LogWriter;   
+            Environment.Application = envCreator.Application;
 
             string[] strResources = ConfigManager.ResourceManager.Split(strSplit, StringSplitOptions.RemoveEmptyEntries);
             Frame.Define.IResourceManager rManager=ResourceFactory.CreateInstance(strResources[0],strResources[1]) as Frame.Define.IResourceManager;

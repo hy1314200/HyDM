@@ -78,7 +78,7 @@ namespace Frame
             }
             catch(Exception exp)
             {
-                Utility.Log.AppendMessage(enumLogType.Debug, string.Format("加载命令对象出错：{0}", exp.ToString()));
+                Environment.LogWriter.AppendMessage(enumLogType.Debug, string.Format("加载命令对象出错：{0}", exp.ToString()));
             }
         }
 
@@ -106,7 +106,7 @@ namespace Frame
                 }
                 catch(Exception exp)
                 {
-                    Utility.Log.AppendMessage(enumLogType.Debug, string.Format("加载命令出错：{0}", exp.ToString()));
+                    Environment.LogWriter.AppendMessage(enumLogType.Debug, string.Format("加载命令出错：{0}", exp.ToString()));
                 }
             }
         }
@@ -302,7 +302,7 @@ namespace Frame
             catch(Exception exp)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("抱歉，操作出现了意外错误，详情请查看日志!");
-                Utility.Log.AppendMessage(enumLogType.Error, exp.ToString());
+                Environment.LogWriter.AppendMessage(enumLogType.Error, exp.ToString());
             }
 
         }

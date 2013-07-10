@@ -7,10 +7,6 @@ namespace Hy.Metadata
 {
     internal class ConstDefine
     {
-        const string StandardTableName = "T_MetaStandard";
-        const string ColumnsTableName = "T_MetaColumns";
-        const string MetaMappingDictTypeName = "MetaMapping";
-
         internal const string Type_Key_String = "StringTypeKey";
         internal const string Type_Key_Int = "IntTypeKey";
         internal const string Type_Key_Decimal = "DecimalTypeKey";

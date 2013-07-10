@@ -86,6 +86,7 @@ namespace Frame
                     plugin.NhibernateHelper = Environment.NHibernateHelper;
                     plugin.AdodbHelper = Environment.AdodbHelper;
                     plugin.GisWorkspace = Environment.Workspace;
+                    plugin.Application = Environment.Application;
                 }
             }
            
@@ -161,7 +162,6 @@ namespace Frame
                 case enumDockPosition.Center:
                     XtraTabPage tpNew = new XtraTabPage();
                     this.tabCenter.TabPages.Add(tpNew);
-                    this.tabCenter.SelectedTabPage = tpNew;
                     ctrlNew = tpNew;
                     break;
 

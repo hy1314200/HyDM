@@ -42,12 +42,21 @@ namespace Utility
 
         /// <summary>
         /// Flushes the current active NHibernate session.
+        /// 为简化后续操作，Flush失败的情况下，进行Clear
         /// </summary>
         public void Flush()
         {
             if (this.m_Session != null && this.m_Session.IsOpen)
             {
-                this.m_Session.Flush();
+                try
+                {
+                    this.m_Session.Flush();
+                }
+                catch(Exception exp)
+                {
+                    this.m_Session.Clear();
+                    throw exp;
+                }
             }
         }
         /// <summary>

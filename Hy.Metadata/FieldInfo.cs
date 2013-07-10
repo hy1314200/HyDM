@@ -10,6 +10,13 @@ namespace Hy.Metadata
     /// </summary>
     public class FieldInfo
     {
+        public FieldInfo()
+        {
+            this.Type = enumFieldType.String;
+            this.Length = 50;
+            this.Precision = 0;
+            this.NullAble = true;
+        }
         /// <summary>
         /// 标识符
         /// </summary>

@@ -25,19 +25,22 @@ namespace Hy.Metadata.UI
 
         public MetaStandard NewStandard()
         {
-            //IList<MetaStandard> dsSource=lbStandards.DataSource as IList<MetaStandard>;
-            //if (dsSource == null)
-            //{
-            //    dsSource = new List<MetaStandard>();
-            //    lbStandards.DataSource = dsSource;
-            //}
+            IList<MetaStandard> dsSource = lbStandards.DataSource as IList<MetaStandard>;
+            if (dsSource == null)
+            {
+                dsSource = new List<MetaStandard>();
+                lbStandards.DataSource = dsSource;
+            }
             MetaStandard standard = new MetaStandard();
-            lbStandards.Items.Add(standard);
+            standard.Name = "新标准";
+            dsSource.Add(standard);
+            //lbStandards.Items.Add(standard);
             lbStandards.SelectedItem = standard;
 
             return standard;
         }
 
+        [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public MetaStandard SelectedStandard
         {
             get

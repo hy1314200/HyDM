@@ -77,7 +77,9 @@ namespace Utility
 
         private IDbCommand CreateCommand(string strSql)
         {
-            IDbCommand cmd = m_DbConnection.CreateCommand();
+            IDbCommand cmd = m_ProviderFactory.CreateCommand();// m_DbConnection.CreateCommand();
+            cmd.Connection = m_DbConnection;
+            cmd.CommandType = CommandType.Text;
             cmd.CommandText = strSql;
 
             return cmd;
@@ -137,7 +139,7 @@ namespace Utility
         {
             if (m_GetServerTimeSQL == null)
             {
-                m_GetServerTimeSQL = this.ExecuteScalar("select ItemValue from T_Parameter where ItemKey='GetServerTimeSQL'") as string;
+                m_GetServerTimeSQL = this.ExecuteScalar(string.Format("select ItemValue from {0} where ItemKey='GetServerTimeSQL'",Properties.Settings.Default.ParamenterTableName)) as string;
             }
             return Convert.ToDateTime(this.ExecuteScalar(m_GetServerTimeSQL));
         }
@@ -145,31 +147,37 @@ namespace Utility
 
         public bool UpdateTable(string strTable, DataTable dtData)
         {
-            DbDataAdapter oleDataAdapter = null;
-            DbCommandBuilder cb = null;
+            Verify();
+            DbDataAdapter dataAdapter = null;
+            DbCommandBuilder cmdBuilder = null;
             try
             {
-                oleDataAdapter = CreateAdapter(string.Format("select * from {0}", strTable));
-                cb = m_ProviderFactory.CreateCommandBuilder();
-                cb.DataAdapter = oleDataAdapter;
-                oleDataAdapter.Update(dtData);
+                dataAdapter = CreateAdapter(string.Format("select * from {0}", strTable));
+                //DataTable dtTemp=new DataTable();
+                //oleDataAdapter.Fill(dtTemp);
+                //dtTemp.Merge(dtData);
+                cmdBuilder = m_ProviderFactory.CreateCommandBuilder();
+                cmdBuilder.DataAdapter = dataAdapter;
+                dataAdapter.InsertCommand= cmdBuilder.GetInsertCommand(true);
+                dataAdapter.UpdateCommand = cmdBuilder.GetUpdateCommand(true);
+                dataAdapter.Update(dtData);
 
                 return true;
             }
-            catch (Exception exp)
+            catch //(Exception exp)
             {
-                throw exp;
+                return false;
             }
             finally
             {
-                if (oleDataAdapter != null)
+                if (dataAdapter != null)
                 {
-                    oleDataAdapter.Dispose();
+                    dataAdapter.Dispose();
                 }
 
-                if (cb != null)
+                if (cmdBuilder != null)
                 {
-                    cb.Dispose();
+                    cmdBuilder.Dispose();
                 }
             }
         }

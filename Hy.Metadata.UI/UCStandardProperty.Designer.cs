@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTableName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbDictItem = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcFields = new DevExpress.XtraGrid.GridControl();
             this.gvFields = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcolName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,288 +45,28 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTableName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDictItem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
+            this.cmbDictItem = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtTableName = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDictItem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTableName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.labelControl1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.labelControl1.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.labelControl1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.labelControl1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
-            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
-            this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
-            this.labelControl1.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl1.Location = new System.Drawing.Point(4, 7);
-            this.labelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(36, 14);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "名称：";
-            this.labelControl1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // txtName
-            // 
-            this.txtName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtName.Location = new System.Drawing.Point(71, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.txtName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtName.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtName.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtName.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtName.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtName.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtName.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtName.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtName.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtName.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtName.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtName.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtName.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtName.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtName.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtName.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtName.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtName.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtName.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtName.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtName.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtName.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtName.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtName.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtName.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.txtName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtName.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txtName.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.txtName.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.txtName.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
-            this.txtName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtName.Size = new System.Drawing.Size(396, 21);
-            this.txtName.TabIndex = 1;
-            this.txtName.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.labelControl2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.labelControl2.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.labelControl2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.labelControl2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.labelControl2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
-            this.labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
-            this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
-            this.labelControl2.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl2.Location = new System.Drawing.Point(4, 36);
-            this.labelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 14);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "数据表：";
-            this.labelControl2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // txtTableName
-            // 
-            this.txtTableName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtTableName.Location = new System.Drawing.Point(71, 32);
-            this.txtTableName.Name = "txtTableName";
-            this.txtTableName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.txtTableName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtTableName.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtTableName.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtTableName.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtTableName.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtTableName.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtTableName.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtTableName.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtTableName.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtTableName.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtTableName.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtTableName.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtTableName.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtTableName.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtTableName.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtTableName.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtTableName.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtTableName.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtTableName.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtTableName.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtTableName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.txtTableName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTableName.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txtTableName.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.txtTableName.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.txtTableName.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
-            this.txtTableName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtTableName.Size = new System.Drawing.Size(396, 21);
-            this.txtTableName.TabIndex = 1;
-            this.txtTableName.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.labelControl3.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.labelControl3.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.labelControl3.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.labelControl3.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.labelControl3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.labelControl3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
-            this.labelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
-            this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
-            this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl3.Location = new System.Drawing.Point(4, 64);
-            this.labelControl3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(60, 14);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "容错字典：";
-            this.labelControl3.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.labelControl4.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.labelControl4.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.labelControl4.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.labelControl4.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.labelControl4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
-            this.labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
-            this.labelControl4.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
-            this.labelControl4.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl4.Location = new System.Drawing.Point(4, 89);
-            this.labelControl4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(36, 14);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "描述：";
-            this.labelControl4.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // cmbDictItem
-            // 
-            this.cmbDictItem.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.cmbDictItem.Location = new System.Drawing.Point(71, 60);
-            this.cmbDictItem.Name = "cmbDictItem";
-            this.cmbDictItem.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.cmbDictItem.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.cmbDictItem.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.cmbDictItem.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.cmbDictItem.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.cmbDictItem.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.cmbDictItem.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.cmbDictItem.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.cmbDictItem.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.cmbDictItem.Properties.AppearanceDropDown.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.cmbDictItem.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.cmbDictItem.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.cmbDictItem.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            serializableAppearanceObject1.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            serializableAppearanceObject1.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            serializableAppearanceObject1.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            serializableAppearanceObject1.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.cmbDictItem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.cmbDictItem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.cmbDictItem.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.cmbDictItem.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.cmbDictItem.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Default;
-            this.cmbDictItem.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.cmbDictItem.Properties.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.Default;
-            this.cmbDictItem.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.SingleClick;
-            this.cmbDictItem.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cmbDictItem.Size = new System.Drawing.Size(396, 21);
-            this.cmbDictItem.TabIndex = 2;
-            this.cmbDictItem.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtDescription.Location = new System.Drawing.Point(71, 87);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.txtDescription.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtDescription.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtDescription.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtDescription.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtDescription.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtDescription.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtDescription.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtDescription.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtDescription.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtDescription.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtDescription.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtDescription.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtDescription.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtDescription.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtDescription.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtDescription.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtDescription.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtDescription.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtDescription.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtDescription.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtDescription.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.txtDescription.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDescription.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txtDescription.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.txtDescription.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.txtDescription.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescription.Size = new System.Drawing.Size(396, 44);
-            this.txtDescription.TabIndex = 3;
-            this.txtDescription.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
             // gcFields
             // 
@@ -357,7 +89,7 @@
             this.gcFields.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
             this.repositoryItemSpinEdit1});
-            this.gcFields.Size = new System.Drawing.Size(459, 244);
+            this.gcFields.Size = new System.Drawing.Size(467, 230);
             this.gcFields.TabIndex = 5;
             this.gcFields.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFields});
@@ -760,9 +492,9 @@
             this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
             this.repositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -839,9 +571,9 @@
             this.repositoryItemSpinEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemSpinEdit1.AutoHeight = false;
             this.repositoryItemSpinEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.repositoryItemSpinEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemSpinEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.repositoryItemSpinEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -978,16 +710,18 @@
             this.groupControl1.Controls.Add(this.simpleButton2);
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.gcFields);
-            this.groupControl1.Location = new System.Drawing.Point(4, 137);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 154);
             this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(463, 269);
+            this.groupControl1.Size = new System.Drawing.Size(471, 255);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "字段信息";
             // 
             // simpleButton2
             // 
             this.simpleButton2.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.simpleButton2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
@@ -997,7 +731,7 @@
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton2.Location = new System.Drawing.Point(398, 0);
+            this.simpleButton2.Location = new System.Drawing.Point(422, 1);
             this.simpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(46, 20);
@@ -1009,6 +743,7 @@
             // simpleButton1
             // 
             this.simpleButton1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.simpleButton1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
@@ -1018,7 +753,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton1.Location = new System.Drawing.Point(327, 0);
+            this.simpleButton1.Location = new System.Drawing.Point(368, 1);
             this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(46, 20);
@@ -1027,46 +762,344 @@
             this.simpleButton1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // UCMetadataStandard
+            // groupControl2
+            // 
+            this.groupControl2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.groupControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.groupControl2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.groupControl2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.groupControl2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.groupControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.groupControl2.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.groupControl2.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.groupControl2.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.groupControl2.AppearanceCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.groupControl2.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.groupControl2.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.groupControl2.CaptionImageLocation = DevExpress.Utils.GroupElementLocation.Default;
+            this.groupControl2.CaptionLocation = DevExpress.Utils.Locations.Default;
+            this.groupControl2.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupControl2.Controls.Add(this.txtDescription);
+            this.groupControl2.Controls.Add(this.cmbDictItem);
+            this.groupControl2.Controls.Add(this.txtTableName);
+            this.groupControl2.Controls.Add(this.txtName);
+            this.groupControl2.Controls.Add(this.labelControl4);
+            this.groupControl2.Controls.Add(this.labelControl3);
+            this.groupControl2.Controls.Add(this.labelControl2);
+            this.groupControl2.Controls.Add(this.labelControl1);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(471, 154);
+            this.groupControl2.TabIndex = 7;
+            this.groupControl2.Text = "基本信息";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtDescription.Location = new System.Drawing.Point(73, 107);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.txtDescription.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtDescription.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtDescription.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtDescription.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtDescription.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtDescription.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtDescription.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtDescription.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtDescription.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtDescription.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtDescription.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtDescription.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtDescription.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtDescription.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtDescription.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtDescription.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtDescription.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtDescription.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtDescription.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtDescription.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtDescription.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.txtDescription.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtDescription.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtDescription.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.txtDescription.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.txtDescription.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(396, 44);
+            this.txtDescription.TabIndex = 11;
+            this.txtDescription.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // cmbDictItem
+            // 
+            this.cmbDictItem.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.cmbDictItem.Location = new System.Drawing.Point(73, 80);
+            this.cmbDictItem.Name = "cmbDictItem";
+            this.cmbDictItem.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.cmbDictItem.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.cmbDictItem.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.cmbDictItem.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.cmbDictItem.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.cmbDictItem.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.cmbDictItem.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.cmbDictItem.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.cmbDictItem.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.cmbDictItem.Properties.AppearanceDropDown.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceDropDown.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.cmbDictItem.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.cmbDictItem.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.cmbDictItem.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.cmbDictItem.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            serializableAppearanceObject6.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject6.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            serializableAppearanceObject6.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            serializableAppearanceObject6.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            serializableAppearanceObject6.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            serializableAppearanceObject6.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.cmbDictItem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
+            this.cmbDictItem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.cmbDictItem.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.cmbDictItem.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.cmbDictItem.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Default;
+            this.cmbDictItem.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.cmbDictItem.Properties.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.Default;
+            this.cmbDictItem.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.SingleClick;
+            this.cmbDictItem.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cmbDictItem.Size = new System.Drawing.Size(396, 21);
+            this.cmbDictItem.TabIndex = 10;
+            this.cmbDictItem.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // txtTableName
+            // 
+            this.txtTableName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtTableName.Location = new System.Drawing.Point(73, 52);
+            this.txtTableName.Name = "txtTableName";
+            this.txtTableName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.txtTableName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtTableName.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtTableName.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtTableName.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtTableName.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtTableName.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtTableName.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtTableName.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtTableName.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtTableName.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtTableName.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtTableName.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtTableName.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtTableName.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtTableName.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtTableName.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtTableName.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtTableName.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtTableName.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtTableName.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtTableName.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtTableName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.txtTableName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTableName.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtTableName.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.txtTableName.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.txtTableName.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
+            this.txtTableName.Properties.Mask.BeepOnError = true;
+            this.txtTableName.Properties.Mask.EditMask = "[a-zA-Z]+[-_\\d]*";
+            this.txtTableName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.txtTableName.Properties.Mask.SaveLiteral = false;
+            this.txtTableName.Properties.ValidateOnEnterKey = true;
+            this.txtTableName.Size = new System.Drawing.Size(396, 21);
+            this.txtTableName.TabIndex = 8;
+            this.txtTableName.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // txtName
+            // 
+            this.txtName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtName.Location = new System.Drawing.Point(73, 24);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.txtName.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtName.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtName.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtName.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtName.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtName.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtName.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtName.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtName.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtName.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtName.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtName.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtName.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtName.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtName.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtName.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtName.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtName.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtName.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtName.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.txtName.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.txtName.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.txtName.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.txtName.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.txtName.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.txtName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.txtName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtName.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtName.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.txtName.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.txtName.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
+            this.txtName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtName.Properties.NullText = "新建元数据标准";
+            this.txtName.Properties.NullValuePrompt = "请输入元数据标准";
+            this.txtName.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtName.Size = new System.Drawing.Size(396, 21);
+            this.txtName.TabIndex = 9;
+            this.txtName.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.labelControl4.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.labelControl4.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.labelControl4.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.labelControl4.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.labelControl4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
+            this.labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
+            this.labelControl4.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
+            this.labelControl4.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
+            this.labelControl4.Location = new System.Drawing.Point(6, 109);
+            this.labelControl4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(36, 14);
+            this.labelControl4.TabIndex = 5;
+            this.labelControl4.Text = "描述：";
+            this.labelControl4.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.labelControl3.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.labelControl3.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.labelControl3.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.labelControl3.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.labelControl3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.labelControl3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
+            this.labelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
+            this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
+            this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
+            this.labelControl3.Location = new System.Drawing.Point(6, 84);
+            this.labelControl3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(60, 14);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "容错字典：";
+            this.labelControl3.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.labelControl2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.labelControl2.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.labelControl2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.labelControl2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.labelControl2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
+            this.labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
+            this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
+            this.labelControl2.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
+            this.labelControl2.Location = new System.Drawing.Point(6, 56);
+            this.labelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(48, 14);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "数据表：";
+            this.labelControl2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.labelControl1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.labelControl1.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.labelControl1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.labelControl1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
+            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
+            this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
+            this.labelControl1.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
+            this.labelControl1.Location = new System.Drawing.Point(6, 27);
+            this.labelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(36, 14);
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "名称：";
+            this.labelControl1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
+            // 
+            // UCStandardProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.cmbDictItem);
-            this.Controls.Add(this.txtTableName);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
-            this.Name = "UCMetadataStandard";
+            this.Controls.Add(this.groupControl2);
+            this.Name = "UCStandardProperty";
             this.Size = new System.Drawing.Size(471, 409);
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTableName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDictItem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFields)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFields)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDictItem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTableName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtName;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtTableName;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbDictItem;
-        private DevExpress.XtraEditors.MemoEdit txtDescription;
         private DevExpress.XtraGrid.GridControl gcFields;
         private DevExpress.XtraGrid.Views.Grid.GridView gvFields;
         private DevExpress.XtraGrid.Columns.GridColumn gcolName;
@@ -1081,5 +1114,14 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.MemoEdit txtDescription;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbDictItem;
+        private DevExpress.XtraEditors.TextEdit txtTableName;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

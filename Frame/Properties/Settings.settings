@@ -23,5 +23,11 @@
     <Setting Name="Version" Type="System.String" Scope="User">
       <Value Profile="(Default)">1.0.0.1</Value>
     </Setting>
+    <Setting Name="LogCacheCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="LogTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">T_Sys_Log</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

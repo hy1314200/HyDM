@@ -13,14 +13,31 @@ namespace Hy.Metadata.Operate
         public CommandStandardAddNew()
         {
             this.m_Category = "元数据";
-            this.m_Caption = "添加";
+            this.m_Caption = "添加元数据标准";
+            this.m_Message = "添加元数据标准定义";
         }
 
-
+        FrmStandardProperty m_FrmAdd;
         public override void OnClick()
         {
-            MetaStandard standard= this.m_Manager.NewStandard();
-            this.m_Manager.SetEditStandard(standard);
+            MetaStandard newStandard=new MetaStandard();
+            newStandard.Name="新建标准";
+            newStandard.Creator = Environment.Application.UserName;
+            newStandard.CreateTime = DateTime.Now;
+
+            if (m_FrmAdd == null || m_FrmAdd.IsDisposed)
+            {
+                m_FrmAdd = new FrmStandardProperty();
+                m_FrmAdd.ViewMode = FrmStandardProperty.enumPropertyViewMode.New;
+                m_FrmAdd.Text = "新建元数据标准";
+            }
+            m_FrmAdd.CurrentStandard = newStandard;
+            if (m_FrmAdd.ShowDialog(base.m_Hook.UIHook.MainForm) == DialogResult.OK)
+            {
+                MetaStandardHelper.SaveStandard(m_FrmAdd.CurrentStandard);
+            }
+
+            this.m_Manager.Refresh();
         }
     }
 }

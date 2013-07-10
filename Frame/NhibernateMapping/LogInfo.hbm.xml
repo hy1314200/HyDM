@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Frame.Helper.LogInfo,Frame" table="T_Sys_Log" lazy="false" >
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+		<property column="ModelName" type="String" name="ModelName"/>
+		<property column="Operation" type="String" name="Operation"/>
+    <property column="Content" type="String" name="Content"/>
+		<property column="LogTime" type="DateTime" name="Time" />
+		<property column="Type" type="Int32" name="Type" />		
+	</class>
+</hibernate-mapping>

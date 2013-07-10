@@ -15,6 +15,7 @@ namespace Hy.Metadata.Operate
         {
             this.m_Category = "元数据";
             this.m_Caption = "刷新";
+            this.m_Message = "刷新元数据标准及数据";
         }
 
 

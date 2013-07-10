@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
-	<class name="Hy.Metadata.MetaStandard,Hy.Metadata" table="T_MetaStandard" lazy="false">
+	<class name="Hy.Metadata.MetaStandard,Hy.Metadata" table="T_Sys_MetaStandard" lazy="false">
 		<id name="ID" column="ID" type="string">
 			<generator class="uuid.hex"/>
 		</id>
@@ -11,7 +11,7 @@
     <property column="CreateTime" type="DateTime" name="CreateTime"/>    
     <set name="FieldsEnumerator" inverse="false"  lazy="false" cascade="all-delete-orphan">
       <key column="Layer" />
-      <one-to-many class="Hy.Dictionary.DictItem,Hy.Dictionary"/>
+      <one-to-many class="Hy.Metadata.FieldInfo,Hy.Metadata"/>
     </set>
 	</class>
 </hibernate-mapping>

@@ -29,7 +29,7 @@ namespace Frame
 
         public global::Define.ILogWriter LogWriter
         {
-            get { return Logger.Instance; }
+            get { return new Helper.DbLogger();}// Logger.Instance; }
         }
 
         public global::Define.IApplication Application

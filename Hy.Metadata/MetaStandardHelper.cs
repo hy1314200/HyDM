@@ -63,16 +63,14 @@ namespace Hy.Metadata
                 // 删除数据表
                 if (Environment.AdodbHelper.TableExists(standard.TableName))
                 {
-                    if (Environment.AdodbHelper.ExecuteSQL(string.Format("Drop table {0}", standard.TableName))<1)
-                    {
-                        ErrorMessage = "标准已删除，但未删除数据";
-                    }
+                    Environment.AdodbHelper.ExecuteSQL(string.Format("Drop table {0}", standard.TableName));                   
                 }
                
                 return true;
             }
             catch (Exception exp)
             {
+                ErrorMessage = "删除出错了!";
                 Environment.Logger.AppendMessage(Define.enumLogType.Error, string.Format("删除元数据标准时出错：{0}", exp.ToString()));
 
                 return false;
@@ -91,16 +89,17 @@ namespace Hy.Metadata
 
             try
             {
+
+                Environment.NhibernateHelper.SaveObject(standard);
                 // 记录
                 if (standard.FieldsInfo != null)
                 {
                     foreach (FieldInfo fInfo in standard.FieldsInfo)
                     {
+                        fInfo.Layer = standard.ID;
                         Environment.NhibernateHelper.SaveObject(fInfo);
                     }
                 }
-
-                Environment.NhibernateHelper.SaveObject(standard);
                 Environment.NhibernateHelper.Flush();
 
                 // 创建表
@@ -280,6 +279,14 @@ namespace Hy.Metadata
 
         public static DataTable GetMetadata(MetaStandard standard, string strClause, int countPerPage, int pageIndex, ref int totalCount)
         {
+            if (!Environment.AdodbHelper.TableExists(standard.TableName))
+            {
+                if (!CreateTable(standard))
+                {
+                    ErrorMessage = "此标准的数据表不存在，并且创建失败";
+                    return null;
+                }
+            }
             DataTable dtResult = GetMetadata(standard.TableName, strClause, countPerPage, pageIndex, ref totalCount);
             TransCaption(dtResult, standard.GetFieldNameDictionary());
 
@@ -296,19 +303,23 @@ namespace Hy.Metadata
             if (totalCount < 0)
             {
                 totalCount = Convert.ToInt32(Environment.AdodbHelper.ExecuteScalar(string.Format("select count(0) from {0} {1}", strTable,strWhereClause)));
+                
             }
+
+            if (totalCount == 0)
+                return Environment.AdodbHelper.ExecuteDataTable(string.Format("select * from {0} {1} ", strTable,strWhereClause));
 
             int resultCount = countPerPage;
             if (countPerPage * (pageIndex + 1) > totalCount)
                 resultCount = totalCount - countPerPage * pageIndex;
 
-            string strSQL = Environment.NhibernateHelper.GetObject<string>(string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemName='{0}'", strTable));
+            string strSQL = Environment.NhibernateHelper.GetObject<string>(string.Format("select cfgItem.ItemValue from ConfigItem cfgItem where cfgItem.ItemKey='{0}'", strTable));
             if (string.IsNullOrEmpty(strSQL))
             {
-                strSQL = "select top {3} * from (select top {1}*({2}-1) * from {0} {4} order by id acs) order by id desc";
+                strSQL = "select top {3} * from (select top {5} * from {0} {4} order by id asc) order by id desc";
             }
 
-            object[] objParams = { strTable, countPerPage, pageIndex, resultCount, strWhereClause };
+            object[] objParams = { strTable, countPerPage, pageIndex, resultCount, strWhereClause, countPerPage*(pageIndex+1)};
             strSQL = string.Format(strSQL, objParams);
 
             return Environment.AdodbHelper.ExecuteDataTable(strSQL);

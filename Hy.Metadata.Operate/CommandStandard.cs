@@ -12,7 +12,8 @@ namespace Hy.Metadata.Operate
         public CommandStandard()
         {
             this.m_Category = "元数据";
-            this.m_Caption = "元数据";
+            this.m_Caption = "元数据管理";
+            this.m_Message = "管理元数据";
         }
         private Hy.Metadata.UI.UCStandardManager m_UcManager;
      

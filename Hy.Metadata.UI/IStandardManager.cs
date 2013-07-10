@@ -7,13 +7,7 @@ namespace Hy.Metadata.UI
 {
     public interface IStandardManager
     {
-        IList<MetaStandard> AllMetaStandard { get; }
-
-        MetaStandard SelectedMetaStandard { get; }
-
-        void SetEditStandard(MetaStandard standard);
-
-        MetaStandard NewStandard();
+        MetaStandard CurrentMetaStandard { get; }
 
         void Refresh();
     }

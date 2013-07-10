@@ -161,7 +161,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{6C899FBF-3BD9-4B8A-8080-4C899354B946}</Project>
-      <Name>Common</Name>
+      <Name>Common %28Common\Common%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\Define\Define.csproj">
       <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>

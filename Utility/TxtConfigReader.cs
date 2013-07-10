@@ -11,7 +11,7 @@ namespace Utility
     {
         public string FileName { private get; set; }
 
-        public string SplitChar { private get; set; }
+        public string SplitString { private get; set; }
         //{
         //    set
         //    {
@@ -42,7 +42,7 @@ namespace Utility
                 {
                     //string[] strs = strLine.Split(m_SplitChar, StringSplitOptions.None);
                     //m_Current = new KeyValuePair<string, string>(strs[0], strs.Length > 1 ? strs[1] : null);
-                    int splitIndex = strLine.IndexOf(this.SplitChar);
+                    int splitIndex = strLine.IndexOf(this.SplitString);
                     m_CurrentKey  = splitIndex > -1 ? strLine.Substring(0, splitIndex) : strLine;
                     m_CurrentValue = (splitIndex > -1 && splitIndex + 1 < strLine.Length) ? strLine.Substring(splitIndex + 1) : null;
 
@@ -102,6 +102,42 @@ namespace Utility
 
             return dt;
 
+        }
+
+        public DataTable ReadMultiToDataTable()
+        {
+            Reset();
+
+            string[] strSplits = { this.SplitString };
+            DataTable dt = new DataTable();
+            for (string strLine = m_Reader.ReadLine(); !m_Reader.EndOfStream; strLine = m_Reader.ReadLine())
+            {
+                // 找到第一行有文字的行，作为Schema
+                if (!string.IsNullOrWhiteSpace(strLine))
+                {
+                    string[] strSchemas = strLine.Split(strSplits, StringSplitOptions.None);
+                    for (int i = 0; i < strSchemas.Length; i++)
+                    {
+                        dt.Columns.Add(strSchemas[i].Trim());
+                    }
+                    break;
+                }
+            }
+            // 从此都读为数据
+            for (string strLine = m_Reader.ReadLine(); !m_Reader.EndOfStream; strLine = m_Reader.ReadLine())
+            {
+                if (!string.IsNullOrWhiteSpace(strLine))
+                {
+                    string[] strSchemas = strLine.Split(strSplits, StringSplitOptions.None);
+                    for (int i = 0; i < strSchemas.Length; i++)
+                    {
+                        strSchemas[i] = strSchemas[i].Trim();
+                    }
+
+                    dt.Rows.Add(strSchemas);
+                }
+            }
+            return dt;
         }
     }
 }
