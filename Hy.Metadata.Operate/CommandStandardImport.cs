@@ -8,7 +8,7 @@ using Hy.Metadata.UI;
 
 namespace Hy.Metadata.Operate
 {
-    public  class CommandStandardImport : BaseCommand
+    public  class CommandStandardImport : StandardBaseCommand
     {
 
         public CommandStandardImport()
@@ -22,6 +22,7 @@ namespace Hy.Metadata.Operate
         public override void OnClick()
         {
             FrmMetadataImport frmImport = new FrmMetadataImport();
+            frmImport.CurrentStandard = base.m_Manager.CurrentMetaStandard;
             frmImport.ShowDialog(base.m_Hook.UIHook.MainForm);
         }
     }
