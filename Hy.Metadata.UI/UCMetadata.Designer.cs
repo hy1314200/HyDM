@@ -38,11 +38,11 @@
             // ucNavigate1
             // 
             this.ucNavigate1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucNavigate1.Location = new System.Drawing.Point(0, 461);
+            this.ucNavigate1.Location = new System.Drawing.Point(0, 459);
             this.ucNavigate1.Name = "ucNavigate1";
             this.ucNavigate1.PageCount = 0;
             this.ucNavigate1.PageIndex = 0;
-            this.ucNavigate1.Size = new System.Drawing.Size(590, 21);
+            this.ucNavigate1.Size = new System.Drawing.Size(590, 23);
             this.ucNavigate1.TabIndex = 0;
             this.ucNavigate1.RequiredPageChanged += new Hy.Check.UI.RequiredPageChangedHandle(this.RequiredData);
             // 
@@ -64,7 +64,7 @@
             this.gcMetadata.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.gcMetadata.MainView = this.gvMetadata;
             this.gcMetadata.Name = "gcMetadata";
-            this.gcMetadata.Size = new System.Drawing.Size(590, 461);
+            this.gcMetadata.Size = new System.Drawing.Size(590, 459);
             this.gcMetadata.TabIndex = 5;
             this.gcMetadata.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMetadata});

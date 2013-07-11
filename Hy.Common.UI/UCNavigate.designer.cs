@@ -50,10 +50,10 @@
             this.btnNext.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnNext.Enabled = false;
             this.btnNext.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.btnNext.Location = new System.Drawing.Point(326, -1);
+            this.btnNext.Location = new System.Drawing.Point(353, 1);
             this.btnNext.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(60, 21);
             this.btnNext.TabIndex = 0;
             this.btnNext.Text = "下一页";
             this.btnNext.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
@@ -74,7 +74,7 @@
             this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl1.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl1.Location = new System.Drawing.Point(122, 3);
+            this.labelControl1.Location = new System.Drawing.Point(172, 4);
             this.labelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(36, 14);
@@ -97,7 +97,7 @@
             this.labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl2.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl2.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl2.Location = new System.Drawing.Point(227, 3);
+            this.labelControl2.Location = new System.Drawing.Point(264, 4);
             this.labelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(12, 14);
@@ -109,7 +109,7 @@
             // 
             this.txtPage.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
             this.txtPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPage.Location = new System.Drawing.Point(161, 0);
+            this.txtPage.Location = new System.Drawing.Point(212, 1);
             this.txtPage.Name = "txtPage";
             this.txtPage.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
             this.txtPage.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
@@ -145,7 +145,7 @@
             this.txtPage.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
             this.txtPage.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtPage.Properties.ReadOnly = true;
-            this.txtPage.Size = new System.Drawing.Size(60, 21);
+            this.txtPage.Size = new System.Drawing.Size(48, 21);
             this.txtPage.TabIndex = 2;
             this.txtPage.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -163,10 +163,10 @@
             this.btnPre.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPre.Enabled = false;
             this.btnPre.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.btnPre.Location = new System.Drawing.Point(245, -1);
+            this.btnPre.Location = new System.Drawing.Point(287, 1);
             this.btnPre.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.btnPre.Name = "btnPre";
-            this.btnPre.Size = new System.Drawing.Size(75, 23);
+            this.btnPre.Size = new System.Drawing.Size(60, 21);
             this.btnPre.TabIndex = 0;
             this.btnPre.Text = "上一页";
             this.btnPre.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
@@ -174,15 +174,22 @@
             // 
             // UCNavigate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtPage);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPre);
+            this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.Name = "UCNavigate";
-            this.Size = new System.Drawing.Size(407, 21);
+            this.Size = new System.Drawing.Size(419, 23);
             ((System.ComponentModel.ISupportInitialize)(this.txtPage.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

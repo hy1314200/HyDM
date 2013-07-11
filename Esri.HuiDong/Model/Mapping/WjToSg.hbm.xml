@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Esri.HuiDong.Model.WjToSg,Esri.HuiDong" table="SgToWj" lazy="false">
+		<id name="ID" column="ID" type="Int32">
+		</id>
+    <!--<property name="SGID" type="Int" column="SGID"/>
+    <property name="WJID" type="Int" column="WJID"/>-->
+
+    <many-to-one name="SG" column="SGID" class="Esri.HuiDong.Model.SgMapping,Esri.HuiDong" not-found="ignore" cascade="none" lazy="false" update="true"/>
+    
+    <many-to-one name="WJ" column="WJID" class="Esri.HuiDong.Model.WuJiang,Esri.HuiDong" not-found="ignore" cascade="none" lazy="false" update="true"/>
+    
+	</class>
+</hibernate-mapping>

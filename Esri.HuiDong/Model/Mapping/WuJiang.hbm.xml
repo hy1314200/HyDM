@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Esri.HuiDong.Model.WuJiang,Esri.HuiDong" table="WuJiang" lazy="false">
+		<id name="ID" column="ID" type="Int32">
+		</id>
+    <property name="SDECode" type="String" column="DM"/>
+    <property name="SDELayer" type="String" column="TCMC"/>
+    <property name="FeatureName" type="String" column="MC"/>
+    <property name="Description" type="String" column="BZ2"/>
+	</class>
+</hibernate-mapping>

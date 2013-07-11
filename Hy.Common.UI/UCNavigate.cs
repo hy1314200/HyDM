@@ -11,7 +11,7 @@ namespace Hy.Check.UI
 {
     public delegate void RequiredPageChangedHandle(int pageIndex);
 
-    public partial class UCNavigate : UserControl
+    public partial class UCNavigate : DevExpress.XtraEditors.XtraUserControl
     {
         public UCNavigate()
         {
@@ -69,7 +69,7 @@ namespace Hy.Check.UI
                     this.btnPre.Enabled = true;
                 }
 
-                if (this.m_PageIndex == this.m_PageCount)
+                if (this.m_PageIndex+1 == this.m_PageCount)
                 {
                     this.btnNext.Enabled = false;
                 }

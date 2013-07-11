@@ -78,6 +78,7 @@ namespace Utility
         {
             try
             {
+                Open();
                 sheetName = VerifySheetName(sheetName);
                 return GetCommand(sheetName).ExecuteReader();
             }

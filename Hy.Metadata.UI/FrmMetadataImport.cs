@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Linq;
 
 namespace Hy.Metadata.UI
 {
@@ -124,16 +125,25 @@ namespace Hy.Metadata.UI
         }
         private void wizardControl1_FinishClick(object sender, CancelEventArgs e)
         {
+            e.Cancel = true;
             if (m_CurrentStandard == null)
             {
                 XtraMessageBox.Show("请指定元数据标准。");
                 return;
             }
             SendMessage("正在解析数据...");
-            Utility.TxtConfigReader txtReader = new Utility.TxtConfigReader();
-            txtReader.FileName = txtPath.Text;
-            txtReader.SplitString = m_SplitArray[rpSplit.SelectedIndex];
-            DataTable dtData = txtReader.ReadMultiToDataTable();
+            //Utility.TxtConfigReader txtReader = new Utility.TxtConfigReader();
+            //txtReader.FileName = txtPath.Text;
+            //txtReader.SplitString = m_SplitArray[rpSplit.SelectedIndex];
+            //DataTable dtData = txtReader.ReadMultiToDataTable();
+
+            Utility.ExcelConfigReader excelReader = new Utility.ExcelConfigReader();
+            excelReader.FileName = txtPath.Text;
+            DataTable dtData = excelReader.ReadToDataTable();
+
+            //Utility.XmlConfigReader xmlReader = new Utility.XmlConfigReader();
+            //xmlReader.FileName = txtPath.Text;
+            //DataTable dtData = xmlReader.ReadToDataTable();
 
             if (dtData == null)
             {
@@ -167,7 +177,8 @@ namespace Hy.Metadata.UI
 
             int countTemp = 0;
             DataTable dtTarget = MetaStandardHelper.GetMetadata(m_CurrentStandard, "1=2", 1, 0, ref countTemp);
-            Dictionary<int, int> dictFieldMapping = new Dictionary<int, int>();
+            List<int> sourceIndexs = new List<int>();
+            List<int> targetIndexs = new List<int>();
             for (int i = 0; i < dtTarget.Columns.Count; i++)
             {
                 if (dtTarget.Columns[i].ColumnName == "ID")
@@ -175,18 +186,19 @@ namespace Hy.Metadata.UI
 
                 if (dictFieldIndex.ContainsKey(dtTarget.Columns[i].ColumnName))
                 {
-                    dictFieldMapping[i] = dictFieldIndex[dtTarget.Columns[i].ColumnName];
+                    targetIndexs.Add(i);
+                    sourceIndexs.Add(dictFieldIndex[dtTarget.Columns[i].ColumnName]);
                 }
             }
-
+            int fieldCount = sourceIndexs.Count;
             SendMessage("开始导入...");
             for (int i = 0; i < dtData.Rows.Count; i++)
             {
                 SendMessage(string.Format("正在导入{0}/{1}...", i + 1, dtData.Rows.Count));
                 DataRow rowNew = dtTarget.NewRow();
-                for (int j = 0; j < dictFieldMapping.Count; j++)
+                for (int j = 0; j < fieldCount; j++)
                 {
-                    rowNew[j] = dtData.Rows[i][dictFieldMapping[j]];
+                    rowNew[targetIndexs[j]] = dtData.Rows[i][sourceIndexs[j]];
                 }
                 dtTarget.Rows.Add(rowNew);
             }

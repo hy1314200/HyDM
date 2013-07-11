@@ -9,8 +9,7 @@ namespace Utility
     public class ExcelConfigReader
     {
         public string FileName { private get; set; }
-
-
+        
         private string m_CurrentKey;
         private string m_CurrentValue;
 
@@ -56,7 +55,16 @@ namespace Utility
             return m_ColumnNames;
         }
 
-        
+        public DataTable ReadToDataTable()
+        {
+            return ReadToDataTable(null);
+        }
+
+        public DataTable ReadToDataTable(string sheetName)
+        {
+            m_ExcelHelper = new ExcelHelper(this.FileName);
+            return m_ExcelHelper.ReadToDataTable(sheetName);
+        }
 
         private IDataReader m_DataReader;
     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Esri.HuiDong.Model.SgMapping,Esri.HuiDong" table="SgMapping" lazy="false">
+		<id name="ID" column="ID" type="Int32">
+		</id>
+    <property name="CADCode" type="String" column="OldCode"/>
+    <property name="CADLayer" type="String" column="OldFeatureType"/>
+    <property name="SDECode" type="String" column="NewCode"/>
+    <property name="SDELayer" type="String" column="NewFeatureType"/>
+    <property name="FeatureName" type="String" column="YSMC"/>
+    <property name="Description" type="String" column="MapMemo"/>
+	</class>
+</hibernate-mapping>

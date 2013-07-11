@@ -91,7 +91,12 @@
     <Compile Include="Command\CommandDataExport.cs" />
     <Compile Include="Command\CommandFeatureCode.cs" />
     <Compile Include="Command\CommandEmptyEnable.cs" />
+    <Compile Include="Command\CommandWuJiangMapping.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="EsriBaseCommand.cs" />
+    <Compile Include="Model\SgMapping.cs" />
+    <Compile Include="Model\WjToSg.cs" />
+    <Compile Include="Model\WuJiang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -121,6 +126,12 @@
     </Compile>
     <Compile Include="UI\FrmFeatureCode.Designer.cs">
       <DependentUpon>FrmFeatureCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMapping.Designer.cs">
+      <DependentUpon>FrmMapping.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmSearchSQL.cs">
       <SubType>Form</SubType>
@@ -168,7 +179,11 @@
       <Name>Define</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Mapping\SgMapping.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -187,6 +202,9 @@
     <EmbeddedResource Include="UI\FrmFeatureCode.resx">
       <DependentUpon>FrmFeatureCode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMapping.resx">
+      <DependentUpon>FrmMapping.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmSearchSQL.resx">
       <DependentUpon>FrmSearchSQL.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +216,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmDataExport.resx">
       <DependentUpon>FrmDataExport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Mapping\WuJiang.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Mapping\WjToSg.hbm.xml">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

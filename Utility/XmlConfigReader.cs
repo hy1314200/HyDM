@@ -13,7 +13,15 @@ namespace Utility
 
         public void Reset()
         {
-            DataTable dt;
+        }
+
+        public DataTable ReadToDataTable()
+        {
+            DataTable dt = new DataTable(System.IO.Path.GetFileNameWithoutExtension(FileName));
+            dt.ReadXmlSchema(this.FileName);
+            dt.ReadXml(FileName);
+
+            return dt;
         }
 
     }
