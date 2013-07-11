@@ -16,7 +16,7 @@ namespace Esri.HuiDong.UI
         {
             InitializeComponent();
 
-            m_Mapping = Environment.NhibernateHelper.GetObjectsByCondition<WjToSg>("from WjToSg wts order by wts.FeatureName asc");
+            m_Mapping = Environment.NhibernateHelper.GetObjectsByCondition<WjToSg>("from WjToSg wts order by wts.WJ.FeatureName asc");
             gcWuJiang.DataSource = m_Mapping;
             gvWuJaing.RefreshData();
 
