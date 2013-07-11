@@ -1,7 +1,0 @@
-E:\HyDM\Out\Bin\Esri.Commands.dll
-E:\HyDM\Out\Bin\Esri.Commands.pdb
-E:\HyDM\Out\Bin\Esri.Commands.tlb
-E:\HyDM\Esri.Commands\obj\Release\ResolveAssemblyReference.cache
-E:\HyDM\Esri.Commands\obj\Release\Esri.Commands.csproj.ResolveComReference.cache
-E:\HyDM\Esri.Commands\obj\Release\Esri.Commands.dll
-E:\HyDM\Esri.Commands\obj\Release\Esri.Commands.pdb
