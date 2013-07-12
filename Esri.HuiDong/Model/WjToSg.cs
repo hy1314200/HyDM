@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Esri.HuiDong.Model
 {
-    public  class WjToSg
+    public class WjToSg
     {
         public int ID { get; set; }
 
@@ -18,14 +18,18 @@ namespace Esri.HuiDong.Model
         public WuJiang WJ { get; set; }
 
 
-       public  string SDECode { get { return WJ.SDECode; } }
+        public string 要素编码 { get { return SG.SDECode; } }
 
-       public  string SDELayer { get { return WJ.SDELayer; } }
+        public string 图层 { get { return SG.SDELayer; } }
 
-       public  string FeatureName { get { return WJ.FeatureName; } }
+        public string 图层类型 { get { return SG.LayerType; } }
 
-        public string Description { get { return WJ.Description; } }
+        public string 要素名称 { get { return SG.FeatureName; } }
 
-       public  bool Checked { get { return SG != null; } }
+        public string 描述 { get { return SG.Description; } }
+
+        public string Cass代码 { get { return SG.CADCode; } }
+
+        public bool 已映射 { get { return WJ != null; } }
     }
 }

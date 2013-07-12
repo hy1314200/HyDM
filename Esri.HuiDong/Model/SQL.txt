@@ -1,0 +1,35 @@
+1.生成映射表
+
+select sgm.MappID,OldFeatureType,StdID,OldCode
+       ,wj.DM as NewCode,wj.TCMC as NewFeatureType,wj.BZ2 as MapMemo,wj.MC as YSMC,
+      sgm.DWGEntityName,sgm.LWidth1000,sgm.LWidth500,sgm.XData,
+      --sgm.ID as SGID,wj.ID as WJID,
+      sgm.NewCode as SgCode,sgm.NewFeatureType as SgFeatureType,sgm.ysmc as SgYSMC
+into WjMapping 
+from sgmapping sgm ,wujiang wj,sgtowj
+where sgm.id=sgtowj.sgid and wj.id=sgtowj.wjid
+
+
+
+
+2.查看对比
+
+select wj.DM as 吴江Code,wj.TCMC as 吴江Layer ,wj.MC as 吴江YSMC, wj.YSLX as 吴江类型 ,   
+      sgm.NewCode as 韶关Code,sgm.NewFeatureType as 韶关Layer,sgm.ysmc as 韶关YSMC,sgm.NewGeomType as 韶关类型
+from sgmapping sgm ,wujiang wj,sgtowj
+where sgm.id=sgtowj.sgid and wj.id=sgtowj.wjid
+
+
+
+
+3.未映射
+
+select sgm.NewCode as 韶关Code,sgm.NewFeatureType as 韶关Layer,sgm.ysmc as 韶关YSMC,sgm.NewGeomType as 韶关类型
+from sgmapping sgm 
+where sgm.id in (select sgid  from sgtowj where wjid is null)
+
+
+
+
+
+

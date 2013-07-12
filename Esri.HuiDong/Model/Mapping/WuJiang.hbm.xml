@@ -7,5 +7,6 @@
     <property name="SDELayer" type="String" column="TCMC"/>
     <property name="FeatureName" type="String" column="MC"/>
     <property name="Description" type="String" column="BZ2"/>
+    <property name="LayerType" type ="Int32" column="YSLX"/>
 	</class>
 </hibernate-mapping>

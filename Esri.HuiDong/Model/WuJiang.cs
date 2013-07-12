@@ -16,5 +16,15 @@ namespace Esri.HuiDong.Model
        public  string FeatureName { get; set; }
 
        public  string Description { get; set; }
+
+       public enumLayerType LayerType { get; set; }
+    }
+
+    public enum enumLayerType
+    {
+        点=1,
+        线=2,
+        面=3,
+        注记=4
     }
 }

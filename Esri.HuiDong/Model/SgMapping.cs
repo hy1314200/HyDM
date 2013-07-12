@@ -17,6 +17,8 @@ namespace Esri.HuiDong.Model
 
         public string SDELayer { get; set; }
 
+        public string LayerType { get; set; }
+
         public string FeatureName { get; set; }
 
         public string Description { get; set; }

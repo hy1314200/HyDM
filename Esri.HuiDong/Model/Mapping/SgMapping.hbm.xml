@@ -7,6 +7,7 @@
     <property name="CADLayer" type="String" column="OldFeatureType"/>
     <property name="SDECode" type="String" column="NewCode"/>
     <property name="SDELayer" type="String" column="NewFeatureType"/>
+    <property name="LayerType" type="String" column="NewGeomType"/>
     <property name="FeatureName" type="String" column="YSMC"/>
     <property name="Description" type="String" column="MapMemo"/>
 	</class>
