@@ -31,6 +31,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.wizardControl1 = new DevExpress.XtraWizard.WizardControl();
+            this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.welcomeWizardPage1 = new DevExpress.XtraWizard.WelcomeWizardPage();
             this.rpDataType = new DevExpress.XtraEditors.RadioGroup();
             this.wpSetting = new DevExpress.XtraWizard.WizardPage();
@@ -48,7 +49,6 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.dlgPath = new System.Windows.Forms.OpenFileDialog();
-            this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.welcomeWizardPage1.SuspendLayout();
@@ -122,6 +122,27 @@
             this.wizardControl1.WizardStyle = DevExpress.XtraWizard.WizardStyle.Wizard97;
             this.wizardControl1.FinishClick += new System.ComponentModel.CancelEventHandler(this.wizardControl1_FinishClick);
             this.wizardControl1.NextClick += new DevExpress.XtraWizard.WizardCommandButtonClickEventHandler(this.wizardControl1_NextClick);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.lblStatus.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.lblStatus.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatus.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.lblStatus.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.lblStatus.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.lblStatus.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.lblStatus.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.lblStatus.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
+            this.lblStatus.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
+            this.lblStatus.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
+            this.lblStatus.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
+            this.lblStatus.Location = new System.Drawing.Point(16, 356);
+            this.lblStatus.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 14);
+            this.lblStatus.TabIndex = 9;
+            this.lblStatus.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
             // welcomeWizardPage1
             // 
@@ -201,11 +222,12 @@
             this.pcTable.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.pcTable.Controls.Add(this.cmbTable);
             this.pcTable.Controls.Add(this.labelControl2);
-            this.pcTable.Location = new System.Drawing.Point(62, 83);
+            this.pcTable.Location = new System.Drawing.Point(62, 85);
             this.pcTable.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.pcTable.Name = "pcTable";
             this.pcTable.Size = new System.Drawing.Size(400, 28);
             this.pcTable.TabIndex = 5;
+            this.pcTable.Visible = false;
             // 
             // cmbTable
             // 
@@ -306,7 +328,7 @@
             this.gpSplit.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.gpSplit.Controls.Add(this.txtSplit);
             this.gpSplit.Controls.Add(this.rpSplit);
-            this.gpSplit.Location = new System.Drawing.Point(62, 115);
+            this.gpSplit.Location = new System.Drawing.Point(62, 101);
             this.gpSplit.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.gpSplit.Name = "gpSplit";
             this.gpSplit.Size = new System.Drawing.Size(400, 79);
@@ -316,6 +338,7 @@
             // txtSplit
             // 
             this.txtSplit.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtSplit.Enabled = false;
             this.txtSplit.Location = new System.Drawing.Point(279, 51);
             this.txtSplit.Name = "txtSplit";
             this.txtSplit.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
@@ -405,7 +428,6 @@
             // cbOnlyOne
             // 
             this.cbOnlyOne.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.cbOnlyOne.EditValue = true;
             this.cbOnlyOne.Location = new System.Drawing.Point(62, 215);
             this.cbOnlyOne.Name = "cbOnlyOne";
             this.cbOnlyOne.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
@@ -447,7 +469,7 @@
             // txtPath
             // 
             this.txtPath.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtPath.Location = new System.Drawing.Point(142, 41);
+            this.txtPath.Location = new System.Drawing.Point(142, 44);
             this.txtPath.Name = "txtPath";
             this.txtPath.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
             this.txtPath.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
@@ -511,7 +533,7 @@
             this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.labelControl1.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.labelControl1.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.labelControl1.Location = new System.Drawing.Point(64, 44);
+            this.labelControl1.Location = new System.Drawing.Point(64, 47);
             this.labelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(72, 14);
@@ -619,27 +641,6 @@
             // 
             this.dlgPath.Filter = "*.txt|*.txt|excel|*.xls|xml|*.xml";
             this.dlgPath.FilterIndex = 0;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.lblStatus.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.lblStatus.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblStatus.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.lblStatus.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.lblStatus.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.lblStatus.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.lblStatus.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.lblStatus.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Default;
-            this.lblStatus.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
-            this.lblStatus.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
-            this.lblStatus.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.lblStatus.Location = new System.Drawing.Point(16, 356);
-            this.lblStatus.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 14);
-            this.lblStatus.TabIndex = 9;
-            this.lblStatus.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
             // FrmMetadataImport
             // 

@@ -141,6 +141,10 @@ namespace Frame
             Thread.Sleep(1000);
 
             loginor.Dispose();
+
+            //this.dockPanelBottom.Visibility = DockVisibility.Hidden;
+            //this.dockPanelLeft.Visibility = DockVisibility.Hidden;
+            //this.dockPanelRight.Visibility = DockVisibility.Hidden;
           
         }
         List<RibbonCommandInfo> m_CommandInfoList = null;

@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{569D2AF0-D622-4107-B78A-E736196B2537}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hy.Esri.Catalog</RootNamespace>
+    <AssemblyName>Hy.Esri.Catalog</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Out\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Analyst3DTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ConversionTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.EngineCore, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseExtensions, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CatalogAdapter.cs" />
+    <Compile Include="Command\CommandCatalog.cs" />
+    <Compile Include="Define\ICatalogHookHelper.cs" />
+    <Compile Include="UI\UCCatalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCCatalog.Designer.cs">
+      <DependentUpon>UCCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkspaceInfo.cs" />
+    <Compile Include="Define\CatalogHookHelper.cs" />
+    <Compile Include="Define\CatalogItemFactory.cs" />
+    <Compile Include="Define\enumCatalogType.cs" />
+    <Compile Include="Define\FeatureClassCatalogItem.cs" />
+    <Compile Include="Define\FeatureDatasetCatalogItem.cs" />
+    <Compile Include="Define\I3DModelCatalogItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Define\ICatalogItem.cs" />
+    <Compile Include="Define\RasterBandCatalogItem.cs" />
+    <Compile Include="Define\RasterCatalogCatalogItem.cs" />
+    <Compile Include="Define\RasterSetCatalogItem.cs" />
+    <Compile Include="Define\TableCatalogItem.cs" />
+    <Compile Include="Define\TerrainCatalogItem.cs" />
+    <Compile Include="Define\ThreeDimenModelCatalogItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Define\TinCatalogItem.cs" />
+    <Compile Include="Define\TopologyCatalogItem.cs" />
+    <Compile Include="Define\WorkspaceCatalogItem.cs" />
+    <Compile Include="Command\CommandLocalWorkspaceCreate.cs" />
+    <Compile Include="Command\CommandWorkspaceAdd.cs" />
+    <Compile Include="Command\CommandWorkspaceDelete.cs" />
+    <Compile Include="Command\CommandWorkspaceProperty.cs" />
+    <Compile Include="Command\Catalog\CatalogBaseCommand.cs" />
+    <Compile Include="Command\Catalog\Command3DFileAppend.cs" />
+    <Compile Include="Command\Catalog\CommandDatasetAddFields.cs" />
+    <Compile Include="Command\Catalog\CommandFeatureClassCreate.cs" />
+    <Compile Include="Command\Catalog\CommandFeatureDatasetCreate.cs" />
+    <Compile Include="Command\Catalog\CommandItemRefresh.cs" />
+    <Compile Include="Command\Catalog\CommandRasterCatalogCreate.cs" />
+    <Compile Include="Command\Catalog\CommandRasterSetCreate.cs" />
+    <Compile Include="Command\Catalog\CommandDeleteDataset.cs" />
+    <Compile Include="Command\Catalog\CommandFeatureClassExport.cs" />
+    <Compile Include="Command\Catalog\CommandRasterExport.cs" />
+    <Compile Include="Command\Catalog\Command3DFileImport.cs" />
+    <Compile Include="Command\Catalog\CommandFeatureClassImport.cs" />
+    <Compile Include="Command\Catalog\CommandRasterImport.cs" />
+    <Compile Include="Command\Catalog\CommandWorkspaceOpen.cs" />
+    <Compile Include="Command\Catalog\CommandRenameItem.cs" />
+    <Compile Include="Command\Globe\CommandAddElevation.cs" />
+    <Compile Include="Command\Globe\CommandAddFeatureAndRaster.cs" />
+    <Compile Include="Command\CommandAddField.cs" />
+    <Compile Include="Command\Globe\CommandAddTinLayer.cs" />
+    <Compile Include="Command\CommandImport3DFile.cs" />
+    <Compile Include="Command\Globe\CommandOpenGlobe.cs" />
+    <Compile Include="Command\Globe\CommandSaveGlobe.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="UI\Frm3CreatSdeConn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm3CreatSdeConn.designer.cs">
+      <DependentUpon>Frm3CreatSdeConn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLocalWorkspaceCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLocalWorkspaceCreate.designer.cs">
+      <DependentUpon>FrmLocalWorkspaceCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmModelLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmModelLocation.designer.cs">
+      <DependentUpon>FrmModelLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmWorkspaceProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmWorkspaceProperty.designer.cs">
+      <DependentUpon>FrmWorkspaceProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RootCatalogItem.cs" />
+    <Compile Include="UI\FrmClassFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmClassFields.Designer.cs">
+      <DependentUpon>FrmClassFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Frm3DFilesImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm3DFilesImport.Designer.cs">
+      <DependentUpon>Frm3DFilesImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmFeatureClassExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmFeatureClassExport.Designer.cs">
+      <DependentUpon>FrmFeatureClassExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmFeatureClassImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmFeatureClassImport.Designer.cs">
+      <DependentUpon>FrmFeatureClassImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSDESetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSDESetting.Designer.cs">
+      <DependentUpon>FrmSDESetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSpatialReference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSpatialReference.Designer.cs">
+      <DependentUpon>FrmSpatialReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\UCClassFields.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCClassFields.Designer.cs">
+      <DependentUpon>UCClassFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmImport3DFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmImport3DFile.Designer.cs">
+      <DependentUpon>FrmImport3DFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCClassOutPath.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCClassOutPath.Designer.cs">
+      <DependentUpon>UCClassOutPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCSpatialReference.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCSpatialReference.Designer.cs">
+      <DependentUpon>UCSpatialReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCClassInPath.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCClassInPath.Designer.cs">
+      <DependentUpon>UCClassInPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRasterImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRasterImport.Designer.cs">
+      <DependentUpon>FrmRasterImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRasteExportr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRasteExportr.Designer.cs">
+      <DependentUpon>FrmRasteExportr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DataConverter.cs" />
+    <Compile Include="Define\enumWorkspaceType.cs" />
+    <Compile Include="Utility\File3DHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\LayerHelper.cs" />
+    <Compile Include="Utility\RasterHelper.cs" />
+    <Compile Include="Utility\SDEHelper.cs" />
+    <Compile Include="Utility\SpatialReferenctHelper.cs" />
+    <Compile Include="Utility\GpTool.cs" />
+    <Compile Include="Utility\WorkspaceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="UI\Frm3CreatSdeConn.resx">
+      <DependentUpon>Frm3CreatSdeConn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLocalWorkspaceCreate.resx">
+      <DependentUpon>FrmLocalWorkspaceCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmModelLocation.resx">
+      <DependentUpon>FrmModelLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmWorkspaceProperty.resx">
+      <DependentUpon>FrmWorkspaceProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmClassFields.resx">
+      <DependentUpon>FrmClassFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Frm3DFilesImport.resx">
+      <DependentUpon>Frm3DFilesImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmFeatureClassExport.resx">
+      <DependentUpon>FrmFeatureClassExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmFeatureClassImport.resx">
+      <DependentUpon>FrmFeatureClassImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSDESetting.resx">
+      <DependentUpon>FrmSDESetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSpatialReference.resx">
+      <DependentUpon>FrmSpatialReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCCatalog.resx">
+      <DependentUpon>UCCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCClassFields.resx">
+      <DependentUpon>UCClassFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmImport3DFile.resx">
+      <DependentUpon>FrmImport3DFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCClassOutPath.resx">
+      <DependentUpon>UCClassOutPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCSpatialReference.resx">
+      <DependentUpon>UCSpatialReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCClassInPath.resx">
+      <DependentUpon>UCClassInPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRasterImport.resx">
+      <DependentUpon>FrmRasterImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRasteExportr.resx">
+      <DependentUpon>FrmRasteExportr.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Define\Define.csproj">
+      <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
+      <Name>Define</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkspaceInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

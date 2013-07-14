@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRuntime));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.mainMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            this.mainMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.statusBarMessage = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
             this.tabCenter = new DevExpress.XtraTab.XtraTabControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
-            this.hideContainerBottom = new DevExpress.XtraBars.Docking.AutoHideContainer();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanelBottom = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer2 = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanelRight = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanelLeft = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -52,11 +50,8 @@
             this.clientPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.hideContainerBottom.SuspendLayout();
             this.dockPanelBottom.SuspendLayout();
-            this.hideContainerRight.SuspendLayout();
             this.dockPanelRight.SuspendLayout();
-            this.hideContainerLeft.SuspendLayout();
             this.dockPanelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,25 +191,18 @@
             // 
             // dockManager1
             // 
-            this.dockManager1.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
-            this.hideContainerBottom,
-            this.hideContainerRight,
-            this.hideContainerLeft});
             this.dockManager1.DockMode = DevExpress.XtraBars.Docking.Helpers.DockMode.VS2005;
             this.dockManager1.Form = this;
+            this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanelRight,
+            this.dockPanelLeft,
+            this.dockPanelBottom});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
             "System.Windows.Forms.StatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
-            // 
-            // hideContainerBottom
-            // 
-            this.hideContainerBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.hideContainerBottom.Controls.Add(this.dockPanelBottom);
-            resources.ApplyResources(this.hideContainerBottom, "hideContainerBottom");
-            this.hideContainerBottom.Name = "hideContainerBottom";
             // 
             // dockPanelBottom
             // 
@@ -235,19 +223,12 @@
             this.dockPanelBottom.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
             this.dockPanelBottom.SavedIndex = 0;
             this.dockPanelBottom.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // controlContainer2
             // 
             resources.ApplyResources(this.controlContainer2, "controlContainer2");
             this.controlContainer2.Name = "controlContainer2";
-            // 
-            // hideContainerRight
-            // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.hideContainerRight.Controls.Add(this.dockPanelRight);
-            resources.ApplyResources(this.hideContainerRight, "hideContainerRight");
-            this.hideContainerRight.Name = "hideContainerRight";
             // 
             // dockPanelRight
             // 
@@ -268,19 +249,12 @@
             this.dockPanelRight.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanelRight.SavedIndex = 0;
             this.dockPanelRight.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelRight.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            this.dockPanelRight.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // controlContainer1
             // 
             resources.ApplyResources(this.controlContainer1, "controlContainer1");
             this.controlContainer1.Name = "controlContainer1";
-            // 
-            // hideContainerLeft
-            // 
-            this.hideContainerLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.hideContainerLeft.Controls.Add(this.dockPanelLeft);
-            resources.ApplyResources(this.hideContainerLeft, "hideContainerLeft");
-            this.hideContainerLeft.Name = "hideContainerLeft";
             // 
             // dockPanelLeft
             // 
@@ -300,7 +274,7 @@
             this.dockPanelLeft.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanelLeft.SavedIndex = 0;
             this.dockPanelLeft.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelLeft.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            this.dockPanelLeft.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
             // 
             // dockPanel1_Container
             // 
@@ -318,9 +292,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.clientPanel);
-            this.Controls.Add(this.hideContainerBottom);
-            this.Controls.Add(this.hideContainerLeft);
-            this.Controls.Add(this.hideContainerRight);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -335,11 +306,8 @@
             this.clientPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.hideContainerBottom.ResumeLayout(false);
             this.dockPanelBottom.ResumeLayout(false);
-            this.hideContainerRight.ResumeLayout(false);
             this.dockPanelRight.ResumeLayout(false);
-            this.hideContainerLeft.ResumeLayout(false);
             this.dockPanelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -360,9 +328,6 @@
         private DevExpress.XtraBars.Docking.ControlContainer controlContainer2;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu mainMenu;
         private DevExpress.XtraBars.BarStaticItem statusBarMessage;
-        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerBottom;
-        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
-        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
         private DevExpress.XtraTab.XtraTabControl tabCenter;
     }
 }

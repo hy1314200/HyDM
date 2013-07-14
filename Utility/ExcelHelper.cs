@@ -57,6 +57,7 @@ namespace Utility
         /// <returns></returns>
         IList<string> GetSheetNameList()
         {
+            Open();
             if (m_SheetNameList == null)
             {
                 DataTable dtSchema = m_Connection.GetSchema("Tables");
@@ -91,6 +92,7 @@ namespace Utility
 
         private string VerifySheetName(string sheetName)
         {
+            Open();
             GetSheetNameList();
             if (string.IsNullOrEmpty(sheetName))
             {
@@ -108,6 +110,7 @@ namespace Utility
         }
         private OleDbCommand GetCommand(string sheetName)
         {
+            Open();
             sheetName = VerifySheetName(sheetName);
 
             string strSQL = string.Format("select * from [{0}]", sheetName);
@@ -126,6 +129,7 @@ namespace Utility
         {
             try
             {
+                Open();
                 sheetName = VerifySheetName(sheetName);
 
                 OleDbDataAdapter dbAdapter = new OleDbDataAdapter(GetCommand(sheetName));

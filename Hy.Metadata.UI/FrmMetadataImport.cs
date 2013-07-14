@@ -50,7 +50,7 @@ namespace Hy.Metadata.UI
             }
             else
             {
-                pcTable.Visible = true;
+                //pcTable.Visible = true;
                 gpSplit.Visible = false;
             }
         }
@@ -83,14 +83,17 @@ namespace Hy.Metadata.UI
             {
                 if (string.IsNullOrEmpty(txtPath.Text))
                 {
-                }
-
-                if (rpDataType.SelectedIndex != 0 && cmbTable.SelectedIndex < 0)
-                {
-                    XtraMessageBox.Show("请选择需要导入的数据表");
+                    XtraMessageBox.Show("请指定数据源路径！");
                     e.Handled = true;
                     return;
                 }
+
+                //if (rpDataType.SelectedIndex != 0 && cmbTable.SelectedIndex < 0)
+                //{
+                //    XtraMessageBox.Show("请选择需要导入的数据表");
+                //    e.Handled = true;
+                //    return;
+                //}
 
                 m_SplitArray[4] = txtSplit.Text;
                 if (txtSplit.Enabled && string.IsNullOrEmpty(txtSplit.Text))
@@ -132,18 +135,33 @@ namespace Hy.Metadata.UI
                 return;
             }
             SendMessage("正在解析数据...");
-            //Utility.TxtConfigReader txtReader = new Utility.TxtConfigReader();
-            //txtReader.FileName = txtPath.Text;
-            //txtReader.SplitString = m_SplitArray[rpSplit.SelectedIndex];
-            //DataTable dtData = txtReader.ReadMultiToDataTable();
+            DataTable dtData = null;
+            try
+            {
+                if (rpDataType.SelectedIndex == 0)
+                {
+                    Utility.TxtConfigReader txtReader = new Utility.TxtConfigReader();
+                    txtReader.FileName = txtPath.Text;
+                    txtReader.SplitString = m_SplitArray[rpSplit.SelectedIndex];
+                    dtData = txtReader.ReadMultiToDataTable();
+                }
 
-            Utility.ExcelConfigReader excelReader = new Utility.ExcelConfigReader();
-            excelReader.FileName = txtPath.Text;
-            DataTable dtData = excelReader.ReadToDataTable();
-
-            //Utility.XmlConfigReader xmlReader = new Utility.XmlConfigReader();
-            //xmlReader.FileName = txtPath.Text;
-            //DataTable dtData = xmlReader.ReadToDataTable();
+                if (rpDataType.SelectedIndex == 1)
+                {
+                    Utility.ExcelConfigReader excelReader = new Utility.ExcelConfigReader();
+                    excelReader.FileName = txtPath.Text;
+                    dtData = excelReader.ReadToDataTable();
+                }
+                if (rpDataType.SelectedIndex == 2)
+                {
+                    Utility.XmlConfigReader xmlReader = new Utility.XmlConfigReader();
+                    xmlReader.FileName = txtPath.Text;
+                    dtData = xmlReader.ReadToDataTable();
+                }
+            }
+            catch
+            {
+            }
 
             if (dtData == null)
             {
@@ -206,6 +224,9 @@ namespace Hy.Metadata.UI
             Environment.AdodbHelper.UpdateTable(m_CurrentStandard.TableName, dtTarget);
 
             SendMessage("导入成功");
+
+            XtraMessageBox.Show("导入成功");
+            e.Cancel = false;
 
         }
     }
