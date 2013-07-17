@@ -7,9 +7,9 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 
 
-namespace Hy.Esri.DataManage
+namespace Hy.Esri.DataManage.Standard
 {
-    public class LayerInfo
+    public class FeatureClassInfo
     {
         public string ID { get; set; }
 
