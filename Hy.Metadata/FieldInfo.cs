@@ -32,6 +32,8 @@ namespace Hy.Metadata
         /// </summary>
         public string Name { get; set; }
 
+        //public int Type { get; set; }
+
         /// <summary>
         /// 字段类型
         /// </summary>

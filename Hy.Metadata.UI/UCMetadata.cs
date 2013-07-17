@@ -29,6 +29,7 @@ namespace Hy.Metadata.UI
             {
                 m_CurrentStandard = value;
                 this.gcMetadata.DataSource = null;
+                this.gvMetadata.Columns.Clear();
 
                 if (m_CurrentStandard == null)
                     return;

@@ -107,7 +107,6 @@
     <EmbeddedResource Include="FrmStandardProperty.resx">
       <DependentUpon>FrmStandardProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UCMetadata.resx">
       <DependentUpon>UCMetadata.cs</DependentUpon>
     </EmbeddedResource>

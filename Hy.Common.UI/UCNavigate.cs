@@ -69,7 +69,7 @@ namespace Hy.Check.UI
                     this.btnPre.Enabled = true;
                 }
 
-                if (this.m_PageIndex+1 == this.m_PageCount)
+                if (this.m_PageIndex+1 >= this.m_PageCount)
                 {
                     this.btnNext.Enabled = false;
                 }

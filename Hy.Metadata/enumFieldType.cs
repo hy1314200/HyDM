@@ -8,32 +8,32 @@ namespace Hy.Metadata
     /// <summary>
     /// 字段类型
     /// </summary>
-    public enum enumFieldType
+    public enum enumFieldType:int
     {
-        /// <summary>
-        /// 字符串
-        /// </summary>
-        String=0,
         /// <summary>
         /// 整数
         /// </summary>
         Int=1,
         /// <summary>
+        /// 字符串
+        /// </summary>
+        String=2,
+        /// <summary>
         /// 小数
         /// </summary>
-        Decimal=2,
+        Decimal=3,
         /// <summary>
         /// 日期和时间
         /// </summary>
-        DateTime=3,
+        DateTime=5,
         /// <summary>
         /// 图片
         /// </summary>
-        Image=4,
+        Image=9,
         /// <summary>
         /// 二进制
         /// </summary>
-        Binary
+        Binary=8
 
     }
 }
