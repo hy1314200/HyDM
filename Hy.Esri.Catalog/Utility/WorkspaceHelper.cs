@@ -44,6 +44,7 @@ namespace Hy.Esri.Catalog.Utility
                         return wsf.OpenFromFile(objWorkspace as string, 0);
 
                     case enumWorkspaceType.SDE:
+                        wsf = new SdeWorkspaceFactoryClass();
                         IPropertySet pSet = objWorkspace as IPropertySet;
                         if (pSet == null)
                         {
@@ -57,7 +58,7 @@ namespace Hy.Esri.Catalog.Utility
                             }
                         }
 
-                        return wsf.Open(objWorkspace as IPropertySet, 0);
+                        return wsf.Open(pSet, 0);
                 }
             }
             catch

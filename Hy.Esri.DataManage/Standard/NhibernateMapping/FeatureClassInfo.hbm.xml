@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Hy.Esri.DataManage.Standard.FeatureClassInfo,Hy.Esri.DataManage" table="T_Sys_FeatureLayer" lazy="false">
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+		<property column="Name" type="String" name="Name"/>
+    <property column="AliasName" type="String" name="AliasName"/>
+    <property column="FeatureType" type="Int32" name="FeatureType"/>
+    <property column="ShapeType" type="Int32" name="ShapeType"/>
+    <property column="AvgNumPoints" type="Int32" name="AvgNumPoints"/>
+    <property column="GridCount" type="Int32" name="GridCount"/>
+    <property column="GridSize" type="double" name="GridSize"/>
+    <property column="HasM" type="bool" name="HasM"/>
+    <property column="HasZ" type="bool" name="HasZ"/>
+    <property column="SpatialReference" type="String" name="SpatialReferenceString"/>
+    <set name="SubItemEnumerator" inverse="false"  lazy="false" cascade="all-delete-orphan">
+      <key column="Layer" />
+      <one-to-many class="Hy.Metadata.FieldInfo,Hy.Metadata"/>
+    </set>
+    <property column="Parent" type="String" name="Parent"/>
+	</class>
+</hibernate-mapping>

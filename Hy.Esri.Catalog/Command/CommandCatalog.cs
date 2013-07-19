@@ -85,7 +85,7 @@ namespace Hy.Esri.Catalog.Command
                 if (m_UcCatalog == null)
                 {
                     m_UcCatalog = new UCCatalog();
-                    m_UcCatalog.Init(m_Hook.Hook);
+                    m_UcCatalog.Init(m_Hook.Hook,base.SendMessage);// delegate(string strMsg) { base.SendMessage(strMsg); });
                     ESRI.ArcGIS.Controls.IHookHelper esriHookHelper = m_Hook.Hook as ESRI.ArcGIS.Controls.IHookHelper;
                     IHooker hooker= new CatalogHooker(m_UcCatalog);
                     (hooker.Hook as CatalogHookHelper).SelectedCatalogItemChanged += delegate(ICatalogItem cItem)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Hy.Esri.DataManage.Standard.StandardItem,Hy.Esri.DataManage" table="T_Sys_DBStandard" lazy="false">
+		<id name="ID" column="ID" type="string">
+			<generator class="uuid.hex"/>
+		</id>
+		<property column="Name" type="String" name="Name"/>
+    <property column="AliasName" type="String" name="AliasName"/>
+    <property column="Type" type="Int32" name="Type"/>
+    <property column="SpatialReference" type="String" name="SpatialReferenceString"/>
+    <many-to-one column="Parent" class="Hy.Dictionary.DictItem,Hy.Dictionary" not-found="ignore" cascade="none" lazy="false" name="Parent" update="true"/>
+    <set name="SubItemEnumerator" inverse="false"  lazy="false" cascade="delete-orphan">
+      <key column="Parent" />
+      <one-to-many class="Hy.Esri.DataManage.Standard.StandardItem,Hy.Esri.DataManage"/>
+    </set>
+	</class>
+</hibernate-mapping>

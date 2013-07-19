@@ -8,7 +8,7 @@ namespace Hy.Metadata
     /// <summary>
     /// 元数据标准
     /// </summary>
-    public class MetaStandard
+    public class MetaStandard:Utility.NHibernateSet<FieldInfo>
     {
         /// <summary>
         /// 标识符
@@ -47,33 +47,37 @@ namespace Hy.Metadata
         public DateTime CreateTime { get; set; }
 
         /// <summary>
-        /// 字段信息
+        /// 字段信息(对SubItems的引用，换个名)
         /// </summary>
-        public IList<FieldInfo> FieldsInfo { get; set; }
-
-        private System.Collections.IEnumerable m_FieldsEnumerator;
-        private System.Collections.IEnumerable FieldsEnumerator
+        public IList<FieldInfo> FieldsInfo
         {
-            set
-            {
-                FieldsInfo = null;
-                if (value == null)
-                    return;
-
-                m_FieldsEnumerator = value;
-                System.Collections.IEnumerator en = value.GetEnumerator();
-                FieldsInfo = new List<FieldInfo>();
-                while (en.MoveNext())
-                {
-                    FieldsInfo.Add(en.Current as FieldInfo);
-                }
-            }
-
-            get
-            {
-                return m_FieldsEnumerator;
-            }
+            get { return this.SubItems; }
+            set { this.SubItems = value; }
         }
+
+        //private System.Collections.IEnumerable m_FieldsEnumerator;
+        //private System.Collections.IEnumerable FieldsEnumerator
+        //{
+        //    set
+        //    {
+        //        FieldsInfo = null;
+        //        if (value == null)
+        //            return;
+
+        //        m_FieldsEnumerator = value;
+        //        System.Collections.IEnumerator en = value.GetEnumerator();
+        //        FieldsInfo = new List<FieldInfo>();
+        //        while (en.MoveNext())
+        //        {
+        //            FieldsInfo.Add(en.Current as FieldInfo);
+        //        }
+        //    }
+
+        //    get
+        //    {
+        //        return m_FieldsEnumerator;
+        //    }
+        //}
 
         public override string ToString()
         {

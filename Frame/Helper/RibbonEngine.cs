@@ -16,7 +16,8 @@ using Frame.Define;
 namespace Frame
 {
     public delegate RibbonCommandInfo RibbonCommandInfoGetter(string resourceID);
-    public class RibbonEngine
+
+    public class RibbonEngine:Messager
     {
         public RibbonControl Ribbon { set; private get; }
 
@@ -24,7 +25,12 @@ namespace Frame
 
         public IList<RibbonCommandInfo> CommandInfoList { set; private get; }
 
-        public event MessageHandler OnMessageChanged;
+        //public event MessageHandler OnMessage;
+        //private void SendMessage(string strMsg)
+        //{
+        //    if (this.OnMessage != null)
+        //        this.OnMessage.Invoke(strMsg);
+        //}
 
 
         private  Dictionary<string, RibbonPage> m_DictPage;
@@ -252,10 +258,5 @@ namespace Frame
             }
         }
 
-        private void SendMessage(string strMsg)
-        {
-            if (this.OnMessageChanged != null)
-                this.OnMessageChanged.Invoke(strMsg);
-        }
     }
 }

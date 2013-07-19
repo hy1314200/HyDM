@@ -9,7 +9,7 @@ namespace Define
     /// <summary>
     /// 为通用Command提供基础实现
     /// </summary>
-    public abstract class BaseCommand:ICommand
+    public abstract class BaseCommand:Messager,ICommand
     {
         protected System.Drawing.Image m_Icon= Properties.Resources.DefaultIcon;
         protected string m_Category="未分类";
@@ -91,17 +91,6 @@ namespace Define
 
         public abstract void OnClick();
 
-        public event MessageHandler OnMessage;
-
-        /// <summary>
-        /// 为所有子类提供发送消息的方法
-        /// </summary>
-        /// <param name="strMsg"></param>
-        protected void SendMessage(string strMsg)
-        {
-            if (this.OnMessage != null)
-                this.OnMessage.Invoke(strMsg);
-        }
 
        
     }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BaseCommand.cs" />
     <Compile Include="CommandAbout.cs" />
+    <Compile Include="Delegates.cs" />
     <Compile Include="enumLogType.cs" />
     <Compile Include="FrmAbout.cs">
       <SubType>Form</SubType>

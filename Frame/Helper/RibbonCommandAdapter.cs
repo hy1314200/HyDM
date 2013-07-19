@@ -9,17 +9,17 @@ using DevExpress.XtraEditors;
 
 namespace Frame
 {
-    internal class RibbonCommandAdapter
+    internal class RibbonCommandAdapter:Messager
     {
         private  Dictionary<string, ICommand> m_DictCommands = new Dictionary<string, ICommand>();
         private object m_Hook;
 
-        public event MessageHandler OnMessageChanged;
-        protected void SendMessage(string strMsg)
-        {
-            if (OnMessageChanged != null)
-                OnMessageChanged.Invoke(strMsg);
-        }
+        //public event MessageHandler OnMessage;
+        //protected void SendMessage(string strMsg)
+        //{
+        //    if (OnMessage != null)
+        //        OnMessage.Invoke(strMsg);
+        //}
 
         public RibbonCommandAdapter(object objHook)
         {

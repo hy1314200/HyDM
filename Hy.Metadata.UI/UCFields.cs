@@ -10,9 +10,9 @@ using DevExpress.XtraEditors;
 
 namespace Hy.Metadata.UI
 {
-    public partial class UCStandardProperty : UserControl
+    public partial class UCFields : UserControl
     {
-        public UCStandardProperty()
+        public UCFields()
         {
             InitializeComponent();
 
@@ -37,52 +37,27 @@ namespace Hy.Metadata.UI
         }
         
         [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public MetaStandard CurrentStandard
+        public IList<FieldInfo> FieldsInfo
         {
             get
             {
-                if (m_CurrentStandard == null)
-                    m_CurrentStandard = new MetaStandard();
+                if (m_FieldsInfo == null)
+                    m_FieldsInfo = gvFields.DataSource as IList<FieldInfo>;
 
-                m_CurrentStandard.Name = txtName.Text;
-                m_CurrentStandard.TableName = this.txtTableName.Text;
-                m_CurrentStandard.MappingDict = this.cmbDictItem.Text;
-                m_CurrentStandard.Description = this.txtDescription.Text;
-                
-                return m_CurrentStandard;
+                return m_FieldsInfo;
             }
 
             set
             {
-                SetEmpty();
-                m_CurrentStandard = value;
-                if (m_CurrentStandard == null)
-                    return;
-                
-                this.txtName.Text = m_CurrentStandard.Name;
-                this.txtTableName.Text = m_CurrentStandard.TableName;
-                this.cmbDictItem.Text = m_CurrentStandard.MappingDict;
-                this.txtDescription.Text = m_CurrentStandard.Description;
-                if (m_CurrentStandard.FieldsInfo == null)
-                    m_CurrentStandard.FieldsInfo = new List<FieldInfo>();
-
-                gcFields.DataSource = m_CurrentStandard.FieldsInfo;
+                gcFields.DataSource = value;
                 gvFields.RefreshData();
 
                 RefreshEnabled();
             }
         }
 
-        private MetaStandard m_CurrentStandard; 
-        
-        private void SetEmpty()
-        {
-            this.txtName.Text = "";
-            this.txtTableName.Text = "";
-            this.cmbDictItem.Text = "";
-            this.txtDescription.Text = "";
-            gcFields.DataSource = null;
-        }
+        IList<FieldInfo> m_FieldsInfo;
+       
 
         private bool m_EditAble = true;
         public bool EditAble
@@ -104,20 +79,12 @@ namespace Hy.Metadata.UI
         {
             if (m_EditAble)
             {
-                this.txtName.Enabled = true;
-                this.txtTableName.Enabled = (m_CurrentStandard != null && string.IsNullOrEmpty(m_CurrentStandard.ID));
-                this.cmbDictItem.Enabled = true;
-                this.txtDescription.Enabled = true;
                 simpleButton1.Enabled = true;
                 simpleButton2.Enabled = m_SelectedFieldInfo!=null;
                 gvFields.OptionsBehavior.Editable = true;
             }
             else
             {
-                this.txtName.Enabled = false;
-                this.txtTableName.Enabled = false;
-                this.cmbDictItem.Enabled = false;
-                this.txtDescription.Enabled = false;
                 simpleButton1.Enabled = false;
                 simpleButton2.Enabled = false;
                 gvFields.OptionsBehavior.Editable = false;
@@ -133,7 +100,12 @@ namespace Hy.Metadata.UI
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            m_CurrentStandard.FieldsInfo.Add(new FieldInfo());
+            if (m_FieldsInfo == null)
+            {
+                this.FieldsInfo = new List<FieldInfo>();
+               
+            }
+            m_FieldsInfo.Add(new FieldInfo());
             gvFields.RefreshData();
         }
 
@@ -141,7 +113,7 @@ namespace Hy.Metadata.UI
         {
             if (m_SelectedFieldInfo != null)
             {
-                m_CurrentStandard.FieldsInfo.Remove(m_SelectedFieldInfo);
+                m_FieldsInfo.Remove(m_SelectedFieldInfo);
                 if (!string.IsNullOrEmpty(m_SelectedFieldInfo.ID))
                 {
                     Hy.Metadata.Environment.NhibernateHelper.DeleteObject(m_SelectedFieldInfo);

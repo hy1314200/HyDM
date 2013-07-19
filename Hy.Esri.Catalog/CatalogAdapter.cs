@@ -16,6 +16,9 @@ namespace Hy.Esri.Catalog
 {
     internal class CatalogAdapter
     {
+
+        public global::Define.MessageHandler MessageHandler { private  get; set; }
+
         private CatalogHookHelper m_HookHelper=new CatalogHookHelper();
         public CatalogHookHelper Hook
         {
@@ -86,6 +89,11 @@ namespace Hy.Esri.Catalog
                 }
             };
         }
+        private void SendMessage(string strMsg)
+        {
+            if (this.MessageHandler != null)
+                this.MessageHandler.Invoke(strMsg);
+        }
         private void ExpandNode(TreeListNode nodeTarget,bool refresh)
         {
             if (nodeTarget == null)
@@ -99,9 +107,7 @@ namespace Hy.Esri.Catalog
             if (!catalogItem.HasChild)
                 return;
 
-            //ThreadLoad frmload = new ThreadLoad();
-            //Thread ui = frmload.CreatUIThread("正在加载，请稍候...");
-
+            SendMessage("正在加载，请稍候...");
             try
             {
                 List<ICatalogItem> catalogItemList = catalogItem.Childrens;
@@ -140,13 +146,15 @@ namespace Hy.Esri.Catalog
                 {
                     nodeTarget.ImageIndex = 1;
                 }
+
+                SendMessage("加载完成。");
             }
             catch
             {
+                SendMessage("加载失败！");
             }
             finally
             {
-                //ui.Abort();
             }
         }
 

@@ -110,7 +110,7 @@ namespace Frame
             {
                 return m_CommandInfoList.Find(delegate(RibbonCommandInfo cmdInfo) { return cmdInfo.ID == resourceID; });
             };
-            ribbonEngine.OnMessageChanged += delegate(string strMsg)
+            ribbonEngine.OnMessage += delegate(string strMsg)
             {
                 Utility.Log.AppendMessage(enumLogType.Operate, strMsg);
                 loginor.ShowMessage(strMsg);
@@ -129,9 +129,10 @@ namespace Frame
             loginor.ShowMessage("正在绑定资源...");
             //RibbonCommandAdapter 
                 m_Adapter = new RibbonCommandAdapter(this);
-            m_Adapter.OnMessageChanged += delegate(string strMsg)
+            m_Adapter.OnMessage += delegate(string strMsg)
             {
                 this.statusBarMessage.Caption = strMsg;
+                Application.DoEvents();
                 //frmLogin.SetMessage(strMsg);
             };
             m_Adapter.Adapter(this.ribbon);

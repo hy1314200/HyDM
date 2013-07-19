@@ -17,10 +17,12 @@ namespace Hy.Esri.Catalog.UI
         }
 
         CatalogAdapter m_Adapter = new CatalogAdapter();
-        public void Init(object esriHook)
+        public void Init(object esriHook,global::Define.MessageHandler messageHandler)
         {
             if (esriHook is ESRI.ArcGIS.Controls.IHookHelper)
                 m_Adapter.Hook.Hook = (esriHook as ESRI.ArcGIS.Controls.IHookHelper).Hook;
+
+            m_Adapter.MessageHandler = messageHandler;
             m_Adapter.AdapterTreeList(this.tlCatalog);
         }
 

@@ -14,6 +14,7 @@ namespace Hy.Esri.Catalog.Command.Catalog
 
         public override void OnClick()
         {
+            this.SendMessage("正在打开...");
             m_HookHelper.CurrentCatalogItem.Open(true);
         }
         public override bool Enabled

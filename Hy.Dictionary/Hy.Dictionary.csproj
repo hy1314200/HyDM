@@ -51,6 +51,10 @@
       <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
       <Name>Define</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{7F639C43-8332-4593-95B4-703E806F399C}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="NhibernateMapping\DictItem.hbm.xml">

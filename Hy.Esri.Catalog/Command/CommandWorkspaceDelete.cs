@@ -25,16 +25,13 @@ namespace Hy.Esri.Catalog.Command
             {
                 try
                 {
-                    if ((m_HookHelper.CurrentCatalogItem as IWorkspaceCatalogItem).WorkspaceType == enumWorkspaceType.SDE)
-                    {
-                        Environment.NhibernateHelper.DeleteObject(m_HookHelper.CurrentCatalogItem.Tag);
-                        Environment.NhibernateHelper.Flush();
+                    Environment.NhibernateHelper.DeleteObject(m_HookHelper.CurrentCatalogItem.Tag);
+                    Environment.NhibernateHelper.Flush();
 
-                        XtraMessageBox.Show("删除成功！");
-                    }
+                    XtraMessageBox.Show("删除成功！");
                     (m_HookHelper.RootCatalogItem as RootCatalogItem).DeleteItem(m_HookHelper.CurrentCatalogItem);
                 }
-                catch(Exception exp)
+                catch (Exception exp)
                 {
                     XtraMessageBox.Show(string.Format("抱歉，删除操作失败！\n信息：{0}", exp.Message));
                 }

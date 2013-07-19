@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Hy.Esri.DataManage.Standard
 {
-    public class TableInfo
+    public class RasterCatalogInfo
     {
         public string ID { get; set; }
 
@@ -13,6 +13,9 @@ namespace Hy.Esri.DataManage.Standard
 
         public string AliasName { get; set; }
 
+        public string SpatialReference { get; set; }
+
         public IList<Hy.Metadata.FieldInfo> FieldsInfo { get; set; }
+
     }
 }

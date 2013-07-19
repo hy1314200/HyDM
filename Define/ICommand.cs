@@ -66,5 +66,4 @@ namespace Define
     }
 
 
-    public delegate void MessageHandler(string strMsg);
 }
