@@ -25,7 +25,7 @@ namespace Hy.Esri.DataManage.UI
         {
             if (sItem == null)
             {
-                tabInfomation.SelectedTabPage = tpEmpty;
+                tabInfo.SelectedTabPage = tpEmpty;
                 return;
             }
 
@@ -35,12 +35,12 @@ namespace Hy.Esri.DataManage.UI
                 case Standard.enumItemType.Standard:
                 case Standard.enumItemType.FeatureDataset:
                     ucFeatureDataset1.StandardItem = sItem;
-                    tabInfomation.SelectedTabPage = tpFeatureDataset;
+                    tabInfo.SelectedTabPage = tpFeatureDataset;
                     return;
 
                 case Standard.enumItemType.FeatureClass:
                     ucFeatureClassInfo1.FeatrueClassInfo = sItem.Details as FeatureClassInfo;
-                    tabInfomation.SelectedTabPage = tpClassInfo;
+                    tabInfo.SelectedTabPage = tpClassInfo;
                     return;
             }
 

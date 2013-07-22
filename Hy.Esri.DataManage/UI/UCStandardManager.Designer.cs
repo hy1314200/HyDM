@@ -30,20 +30,18 @@
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.ucStandardList1 = new Hy.Esri.DataManage.UI.UCStandardList();
-            this.tablInfo = new DevExpress.XtraTab.XtraTabControl();
+            this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tpClassInfo = new DevExpress.XtraTab.XtraTabPage();
             this.ucFeatureClassInfo1 = new Hy.Esri.DataManage.UI.UCFeatureClassInfo();
             this.tpFeatureDataset = new DevExpress.XtraTab.XtraTabPage();
             this.ucFeatureDataset1 = new Hy.Esri.DataManage.UI.UCFeatureDataset();
             this.tpEmpty = new DevExpress.XtraTab.XtraTabPage();
-            this.tabInfomation = new DevExpress.XtraTab.XtraTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablInfo)).BeginInit();
-            this.tablInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
+            this.tabInfo.SuspendLayout();
             this.tpClassInfo.SuspendLayout();
             this.tpFeatureDataset.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabInfomation)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -97,7 +95,7 @@
             this.splitContainerControl1.Panel2.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.splitContainerControl1.Panel2.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.splitContainerControl1.Panel2.CaptionLocation = DevExpress.Utils.Locations.Default;
-            this.splitContainerControl1.Panel2.Controls.Add(this.tablInfo);
+            this.splitContainerControl1.Panel2.Controls.Add(this.tabInfo);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
             this.splitContainerControl1.Size = new System.Drawing.Size(767, 528);
@@ -122,63 +120,63 @@
             // 
             // tablInfo
             // 
-            this.tablInfo.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tablInfo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tablInfo.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tablInfo.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tablInfo.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tablInfo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tablInfo.AppearancePage.Header.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tablInfo.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tablInfo.AppearancePage.Header.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tablInfo.AppearancePage.Header.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tablInfo.AppearancePage.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tablInfo.AppearancePage.Header.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tablInfo.AppearancePage.HeaderActive.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tablInfo.AppearancePage.HeaderActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tablInfo.AppearancePage.HeaderActive.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tablInfo.AppearancePage.HeaderActive.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tablInfo.AppearancePage.HeaderActive.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tablInfo.AppearancePage.HeaderActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tablInfo.AppearancePage.HeaderDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tablInfo.AppearancePage.HeaderDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tablInfo.AppearancePage.HeaderDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tablInfo.AppearancePage.HeaderDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tablInfo.AppearancePage.HeaderDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tablInfo.AppearancePage.HeaderDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tablInfo.AppearancePage.HeaderHotTracked.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tablInfo.AppearancePage.HeaderHotTracked.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tablInfo.AppearancePage.HeaderHotTracked.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tablInfo.AppearancePage.HeaderHotTracked.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tablInfo.AppearancePage.HeaderHotTracked.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tablInfo.AppearancePage.HeaderHotTracked.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tablInfo.AppearancePage.PageClient.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tablInfo.AppearancePage.PageClient.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tablInfo.AppearancePage.PageClient.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tablInfo.AppearancePage.PageClient.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tablInfo.AppearancePage.PageClient.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tablInfo.AppearancePage.PageClient.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tablInfo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.tablInfo.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.tablInfo.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.Default;
-            this.tablInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablInfo.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.Default;
-            this.tablInfo.HeaderButtons = DevExpress.XtraTab.TabButtons.Default;
-            this.tablInfo.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Default;
-            this.tablInfo.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Top;
-            this.tablInfo.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Default;
-            this.tablInfo.Location = new System.Drawing.Point(0, 0);
-            this.tablInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.tablInfo.MultiLine = DevExpress.Utils.DefaultBoolean.Default;
-            this.tablInfo.Name = "tablInfo";
-            this.tablInfo.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Near;
-            this.tablInfo.SelectedTabPage = this.tpEmpty;
-            this.tablInfo.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.Default;
-            this.tablInfo.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.tablInfo.ShowToolTips = DevExpress.Utils.DefaultBoolean.Default;
-            this.tablInfo.Size = new System.Drawing.Size(514, 528);
-            this.tablInfo.TabIndex = 0;
-            this.tablInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabInfo.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabInfo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabInfo.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabInfo.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabInfo.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabInfo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabInfo.AppearancePage.Header.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabInfo.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabInfo.AppearancePage.Header.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabInfo.AppearancePage.Header.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabInfo.AppearancePage.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabInfo.AppearancePage.Header.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabInfo.AppearancePage.HeaderActive.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabInfo.AppearancePage.HeaderActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabInfo.AppearancePage.HeaderActive.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabInfo.AppearancePage.HeaderActive.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabInfo.AppearancePage.HeaderActive.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabInfo.AppearancePage.HeaderActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabInfo.AppearancePage.HeaderDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabInfo.AppearancePage.HeaderDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabInfo.AppearancePage.HeaderDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabInfo.AppearancePage.HeaderDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabInfo.AppearancePage.HeaderDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabInfo.AppearancePage.HeaderDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabInfo.AppearancePage.HeaderHotTracked.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabInfo.AppearancePage.HeaderHotTracked.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabInfo.AppearancePage.HeaderHotTracked.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabInfo.AppearancePage.HeaderHotTracked.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabInfo.AppearancePage.HeaderHotTracked.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabInfo.AppearancePage.HeaderHotTracked.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabInfo.AppearancePage.PageClient.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.tabInfo.AppearancePage.PageClient.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tabInfo.AppearancePage.PageClient.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.tabInfo.AppearancePage.PageClient.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.tabInfo.AppearancePage.PageClient.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.tabInfo.AppearancePage.PageClient.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.tabInfo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.tabInfo.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.tabInfo.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.Default;
+            this.tabInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabInfo.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.Default;
+            this.tabInfo.HeaderButtons = DevExpress.XtraTab.TabButtons.Default;
+            this.tabInfo.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Default;
+            this.tabInfo.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Top;
+            this.tabInfo.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Default;
+            this.tabInfo.Location = new System.Drawing.Point(0, 0);
+            this.tabInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.tabInfo.MultiLine = DevExpress.Utils.DefaultBoolean.Default;
+            this.tabInfo.Name = "tablInfo";
+            this.tabInfo.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Near;
+            this.tabInfo.SelectedTabPage = this.tpEmpty;
+            this.tabInfo.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.Default;
+            this.tabInfo.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
+            this.tabInfo.ShowToolTips = DevExpress.Utils.DefaultBoolean.Default;
+            this.tabInfo.Size = new System.Drawing.Size(514, 528);
+            this.tabInfo.TabIndex = 0;
+            this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpClassInfo,
             this.tpFeatureDataset,
             this.tpEmpty});
@@ -331,64 +329,6 @@
             this.tpEmpty.Text = "xtraTabPage1";
             this.tpEmpty.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
-            // tabInfomation
-            // 
-            this.tabInfomation.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tabInfomation.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tabInfomation.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tabInfomation.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tabInfomation.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tabInfomation.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tabInfomation.AppearancePage.Header.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tabInfomation.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tabInfomation.AppearancePage.Header.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tabInfomation.AppearancePage.Header.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tabInfomation.AppearancePage.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tabInfomation.AppearancePage.Header.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tabInfomation.AppearancePage.HeaderActive.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tabInfomation.AppearancePage.HeaderActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tabInfomation.AppearancePage.HeaderActive.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tabInfomation.AppearancePage.HeaderActive.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tabInfomation.AppearancePage.HeaderActive.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tabInfomation.AppearancePage.HeaderActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tabInfomation.AppearancePage.HeaderDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tabInfomation.AppearancePage.HeaderDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tabInfomation.AppearancePage.HeaderDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tabInfomation.AppearancePage.HeaderDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tabInfomation.AppearancePage.HeaderDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tabInfomation.AppearancePage.HeaderDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tabInfomation.AppearancePage.HeaderHotTracked.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tabInfomation.AppearancePage.HeaderHotTracked.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tabInfomation.AppearancePage.HeaderHotTracked.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tabInfomation.AppearancePage.HeaderHotTracked.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tabInfomation.AppearancePage.HeaderHotTracked.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tabInfomation.AppearancePage.HeaderHotTracked.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tabInfomation.AppearancePage.PageClient.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.tabInfomation.AppearancePage.PageClient.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.tabInfomation.AppearancePage.PageClient.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.tabInfomation.AppearancePage.PageClient.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.tabInfomation.AppearancePage.PageClient.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.tabInfomation.AppearancePage.PageClient.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.tabInfomation.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.tabInfomation.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.tabInfomation.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.Default;
-            this.tabInfomation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabInfomation.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabInfomation.HeaderButtons = DevExpress.XtraTab.TabButtons.Default;
-            this.tabInfomation.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Default;
-            this.tabInfomation.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Top;
-            this.tabInfomation.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Default;
-            this.tabInfomation.Location = new System.Drawing.Point(0, 0);
-            this.tabInfomation.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.tabInfomation.MultiLine = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabInfomation.Name = "tabInfomation";
-            this.tabInfomation.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Near;
-            this.tabInfomation.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabInfomation.ShowTabHeader = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabInfomation.ShowToolTips = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabInfomation.Size = new System.Drawing.Size(514, 528);
-            this.tabInfomation.TabIndex = 0;
-            // 
             // UCStandardManager
             // 
             this.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -405,11 +345,10 @@
             this.Size = new System.Drawing.Size(767, 528);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablInfo)).EndInit();
-            this.tablInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).EndInit();
+            this.tabInfo.ResumeLayout(false);
             this.tpClassInfo.ResumeLayout(false);
             this.tpFeatureDataset.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabInfomation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,8 +357,7 @@
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private UCStandardList ucStandardList1;
-        private DevExpress.XtraTab.XtraTabControl tablInfo;
-        private DevExpress.XtraTab.XtraTabControl tabInfomation;
+        private DevExpress.XtraTab.XtraTabControl tabInfo;
         private DevExpress.XtraTab.XtraTabPage tpClassInfo;
         private UCFeatureClassInfo ucFeatureClassInfo1;
         private DevExpress.XtraTab.XtraTabPage tpFeatureDataset;

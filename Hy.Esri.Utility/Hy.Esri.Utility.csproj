@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FeatureTraversaler.cs" />
     <Compile Include="LicenseInitializer.cs" />
     <Compile Include="LicenseInitializer.Designer.cs">
       <DependentUpon>LicenseInitializer.cs</DependentUpon>
@@ -78,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="WorkspaceTraversaler.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
