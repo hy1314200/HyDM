@@ -18,9 +18,10 @@ namespace Hy.Esri.DataManage.UI
         {
             InitializeComponent();
 
-            cmbGeometryType.Properties.Items.Add("");
-            cmbGeometryType.Properties.Items.Add("");
-            cmbGeometryType.Properties.Items.Add("");
+            foreach (string strType in m_GeometryTypeStirngs)
+            {
+                cmbGeometryType.Properties.Items.Add(strType);
+            }
         }
 
         private List<string> m_GeometryTypeStirngs =new List<string>(){
@@ -39,6 +40,8 @@ namespace Hy.Esri.DataManage.UI
         };
 
         public FeatureClassInfo m_FeatrueClassInfo;
+
+        [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FeatureClassInfo FeatrueClassInfo
         {
             get
@@ -53,6 +56,10 @@ namespace Hy.Esri.DataManage.UI
                 m_FeatrueClassInfo.ShapeType = m_GeoemtryTypes[cmbGeometryType.SelectedIndex];
 
                 m_FeatrueClassInfo.FieldsInfo = ucFields1.FieldsInfo;
+                foreach (Hy.Metadata.FieldInfo fInfo in m_FeatrueClassInfo.FieldsInfo)
+                {
+                    fInfo.Layer = m_FeatrueClassInfo.ID;
+                }
 
                 return m_FeatrueClassInfo;
             }
@@ -73,6 +80,22 @@ namespace Hy.Esri.DataManage.UI
             }
         }
 
+        private bool m_EditAble = false;
+        public bool EditAble
+        {
+            set
+            {
+                m_EditAble = value;
+
+                this.txtName.Properties.ReadOnly = !m_EditAble;
+                this.txtAlias.Properties.ReadOnly = !m_EditAble;
+                this.txtShapeField.Properties.ReadOnly = !m_EditAble;
+                this.txtSpatialReference.Properties.ReadOnly = !m_EditAble;
+
+                this.cmbGeometryType.Properties.ReadOnly = !m_EditAble;
+                this.ucFields1.EditAble = m_EditAble;
+            }
+        }
 
     }
 }

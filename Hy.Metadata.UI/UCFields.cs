@@ -34,6 +34,8 @@ namespace Hy.Metadata.UI
             {
                 this.repositoryItemComboBox1.Items.Add((enumFieldType)i);
             }
+
+            this.FieldsInfo = new List<FieldInfo>();
         }
         
         [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -49,7 +51,8 @@ namespace Hy.Metadata.UI
 
             set
             {
-                gcFields.DataSource = value;
+                m_FieldsInfo = value;
+                gcFields.DataSource = m_FieldsInfo;
                 gvFields.RefreshData();
 
                 RefreshEnabled();

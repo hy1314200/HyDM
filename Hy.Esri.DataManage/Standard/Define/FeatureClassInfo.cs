@@ -11,6 +11,12 @@ namespace Hy.Esri.DataManage.Standard
 {
     public class FeatureClassInfo:TableInfo
     {
+        public FeatureClassInfo()
+        {
+            this.FeatureType = esriFeatureType.esriFTSimple;
+            this.ShapeType = esriGeometryType.esriGeometryPoint;
+            this.ShapeFieldName = "Shape";
+        }
     //    /// <summary>
     //    /// 标识
     //    /// </summary>

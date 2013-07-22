@@ -18,6 +18,8 @@ namespace Hy.Esri.DataManage
 
         public static IApplication Application {  get; set; }
 
+        public static ESRI.ArcGIS.Geodatabase.IWorkspace GisConnection { get; set; }
+
 
         IAdodbHelper IPlugin.AdodbHelper
         {
@@ -29,7 +31,7 @@ namespace Hy.Esri.DataManage
 
         public object GisWorkspace
         {
-            set { }
+            set { GisConnection = value as ESRI.ArcGIS.Geodatabase.IWorkspace; }
         }
 
         INhibernateHelper IPlugin.NhibernateHelper

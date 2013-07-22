@@ -75,6 +75,10 @@
       <Project>{547A2C4A-957F-4B5D-B190-46B9D002B044}</Project>
       <Name>Hy.Metadata</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{7F639C43-8332-4593-95B4-703E806F399C}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

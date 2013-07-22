@@ -62,6 +62,10 @@
       <Project>{84978032-05BC-473B-BEFE-BB5E55C9DE4D}</Project>
       <Name>Hy.Dictionary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{7F639C43-8332-4593-95B4-703E806F399C}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

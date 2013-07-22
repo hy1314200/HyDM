@@ -15,20 +15,28 @@ namespace Hy.Esri.DataManage.Standard.Helper
         public void CreateToWorkspace()
         {
             SendMessage("准备创建...");
-            CreateItemToWorkspace(this.StandardItem);
+            bool result = CreateItemToWorkspace(this.StandardItem);
+            if (result)
+                SendMessage("完成.");
+            else
+                SendMessage("创建失败!");
         }
 
-        private  void CreateItemToWorkspace(StandardItem sItem)
+        private  bool CreateItemToWorkspace(StandardItem sItem)
         {
             if (fws == null || sItem == null)
-                return;
+                return false;
 
             StandardHelper.InitItemDetial(sItem);
             switch (sItem.Type)
             {
                 case enumItemType.Standard:
                     foreach (StandardItem subItem in sItem.SubItems)
-                        CreateItemToWorkspace(subItem);
+                    {
+                        bool result = CreateItemToWorkspace(subItem);
+                        if (!result)
+                            return false;
+                    }
 
                     break;
 
@@ -49,16 +57,18 @@ namespace Hy.Esri.DataManage.Standard.Helper
                             catch (Exception exp)
                             {
                                 SendMessage(string.Format("创建矢量图层[{0}]失败", sItem.Name));
-
                                 Environment.Logger.AppendMessage(Define.enumLogType.Debug, string.Format("创建矢量图层[{0}]失败,信息：{1}", sItem.Name, exp));
+
+                                return false;
                             }
                         }
                     }
                     catch (Exception exp)
                     {
                         SendMessage(string.Format("创建FeatureDataset[{0}]失败", sItem.Name));
-
                         Environment.Logger.AppendMessage(Define.enumLogType.Debug, string.Format("创建FeatureDataset[{0}]失败,信息：{1}", sItem.Name, exp));
+                        
+                        return false;
                     }
                     break;
 
@@ -79,12 +89,15 @@ namespace Hy.Esri.DataManage.Standard.Helper
                     catch (Exception exp)
                     {
                         SendMessage(string.Format("创建矢量图层[{0}]失败", sItem.Name));
-
                         Environment.Logger.AppendMessage(Define.enumLogType.Debug, string.Format("创建矢量图层[{0}]失败,信息：{1}", sItem.Name, exp));
+
+                        return false;
                     }
                     break;
 
             }
+
+            return true;
         }
 
     }
