@@ -29,6 +29,7 @@ namespace Hy.Esri.DataManage.UI
             nodeRoot.SelectImageIndex = 18;
             foreach (StandardItem sItem in rootList)
             {
+                Environment.NhibernateHelper.RefreshObject(sItem, Define.enumLockMode.None);
                 StandardHelper.InitItemDetial(sItem);
                 BoundItem(sItem, nodeRoot);
             }
@@ -49,6 +50,8 @@ namespace Hy.Esri.DataManage.UI
 
                 case enumItemType.FeatureClass:
                     FeatureClassInfo fcInfo = sItem.Details as FeatureClassInfo;
+                    if (fcInfo == null)
+                        return 8;
                     switch (fcInfo.ShapeType)
                     {
                         case esriGeometryType.esriGeometryPoint:

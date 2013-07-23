@@ -15,6 +15,36 @@ namespace Hy.Esri.DataManage.Standard.Helper
 
         public StandardItem Import()
         {
+            StandardItem sItem = new StandardItem();
+            sItem.Type = enumItemType.Standard;
+            sItem.Name = this.StandardName;
+
+            IList<StandardItem> subList = new List<StandardItem>();
+            sItem.SubItems = subList;
+
+            IEnumDataset enDSN = this.Source.get_Datasets(esriDatasetType.esriDTAny);
+            IDataset dsName = enDSN.Next();
+            while (dsName != null)
+            {
+                switch (dsName.Type)
+                {
+                    case esriDatasetType.esriDTFeatureDataset:
+                        StandardItem sItemDs = StandardHelper.Import(dsName as IFeatureDataset);
+                        sItemDs.Parent = sItem;
+                        subList.Add(sItemDs);
+                        break;
+
+                    case esriDatasetType.esriDTFeatureClass:
+                        StandardItem sItemClass = StandardHelper.Import(dsName as IFeatureClass);
+                        sItemClass.Parent = sItem;
+                        subList.Add(sItemClass);
+                        break;
+                }
+                dsName = enDSN.Next();
+            }
+
+            return sItem;
+            
         }
     }
 }

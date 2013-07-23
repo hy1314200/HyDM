@@ -94,8 +94,10 @@ namespace Hy.Esri.DataManage.Standard
                 if (m_SpatialReference == null)
                 {
                     if (!string.IsNullOrWhiteSpace(this.SpatialReferenceString))
-                        m_SpatialReference = (new SpatialReferenceEnvironment()).CreateESRISpatialReferenceFromPRJ(this.SpatialReferenceString);
-
+                    {
+                        int temp = -1;
+                        (new SpatialReferenceEnvironment()).CreateESRISpatialReference(this.SpatialReferenceString, out this.m_SpatialReference, out temp);
+                    }
                     else
                         m_SpatialReference = (new UnknownCoordinateSystemClass());
                 }

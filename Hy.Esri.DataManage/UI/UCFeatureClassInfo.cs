@@ -22,6 +22,7 @@ namespace Hy.Esri.DataManage.UI
             {
                 cmbGeometryType.Properties.Items.Add(strType);
             }
+            this.EditAble = false;
         }
 
         private List<string> m_GeometryTypeStirngs =new List<string>(){

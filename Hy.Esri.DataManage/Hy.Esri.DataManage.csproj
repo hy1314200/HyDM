@@ -45,6 +45,10 @@
     <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -82,6 +86,8 @@
     <Compile Include="Command\CommandStandardAddFeatureClass.cs" />
     <Compile Include="Command\CommandStandardAddFeatureDataset.cs" />
     <Compile Include="Command\CommandStandardFlushToDB.cs" />
+    <Compile Include="Command\CommandStandardImport.cs" />
+    <Compile Include="Command\CommandStandardDelete.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="Standard\Define\enumItemType.cs" />
     <Compile Include="Standard\Define\FeatureClassInfo.cs" />
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="UI\FrmFeatureDatasetInfo.Designer.cs">
       <DependentUpon>FrmFeatureDatasetInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStandardImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStandardImport.Designer.cs">
+      <DependentUpon>FrmStandardImport.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UCStandardList.cs">
       <SubType>UserControl</SubType>
@@ -156,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmFeatureDatasetInfo.resx">
       <DependentUpon>FrmFeatureDatasetInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStandardImport.resx">
+      <DependentUpon>FrmStandardImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCStandardList.resx">
       <DependentUpon>UCStandardList.cs</DependentUpon>

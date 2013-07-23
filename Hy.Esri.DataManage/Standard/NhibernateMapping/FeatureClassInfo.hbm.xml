@@ -14,7 +14,7 @@
     <property column="HasM" type="bool" name="HasM"/>
     <property column="HasZ" type="bool" name="HasZ"/>
     <property column="SpatialReference" type="String" name="SpatialReferenceString"/>
-    <set name="SubItemEnumerator" inverse="false"  lazy="false" cascade="all-delete-orphan">
+    <set name="SubItemEnumerator" inverse="false"  lazy="false" cascade="none">
       <key column="Layer" />
       <one-to-many class="Hy.Metadata.FieldInfo,Hy.Metadata"/>
     </set>

@@ -15,6 +15,8 @@ namespace Hy.Esri.DataManage.UI
         public UCFeatureDataset()
         {
             InitializeComponent();
+
+            this.EditAble = false;
         }
 
         private StandardItem m_FeatureDatasetInfo;

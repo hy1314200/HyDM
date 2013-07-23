@@ -9,7 +9,7 @@
     <property column="Type" type="Int32" name="Type"/>
     <property column="SpatialReference" type="String" name="SpatialReferenceString"/>
     <many-to-one column="Parent" class="Hy.Dictionary.DictItem,Hy.Dictionary" not-found="ignore" cascade="none" lazy="false" name="Parent" update="false"/>
-    <set name="SubItemEnumerator" inverse="false"  lazy="false" cascade="delete-orphan">
+    <set name="SubItemEnumerator" inverse="false"  lazy="false" cascade="none">
       <key column="Parent" />
       <one-to-many class="Hy.Esri.DataManage.Standard.StandardItem,Hy.Esri.DataManage"/>
     </set>

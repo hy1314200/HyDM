@@ -123,17 +123,35 @@ namespace Hy.Esri.DataManage.Standard.Helper
             return fds.CreateFeatureClass(fcInfo.Name, CreateFields(fcInfo), null, null, fcInfo.FeatureType, fcInfo.ShapeFieldName, null);
         }
 
-        public static bool SaveStanard(StandardItem sItem)
+        public static bool SaveStandard(StandardItem sItem)
         {
             try
             {
                 Environment.NhibernateHelper.SaveObject(sItem);
                 if (sItem.Details != null)
-                    Environment.NhibernateHelper.SaveObject(sItem.Details);
+                {
+                    if (sItem.Details is FeatureClassInfo)
+                    {
+                        FeatureClassInfo fcInfo = sItem.Details as FeatureClassInfo;
+                        fcInfo.Parent = sItem.ID;
+                        Environment.NhibernateHelper.SaveObject(fcInfo);
+                        
+                        if (fcInfo.FieldsInfo != null)
+                        {
+                            foreach (FieldInfo fInfo in fcInfo.FieldsInfo)
+                            {
+                                fInfo.Layer = fcInfo.ID;
+                                Environment.NhibernateHelper.SaveObject(fInfo);
+                            }
+                        }
+                    }
 
+                }
+
+               
                 foreach (StandardItem subItem in sItem.SubItems)
                 {
-                    SaveStanard(subItem);
+                    SaveStandard(subItem);
                 }
                 Environment.NhibernateHelper.Flush();
 
@@ -144,5 +162,134 @@ namespace Hy.Esri.DataManage.Standard.Helper
                 return false;
             }
         }
+
+        public static bool DeleteStandard(StandardItem sItem)
+        {
+            try
+            {
+                if (sItem.Details != null)
+                {
+                    if (sItem.Details is FeatureClassInfo)
+                    {
+                        FeatureClassInfo fcInfo = sItem.Details as FeatureClassInfo;
+                        if (fcInfo.FieldsInfo != null)
+                        {
+                            foreach (FieldInfo fInfo in fcInfo.FieldsInfo)
+                            {
+                                Environment.NhibernateHelper.DeleteObject(fInfo);
+                            }
+                        }
+                        Environment.NhibernateHelper.DeleteObject(fcInfo);
+                    }
+
+                }
+
+
+                foreach (StandardItem subItem in sItem.SubItems)
+                {
+                    DeleteStandard(subItem);
+                }
+                Environment.NhibernateHelper.DeleteObject(sItem);
+                Environment.NhibernateHelper.Flush();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static StandardItem Import(IFeatureDataset fds)
+        {
+            if (fds == null)
+                return null;
+
+            StandardItem sItem = new StandardItem();
+            sItem.Type = enumItemType.FeatureDataset;
+            sItem.Name = fds.Name;
+            sItem.SpatialReference = (fds as IGeoDataset).SpatialReference;
+            sItem.ID = Guid.NewGuid().ToString("N");
+
+            IList<StandardItem> subList = new List<StandardItem>();
+            sItem.SubItems = subList;
+            IFeatureClassContainer fcContianer = fds as IFeatureClassContainer;
+            for (int i = 0; i < fcContianer.ClassCount; i++)
+            {
+                StandardItem sItemClass = Import(fcContianer.get_Class(i));
+                sItemClass.Parent = sItem;
+
+                subList.Add(sItemClass);
+            }
+
+            return sItem;
+          
+        }
+
+        public static StandardItem Import(IFeatureClass fClass)
+        {
+            if (fClass == null)
+                return null;
+
+            StandardItem sItem = new StandardItem();
+            sItem.Type = enumItemType.FeatureClass;
+            sItem.ID = Guid.NewGuid().ToString("N");
+
+            FeatureClassInfo fcInfo = new FeatureClassInfo();
+            fcInfo.ID = Guid.NewGuid().ToString("N");
+            fcInfo.Name=(fClass as IDataset).Name;
+            fcInfo.AliasName=fClass.AliasName;
+            fcInfo.SpatialReference=(fClass as IGeoDataset).SpatialReference;
+            fcInfo.FeatureType = esriFeatureType.esriFTSimple;
+            fcInfo.ShapeFieldName = fClass.ShapeFieldName;
+            fcInfo.ShapeType = fClass.ShapeType;
+
+            IList<FieldInfo> fList = new List<FieldInfo>();
+            for(int i=0;i<fClass.Fields.FieldCount;i++)
+            {
+                IField field = fClass.Fields.get_Field(i);
+                if (field.Type == esriFieldType.esriFieldTypeOID)
+                    continue;
+
+                if (field.Type == esriFieldType.esriFieldTypeGeometry)
+                {
+                    IGeometryDef geoDef = field.GeometryDef;
+                    fcInfo.AvgNumPoints = geoDef.AvgNumPoints;
+                    fcInfo.GridCount = geoDef.GridCount;
+                    fcInfo.HasM = geoDef.HasM;
+                    fcInfo.HasZ = geoDef.HasZ;
+                    continue;
+                }
+                FieldInfo fInfo = FromEsriField(field);
+                fInfo.Layer = fcInfo.ID;
+                fList.Add(fInfo);
+            }
+            fcInfo.FieldsInfo = fList;
+
+            sItem.Name = fcInfo.Name;
+            sItem.AliasName = fcInfo.AliasName;
+            sItem.SpatialReferenceString = fcInfo.SpatialReferenceString;
+            sItem.Details = fcInfo;
+
+            return sItem;
+        }
+
+        public static FieldInfo FromEsriField(IField field)
+        {
+            if (field == null)
+                return null;
+
+            FieldInfo fInfo = new FieldInfo();
+            fInfo.Name = field.Name;
+            fInfo.AliasName = field.AliasName;
+            fInfo.Length = field.Length;
+            fInfo.NullAble = field.IsNullable;
+            fInfo.Precision = field.Precision;
+            fInfo.Type = (enumFieldType)field.Type;
+
+            return fInfo;
+        }
+
+
     }
 }

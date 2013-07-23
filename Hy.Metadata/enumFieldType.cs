@@ -17,7 +17,7 @@ namespace Hy.Metadata
         /// <summary>
         /// 字符串
         /// </summary>
-        String=2,
+        String=4,
         /// <summary>
         /// 小数
         /// </summary>
