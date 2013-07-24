@@ -14,7 +14,7 @@ namespace Hy.Esri.Catalog
     {
         public override void OnClick()
         {
-            FrmLocalWorkspaceCreate frmCreate = new FrmLocalWorkspaceCreate();
+            FrmLocalWorkspaceAdd frmCreate = new FrmLocalWorkspaceAdd();
             if (frmCreate.ShowDialog() == DialogResult.OK)
             {
                 if (frmCreate.CreateNew)

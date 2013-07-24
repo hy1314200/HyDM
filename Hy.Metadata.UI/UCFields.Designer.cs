@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcFields = new DevExpress.XtraGrid.GridControl();
             this.gvFields = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcolName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,12 +45,14 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gcFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gcFields
@@ -72,7 +75,8 @@
             this.gcFields.Name = "gcFields";
             this.gcFields.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
-            this.repositoryItemSpinEdit1});
+            this.repositoryItemSpinEdit1,
+            this.repositoryItemImageComboBox1});
             this.gcFields.Size = new System.Drawing.Size(467, 267);
             this.gcFields.TabIndex = 5;
             this.gcFields.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -419,7 +423,7 @@
             this.gcolType.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.gcolType.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.gcolType.Caption = "数据类型";
-            this.gcolType.ColumnEdit = this.repositoryItemComboBox1;
+            this.gcolType.ColumnEdit = this.repositoryItemImageComboBox1;
             this.gcolType.FieldName = "Type";
             this.gcolType.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.Value;
             this.gcolType.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.None;
@@ -476,9 +480,9 @@
             this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.repositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -746,6 +750,60 @@
             this.simpleButton1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // repositoryItemImageComboBox1
+            // 
+            this.repositoryItemImageComboBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.repositoryItemImageComboBox1.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
+            this.repositoryItemImageComboBox1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemImageComboBox1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemImageComboBox1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemImageComboBox1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemImageComboBox1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemImageComboBox1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemImageComboBox1.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemImageComboBox1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemImageComboBox1.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemImageComboBox1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemImageComboBox1.AppearanceDropDown.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemImageComboBox1.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceDropDown.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemImageComboBox1.AppearanceDropDown.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemImageComboBox1.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceDropDown.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemImageComboBox1.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemImageComboBox1.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemImageComboBox1.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemImageComboBox1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemImageComboBox1.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemImageComboBox1.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemImageComboBox1.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemImageComboBox1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemImageComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemImageComboBox1.AutoHeight = false;
+            this.repositoryItemImageComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.repositoryItemImageComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.repositoryItemImageComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.repositoryItemImageComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.repositoryItemImageComboBox1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.repositoryItemImageComboBox1.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Default;
+            this.repositoryItemImageComboBox1.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageComboBoxItem[] {
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("短整型", "0", -1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("长整型", "1", -1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("", null, -1)});
+            this.repositoryItemImageComboBox1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
+            this.repositoryItemImageComboBox1.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.Default;
+            this.repositoryItemImageComboBox1.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.SingleClick;
+            this.repositoryItemImageComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
             // UCFields
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -759,6 +817,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -779,5 +838,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
     }
 }

@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfig));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -41,14 +38,12 @@
             this.tlRibbon = new DevExpress.XtraTreeList.TreeList();
             this.tlColCaption = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlColIcon = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.repositoryItemImageEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.tlColContent = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlColOrder = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlColCommandType = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.tlColParent = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.barBtnAddPage = new System.Windows.Forms.ToolStripButton();
             this.barBtnDeletePage = new System.Windows.Forms.ToolStripButton();
@@ -89,10 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tlRibbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -465,10 +458,8 @@
             this.tlRibbon.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.tlRibbon.Name = "tlRibbon";
             this.tlRibbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1,
-            this.repositoryItemImageEdit1,
-            this.repositoryItemImageEdit2,
-            this.repositoryItemComboBox1});
+            this.repositoryItemComboBox1,
+            this.repositoryItemPictureEdit1});
             this.tlRibbon.ShowButtonMode = DevExpress.XtraTreeList.ShowButtonModeEnum.ShowForFocusedCell;
             this.tlRibbon.Size = new System.Drawing.Size(557, 307);
             this.tlRibbon.TabIndex = 0;
@@ -521,7 +512,7 @@
             this.tlColIcon.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.tlColIcon.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.tlColIcon.Caption = "图标";
-            this.tlColIcon.ColumnEdit = this.repositoryItemImageEdit2;
+            this.tlColIcon.ColumnEdit = this.repositoryItemPictureEdit1;
             this.tlColIcon.FieldName = "图标";
             this.tlColIcon.Fixed = DevExpress.XtraTreeList.Columns.FixedStyle.None;
             this.tlColIcon.Format.FormatType = DevExpress.Utils.FormatType.None;
@@ -535,56 +526,43 @@
             this.tlColIcon.VisibleIndex = 1;
             this.tlColIcon.Width = 39;
             // 
-            // repositoryItemImageEdit2
+            // repositoryItemPictureEdit1
             // 
-            this.repositoryItemImageEdit2.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.repositoryItemImageEdit2.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.repositoryItemImageEdit2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit2.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit2.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit2.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit2.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit2.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit2.AppearanceDropDown.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit2.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceDropDown.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit2.AppearanceDropDown.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit2.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceDropDown.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit2.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit2.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit2.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit2.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit2.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit2.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit2.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit2.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit2.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit2.AutoHeight = false;
-            this.repositoryItemImageEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.repositoryItemImageEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.repositoryItemImageEdit2.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.repositoryItemImageEdit2.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.repositoryItemImageEdit2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.repositoryItemImageEdit2.Name = "repositoryItemImageEdit2";
-            this.repositoryItemImageEdit2.PictureAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.repositoryItemImageEdit2.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.Default;
-            this.repositoryItemImageEdit2.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.SingleClick;
-            this.repositoryItemImageEdit2.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.repositoryItemImageEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.repositoryItemImageEdit2.UseParentBackground = true;
+            this.repositoryItemPictureEdit1.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
+            this.repositoryItemPictureEdit1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemPictureEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemPictureEdit1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemPictureEdit1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemPictureEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemPictureEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemPictureEdit1.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemPictureEdit1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemPictureEdit1.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemPictureEdit1.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemPictureEdit1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemPictureEdit1.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemPictureEdit1.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemPictureEdit1.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemPictureEdit1.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemPictureEdit1.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemPictureEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemPictureEdit1.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemPictureEdit1.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.repositoryItemPictureEdit1.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemPictureEdit1.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.repositoryItemPictureEdit1.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.repositoryItemPictureEdit1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.repositoryItemPictureEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.repositoryItemPictureEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.repositoryItemPictureEdit1.CustomHeight = 32;
+            this.repositoryItemPictureEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.repositoryItemPictureEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
+            this.repositoryItemPictureEdit1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            this.repositoryItemPictureEdit1.NullText = " ";
+            this.repositoryItemPictureEdit1.PictureAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.repositoryItemPictureEdit1.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.Default;
+            this.repositoryItemPictureEdit1.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Clip;
             // 
             // tlColContent
             // 
@@ -706,9 +684,9 @@
             this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -752,104 +730,6 @@
             this.tlColParent.Visible = true;
             this.tlColParent.VisibleIndex = 4;
             this.tlColParent.Width = 140;
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.repositoryItemButtonEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.repositoryItemButtonEdit1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemButtonEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemButtonEdit1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemButtonEdit1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemButtonEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemButtonEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemButtonEdit1.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemButtonEdit1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemButtonEdit1.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemButtonEdit1.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemButtonEdit1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemButtonEdit1.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemButtonEdit1.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemButtonEdit1.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemButtonEdit1.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemButtonEdit1.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemButtonEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemButtonEdit1.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemButtonEdit1.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemButtonEdit1.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemButtonEdit1.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemButtonEdit1.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemButtonEdit1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemButtonEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            this.repositoryItemButtonEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            serializableAppearanceObject3.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            serializableAppearanceObject3.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            serializableAppearanceObject3.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            serializableAppearanceObject3.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            serializableAppearanceObject3.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
-            this.repositoryItemButtonEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.repositoryItemButtonEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.repositoryItemButtonEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.repositoryItemButtonEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.repositoryItemButtonEdit1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.repositoryItemButtonEdit1.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
-            this.repositoryItemButtonEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            // 
-            // repositoryItemImageEdit1
-            // 
-            this.repositoryItemImageEdit1.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.repositoryItemImageEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.repositoryItemImageEdit1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit1.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit1.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit1.AppearanceDropDown.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit1.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceDropDown.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit1.AppearanceDropDown.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit1.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceDropDown.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit1.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit1.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit1.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit1.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit1.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.repositoryItemImageEdit1.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.repositoryItemImageEdit1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.repositoryItemImageEdit1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.repositoryItemImageEdit1.AutoHeight = false;
-            this.repositoryItemImageEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
-            this.repositoryItemImageEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.repositoryItemImageEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.repositoryItemImageEdit1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.repositoryItemImageEdit1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
-            this.repositoryItemImageEdit1.PictureAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.repositoryItemImageEdit1.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.Default;
-            this.repositoryItemImageEdit1.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.SingleClick;
-            this.repositoryItemImageEdit1.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.repositoryItemImageEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // toolStrip2
             // 
@@ -1450,10 +1330,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tlRibbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -1511,10 +1389,7 @@
         private DevExpress.XtraTreeList.TreeList tlRibbon;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlColCaption;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlColIcon;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlColContent;
-        private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit2;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlColOrder;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton barBtnRefresh;
@@ -1529,6 +1404,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlColParent;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel txtStatus;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
 
     }
 }

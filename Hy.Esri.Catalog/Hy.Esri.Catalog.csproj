@@ -182,17 +182,17 @@
     <Compile Include="Command\Globe\CommandOpenGlobe.cs" />
     <Compile Include="Command\Globe\CommandSaveGlobe.cs" />
     <Compile Include="Environment.cs" />
-    <Compile Include="UI\Frm3CreatSdeConn.cs">
+    <Compile Include="UI\FrmSDEWorkspaceAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Frm3CreatSdeConn.designer.cs">
-      <DependentUpon>Frm3CreatSdeConn.cs</DependentUpon>
+    <Compile Include="UI\FrmSDEWorkspaceAdd.designer.cs">
+      <DependentUpon>FrmSDEWorkspaceAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmLocalWorkspaceCreate.cs">
+    <Compile Include="UI\FrmLocalWorkspaceAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FrmLocalWorkspaceCreate.designer.cs">
-      <DependentUpon>FrmLocalWorkspaceCreate.cs</DependentUpon>
+    <Compile Include="UI\FrmLocalWorkspaceAdd.designer.cs">
+      <DependentUpon>FrmLocalWorkspaceAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmModelLocation.cs">
       <SubType>Form</SubType>
@@ -300,11 +300,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="UI\Frm3CreatSdeConn.resx">
-      <DependentUpon>Frm3CreatSdeConn.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FrmSDEWorkspaceAdd.resx">
+      <DependentUpon>FrmSDEWorkspaceAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmLocalWorkspaceCreate.resx">
-      <DependentUpon>FrmLocalWorkspaceCreate.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FrmLocalWorkspaceAdd.resx">
+      <DependentUpon>FrmLocalWorkspaceAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmModelLocation.resx">
       <DependentUpon>FrmModelLocation.cs</DependentUpon>

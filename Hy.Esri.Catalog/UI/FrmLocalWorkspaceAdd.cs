@@ -12,9 +12,9 @@ using Hy.Esri.Catalog.Define;
 
 namespace Hy.Esri.Catalog.UI
 {
-    public partial class FrmLocalWorkspaceCreate : DevExpress.XtraEditors.XtraForm
+    public partial class FrmLocalWorkspaceAdd : DevExpress.XtraEditors.XtraForm
     {
-        public FrmLocalWorkspaceCreate()
+        public FrmLocalWorkspaceAdd()
         {
             InitializeComponent();
         }

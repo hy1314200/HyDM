@@ -1,6 +1,6 @@
 ﻿namespace Hy.Esri.Catalog.UI
 {
-    partial class Frm3CreatSdeConn
+    partial class FrmSDEWorkspaceAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm3CreatSdeConn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSDEWorkspaceAdd));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();

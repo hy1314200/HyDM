@@ -66,6 +66,8 @@
             // txtSource
             // 
             this.txtSource.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSource.Location = new System.Drawing.Point(92, 20);
             this.txtSource.Name = "txtSource";
             this.txtSource.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
@@ -110,7 +112,7 @@
             this.txtSource.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
             this.txtSource.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtSource.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtSource.Size = new System.Drawing.Size(312, 21);
+            this.txtSource.Size = new System.Drawing.Size(373, 21);
             this.txtSource.TabIndex = 1;
             this.txtSource.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             this.txtSource.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ChooseSource);
@@ -140,6 +142,8 @@
             // txtName
             // 
             this.txtName.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(92, 60);
             this.txtName.Name = "txtName";
             this.txtName.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
@@ -175,13 +179,14 @@
             this.txtName.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.txtName.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
             this.txtName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtName.Size = new System.Drawing.Size(312, 21);
+            this.txtName.Size = new System.Drawing.Size(373, 21);
             this.txtName.TabIndex = 2;
             this.txtName.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
             // simpleButton1
             // 
             this.simpleButton1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.simpleButton1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
@@ -191,7 +196,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.simpleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton1.Location = new System.Drawing.Point(267, 87);
+            this.simpleButton1.Location = new System.Drawing.Point(328, 88);
             this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(60, 23);
@@ -203,6 +208,7 @@
             // simpleButton2
             // 
             this.simpleButton2.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.simpleButton2.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
@@ -212,7 +218,7 @@
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.Default;
-            this.simpleButton2.Location = new System.Drawing.Point(344, 87);
+            this.simpleButton2.Location = new System.Drawing.Point(405, 88);
             this.simpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(60, 23);
@@ -234,7 +240,7 @@
             this.lblStatus.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.None;
             this.lblStatus.LineLocation = DevExpress.XtraEditors.LineLocation.Default;
             this.lblStatus.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Default;
-            this.lblStatus.Location = new System.Drawing.Point(25, 104);
+            this.lblStatus.Location = new System.Drawing.Point(25, 92);
             this.lblStatus.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 14);
@@ -256,7 +262,7 @@
             this.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 123);
+            this.ClientSize = new System.Drawing.Size(486, 118);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);

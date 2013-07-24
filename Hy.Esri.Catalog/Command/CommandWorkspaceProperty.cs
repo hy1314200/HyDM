@@ -26,7 +26,7 @@ namespace Hy.Esri.Catalog.Command
             }
             else
             {
-                FrmLocalWorkspaceCreate frmPropery2 = new FrmLocalWorkspaceCreate();
+                FrmLocalWorkspaceAdd frmPropery2 = new FrmLocalWorkspaceAdd();
                 frmPropery2.Editable = false;
                 frmPropery2.WorkspaceAlias = itemWorkspace.Name;
                 frmPropery2.WorkspaceType = itemWorkspace.WorkspaceType;

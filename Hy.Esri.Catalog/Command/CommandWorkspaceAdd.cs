@@ -17,7 +17,7 @@ namespace Hy.Esri.Catalog.Command
         }
         public override void OnClick()
         {
-            Frm3CreatSdeConn frmCreate = new Frm3CreatSdeConn();
+            FrmSDEWorkspaceAdd frmCreate = new FrmSDEWorkspaceAdd();
             if (frmCreate.ShowDialog() == DialogResult.OK)
             {
                 ICatalogItem itemWorkspace = new WorkspaceCatalogItem(

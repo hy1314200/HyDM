@@ -1,6 +1,6 @@
 ﻿namespace Hy.Esri.Catalog.UI
 {
-    partial class FrmLocalWorkspaceCreate
+    partial class FrmLocalWorkspaceAdd
     {
         /// <summary>
         /// Required designer variable.

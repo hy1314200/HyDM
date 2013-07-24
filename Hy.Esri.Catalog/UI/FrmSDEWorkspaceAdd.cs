@@ -14,11 +14,11 @@ using Hy.Esri.Catalog.Define;
 
 namespace Hy.Esri.Catalog.UI
 {
-    public partial class Frm3CreatSdeConn : DevExpress.XtraEditors.XtraForm
+    public partial class FrmSDEWorkspaceAdd : DevExpress.XtraEditors.XtraForm
     {
         private bool SAVEorUN = false;
         private bool Success = false;
-        public Frm3CreatSdeConn()
+        public FrmSDEWorkspaceAdd()
         {
             InitializeComponent();
             textEdit6.Properties.ReadOnly = true;

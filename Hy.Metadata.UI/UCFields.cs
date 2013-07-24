@@ -17,25 +17,52 @@ namespace Hy.Metadata.UI
             InitializeComponent();
 
             string[] m_Captions =
-            {                 
+            {   
+                "短整型",
+                "长整数",
+                "单精度",
+                "双精度",
                 "字符串",
-                "整数",
-                "小数",
                 "日期和时间",
+                "标识",
+                "几何",
+                "二进制",
                 "图片",
-                "二进制"
+                "唯一标识符",
+                "唯一标识符",
+                "XML"
+
             };
             //ComboBoxEdit cmbFiels = this.repositoryItemComboBox1.OwnerEdit;
             //for(int i=0;i<m_Captions.Length;i++)
             //{
             //    cmbFiels.Properties.Items.Add(new ComboItem((enumFieldType)i, m_Captions[i]));
             //}
-            for (int i = 0; i <6; i++)
+            for (int i = 0; i <13; i++)
             {
-                this.repositoryItemComboBox1.Items.Add((enumFieldType)i);
+                //this.repositoryItemComboBox1.Items.Add(new ComboBoxItem(i,m_Captions[i]));//(enumFieldType)i);
+                this.repositoryItemImageComboBox1.Items.Add(new DevExpress.XtraEditors.Controls.ImageComboBoxItem(m_Captions[i], (enumFieldType)i));
+            }
+            
+            this.FieldsInfo = new List<FieldInfo>();
+        }
+        private class ComboBoxItem
+        {
+            public ComboBoxItem(object value,object caption)
+            {
+                this.m_Caption = caption;
+                this.m_Value = value;
             }
 
-            this.FieldsInfo = new List<FieldInfo>();
+            protected object m_Caption;
+            protected object m_Value;
+
+            public object Value { get { return m_Value; } }
+
+            public override string ToString()
+            {
+                return m_Caption==null?"":m_Caption.ToString();
+            }
         }
         
         [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]

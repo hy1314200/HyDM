@@ -15,6 +15,7 @@ namespace Hy.Esri.DataManage.UI
         public FrmFeatureClassInfo()
         {
             InitializeComponent();
+            this.EditAble = true;
         }
 
 
