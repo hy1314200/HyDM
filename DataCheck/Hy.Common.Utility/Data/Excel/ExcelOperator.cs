@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.IO;
 
-namespace Common.Utility.Data.Excel
+namespace Hy.Common.Utility.Data.Excel
 {
     public class Excelator
     {
@@ -88,7 +88,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 if (m_pWorkBook != null)
                 {
@@ -122,7 +122,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 if (m_pWorkBook != null)
                 {
@@ -354,7 +354,7 @@ namespace Common.Utility.Data.Excel
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             finally
@@ -519,7 +519,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return;
             }
@@ -540,7 +540,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return;
             }
@@ -862,7 +862,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return;
             }
@@ -937,7 +937,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 if (m_pWorkBook != null)
                 {
@@ -1003,7 +1003,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
         }
 
@@ -1070,7 +1070,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -1093,7 +1093,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 return false;
             }
         }

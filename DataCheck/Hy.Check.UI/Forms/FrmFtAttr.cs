@@ -213,7 +213,7 @@ namespace Hy.Check.UI.Forms
                 string s = ex.Message;
             }
             string strLayerName = nodeChild.ParentNode.GetDisplayText("FtName").ToString();
-            ILayer pLayer1 = Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(m_pMap, strLayerName);
+            ILayer pLayer1 = Hy.Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(m_pMap, strLayerName);
             if(pLayer1==null)
             {
                 return;
@@ -494,7 +494,7 @@ namespace Hy.Check.UI.Forms
 
             TreeNode Nodeparent = FtTreeView.SelectedNode.Parent;
 
-            ILayer pLayer = Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(m_pMap, Nodeparent.Text);
+            ILayer pLayer = Hy.Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(m_pMap, Nodeparent.Text);
             if (pLayer == null)
             {
                 return;
@@ -533,7 +533,7 @@ namespace Hy.Check.UI.Forms
                 m_pMapControl.ActiveView.Extent = pFt.Shape.Envelope;
                 m_pActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
                 m_pActiveView.ScreenDisplay.UpdateWindow();
-                Common.Utility.Esri.MapOperAPI.FlashGeometry(m_pMapControl.Object as IMapControl4, pFt.Shape);
+                Hy.Common.Utility.Esri.MapOperAPI.FlashGeometry(m_pMapControl.Object as IMapControl4, pFt.Shape);
                 //m_pMapControl.FlashShape(pFt.SHP, 2, 150, null);
                 //Engine_API.ZoomToFeature(m_pMapControl, pFt);
                 return;
@@ -575,7 +575,7 @@ namespace Hy.Check.UI.Forms
 
             string LayerName = node.ParentNode.GetDisplayText("FtName").ToString();
 
-            ILayer pLayer = Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(m_pMap, LayerName);
+            ILayer pLayer = Hy.Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(m_pMap, LayerName);
             if (pLayer == null)
             {
                 return;

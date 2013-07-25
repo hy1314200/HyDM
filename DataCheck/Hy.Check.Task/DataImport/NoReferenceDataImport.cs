@@ -5,7 +5,7 @@ using System.Text;
 
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Define;
 
 namespace Hy.Check.Task.DataImport

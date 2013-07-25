@@ -147,7 +147,7 @@ namespace Hy.Check.UI.Forms
                     break;
 
                 case enumMessageType.Exception:
-                    Common.Utility.Log.OperationalLogManager.AppendMessage(strMsg);
+                    Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(strMsg);
                     break;
 
                 default:

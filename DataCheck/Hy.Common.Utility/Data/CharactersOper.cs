@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Common.Utility.Data
+namespace Hy.Common.Utility.Data
 {
     public class CharactersOper
     {

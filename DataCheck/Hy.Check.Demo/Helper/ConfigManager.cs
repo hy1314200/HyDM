@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using Common.Utility.Encryption;
+using Hy.Common.Utility.Encryption;
 using System.IO;
-using Common.UI;
+using Hy.Common.UI;
 using Hy.Check.Command;
 using Hy.Check.Utility;
-using Common.Utility;
+using Hy.Common.Utility;
 
 namespace Hy.Check.Demo.Helper
 {

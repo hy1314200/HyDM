@@ -12,7 +12,7 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.SystemUI;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 
 namespace Hy.Check.UI.Forms
 {

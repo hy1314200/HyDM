@@ -1,4 +1,4 @@
-namespace Common.UI
+namespace Hy.Common.UI
 {
     partial class frmProgress
     {

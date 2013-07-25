@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
 using Hy.Check.Task;
-using Common.UI;
+using Hy.Common.UI;
 using Hy.Check.Utility;
 using CheckTask = Hy.Check.Task.Task;
 

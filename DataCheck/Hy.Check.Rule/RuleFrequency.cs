@@ -140,7 +140,7 @@ namespace Hy.Check.Rule
 
                     //打开记录集，并分组	         
                     DataTable ipRecordset = new DataTable();
-                    ipRecordset = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
+                    ipRecordset = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
                     if (ipRecordset == null)
                     {
                         return false;
@@ -219,7 +219,7 @@ namespace Hy.Check.Rule
                     string strTargetField = GetTargetField();
                     string strSql1 = "Select " + strGroup + ",BSM,ObjectID From " + layerName;
                     DataTable ipRecordsetRes = new DataTable();
-                    ipRecordsetRes = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql1);
+                    ipRecordsetRes = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql1);
                     if (ipRecordsetRes == null)
                     {
                         return false;

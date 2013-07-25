@@ -182,7 +182,7 @@ namespace Hy.Check.UI.UC
                     PanMap(0d, -0.3d);
                     break;
                 case enumNavigate.Full:
-                    //ILayer pLayer = EngineAPI.GetLayerFromMapByName(this.Map, Common.UI.GT_COMMONNOUN.XZQChnName);
+                    //ILayer pLayer = EngineAPI.GetLayerFromMapByName(this.Map, Hy.Common.UI.GT_COMMONNOUN.XZQChnName);
                     //if (pLayer == null)
                     //{
                     //    return;

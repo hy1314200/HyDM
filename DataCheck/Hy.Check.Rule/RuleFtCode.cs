@@ -92,7 +92,7 @@ namespace Hy.Check.Rule
                 string strSql = "select OBJECTID,BSM from " + strLayerName;
 
                 DataTable ipRecordset = new DataTable();
-                ipRecordset = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
+                ipRecordset = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
                 if (ipRecordset == null)
                 {
                     return false;
@@ -153,7 +153,7 @@ namespace Hy.Check.Rule
                              strFtCode.Substring(0, strFtCode.Length) + "')) or (" + strCodeField + " is null )";
 
                     DataTable ipRecordset = new DataTable();
-                    ipRecordset = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
+                    ipRecordset = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
                     if (ipRecordset == null)
                     {
                         return false;

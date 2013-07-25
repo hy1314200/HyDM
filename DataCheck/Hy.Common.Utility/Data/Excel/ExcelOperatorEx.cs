@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 
-namespace Common.Utility.Data.Excel
+namespace Hy.Common.Utility.Data.Excel
 {
     /// <summary>
     /// 导出excel操作类支持2007
@@ -22,7 +22,7 @@ namespace Common.Utility.Data.Excel
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -71,7 +71,7 @@ namespace Common.Utility.Data.Excel
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 base.ReleaseObjects();
                 //KillExcelPProcess();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using System.Data;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 using Hy.Check.Utility;
 
 namespace Hy.Check.Rule.Helper
@@ -32,7 +32,7 @@ namespace Hy.Check.Rule.Helper
           // DataTable dtSchema= (m_DBConnection as System.Data.Common.DbConnection).GetSchema("Column_Type",string[]{m_LayerName,fieldName});
 
             string strSQL = string.Format("select {0} from {1} where 1=2", fieldName, lyrName);
-            DataTable dtSchema = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_DBConnection, strSQL);
+            DataTable dtSchema = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_DBConnection, strSQL);
             if (dtSchema == null)
                 return null;
 
@@ -54,7 +54,7 @@ namespace Hy.Check.Rule.Helper
                          strLayerName + "'";
 
                 // 执行SQL命令得到标准名称		      
-                DataTable ipRecordset = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_DBConnection, strSql);
+                DataTable ipRecordset = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_DBConnection, strSql);
                 if (ipRecordset==null)
                 {
                     aryFtCode = null;

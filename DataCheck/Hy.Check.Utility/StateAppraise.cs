@@ -110,7 +110,7 @@ namespace Hy.Check.Utility
                         // 2012-07-12 张航宇
                         // 直接从结果库获取结果表记录，而关闭ResultTable属性 
 
-                        this.ResultTable = Common.Utility.Data.AdoDbHelper.GetDataTable(_resultConn, @"SELECT
+                        this.ResultTable = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(_resultConn, @"SELECT
                             b.CheckType,b.RuleInstID,b.ArcGisRule ,a.TargetFeatClass1 as YSTC,
                             a.BSM as SourceBSM,'LR_ResAutoAttr' as SysTab,a.IsException from LR_ResAutoAttr as a, LR_ResultEntryRule as b where a.RuleInstID=b.RuleInstID
 
@@ -136,7 +136,7 @@ namespace Hy.Check.Utility
                         DataTable dt = null;
                         // = GT_CARTO.CommonAPI.ado_OpenTable() .ado_Execute(CommonAPI.Get_DBConnection(), sql);
                         string str = string.Format("select * from LR_ResultEntryRule where ArcGisRule<>''");
-                        dt = Common.Utility.Data.AdoDbHelper.GetDataTable(_resultConn, str);
+                        dt = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(_resultConn, str);
                         if (dt == null) return;
                         if (dt.Rows.Count < 1) return;
                         foreach (DataRow dr in dt.Rows)
@@ -148,7 +148,7 @@ namespace Hy.Check.Utility
                     }
                     catch (Exception exp)
                     {
-                        Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                        Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                         //GT_CONST.LogAPI.CheckLog.AppendErrLogs(ex.ToString());
                     }
@@ -197,7 +197,7 @@ namespace Hy.Check.Utility
             {
                 //DataTable dt = null; // = GT_CARTO.CommonAPI.ado_OpenTable() .ado_Execute(CommonAPI.Get_DBConnection(), sql);
                 //GT_CARTO.CommonAPI.ado_OpenTable("LR_EvaHMWeight", ref dt, GT_CARTO.CommonAPI.Get_DBConnection());
-                DataTable dt = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), "select * from LR_EvaHMWeight");
+                DataTable dt = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), "select * from LR_EvaHMWeight");
                 if (dt.Rows.Count < 1) return;
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -208,7 +208,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 //GT_CONST.LogAPI.CheckLog.AppendErrLogs(ex.ToString());
             }
@@ -303,7 +303,7 @@ namespace Hy.Check.Utility
                 }
                 catch (Exception exp)
                 {
-                    Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                    Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                     //GT_CONST.LogAPI.CheckLog.AppendErrLogs(ex.ToString());
                 }
@@ -406,7 +406,7 @@ namespace Hy.Check.Utility
                 }
                 catch (Exception exp)
                 {
-                    Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                    Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                     //GT_CONST.LogAPI.CheckLog.AppendErrLogs(ex.ToString());
                 }
@@ -468,7 +468,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             return totalMark;

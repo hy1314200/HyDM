@@ -5,7 +5,7 @@ using System.Text;
 //using VCTEXCHANGELib;
 
 
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Define;
 
 namespace Hy.Check.Task.DataImport
@@ -44,7 +44,7 @@ namespace Hy.Check.Task.DataImport
 
         protected override bool ImportToBase(ref ESRI.ArcGIS.Geodatabase.IWorkspace wsBase)
         {
-           // Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.m_TargetPath, COMMONCONST.DB_Name_Base,ref wsBase);
+           // Hy.Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.m_TargetPath, COMMONCONST.DB_Name_Base,ref wsBase);
            // VctReaderClass vctReader = new VctReaderClass();
            // vctReader.VctFile = this.m_Datasource;   
            //// vctReader.SpatialReference = this.m_SpatialReference;

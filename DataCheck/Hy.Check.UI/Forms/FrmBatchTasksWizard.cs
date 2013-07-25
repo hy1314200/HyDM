@@ -16,11 +16,11 @@ using DevExpress.XtraWizard;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Geodatabase;
 using Hy.Check.Task;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Task.DataImport;
 using Hy.Check.Define;
 using Hy.Check.Utility;
-using Common.UI;
+using Hy.Common.UI;
 using CheckTask = Hy.Check.Task.Task;
 
 namespace Hy.Check.UI.Forms 
@@ -789,7 +789,7 @@ namespace Hy.Check.UI.Forms
 
         void multiTask_CreatingTaskChanged(CheckTask curTask)
         {
-            m_GifProgress = new Common.UI.XGifProgress();
+            m_GifProgress = new Hy.Common.UI.XGifProgress();
             m_GifProgress.ShowHint(string.Format("正在创建任务“{0}”…", curTask.Name));
         }
         void multiTask_TaskCreated(CheckTask curTask)
@@ -953,7 +953,7 @@ namespace Hy.Check.UI.Forms
         public List<CheckTask> AvailableTasks { get { return m_AvailableTasks; } }
 
 
-        XGifProgress m_GifProgress =null;// new Common.UI.XGifProgress();
+        XGifProgress m_GifProgress =null;// new Hy.Common.UI.XGifProgress();
         /// <summary>
         /// 显示进度条
         /// </summary>
@@ -967,7 +967,7 @@ namespace Hy.Check.UI.Forms
         /// </summary>
         void MessageHandler(enumMessageType msgType, string strMsg)
         {
-            Common.Utility.Log.OperationalLogManager.AppendMessage(strMsg);
+            Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(strMsg);
         }
 
       

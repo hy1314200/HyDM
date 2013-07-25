@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Common.Utility.Log
+namespace Hy.Common.Utility.Log
 {
     /// <summary>
     /// 任务（执行）日志管理类

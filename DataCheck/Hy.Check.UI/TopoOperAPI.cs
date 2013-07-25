@@ -8,7 +8,7 @@ using ESRI.ArcGIS.Carto;
 using System.Runtime.InteropServices;
 using Hy.Check.Utility;
 
-namespace Common.Utility.Esri
+namespace Hy.Common.Utility.Esri
 {
     public class TopoOperAPI
     {

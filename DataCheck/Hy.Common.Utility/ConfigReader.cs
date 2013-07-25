@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace Common.Utility
+namespace Hy.Common.Utility
 {
     /// <summary>
     /// Config文件简单读取

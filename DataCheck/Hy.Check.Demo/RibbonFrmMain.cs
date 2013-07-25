@@ -12,7 +12,7 @@ using DevExpress.XtraGrid.Localization;
 using DevExpress.XtraTreeList.Localization;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Geometry;
-using Common.UI;
+using Hy.Common.UI;
 using Hy.Check.Command;
 using Hy.Check.Demo.Helper;
 

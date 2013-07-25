@@ -15,7 +15,7 @@ namespace Hy.Check.Utility
         {
             try
             {
-                DataTable dtDefectLevel = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), "select ElementID as RuleID,IIF(ErrType='轻缺陷',0,IIF(ErrType='重缺陷',1,2)) as DefectLevel from LR_EvaHMWeight");
+                DataTable dtDefectLevel = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), "select ElementID as RuleID,IIF(ErrType='轻缺陷',0,IIF(ErrType='重缺陷',1,2)) as DefectLevel from LR_EvaHMWeight");
                 m_DictDefectLevel = new Dictionary<string, enumDefectLevel>();
                 for (int i = 0; i < dtDefectLevel.Rows.Count; i++)
                 {
@@ -24,7 +24,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
         }
 

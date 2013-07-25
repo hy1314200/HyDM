@@ -4,7 +4,7 @@ using System.Data;
 using System.IO;
 using System.Text;
 using Hy.Check.Rule;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 using Hy.Check.Utility;
 using Hy.Check.Define;
 

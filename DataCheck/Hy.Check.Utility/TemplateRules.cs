@@ -7,7 +7,7 @@ using System.IO;
 using System.Collections;
 
 using Hy.Check.Define;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 
 namespace Hy.Check.Utility
 {
@@ -155,14 +155,14 @@ namespace Hy.Check.Utility
                     }
                     catch (Exception exp)
                     {
-                        Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                        Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                         continue;
                     }
                 }
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             finally
@@ -202,7 +202,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             finally

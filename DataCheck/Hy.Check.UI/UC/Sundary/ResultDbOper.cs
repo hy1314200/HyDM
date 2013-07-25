@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 using System.Data.Common;
 using Hy.Check.Utility;
 

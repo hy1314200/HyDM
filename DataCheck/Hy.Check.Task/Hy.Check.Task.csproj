@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtendChecker.cs" />
     <Compile Include="Helper\VCTHeadInfo.cs" />
     <Compile Include="Helper\VctIntegerityCheck.cs" />
     <Compile Include="DataImport\DataBaseCopier.cs" />

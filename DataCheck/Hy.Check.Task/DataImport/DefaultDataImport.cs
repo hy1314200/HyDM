@@ -7,7 +7,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 
 
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Define;
 using Hy.Check.Utility;
 
@@ -251,7 +251,7 @@ namespace Hy.Check.Task.DataImport
                     string strDBPath = this.m_TargetPath + "\\Base.MDB";
                     System.IO.File.Copy(this.m_Datasource, strDBPath);//+ COMMONCONST.DB_Name_Base);
 
-                    if (!Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref wsBase, strDBPath))
+                    if (!Hy.Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref wsBase, strDBPath))
                     {
                         SendMessage(enumMessageType.Exception, "导入数据（复制文件）后打开出错，请确认数据源为正确的PGDB文件");
                         return false;
@@ -277,7 +277,7 @@ namespace Hy.Check.Task.DataImport
                     else
                     {
                         strFolderName = COMMONCONST.DB_Name_Base;
-                        Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+                        Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
                         gpTool.Copy(this.m_Datasource, this.m_TargetPath + "\\" + strFolderName);
                     }
 
@@ -311,18 +311,18 @@ namespace Hy.Check.Task.DataImport
 
             // 导入的方式 
             string strWorkspace = this.m_TargetPath + "\\" + COMMONCONST.DB_Name_Base;
-            if (!Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref wsBase, strWorkspace))
+            if (!Hy.Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref wsBase, strWorkspace))
             {
                 SendMessage(enumMessageType.Exception, "导入数据失败：无法打开Base库，请确认在创建任务文件结构时已创建Base库");
                 return false;
-            }// Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.m_TargetPath, COMMONCONST.DB_Name_Base);
+            }// Hy.Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.m_TargetPath, COMMONCONST.DB_Name_Base);
             IFeatureDataset fdsTarget = CreateFeatureDataset(wsBase, this.m_SpatialReference);
             if (fdsTarget == null)
             {
                 SendMessage(enumMessageType.Exception, "“Dataset”没有创建成功，无法继续导入");
                 return false;
             }
-            Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+            Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
 
             // 打开数据源
             IWorkspace wsSource = null;
@@ -344,13 +344,13 @@ namespace Hy.Check.Task.DataImport
                     {
                         case esriDatasetType.esriDTTable:
                             SendEvent(dataset.Name);
-                            Common.Utility.Esri.DataConverter.ConvertTable(wsSource, wsBase, dataset, GetObjectName(dataset.Name));
+                            Hy.Common.Utility.Esri.DataConverter.ConvertTable(wsSource, wsBase, dataset, GetObjectName(dataset.Name));
                             break;
 
                         case esriDatasetType.esriDTFeatureClass:
                             SendEvent(dataset.Name);
                             gpTool.CopyFeatureClass(string.Format("{0}\\{1}", this.m_Datasource, dataset.Name + (this.m_DataType == enumDataType.SHP ? ".shp" : "")), string.Format("{0}\\{1}\\{2}", strWorkspace, fdsTarget.Name, GetObjectName(dataset.Name)));
-                            //Common.Utility.Esri.DataConverter.ConvertFeatureClass(wsSource as IDataset,fdsTarget as IDataset, dataset as IFeatureClass, GetObjectName(dataset.Name));
+                            //Hy.Common.Utility.Esri.DataConverter.ConvertFeatureClass(wsSource as IDataset,fdsTarget as IDataset, dataset as IFeatureClass, GetObjectName(dataset.Name));
                             break;
 
                         case esriDatasetType.esriDTFeatureDataset:
@@ -360,7 +360,7 @@ namespace Hy.Check.Task.DataImport
                                 string strFcName = (fsContainer.get_Class(i) as IDataset).Name;
                                 SendEvent(strFcName);
                                 gpTool.CopyFeatureClass(string.Format("{0}\\{1}\\{2}", this.m_Datasource, dataset.Name, strFcName), string.Format("{0}\\{1}\\{2}", strWorkspace, fdsTarget.Name, GetObjectName(strFcName)));
-                                //Common.Utility.Esri.DataConverter.ConvertFeatureClass(dataset, fdsTarget as IDataset, fsContainer.get_Class(i), (fsContainer.get_Class(i) as IDataset).Name);
+                                //Hy.Common.Utility.Esri.DataConverter.ConvertFeatureClass(dataset, fdsTarget as IDataset, fsContainer.get_Class(i), (fsContainer.get_Class(i) as IDataset).Name);
                             }
 
                             break;
@@ -404,15 +404,15 @@ namespace Hy.Check.Task.DataImport
         {
             string strWorkspace = this.m_TargetPath + "\\" + COMMONCONST.DB_Name_Query;
             IWorkspace wsQuery = null;
-            if (!Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref wsQuery, strWorkspace))
+            if (!Hy.Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref wsQuery, strWorkspace))
             {
                 SendMessage(enumMessageType.Exception, "导入数据失败：无法打开Query库，请确认在创建任务文件结构时已创建Query库");
                 return false;
             }
-            //Common.Utility.Esri.AEAccessFactory.CreatePGDB(this.m_TargetPath, COMMONCONST.DB_Name_Query);
+            //Hy.Common.Utility.Esri.AEAccessFactory.CreatePGDB(this.m_TargetPath, COMMONCONST.DB_Name_Query);
             //IFeatureDataset fdsTarget = CreateFeatureDataset(wsQuery, this.m_SpatialReference);
 
-            Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+            Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
 
             // 打开数据源           
             if (wsBase == null)
@@ -432,7 +432,7 @@ namespace Hy.Check.Task.DataImport
                     case esriDatasetType.esriDTTable:
                     case esriDatasetType.esriDTFeatureClass:
                         SendEvent(dataset.Name);
-                        Common.Utility.Esri.DataConverter.ConvertTable(wsBase, wsQuery, dataset, GetObjectName(dataset.Name));
+                        Hy.Common.Utility.Esri.DataConverter.ConvertTable(wsBase, wsQuery, dataset, GetObjectName(dataset.Name));
                         break;
 
                     case esriDatasetType.esriDTFeatureDataset:
@@ -441,7 +441,7 @@ namespace Hy.Check.Task.DataImport
                         {
                             IDataset dsSub = fcContianer.get_Class(i) as IDataset;
                             SendEvent(dsSub.Name);
-                            Common.Utility.Esri.DataConverter.ConvertTable(wsBase, wsQuery, dsSub, GetObjectName(dsSub.Name));
+                            Hy.Common.Utility.Esri.DataConverter.ConvertTable(wsBase, wsQuery, dsSub, GetObjectName(dsSub.Name));
                         }
                         break;
 

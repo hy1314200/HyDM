@@ -17,7 +17,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using Hy.Check.Define;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using CheckTask = Hy.Check.Task.Task;
 
 namespace Hy.Check.UI.UC
@@ -411,8 +411,8 @@ namespace Hy.Check.UI.UC
 
                 if (fError != null)
                 {
-                    Common.Utility.Esri.MapOperAPI.ZoomToFeature(Control.FromHandle((IntPtr)(this.m_HookHelper.Hook as IMapControl2).hWnd) as AxMapControl, fError.Shape);
-                    Common.Utility.Esri.MapOperAPI.FlashGeometry(this.m_HookHelper.Hook as IMapControl4, fError.Shape);
+                    Hy.Common.Utility.Esri.MapOperAPI.ZoomToFeature(Control.FromHandle((IntPtr)(this.m_HookHelper.Hook as IMapControl2).hWnd) as AxMapControl, fError.Shape);
+                    Hy.Common.Utility.Esri.MapOperAPI.FlashGeometry(this.m_HookHelper.Hook as IMapControl4, fError.Shape);
                 }
                 
             }

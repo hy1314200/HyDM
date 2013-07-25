@@ -4,7 +4,7 @@ using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 
-namespace Common.UI
+namespace Hy.Common.UI
 {
     public partial class frmProgress : XtraForm
     {

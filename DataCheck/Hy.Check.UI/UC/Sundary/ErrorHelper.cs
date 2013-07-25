@@ -36,7 +36,7 @@ namespace Hy.Check.UI.UC.Sundary
             string strFields = GetErrorFields(errType);
             if (errCount < 0)
             {
-                DataTable dtCount = Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, string.Format("select count(0) from {0} where RuleInstID in ('{1}')", resultTableName,  ruleIDs.Replace(",", "','")));
+                DataTable dtCount = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, string.Format("select count(0) from {0} where RuleInstID in ('{1}')", resultTableName,  ruleIDs.Replace(",", "','")));
                 errCount = (int)dtCount.Rows[0][0];
             }
             int resultCount = countPerPage;
@@ -47,7 +47,7 @@ namespace Hy.Check.UI.UC.Sundary
             object[] objArgs = { resultCount, countPerPage * (pageIndex + 1), resultTableName, ruleIDs.Replace(",", "','"),strFields };
             string strSQL = string.Format("select top {0} * from (select top {1} {4} from {2} as Result,LR_ResultEntryRule as Entry where Result.RuleInstID in ('{3}') and Result.RuleInstID=Entry.RuleInstID order by ErrNum Asc) Order by ErrNum Desc", objArgs);
 
-            DataTable dtErrors= Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, strSQL);
+            DataTable dtErrors= Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, strSQL);
             dtErrors.TableName = resultTableName;
 
             //DataColumn colErrorType = new DataColumn("错误级别",typeof(string));
@@ -141,7 +141,7 @@ Entry.ErrorType as ErrorType
 
         public enumDefectLevel GetDefectLevel(string ruleID)
         {
-            DataTable dtDefect= Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, string.Format("select IIf(ErrType='轻缺陷',0,IIF(ErrType='重缺陷',1,2)) from LR_EvaHMWeight where ElementID='{0}'", ruleID));
+            DataTable dtDefect= Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, string.Format("select IIf(ErrType='轻缺陷',0,IIF(ErrType='重缺陷',1,2)) from LR_EvaHMWeight where ElementID='{0}'", ruleID));
             if (dtDefect == null || dtDefect.Rows.Count == 0)
             {
 
@@ -153,7 +153,7 @@ Entry.ErrorType as ErrorType
         public bool CommitExceptionEdit(enumErrorType errorType, DataTable dtError)
         {
             string strTable = GetResultTableNameByType(errorType);
-            return Common.Utility.Data.AdoDbHelper.UpdateTable(strTable, dtError, this.ResultConnection);          
+            return Hy.Common.Utility.Data.AdoDbHelper.UpdateTable(strTable, dtError, this.ResultConnection);          
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ Entry.ErrorType as ErrorType
         {
             string strTable = GetResultTableNameByType(errType);
             object[] objArgs = { strTable, isException, errID, remark==null?remark:remark.Replace("'","''") };
-            return Common.Utility.Data.AdoDbHelper.ExecuteSql(this.ResultConnection, string.Format("Update {0} set IsException={1},Remark='{3}' where ErrNum={2}", objArgs));
+            return Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.ResultConnection, string.Format("Update {0} set IsException={1},Remark='{3}' where ErrNum={2}", objArgs));
         }
 
         public static string GetResultTableNameByType(enumErrorType errType)

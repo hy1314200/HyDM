@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Common.Utility.Encryption
+namespace Hy.Common.Utility.Encryption
 {
     /// <summary>
     /// Access ˝æ›ø‚º”√‹
@@ -80,7 +80,7 @@ namespace Common.Utility.Encryption
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             return null;
@@ -168,7 +168,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             return false;
         }
@@ -251,7 +251,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             return false;
         }

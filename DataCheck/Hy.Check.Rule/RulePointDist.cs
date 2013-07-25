@@ -496,7 +496,7 @@ namespace Hy.Check.Rule
                     strSql = "update LR_ResultEntryRule set TargetFeatClass2='" + m_pPara.strTargetLayer +
                              "|' where RuleInstID='" +
                              this.m_InstanceID + "'";
-                    Common.Utility.Data.AdoDbHelper.ExecuteSql(null, strSql);
+                    Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(null, strSql);
                 }
                 //else if (nGeoType == 2) // Ïß
                 //{

@@ -7,7 +7,7 @@ using System.Management;
 using Microsoft.Win32;
 using System.Data;
 
-namespace Common.Utility.Encryption
+namespace Hy.Common.Utility.Encryption
 {
     /// <summary>
     ///  加/解密类，主要指公/私钥的生成/读取等操作
@@ -30,7 +30,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
         }
 
@@ -85,7 +85,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
 
@@ -122,7 +122,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             return "";
@@ -222,7 +222,7 @@ namespace Common.Utility.Encryption
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 return false;
             }
         }
@@ -390,7 +390,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                //Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                //Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 throw;//可能没有此注册项;
             }
         }
@@ -410,7 +410,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                //Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                //Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 throw;
             }
         }
@@ -432,7 +432,7 @@ namespace Common.Utility.Encryption
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
         }
     }

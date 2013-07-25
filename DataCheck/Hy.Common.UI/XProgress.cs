@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Common.UI
+namespace Hy.Common.UI
 {
     /// <summary>
     /// 进度条

@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraTreeList;

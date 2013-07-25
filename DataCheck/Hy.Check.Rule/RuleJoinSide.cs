@@ -1397,7 +1397,7 @@ namespace Hy.Check.Rule
                     strSql = "update LR_ResultEntryRule set TargetFeatClass2='" + m_pPara.strFeatureLayer +
                              "|' where RuleInstID='" + this.m_SchemaID + "'";
 
-                    Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSql);
+                    Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSql);
                 }
                 else if (m_nGeoType == 2) // Ïß
                 {
@@ -1405,7 +1405,7 @@ namespace Hy.Check.Rule
                              "',TargetFeatClass2='" + m_pPara.strBoundLayer + "|" + m_pPara.strBoundLayer +
                              "'where RuleInstID='" + this.m_SchemaID + "'";
 
-                    Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSql);
+                    Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSql);
                 }
                 else if (m_nGeoType == 3) // Ãæ
                 {
@@ -1414,7 +1414,7 @@ namespace Hy.Check.Rule
                              m_pPara.strBoundLayer + "|" + m_pPara.strBoundLayer + "' where RuleInstID='" +
                              this.m_SchemaID + "'";
 
-                    Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSql);
+                    Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSql);
                 }
 
                 int size = m_aryResult.Count;

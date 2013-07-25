@@ -9,7 +9,7 @@ using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Controls;
 using System.Collections;
 
-namespace Common.Utility.Esri
+namespace Hy.Common.Utility.Esri
 {
     public class MapOperAPI
     {
@@ -410,7 +410,7 @@ namespace Common.Utility.Esri
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }

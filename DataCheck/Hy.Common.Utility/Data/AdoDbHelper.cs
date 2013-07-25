@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.Common;
 
-namespace Common.Utility.Data
+namespace Hy.Common.Utility.Data
 {
     public class AdoDbHelper
     {
@@ -37,7 +37,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -63,7 +63,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -89,7 +89,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -134,7 +134,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -181,7 +181,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -211,7 +211,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 // 表不存在
                 return false;
@@ -248,7 +248,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 if (sqlTran != null)
                 {
@@ -290,7 +290,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 //if (sqlTran != null)
                 //{
                 //    sqlTran.Rollback();
@@ -405,7 +405,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -434,7 +434,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -462,7 +462,7 @@ namespace Common.Utility.Data
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }

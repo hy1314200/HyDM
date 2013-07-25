@@ -154,7 +154,6 @@
     <Compile Include="FileData\ThreePointArcNode.cs" />
     <Compile Include="FileData\ThreeSplineNode.cs" />
     <Compile Include="FileData\VarcharNode.cs" />
-    <Compile Include="LogAPI.cs" />
     <Compile Include="MDB2VCT.cs" />
     <Compile Include="MDBFile.cs" />
     <Compile Include="Metadata\GraphConfig.cs" />

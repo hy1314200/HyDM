@@ -8,8 +8,8 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
 
-using Common.Utility.Data;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Data;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Utility;
 
 namespace Hy.Check.Task
@@ -269,7 +269,7 @@ namespace Hy.Check.Task
         /// <returns></returns>
         public static Task FromTaskConfig(string strFile)
         {
-            string strXml = Common.Utility.Encryption.FileEncryption.DecryptKey(strFile);
+            string strXml = Hy.Common.Utility.Encryption.FileEncryption.DecryptKey(strFile);
             return FromXml(strXml);
         }
 

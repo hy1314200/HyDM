@@ -264,7 +264,7 @@ namespace Hy.Check.Engine
             {
                 string strResultDBFile = this.m_ResultPath + "\\" + COMMONCONST.DB_Name_Result;
                 System.IO.File.Copy(System.Windows.Forms.Application.StartupPath + "\\template\\report\\result_AutoTmpl.mdb", strResultDBFile, true);
-                this.m_ResultConnection = Common.Utility.Data.AdoDbHelper.GetDbConnection(strResultDBFile);
+                this.m_ResultConnection = Hy.Common.Utility.Data.AdoDbHelper.GetDbConnection(strResultDBFile);
 
             }
             catch (Exception exp)
@@ -337,7 +337,7 @@ namespace Hy.Check.Engine
                                 {
                                     System.IO.Directory.Delete(this.m_TopoDBPath + "\\" + COMMONCONST.DB_Name_Topo, true);
                                 }
-                                Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.m_TopoDBPath, COMMONCONST.DB_Name_Topo, ref this.m_TopoWorkspace);
+                                Hy.Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.m_TopoDBPath, COMMONCONST.DB_Name_Topo, ref this.m_TopoWorkspace);
                                 if (this.m_TopoWorkspace == null)
                                 {
                                     SendMessage(enumMessageType.Exception, "创建拓扑库失败");
@@ -557,7 +557,7 @@ namespace Hy.Check.Engine
             System.Runtime.InteropServices.Marshal.ReleaseComObject(this.m_Topology);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(this.m_TopoWorkspace);
 
-            Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref this.m_TopoWorkspace,this.m_TopoDBPath+"\\"+ COMMONCONST.DB_Name_Topo);
+            Hy.Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref this.m_TopoWorkspace,this.m_TopoDBPath+"\\"+ COMMONCONST.DB_Name_Topo);
             this.m_Topology= (this.m_TopoWorkspace as ITopologyWorkspace).OpenTopology(COMMONCONST.Topology_Name);
 
             for (int i = 0; i < m_NormalRuleList.Count; i++)
@@ -829,7 +829,7 @@ namespace Hy.Check.Engine
 
             //public bool ClearResultRuleList(IDbConnection resultConnection)
             //{
-            //    return Common.Utility.Data.AdoDbHelper.ExecuteSql(resultConnection, "delete from LR_ResultEntryRule");
+            //    return Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(resultConnection, "delete from LR_ResultEntryRule");
             //}
 
             public bool AddVerifiedRule(SchemaRule schemaRule,enumErrorType errType, enumRuleState defaultState)
@@ -866,21 +866,21 @@ namespace Hy.Check.Engine
 
                 strBuilder.Append(")");
 
-                return Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strBuilder.ToString());
+                return Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strBuilder.ToString());
 
             }
 
             public bool UpdateRuleState(string ruleInstanceID, int errorCount, enumRuleState ruleState)
             {
                 string strSQL = string.Format("Update LR_ResultEntryRule set ErrorCount={0} ,RuleExeState={1} where RuleInstID='{2}'", errorCount, (int)ruleState, ruleInstanceID);
-                return Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection,strSQL);
+                return Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection,strSQL);
             }
 
             public bool UpdateRuleState(string ruleInstanceID, int errorCount, enumRuleState ruleState, string arcgisRule)
             {
                 object[] objArgs = { errorCount, (int)ruleState, ruleInstanceID, arcgisRule };
                 string strSQL = string.Format("Update LR_ResultEntryRule set ArcGiSRule='{3}', ErrorCount={0} ,RuleExeState={1} where RuleInstID='{2}'", objArgs);
-                return Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSQL);
+                return Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, strSQL);
             }
 
         }

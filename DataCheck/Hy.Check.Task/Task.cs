@@ -15,7 +15,7 @@ using System.Xml;
 using System.Runtime.InteropServices;
 
 
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Task.DataImport;
 using Hy.Check.Define;
 using Hy.Check.Utility;
@@ -207,7 +207,7 @@ namespace Hy.Check.Task
                                 SendMessage(enumMessageType.Exception, "逻辑错误：VCT不允许直接使用数据源作为Base库");
                             }
 
-                            this.m_BaseWorkspace= Common.Utility.Esri.AEAccessFactory.OpenWorkspace(this.DatasourceType, strPath);
+                            this.m_BaseWorkspace= Hy.Common.Utility.Esri.AEAccessFactory.OpenWorkspace(this.DatasourceType, strPath);
                         }
                         catch (Exception exp)
                         {
@@ -217,7 +217,7 @@ namespace Hy.Check.Task
                     }
                     else
                     {
-                       bool isSucceed= Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref m_BaseWorkspace, strPath);
+                       bool isSucceed= Hy.Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref m_BaseWorkspace, strPath);
                        if (!isSucceed)
                        {
                            SendMessage(enumMessageType.Exception, "打开Base库出错：可能的原因是任务未创建！");
@@ -248,7 +248,7 @@ namespace Hy.Check.Task
                     }
                     else
                     {
-                        bool isSucceed = Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref m_QueryWorkspace, string.Format("{0}\\{1}", GetTaskFolder(), COMMONCONST.DB_Name_Query));
+                        bool isSucceed = Hy.Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref m_QueryWorkspace, string.Format("{0}\\{1}", GetTaskFolder(), COMMONCONST.DB_Name_Query));
                         if (!isSucceed)
                         {
                             SendMessage(enumMessageType.Exception, "打开Query出错：可能的原因是任务未创建！");
@@ -272,7 +272,7 @@ namespace Hy.Check.Task
                 if (m_QueryConnection == null)
                 {
                     string strPath = string.Format("{0}\\{1}", GetTaskFolder(), (this.UseSourceDirectly && this.DatasourceType == enumDataType.PGDB) ? "Base.MDB" : COMMONCONST.DB_Name_Query);
-                    m_QueryConnection = Common.Utility.Data.AdoDbHelper.GetDbConnection(strPath);
+                    m_QueryConnection = Hy.Common.Utility.Data.AdoDbHelper.GetDbConnection(strPath);
                 }
 
                 return m_QueryConnection;
@@ -293,7 +293,7 @@ namespace Hy.Check.Task
                     string strPath = string.Format("{0}\\{1}", GetTaskFolder(), COMMONCONST.DB_Name_Topo);
                     if (Directory.Exists(strPath))
                     {
-                        bool isSucceed = Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref m_TopoWorkspace, strPath);
+                        bool isSucceed = Hy.Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref m_TopoWorkspace, strPath);
                         if (!isSucceed)
                         {
                             SendMessage(enumMessageType.Exception, "打开Topo库出错");
@@ -360,7 +360,7 @@ namespace Hy.Check.Task
                 if (m_ResultConnection == null)
                 {
                     string strPath = string.Format("{0}\\{1}", GetResultDBPath(), COMMONCONST.DB_Name_Result);
-                    m_ResultConnection = Common.Utility.Data.AdoDbHelper.GetDbConnection(strPath);
+                    m_ResultConnection = Hy.Common.Utility.Data.AdoDbHelper.GetDbConnection(strPath);
                 }
 
                 return m_ResultConnection;
@@ -611,7 +611,7 @@ namespace Hy.Check.Task
                     return false;
                 }
             }
-            return Common.Utility.Encryption.FileEncryption.EncryptKey(strPath, strXml);
+            return Hy.Common.Utility.Encryption.FileEncryption.EncryptKey(strPath, strXml);
         }
 
         /// <summary>
@@ -707,7 +707,7 @@ namespace Hy.Check.Task
 
                 // 重定向数据库
                 IMap mapTarget = mapDoc.get_Map(0);
-                Common.Utility.Esri.AEAccessFactory.ResetMapWorkspace(this.BaseWorkspace, mapTarget);
+                Hy.Common.Utility.Esri.AEAccessFactory.ResetMapWorkspace(this.BaseWorkspace, mapTarget);
                 // 修改空间参考及范围
                 IEnumDataset enDataset = this.BaseWorkspace.get_Datasets(esriDatasetType.esriDTAny);
                 IDataset dataset = enDataset.Next();
@@ -768,7 +768,7 @@ namespace Hy.Check.Task
         //public bool CreateTopoDB()
         //{
         //    // 创建Workspace
-        //    this.m_TopoWorkspace = Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.GetTaskFolder(), COMMONCONST.DB_Name_Topo);
+        //    this.m_TopoWorkspace = Hy.Common.Utility.Esri.AEAccessFactory.CreateFGDB(this.GetTaskFolder(), COMMONCONST.DB_Name_Topo);
         //    if (this.m_TopoWorkspace == null)
         //        return false;
 

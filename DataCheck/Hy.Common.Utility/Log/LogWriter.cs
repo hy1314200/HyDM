@@ -5,7 +5,7 @@ using System.Text;
 
 using System.IO;
 
-namespace Common.Utility.Log
+namespace Hy.Common.Utility.Log
 {
     /// <summary>
     /// 日志写入类（仅提供字符串写入）

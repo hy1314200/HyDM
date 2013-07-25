@@ -34,7 +34,7 @@ namespace Hy.Check.Engine.Helper
 //                              where  ruleClass.ID=schemapara.ruleserialid and schemapara.TempInstID=schemaTemp.TempInstID  and schemaPara.schemaid='";
 //            strSQL += schemaID + "'";
 
-//            DataTable dtRuleInfo = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
+//            DataTable dtRuleInfo = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
 //            List<RuleInfo> ruleInfoList = new List<RuleInfo>();
 //            foreach (DataRow rowRuleInfo in dtRuleInfo.Rows)
 //            {
@@ -64,7 +64,7 @@ namespace Hy.Check.Engine.Helper
 
 //            IDbConnection sysConnection= SysDbHelper.GetSysDbConnection();
 
-//            DataTable dtRuleClass = Common.Utility.Data.AdoDbHelper.GetDataTable(sysConnection, strSQL);
+//            DataTable dtRuleClass = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(sysConnection, strSQL);
 //            List<RuleClassInfo> ruleClassInfos = new List<RuleClassInfo>();
 //            foreach (DataRow rowClassInfo in dtRuleClass.Rows)
 //            {

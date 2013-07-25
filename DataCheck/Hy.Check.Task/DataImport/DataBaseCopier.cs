@@ -7,7 +7,7 @@ using System.Text;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Define;
 using Hy.Check.Utility;
 
@@ -100,7 +100,7 @@ namespace Hy.Check.Task.DataImport
 
                 // 导入的方式 
                 string strWorkspace = this.m_TargetPath + "\\" + this.m_TargetName;
-                if (!Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref wsTarget, strWorkspace))
+                if (!Hy.Common.Utility.Esri.AEAccessFactory.OpenFGDB(ref wsTarget, strWorkspace))
                 {
                     SendMessage(enumMessageType.Exception, "导入数据失败：无法打开目标库，请确认目标库已经创建");
                     return false;
@@ -111,7 +111,7 @@ namespace Hy.Check.Task.DataImport
                     SendMessage(enumMessageType.Exception, "“Dataset”没有创建成功，无法继续导入");
                     return false;
                 }
-                Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+                Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
 
                 // 打开数据源
                 try
@@ -132,7 +132,7 @@ namespace Hy.Check.Task.DataImport
                         {
                             case esriDatasetType.esriDTTable:
                                 SendEvent(dataset.Name);
-                                Common.Utility.Esri.DataConverter.ConvertTable(wsSource, wsTarget, dataset, GetObjectName(dataset.Name));
+                                Hy.Common.Utility.Esri.DataConverter.ConvertTable(wsSource, wsTarget, dataset, GetObjectName(dataset.Name));
                                 break;
 
                             case esriDatasetType.esriDTFeatureClass:
@@ -260,7 +260,7 @@ namespace Hy.Check.Task.DataImport
                     string strDBPath = this.m_TargetPath + "\\"+this.m_TargetName;
                     System.IO.File.Copy(this.m_Datasource, strDBPath);
 
-                    //if (!Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref wsSource, strDBPath))
+                    //if (!Hy.Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref wsSource, strDBPath))
                     //{
                     //    SendMessage(enumMessageType.Exception, "导入数据（复制文件）后打开出错，请确认数据源为正确的PGDB文件");
                     //    return false;
@@ -283,7 +283,7 @@ namespace Hy.Check.Task.DataImport
                     }
                     else
                     {
-                        Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+                        Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
                         gpTool.Copy(this.m_Datasource, this.m_TargetPath + "\\" + this.m_TargetName);
                     }
 

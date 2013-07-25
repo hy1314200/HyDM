@@ -217,11 +217,11 @@ namespace Hy.Check.Rule
                 //创建临时操作tempdist.mdb,防止把所有结果库数据存储到query库，引起query库超限
                 if (File.Exists(path))
                 {
-                    Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref TempWorkspace, path);
+                    Hy.Common.Utility.Esri.AEAccessFactory.OpenPGDB(ref TempWorkspace, path);
                 }
                 else
                 {
-                    Common.Utility.Esri.AEAccessFactory.CreatePGDB(System.IO.Path.GetDirectoryName(m_QueryWorkspace.PathName), COMMONCONST.DB_Name_Temp, ref TempWorkspace);
+                    Hy.Common.Utility.Esri.AEAccessFactory.CreatePGDB(System.IO.Path.GetDirectoryName(m_QueryWorkspace.PathName), COMMONCONST.DB_Name_Temp, ref TempWorkspace);
                 }
                 if(TempWorkspace==null)
                 {
@@ -307,7 +307,7 @@ namespace Hy.Check.Rule
                 "',TargetFeatClass2='" + m_pPara.strGraphSpeckle +
                 "|' where RuleInstID='" + this.m_InstanceID + "'";
 
-                Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, _strSql);
+                Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(this.m_ResultConnection, _strSql);
                 // 释放资源，删除中间结果
                 if (pResultCur != null)
                 {
@@ -365,7 +365,7 @@ namespace Hy.Check.Rule
             string sql = "SELECT bsm FROM XZDW_Intersect where kcbl=0.5 and (LEN_DIST-SHAPE_LENGTH)<" + (1 * this.m_UnitScale).ToString("N7") + " group by bsm having count(bsm)=1";
             sql += " union SELECT bsm FROM XZDW_Intersect where (shape_length  in (select shape_length from XZDW_Intersect group by bsm,shape_length having count(*)>1)) and kcbl=1";
 
-            DataTable dt = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection,sql);
+            DataTable dt = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection,sql);
             if (dt.Rows.Count < 1) return "";
             string oids = "(";
             foreach (DataRow dr in dt.Rows)

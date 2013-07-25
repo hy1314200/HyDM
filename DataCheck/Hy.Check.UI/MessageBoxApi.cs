@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
-using Common.UI;
+using Hy.Common.UI;
 using Hy.Check.Utility;
 
 namespace Hy.Check.UI

@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using Microsoft.VisualBasic;
 
-namespace Common.Utility.Encryption
+namespace Hy.Common.Utility.Encryption
 {
     /// <summary>
     /// 文件加解密

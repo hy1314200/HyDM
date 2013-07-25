@@ -7,7 +7,7 @@ using System.Text;
 using ESRI.ArcGIS.Geodatabase;
 using Hy.Check.Define;
 using System.Runtime.InteropServices;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 using System.Data.OleDb;
 using Hy.Check.Rule.Helper;
 using Hy.Check.Utility;

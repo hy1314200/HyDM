@@ -9,7 +9,7 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using ESRI.ArcGIS.Geodatabase;
 using Hy.Check.Utility;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 
 namespace Hy.Check.Command.CustomCommand
 {
@@ -136,7 +136,7 @@ namespace Hy.Check.Command.CustomCommand
                 //System.IO.File.Delete(dlgShpFile.FileName);
                 try
                 {
-                    IWorkspace ws = Common.Utility.Esri.AEAccessFactory.OpenWorkspace(enumDataType.SHP, strPath);
+                    IWorkspace ws = Hy.Common.Utility.Esri.AEAccessFactory.OpenWorkspace(enumDataType.SHP, strPath);
                     IDataset dsShp = (ws as IFeatureWorkspace).OpenFeatureClass(strName) as IDataset;
                     if (dsShp != null)
                         dsShp.Delete();

@@ -152,7 +152,7 @@ namespace Hy.Check.Rule
 
                 if (!ws2.get_NameExists(esriDatasetType.esriDTFeatureClass, m_LayerName))
                 {
-                    Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+                    Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
                     gpTool.CopyFeatureClass(m_BaseWorkspace.PathName + "\\" + m_LayerName, m_TopoWorkspace.PathName + "\\" + this.m_Topology.FeatureDataset.Name + "\\" + m_LayerName);
                 }
 
@@ -163,7 +163,7 @@ namespace Hy.Check.Rule
 
                     if (!ws2.get_NameExists(esriDatasetType.esriDTFeatureClass, m_ReferLayerName))
                     {
-                        Common.Utility.Esri.GPTool gpTool = new Common.Utility.Esri.GPTool();
+                        Hy.Common.Utility.Esri.GPTool gpTool = new Hy.Common.Utility.Esri.GPTool();
                         gpTool.CopyFeatureClass(m_BaseWorkspace.PathName + "\\" + m_ReferLayerName, m_TopoWorkspace.PathName + "\\" + this.m_Topology.FeatureDataset.Name + "\\" + m_ReferLayerName);
                     }
                 }

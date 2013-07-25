@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Common;
 
-namespace Common.Utility.Data
+namespace Hy.Common.Utility.Data
 {
 
     /// <summary>

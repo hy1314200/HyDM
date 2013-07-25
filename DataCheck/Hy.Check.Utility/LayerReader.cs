@@ -5,7 +5,7 @@ using System.Text;
 
 using System.Data;
 using Hy.Check.Define;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 
 namespace Hy.Check.Utility
 {

@@ -125,7 +125,7 @@ namespace Hy.Check.UI.UC
                 IFields _fields;
                 IDataset _dataSet;
 
-                _featureLayer = (IFeatureLayer)Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(pMap, sLayerName);
+                _featureLayer = (IFeatureLayer)Hy.Common.Utility.Esri.MapOperAPI.GetLayerFromMapByName(pMap, sLayerName);
                 pFeatureLayer = _featureLayer;
 
                 if (_featureLayer != null)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Common.Utility.Log
+namespace Hy.Common.Utility.Log
 {
     /// <summary>
     /// 软件的操作及异常日志管理类

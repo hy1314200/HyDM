@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Threading;
 
-namespace Common.Utility.Encryption
+namespace Hy.Common.Utility.Encryption
 {
     /// <summary>
     /// 时间限制
@@ -79,7 +79,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             return "";
         }
@@ -137,7 +137,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             return "";
         }
@@ -159,7 +159,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 return false;
             }
             return false;
@@ -231,7 +231,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             return true;
         }
@@ -256,7 +256,7 @@ namespace Common.Utility.Encryption
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             return "";
         }

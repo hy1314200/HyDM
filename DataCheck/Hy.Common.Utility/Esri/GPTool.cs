@@ -7,7 +7,7 @@ using ESRI.ArcGIS.Geoprocessor;
 using ESRI.ArcGIS.esriSystem;
 using System.Runtime.InteropServices;
 
-namespace Common.Utility.Esri
+namespace Hy.Common.Utility.Esri
 {
     public class GPTool
     {
@@ -91,7 +91,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -122,7 +122,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -156,7 +156,7 @@ namespace Common.Utility.Esri
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -199,7 +199,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -225,7 +225,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -251,7 +251,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -308,7 +308,7 @@ namespace Common.Utility.Esri
 
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 //GT_CARTO.XApplication.ProgressBar.Hide();
                 return false;

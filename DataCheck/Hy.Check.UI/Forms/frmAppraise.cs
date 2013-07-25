@@ -7,7 +7,7 @@ using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using Hy.Check.Utility;
-using Common.Utility.Data.Excel;
+using Hy.Common.Utility.Data.Excel;
 namespace Hy.Check.UI.Forms
 {
     public partial class FrmAppraise : XtraForm

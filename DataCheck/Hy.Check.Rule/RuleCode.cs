@@ -142,7 +142,7 @@ namespace Hy.Check.Rule
                     strSQL = "select distinct " + strFieldCode + "," + strFieldName + " from " + strFeat + "";
                 }
 
-                dt = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSQL);
+                dt = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSQL);
 
                 //strfieldcode 编码字段是否为字符类型；
                 bool bIsStrType = false;
@@ -189,7 +189,7 @@ namespace Hy.Check.Rule
                                                  strFieldName + " is null or " + strFieldName + " ='' )";
                                     }
                                 }
-                                DataTable pDt = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSQL);
+                                DataTable pDt = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSQL);
 
                                 if (pDt != null)
                                 {
@@ -253,7 +253,7 @@ namespace Hy.Check.Rule
                             }
 
                             // 在字典中查找这个唯一值, 如果找不到，那么字段属性为这个值的所有记录都必须找出来，返回其OID
-                            DataTable ipRSCode = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
+                            DataTable ipRSCode = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
 
 
                             if (ipRSCode == null || ipRSCode.Rows.Count == 0)
@@ -315,7 +315,7 @@ namespace Hy.Check.Rule
                                     }
                                 }
 
-                                DataTable pDt = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSQL);
+                                DataTable pDt = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSQL);
 
                                 // 遍历记录集，返回错误
                                 foreach (DataRow pDr in pDt.Rows)
@@ -394,7 +394,7 @@ namespace Hy.Check.Rule
                     strSQL = "select 编码 from " + strLibName + " where 规范号 = " + nVersion + " and 编码 = '" + strCode + "'";
 
                     // 在字典中查找这编码，找到说明错误类型是代码和名称不匹配，反之是代码不存在
-                    DataTable ipRSCode = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
+                    DataTable ipRSCode = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
 
                     if (ipRSCode != null && ipRSCode.Rows.Count != 0)
                     {

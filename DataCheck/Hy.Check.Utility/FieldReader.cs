@@ -26,7 +26,7 @@ namespace Hy.Check.Utility
         public static DataTable GetAllFields()
         {
             IDbConnection sysConnection = SysDbHelper.GetSysDbConnection();
-            return Common.Utility.Data.AdoDbHelper.GetDataTable(sysConnection, "select * from LR_DicField");
+            return Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(sysConnection, "select * from LR_DicField");
         }
 
 

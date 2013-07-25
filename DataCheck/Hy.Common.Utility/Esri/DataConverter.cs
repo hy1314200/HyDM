@@ -5,7 +5,7 @@ using System.Text;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.esriSystem;
 
-namespace Common.Utility.Esri
+namespace Hy.Common.Utility.Esri
 {
     public class DataConverter
     {
@@ -89,7 +89,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return;
             }
@@ -166,7 +166,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -228,7 +228,7 @@ namespace Common.Utility.Esri
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return;
             }

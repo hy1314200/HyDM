@@ -12,7 +12,7 @@ using ESRI.ArcGIS.DataSourcesGDB;
 using ESRI.ArcGIS.Geometry;
 using Hy.Check.Task;
 using Hy.Check.Task.DataImport;
-using Common.Utility.Esri;
+using Hy.Common.Utility.Esri;
 using Hy.Check.Define;
 using CheckTask = Hy.Check.Task.Task;
 using Hy.Check.Utility;
@@ -485,7 +485,7 @@ namespace Hy.Check.UI.Forms
 
             #region 后台线程导入方式
 
-            //Common.UI.frmProgress frmProgress = new Common.UI.frmProgress();
+            //Hy.Common.UI.frmProgress frmProgress = new Hy.Common.UI.frmProgress();
             //dataImporter.ImportingObjectChanged += new ImportingObjectChangedHandler(frmProgress.ShowDoing);
             //System.Threading.Thread newThread = new System.Threading.Thread(new System.Threading.ThreadStart(RunTaskCreate));
             //newThread.Start();
@@ -533,7 +533,7 @@ namespace Hy.Check.UI.Forms
 
         }
 
-        //Common.UI.XProgress m_Progress = new Common.UI.XProgress();
+        //Hy.Common.UI.XProgress m_Progress = new Hy.Common.UI.XProgress();
         //private int m_ImportedCount = 0;
         //void vctDataImport_ConvertStepping(int totalCount)
         //{
@@ -542,7 +542,7 @@ namespace Hy.Check.UI.Forms
         //}
 
 
-        Common.UI.XGifProgress m_GifProgress=new Common.UI.XGifProgress();
+        Hy.Common.UI.XGifProgress m_GifProgress=new Hy.Common.UI.XGifProgress();
 
         /// <summary>
         /// 显示进度条
@@ -553,7 +553,7 @@ namespace Hy.Check.UI.Forms
             m_GifProgress.ShowHint(strOjbectName);
             //if (m_FrmProgress == null)
             //{
-            //    m_FrmProgress = new Common.UI.frmProgress();
+            //    m_FrmProgress = new Hy.Common.UI.frmProgress();
             //    m_FrmProgress.UseWaitCursor = true;
 
             //    System.Threading.ThreadStart start = new System.Threading.ThreadStart(m_FrmProgress.ShowGifProgress);
@@ -572,7 +572,7 @@ namespace Hy.Check.UI.Forms
         /// </summary>
         void MessageHandler(enumMessageType msgType, string strMsg)
         {
-            Common.Utility.Log.OperationalLogManager.AppendMessage(strMsg);
+            Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(strMsg);
         }
 
         private CheckTask GenerateTask()

@@ -111,7 +111,7 @@ namespace Hy.Check.Rule
                 DataTable dtLayer = new DataTable();
                 string strSQL = "select AttrTableName,LayerName,LayerID from LR_DicLayer";
 
-                dtLayer = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
+                dtLayer = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
                 if (dtLayer==null)
                 {
                     return false;
@@ -150,7 +150,7 @@ namespace Hy.Check.Rule
 
                         DataTable dtFields = new DataTable();
                         string strSQLFields = "select * from LR_DicField where LayerID = " + nLayerID + "";
-                        dtFields = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQLFields);
+                        dtFields = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQLFields);
                         if (dtFields==null)
                         {
                             FieldError LRFieldErrorInfo = new FieldError();
@@ -235,7 +235,7 @@ namespace Hy.Check.Rule
                                 int nStdType = Convert.ToInt32(drField["FieldType"]);
 
                                 
-                                string strStdFldType = Common.Utility.Data.AdoDbHelper.GetFieldTypeName(nStdType);
+                                string strStdFldType = Hy.Common.Utility.Data.AdoDbHelper.GetFieldTypeName(nStdType);
 
                                 FieldError FieldErrInfo1  = new FieldError();
                                 FieldErrInfo1.DefectLevel = this.DefectLevel;
@@ -351,7 +351,7 @@ namespace Hy.Check.Rule
             {
                 DataTable ipRecordset = new DataTable();
 
-                if (!Common.Utility.Data.AdoDbHelper.OpenTable("LR_CheckLayer", ref ipRecordset, this.m_QueryConnection))
+                if (!Hy.Common.Utility.Data.AdoDbHelper.OpenTable("LR_CheckLayer", ref ipRecordset, this.m_QueryConnection))
                 {
                     
                     SendMessage(enumMessageType.RuleError, "当前工作数据库中不存在对照表LR_CheckLayer，无法执行字段完整性检查!");

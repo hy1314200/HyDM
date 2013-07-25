@@ -14,7 +14,7 @@ using ESRI.ArcGIS.Geometry;
 
 using Microsoft.Office.Interop.Excel;
 
-using Common.UI;
+using Hy.Common.UI;
 using Path = System.IO.Path;
 using System.Collections.Specialized;
 
@@ -100,7 +100,7 @@ namespace Hy.Check.Utility
                             a.Remark
                             from LR_ResIntLayer as a, LR_ResultEntryRule as b where a.RuleInstID=b.RuleInstID";
 
-            DataTable dtError = Common.Utility.Data.AdoDbHelper.GetDataTable(resultConnection, strSQL);
+            DataTable dtError = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(resultConnection, strSQL);
 
             // 修改字段Caption
             dtError.Columns["CheckType"].Caption = "检查类型";
@@ -136,7 +136,7 @@ namespace Hy.Check.Utility
                     }
                     catch(Exception exp)
                     {
-                        Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                        Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                         return false;
                     }
@@ -409,7 +409,7 @@ namespace Hy.Check.Utility
                 }
                 catch (Exception exp)
                 {
-                    Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                    Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                     xProgress.Hide();
 
@@ -436,7 +436,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 //GT_CONST.LogAPI.CheckLog.AppendErrLogs(ex.ToString());
                 xProgress.Hide();
                 //XtraMessageBox.Show(ex.Message);
@@ -590,7 +590,7 @@ namespace Hy.Check.Utility
                             ";
 
 
-                DataTable dtError = Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, strSQL);
+                DataTable dtError = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, strSQL);
                 
                 IFeatureCursor fCusorInsert = destFClass.Insert(false);
                 Dictionary<int, int> dictFieldIndex = new Dictionary<int, int>();
@@ -642,7 +642,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
                 return false;
             }
         }
@@ -669,7 +669,7 @@ namespace Hy.Check.Utility
                             from LR_ResAutoAttr as a, LR_ResultEntryRule as b where a.RuleInstID=b.RuleInstID";
 
 
-                DataTable dtError = Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, strSQL);
+                DataTable dtError = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.ResultConnection, strSQL);
                 IFeatureCursor fCusorInsert = destFClass.Insert(false);
                 Dictionary<string, IFeatureClass> dictFeatureClass = new Dictionary<string, IFeatureClass>();
                 Dictionary<int, int> dictFieldIndex = new Dictionary<int, int>();
@@ -736,7 +736,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -927,7 +927,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 //GT_CONST.LogAPI.CheckLog.AppendErrLogs(ex.ToString());
             }

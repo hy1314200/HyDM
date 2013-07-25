@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Common.UI")]
+[assembly: AssemblyTitle("Hy.Hy.Common.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hy-Xingzhe")]
-[assembly: AssemblyProduct("Common.UI")]
+[assembly: AssemblyProduct("Hy.Hy.Common.UI")]
 [assembly: AssemblyCopyright("产权所有 © Hy-Xingzhe 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

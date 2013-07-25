@@ -6,10 +6,10 @@ using System.IO;
 using System.Reflection;
 using System.Data.Common;
 using System.Data;
-using Common.Utility.Encryption;
-using Common.Utility.Log;
+using Hy.Common.Utility.Encryption;
+using Hy.Common.Utility.Log;
 using System.Collections;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 
 namespace Hy.Check.Utility
 {
@@ -104,7 +104,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
             }
             finally
             {
@@ -161,7 +161,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp) //捕捉异常
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return false;
             }
@@ -238,7 +238,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp) //捕捉异常
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -283,7 +283,7 @@ namespace Hy.Check.Utility
             }
             catch (Exception exp) //捕捉异常
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -326,7 +326,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null ;
             }
@@ -385,7 +385,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return null;
             }
@@ -410,7 +410,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return dt;
             }
@@ -436,7 +436,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return dt;
             }
@@ -458,7 +458,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return dt;
             }
@@ -479,7 +479,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return dt;
             }
@@ -500,7 +500,7 @@ namespace Hy.Check.Utility
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
                 return dt;
             }

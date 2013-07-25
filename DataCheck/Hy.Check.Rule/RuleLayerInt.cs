@@ -81,7 +81,7 @@ namespace Hy.Check.Rule
         public override bool Verify()
         {
             string strSQL = "select AttrTableName,LayerName,LayerOption from LR_DicLayer";
-            dtLayer = Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
+            dtLayer = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(SysDbHelper.GetSysDbConnection(), strSQL);
             if (dtLayer == null)
             {
                 SendMessage(enumMessageType.Exception, "在系统库中找不到标准的图层列表");
@@ -109,7 +109,7 @@ namespace Hy.Check.Rule
                 }
 
                 List<IFeatureLayer> listFtLayer = new List<IFeatureLayer>();
-                Common.Utility.Esri.FeatClsOperAPI.GetFeatLayerInDs(ipDataset, ref listFtLayer);
+                Hy.Common.Utility.Esri.FeatClsOperAPI.GetFeatLayerInDs(ipDataset, ref listFtLayer);
        
                 //二次for循环迭代控制器，add by wangxiang 20111201
                 int flag = 0;

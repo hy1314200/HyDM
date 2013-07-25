@@ -5,7 +5,7 @@ using System.Text;
 using System.Data.Common;
 using System.Data;
 
-namespace Common.Utility.Data.Excel
+namespace Hy.Common.Utility.Data.Excel
 {
     /// <summary>
     /// 
@@ -43,7 +43,7 @@ namespace Common.Utility.Data.Excel
             }
             catch (Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             return bolReturn;

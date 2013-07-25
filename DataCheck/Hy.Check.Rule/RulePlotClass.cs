@@ -4,7 +4,7 @@ using System.Data;
 using System.IO;
 using System.Text;
 using Hy.Check.Define;
-using Common.Utility.Data;
+using Hy.Common.Utility.Data;
 
 namespace Hy.Check.Rule
 {
@@ -50,7 +50,7 @@ namespace Hy.Check.Rule
                 strWhere = "LEFT(" + m_structPara.strClassField + ",4)";
             }
             //打开记录集，并分组
-            ipRecordset = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
+            ipRecordset = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql);
 
             if (ipRecordset.Rows.Count==0)
             {
@@ -72,7 +72,7 @@ namespace Hy.Check.Rule
                                      "='" + strCode + "'";
 
                     //打开记录集，并分组
-                    ipRecordsetRes = Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql1);
+                    ipRecordsetRes = Hy.Common.Utility.Data.AdoDbHelper.GetDataTable(this.m_QueryConnection, strSql1);
 
                     if (ipRecordsetRes.Rows.Count == 0)
                     {
@@ -181,7 +181,7 @@ namespace Hy.Check.Rule
             try
             {
                 string strSql = "delete * from LR_ResAutoStat_PlotClass where RuleInstID='" + base.m_InstanceID + "'";
-               Common.Utility.Data.AdoDbHelper.ExecuteSql(base.m_ResultConnection, strSql);
+               Hy.Common.Utility.Data.AdoDbHelper.ExecuteSql(base.m_ResultConnection, strSql);
                 //------------------------------------------------//
                 //				在结果表中存储结果				  //														
                 //------------------------------------------------//

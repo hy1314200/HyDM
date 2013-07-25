@@ -4,7 +4,7 @@ using System.Text;
 using ESRI.ArcGIS.Carto;
 using System.Runtime.InteropServices;
 
-namespace Common.Utility.Esri
+namespace Hy.Common.Utility.Esri
 {
     /// <summary>
     /// 地图图层控制器
@@ -122,7 +122,7 @@ namespace Common.Utility.Esri
             }
             catch(Exception exp)
             {
-                Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
+                Hy.Common.Utility.Log.OperationalLogManager.AppendMessage(exp.ToString());
 
             }
             finally
