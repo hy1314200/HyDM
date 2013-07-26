@@ -148,10 +148,12 @@ namespace Hy.Esri.DataManage.Standard.Helper
 
                 }
 
-               
-                foreach (StandardItem subItem in sItem.SubItems)
+                if (sItem.SubItems != null)
                 {
-                    SaveStandard(subItem);
+                    foreach (StandardItem subItem in sItem.SubItems)
+                    {
+                        SaveStandard(subItem);
+                    }
                 }
                 Environment.NhibernateHelper.Flush();
 
@@ -185,9 +187,12 @@ namespace Hy.Esri.DataManage.Standard.Helper
                 }
 
 
-                foreach (StandardItem subItem in sItem.SubItems)
+                if (sItem.SubItems != null)
                 {
-                    DeleteStandard(subItem);
+                    foreach (StandardItem subItem in sItem.SubItems)
+                    {
+                        DeleteStandard(subItem);
+                    }
                 }
                 Environment.NhibernateHelper.DeleteObject(sItem);
                 Environment.NhibernateHelper.Flush();
