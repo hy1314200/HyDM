@@ -68,6 +68,10 @@
     <Reference Include="Hy.Common.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Hy.Dictionary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="Hy.Metadata.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Hy.VCTConverter, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Out\Bin\Hy.VCTConverter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
