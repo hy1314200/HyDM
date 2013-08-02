@@ -112,5 +112,17 @@ namespace Frame.Properties {
                 this["LogTableName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("iMaginary")]
+        public string SkinName {
+            get {
+                return ((string)(this["SkinName"]));
+            }
+            set {
+                this["SkinName"] = value;
+            }
+        }
     }
 }

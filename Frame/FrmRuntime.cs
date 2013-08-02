@@ -146,7 +146,7 @@ namespace Frame
             //this.dockPanelBottom.Visibility = DockVisibility.Hidden;
             //this.dockPanelLeft.Visibility = DockVisibility.Hidden;
             //this.dockPanelRight.Visibility = DockVisibility.Hidden;
-          
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = Properties.Settings.Default.SkinName;
         }
         List<RibbonCommandInfo> m_CommandInfoList = null;
         RibbonCommandAdapter m_Adapter = null;

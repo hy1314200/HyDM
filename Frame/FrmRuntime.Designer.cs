@@ -38,21 +38,21 @@
             this.tabCenter = new DevExpress.XtraTab.XtraTabControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanelBottom = new DevExpress.XtraBars.Docking.DockPanel();
-            this.controlContainer2 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanelRight = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanelLeft = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanelBottom = new DevExpress.XtraBars.Docking.DockPanel();
+            this.controlContainer2 = new DevExpress.XtraBars.Docking.ControlContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).BeginInit();
             this.clientPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.dockPanelBottom.SuspendLayout();
             this.dockPanelRight.SuspendLayout();
             this.dockPanelLeft.SuspendLayout();
+            this.dockPanelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -186,7 +186,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Blue";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Black";
             this.defaultLookAndFeel1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             // 
             // dockManager1
@@ -203,32 +203,6 @@
             "System.Windows.Forms.StatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
-            // 
-            // dockPanelBottom
-            // 
-            this.dockPanelBottom.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.dockPanelBottom.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.dockPanelBottom.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.dockPanelBottom.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.dockPanelBottom.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.dockPanelBottom.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.dockPanelBottom.Controls.Add(this.controlContainer2);
-            this.dockPanelBottom.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
-            this.dockPanelBottom.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
-            this.dockPanelBottom.FloatVertical = true;
-            this.dockPanelBottom.ID = new System.Guid("211bbdb2-749f-4c90-94ed-b7ef62c7e8ab");
-            resources.ApplyResources(this.dockPanelBottom, "dockPanelBottom");
-            this.dockPanelBottom.Name = "dockPanelBottom";
-            this.dockPanelBottom.OriginalSize = new System.Drawing.Size(415, 139);
-            this.dockPanelBottom.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
-            this.dockPanelBottom.SavedIndex = 0;
-            this.dockPanelBottom.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
-            this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
-            // 
-            // controlContainer2
-            // 
-            resources.ApplyResources(this.controlContainer2, "controlContainer2");
-            this.controlContainer2.Name = "controlContainer2";
             // 
             // dockPanelRight
             // 
@@ -281,6 +255,32 @@
             resources.ApplyResources(this.dockPanel1_Container, "dockPanel1_Container");
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             // 
+            // dockPanelBottom
+            // 
+            this.dockPanelBottom.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.dockPanelBottom.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.dockPanelBottom.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.dockPanelBottom.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.dockPanelBottom.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.dockPanelBottom.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.dockPanelBottom.Controls.Add(this.controlContainer2);
+            this.dockPanelBottom.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanelBottom.DockVertical = DevExpress.Utils.DefaultBoolean.Default;
+            this.dockPanelBottom.FloatVertical = true;
+            this.dockPanelBottom.ID = new System.Guid("211bbdb2-749f-4c90-94ed-b7ef62c7e8ab");
+            resources.ApplyResources(this.dockPanelBottom, "dockPanelBottom");
+            this.dockPanelBottom.Name = "dockPanelBottom";
+            this.dockPanelBottom.OriginalSize = new System.Drawing.Size(415, 139);
+            this.dockPanelBottom.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanelBottom.SavedIndex = 0;
+            this.dockPanelBottom.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Bottom;
+            this.dockPanelBottom.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+            // 
+            // controlContainer2
+            // 
+            resources.ApplyResources(this.controlContainer2, "controlContainer2");
+            this.controlContainer2.Name = "controlContainer2";
+            // 
             // FrmRuntime
             // 
             this.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -306,9 +306,9 @@
             this.clientPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.dockPanelBottom.ResumeLayout(false);
             this.dockPanelRight.ResumeLayout(false);
             this.dockPanelLeft.ResumeLayout(false);
+            this.dockPanelBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

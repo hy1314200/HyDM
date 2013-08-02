@@ -29,5 +29,8 @@
     <Setting Name="LogTableName" Type="System.String" Scope="User">
       <Value Profile="(Default)">T_Sys_Log</Value>
     </Setting>
+    <Setting Name="SkinName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">iMaginary</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
