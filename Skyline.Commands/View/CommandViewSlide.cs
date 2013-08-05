@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewSlide:SkylineBaseCommand
+    public class CommandViewSlide:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewSlide()
         {

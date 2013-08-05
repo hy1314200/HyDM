@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ISkylineHook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkylineBaseCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxTerraExplorerX">
@@ -72,6 +73,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Define\Define.csproj">
+      <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
+      <Name>Define</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

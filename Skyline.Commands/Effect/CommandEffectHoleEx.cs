@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectHoleEx:SkylineBaseCommand
+    public class CommandEffectHoleEx:Skyline.Define.SkylineBaseCommand
     {
         public CommandEffectHoleEx()
         {

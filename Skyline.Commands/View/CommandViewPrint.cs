@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewPrint:SkylineBaseCommand
+    public class CommandViewPrint:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewPrint()
         {

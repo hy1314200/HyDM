@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 
 using Define;
-using Skyline.Define;
-namespace Skyline.Commands
+
+
+namespace Skyline.Define
 {
     public abstract class SkylineBaseCommand:BaseCommand
     {

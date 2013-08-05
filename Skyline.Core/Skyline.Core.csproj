@@ -109,6 +109,12 @@
     <Compile Include="UI\Fly\FrmCustomPath.designer.cs">
       <DependentUpon>FrmCustomPath.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Fly\FrmHotDot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Fly\FrmHotDot.designer.cs">
+      <DependentUpon>FrmHotDot.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Fly\FrmSetPlaneParam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,7 @@
     <Compile Include="UI\Fly\FrmStipulatePath.designer.cs">
       <DependentUpon>FrmStipulatePath.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Fly\GetPositionInfo.cs" />
     <Compile Include="UI\FrmAttributeMapQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Fly\FrmCustomPath.resx">
       <DependentUpon>FrmCustomPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Fly\FrmHotDot.resx">
+      <DependentUpon>FrmHotDot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Fly\FrmSetPlaneParam.resx">
       <DependentUpon>FrmSetPlaneParam.cs</DependentUpon>

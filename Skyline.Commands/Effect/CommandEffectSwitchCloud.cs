@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectSwitchCloud:SkylineBaseCommand
+    public class CommandEffectSwitchCloud:Skyline.Define.SkylineBaseCommand
     {
         public CommandEffectSwitchCloud()
         {

@@ -6,7 +6,7 @@ using Skyline.Core;
 using Define;
 namespace Skyline.Commands
 {
-    public abstract class SkylineBaseTool:SkylineBaseCommand,ITool
+    public abstract class SkylineBaseTool:Skyline.Define.SkylineBaseCommand,ITool
     {
         public SkylineBaseTool()
         {

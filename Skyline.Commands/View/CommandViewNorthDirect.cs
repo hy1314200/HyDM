@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewNorthDirect:SkylineBaseCommand
+    public class CommandViewNorthDirect:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewNorthDirect()
         {

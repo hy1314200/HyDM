@@ -70,13 +70,16 @@
     <Compile Include="CommandOpenFly.cs" />
     <Compile Include="CommandInfoTree.cs" />
     <Compile Include="Analysis\CommandAnalysisLandformLine.cs" />
+    <Compile Include="Fly\CommandSpecifiedPath.cs" />
+    <Compile Include="Fly\CommandStopTracking.cs" />
+    <Compile Include="Fly\CommandHotPoint.cs" />
     <Compile Include="Query\CommandQueryBoth.cs" />
     <Compile Include="Query\CommandQueryProperty.cs" />
     <Compile Include="Query\CommandQuerySQL.cs" />
+    <Compile Include="Fly\CommandPathDefine.cs" />
     <Compile Include="View\CommandViewPan.cs" />
     <Compile Include="View\CommandViewZoom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SkylineBaseCommand.cs" />
     <Compile Include="View\CommandViewSlide.cs" />
     <Compile Include="View\CommandViewRotation.cs" />
     <Compile Include="Measure\ToolCoordsInfo.cs" />
