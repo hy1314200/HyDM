@@ -68,6 +68,7 @@ namespace Hy.Metadata.Operate
         }
 
         private Guid m_Guid = Guid.Empty;
+        private Control m_HookControl;
         public override void OnClick()
         {
             if (m_UcManager != null && m_UcManager.Visible)
@@ -76,12 +77,12 @@ namespace Hy.Metadata.Operate
             }
             else
             {
-                if (m_UcManager == null)
+                if (m_UcManager == null || m_HookControl==null || m_HookControl.IsDisposed)
                 {
                     m_UcManager = new Hy.Metadata.UI.UCStandardManager();
                     IHooker hooker= new MetadataHooker(m_UcManager);
                     m_Guid=hooker.ID;
-                    base.m_Hook.UIHook.AddHooker(hooker, enumDockPosition.Center);
+                    m_HookControl= base.m_Hook.UIHook.AddHooker(hooker, enumDockPosition.Center);
                 }
 
                 this.m_Hook.UIHook.ActiveHookControl(m_Guid);

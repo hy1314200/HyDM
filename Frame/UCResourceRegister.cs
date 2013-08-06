@@ -43,12 +43,22 @@ namespace Frame
                     cInfo.DllName = m_DllName;
                     cInfo.Type = dicResource.Values.ElementAt(i);
 
-                    ICommand cmd = ResourceFactory.CreateCommand(cInfo);
-                    if (cmd == null)
-                        continue;
-
-                    cInfo.Category = cmd.Category;
-                    cInfo.Description = cmd.Caption;
+                    object objResource= ResourceFactory.CreateInstance(cInfo.DllName,cInfo.ClassName);
+                    ICommand cmd = objResource as ICommand;
+                    if (cmd != null)
+                    {
+                        cInfo.Category = cmd.Category;
+                        cInfo.Description = cmd.Caption;
+                    }
+                    else
+                    {
+                        IPlugin plugin = objResource as IPlugin;
+                        if (plugin != null)
+                        {
+                            cInfo.Category="插件";
+                            cInfo.Description = plugin.Description;
+                        }
+                    }
 
                     TreeListNode nodeResource =
                         tlResource.AppendNode(new object[] { dicResource.Values.ElementAt(i) == enumResourceType.Command ? "命令" : "插件",string.IsNullOrWhiteSpace(cInfo.Description)? dicResource.Keys.ElementAt(i):cInfo.Description }, m_NodeAll);

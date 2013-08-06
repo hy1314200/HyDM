@@ -91,22 +91,37 @@ namespace Skyline.Frame
 
         private class SkylineFrameHook : ISkylineHook,IHooker
         {
-            public SkylineFrameHook(               
-                )
+            public SkylineFrameHook()
             {
-                this.SGWorld = new TerraExplorerX.SGWorld61Class();
-                this.TerraExplorer = new TerraExplorerX.TerraExplorerClass();
             }
-
+                       
+            private TerraExplorerX.TerraExplorerClass m_TerraExplorer;
             public TerraExplorerX.TerraExplorerClass TerraExplorer
             {
-                get;
-                private set;
+                get
+                {
+                    if(this.m_TerraExplorer==null)
+                    { 
+                        this.m_TerraExplorer = new TerraExplorerX.TerraExplorerClass();
+                    }
+
+                    return m_TerraExplorer;
+                }
+
             }
 
+            public TerraExplorerX.ISGWorld61 m_SGWorld;
             public TerraExplorerX.ISGWorld61 SGWorld
             {
-                get; private set;
+                get
+                {
+                    if(this.m_SGWorld==null)
+                    {
+                        this.m_SGWorld = new TerraExplorerX.SGWorld61Class();
+                    }
+
+                    return m_SGWorld;
+                }
             }
 
 
@@ -116,7 +131,9 @@ namespace Skyline.Frame
                 get
                 {
                     if (m_TeWindow == null)
+                    {
                         m_TeWindow = new AxTerraExplorerX.AxTE3DWindow();
+                    }
 
                     return m_TeWindow;
                 }

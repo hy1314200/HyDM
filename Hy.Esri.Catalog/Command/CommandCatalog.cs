@@ -74,6 +74,7 @@ namespace Hy.Esri.Catalog.Command
         private ILayer m_CurrentLayer;
 
         private Guid m_Guid = Guid.Empty;
+        private Control m_HookControl;
         public override void OnClick()
         {
             if (m_UcCatalog != null && m_UcCatalog.Visible)
@@ -82,7 +83,7 @@ namespace Hy.Esri.Catalog.Command
             }
             else
             {
-                if (m_UcCatalog == null)
+                if (m_UcCatalog == null || m_HookControl == null || m_HookControl.IsDisposed)
                 {
                     m_UcCatalog = new UCCatalog();
                     m_UcCatalog.Init(m_Hook.Hook,base.SendMessage);// delegate(string strMsg) { base.SendMessage(strMsg); });

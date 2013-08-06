@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRuntime));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.mainMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.mainMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
             this.statusBarMessage = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
             this.tabCenter = new DevExpress.XtraTab.XtraTabControl();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanelRight = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanelLeft = new DevExpress.XtraBars.Docking.DockPanel();
@@ -63,7 +62,7 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.statusBarMessage});
             this.ribbon.ItemsVertAlign = DevExpress.Utils.VertAlignment.Default;
-            this.ribbon.MaxItemId = 22;
+            this.ribbon.MaxItemId = 23;
             this.ribbon.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Default;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategoryAlignment = DevExpress.XtraBars.Ribbon.RibbonPageCategoryAlignment.Default;
@@ -183,6 +182,9 @@
             this.tabCenter.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.tabCenter.Name = "tabCenter";
             this.tabCenter.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.tabCenter_SelectedPageChanged);
+            this.tabCenter.CloseButtonClick += new System.EventHandler(this.tabCenter_CloseButtonClick);
+            this.tabCenter.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabPageCountChanged);
+            this.tabCenter.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.TabPageCountChanged);
             // 
             // defaultLookAndFeel1
             // 

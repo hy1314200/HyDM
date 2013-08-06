@@ -68,6 +68,7 @@ namespace Hy.Esri.DataManage.Command
         }
         private Guid m_Guid = Guid.Empty;
 
+        private Control m_HookControl;
         public override void OnClick()
         {
             if (m_UcManager != null && m_UcManager.Visible)
@@ -76,7 +77,7 @@ namespace Hy.Esri.DataManage.Command
             }
             else
             {
-                if (m_UcManager == null)
+                if (m_UcManager == null || m_HookControl == null || m_HookControl.IsDisposed)
                 {
                     m_UcManager = new UCStandardManager();                   
                     IHooker hooker = new DataManageHooker(m_UcManager);                   

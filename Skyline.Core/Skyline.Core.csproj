@@ -127,6 +127,12 @@
     <Compile Include="UI\Fly\FrmStipulatePath.designer.cs">
       <DependentUpon>FrmStipulatePath.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Fly\FrmVideoCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Fly\FrmVideoCreate.Designer.cs">
+      <DependentUpon>FrmVideoCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Fly\GetPositionInfo.cs" />
     <Compile Include="UI\FrmAttributeMapQuery.cs">
       <SubType>Form</SubType>
@@ -306,6 +312,9 @@
     <EmbeddedResource Include="UI\Fly\FrmStipulatePath.resx">
       <DependentUpon>FrmStipulatePath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Fly\FrmVideoCreate.resx">
+      <DependentUpon>FrmVideoCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmAttributeMapQuery.resx">
       <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +388,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GenericBlueSubtract16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericBluePause32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericBlueRightArrowNoTail32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericBlueStop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Record32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RecordStop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrackingDataAnimationTool32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

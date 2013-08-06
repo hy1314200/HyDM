@@ -55,16 +55,11 @@ namespace Frame.Helper
             this.Append(logType, strMsg);
         }
 
-        private void Flush()
+        public void Flush()
         {
             if (m_DtLogCache != null)
                 Environment.AdodbHelper.UpdateTable(Properties.Settings.Default.LogTableName, this.m_DtLogCache);
-        }
-
-        ~DbLogger()
-        {
-            Flush();
-        }
+        }        
     }
 
 

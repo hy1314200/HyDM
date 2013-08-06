@@ -12,7 +12,7 @@ using System.Configuration;
 
 namespace Skyline.Commands
 {
-    public class CommandEnterpriseQuery : Skyline.Define.SkylineBaseCommand
+    public class CommandEnterpriseQuery : Skyline.Define.SkylineBaseCommand,global::Define.ITool
     {
         public CommandEnterpriseQuery()
         {
@@ -70,6 +70,21 @@ namespace Skyline.Commands
         {
             if (m_ModelFloor != null)
                 m_ModelFloor.Visibility.Show = false;
+        }
+
+        public object Resource
+        {
+            get { return m_SkylineHook; }
+        }
+
+        public bool Release()
+        {
+            if (this.Checked)
+            {
+                this.OnClick();
+            }
+
+            return true;
         }
     }
 }

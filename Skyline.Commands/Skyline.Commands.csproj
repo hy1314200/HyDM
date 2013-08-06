@@ -76,6 +76,7 @@
     <Compile Include="Fly\CommandSpecifiedPath.cs" />
     <Compile Include="Fly\CommandStopTracking.cs" />
     <Compile Include="Fly\CommandHotPoint.cs" />
+    <Compile Include="Fly\CommandVideo.cs" />
     <Compile Include="Query\CommandQueryBoth.cs" />
     <Compile Include="Query\CommandQueryProperty.cs" />
     <Compile Include="Query\CommandQuerySQL.cs" />

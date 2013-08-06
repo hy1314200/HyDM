@@ -18,15 +18,7 @@ namespace Skyline.Commands
             this.m_Message = "控高分析";
             this.m_Tooltip = "查看指定范围内建筑是否超过指定控制高度";
         }
-
-        public override bool Enabled
-        {
-            get
-            {
-                return m_Hook != null && m_SkylineHook != null && m_SkylineHook.TerraExplorer != null;
-            }
-        }
-
+      
         public override void OnClick()
         {
             try

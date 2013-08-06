@@ -15,9 +15,13 @@ namespace Skyline.GuiHua.Bussiness
         private AxTerraExplorerX.AxTE3DWindow teTopLeft;
         public UCSchemaCompare(AxTerraExplorerX.AxTE3DWindow teTL)
         {
-            this.teTopLeft = teTL;
-            this.splitLeft.Panel1.Controls.Add(teTL);
             InitializeComponent();
+
+            this.teTopLeft = teTL;
+            teTL.BeginInit();
+            teTL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitLeft.Panel1.Controls.Add(teTL);
+            teTL.EndInit();
         }
 
         public enum3DControlMode ControlMode

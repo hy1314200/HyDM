@@ -106,7 +106,7 @@ namespace Frame.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("iMaginary")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
         public string SkinName {
             get {
                 return ((string)(this["SkinName"]));

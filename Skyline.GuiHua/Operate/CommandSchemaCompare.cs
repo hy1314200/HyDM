@@ -7,10 +7,11 @@ using System.Windows.Forms;
 using System.IO;
 using System.Configuration;
 using TerraExplorerX;
+using Define;
 
 namespace Skyline.GuiHua.Operate
 {
-    public class CommandSchemaCompare:GuiHuaBaseCommand
+    public class CommandSchemaCompare:GuiHuaBaseCommand,ITool
     {
         public CommandSchemaCompare()
         {
@@ -39,10 +40,12 @@ namespace Skyline.GuiHua.Operate
             {
                 if (m_UcCompare == null )
                 {
-                    m_SkylineHook.Window.Parent.Controls.Remove(m_SkylineHook.Window);
+                    Control parent=m_SkylineHook.Window.Parent;
+                    parent.Controls.Remove(m_SkylineHook.Window);
                     m_UcCompare = new UCSchemaCompare(m_SkylineHook.Window as AxTerraExplorerX.AxTE3DWindow);
                     m_UcCompare.CreateHooker(out Program.sgworld, out teTopRight, out teBottomLeft, out teBottomRight);
-                    m_SkylineHook.Window.Parent.Controls.Add(m_UcCompare);
+                    parent.Controls.Add(m_UcCompare);
+                    m_UcCompare.Dock = DockStyle.Fill;
                 }
                 
                 if (Bussiness.Environment. m_Project.Schemas == null)
@@ -140,6 +143,16 @@ namespace Skyline.GuiHua.Operate
             {
                 return !m_Flag;
             }
+        }
+
+        public object Resource
+        {
+            get { return -1; }
+        }
+
+        public bool Release()
+        {
+            return true;
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Configuration;
 
 namespace Skyline.Commands
 {
-    public class CommandAchirveQuery : Skyline.Define.SkylineBaseCommand
+    public class CommandAchirveQuery : Skyline.Define.SkylineBaseCommand,global::Define.ITool
     {
         public CommandAchirveQuery()
         {
@@ -55,6 +55,21 @@ namespace Skyline.Commands
             if (m_FrmUrban.Visible == false)
                 m_FrmUrban.Show(this.m_Hook.UIHook.MainForm);
 
+        }
+
+        public object Resource
+        {
+            get { return m_SkylineHook; }
+        }
+
+        public bool Release()
+        {
+            if (this.Checked)
+            {
+                this.OnClick();
+            }
+
+            return true;
         }
     }
 }
