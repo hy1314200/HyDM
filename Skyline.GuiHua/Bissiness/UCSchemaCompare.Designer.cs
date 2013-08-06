@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCSchemaCompare));
             this.splitAll = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitLeft = new DevExpress.XtraEditors.SplitContainerControl();
-            this.teTopLeft = new AxTerraExplorerX.AxTE3DWindow();
             this.teBottomLeft = new AxTerraExplorerX.AxTE3DWindowEx();
             this.splitRight = new DevExpress.XtraEditors.SplitContainerControl();
             this.teTopRight = new AxTerraExplorerX.AxTE3DWindowEx();
@@ -40,7 +38,6 @@
             this.splitAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitLeft)).BeginInit();
             this.splitLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teTopLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teBottomLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitRight)).BeginInit();
             this.splitRight.SuspendLayout();
@@ -143,7 +140,6 @@
             this.splitLeft.Panel1.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
             this.splitLeft.Panel1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.splitLeft.Panel1.CaptionLocation = DevExpress.Utils.Locations.Default;
-            this.splitLeft.Panel1.Controls.Add(this.teTopLeft);
             this.splitLeft.Panel1.Text = "Panel1";
             this.splitLeft.Panel2.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.splitLeft.Panel2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
@@ -165,16 +161,6 @@
             this.splitLeft.SplitterPosition = 260;
             this.splitLeft.TabIndex = 0;
             this.splitLeft.Text = "splitContainerControl2";
-            // 
-            // teTopLeft
-            // 
-            this.teTopLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teTopLeft.Enabled = true;
-            this.teTopLeft.Location = new System.Drawing.Point(0, 0);
-            this.teTopLeft.Name = "teTopLeft";
-            this.teTopLeft.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("teTopLeft.OcxState")));
-            this.teTopLeft.Size = new System.Drawing.Size(830, 592);
-            this.teTopLeft.TabIndex = 0;
             // 
             // teBottomLeft
             // 
@@ -281,7 +267,6 @@
             this.splitAll.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitLeft)).EndInit();
             this.splitLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.teTopLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teBottomLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitRight)).EndInit();
             this.splitRight.ResumeLayout(false);
@@ -299,7 +284,6 @@
         public AxTerraExplorerX.AxTE3DWindowEx teBottomLeft;
         public AxTerraExplorerX.AxTE3DWindowEx teTopRight;
         public AxTerraExplorerX.AxTE3DWindowEx teBottomRight;
-        public AxTerraExplorerX.AxTE3DWindow teTopLeft;
 
     }
 }

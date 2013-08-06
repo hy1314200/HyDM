@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analysis\CommandAnalysisBestPath.cs" />
+    <Compile Include="Analysis\CommandAnalysisHeightControl.cs" />
     <Compile Include="Analysis\Sight\CommandAnalysisMultiSightLine.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlop.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlopDirect.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="Analysis\CommandAnalysisViewshed.cs" />
     <Compile Include="Analysis\CommandAnalysisShadow.cs" />
     <Compile Include="Analysis\Sight\CommandAnalysisSightLine.cs" />
+    <Compile Include="Analysis\CommandAnalysisSkyline.cs" />
+    <Compile Include="CommandEdit.cs" />
     <Compile Include="CommandOpenFly.cs" />
     <Compile Include="CommandInfoTree.cs" />
     <Compile Include="Analysis\CommandAnalysisLandformLine.cs" />

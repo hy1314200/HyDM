@@ -12,8 +12,11 @@ namespace Skyline.GuiHua.Bussiness
 
     public partial class UCSchemaCompare : DevExpress.XtraEditors.XtraUserControl
     {
-        public UCSchemaCompare()
+        private AxTerraExplorerX.AxTE3DWindow teTopLeft;
+        public UCSchemaCompare(AxTerraExplorerX.AxTE3DWindow teTL)
         {
+            this.teTopLeft = teTL;
+            this.splitLeft.Panel1.Controls.Add(teTL);
             InitializeComponent();
         }
 

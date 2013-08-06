@@ -81,8 +81,12 @@
     <Compile Include="Bissiness\FrmUrbanConstruction.Designer.cs">
       <DependentUpon>FrmUrbanConstruction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operate\CommandTrafficRoute.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="Bissiness\Program.cs" />
+    <Compile Include="Operate\CommandAccessibility.cs" />
+    <Compile Include="Operate\CommandAchirveQuery.cs" />
+    <Compile Include="Operate\CommandEnterpriseQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bissiness\UCAgeChart.cs">
       <SubType>UserControl</SubType>
@@ -192,9 +196,7 @@
       <DependentUpon>UCSolution.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Operate\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="AxTerraExplorerX">
       <Guid>{B87695B0-65AD-11D5-85C1-0001023952C1}</Guid>

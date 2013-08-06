@@ -134,6 +134,12 @@
     <Compile Include="UI\FrmAttributeMapQuery.designer.cs">
       <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FrmHeightControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmHeightControl.Designer.cs">
+      <DependentUpon>FrmHeightControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FrmQueryCoordinate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmAttributeMapQuery.resx">
       <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmHeightControl.resx">
+      <DependentUpon>FrmHeightControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmQueryCoordinate.resx">
       <DependentUpon>FrmQueryCoordinate.cs</DependentUpon>

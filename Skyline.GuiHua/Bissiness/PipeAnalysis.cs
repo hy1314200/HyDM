@@ -193,9 +193,14 @@ namespace Skyline.GuiHua.Bussiness
             {
                 if (Analysised != null)
                     Analysised.Invoke();
-                TE.OnLButtonDown -= new TerraExplorerX._ITerraExplorerEvents5_OnLButtonDownEventHandler(TE_OnLButtonDown);
+                EndPipeAnalysis();
+
             }
         }
-               
+
+        public void EndPipeAnalysis()
+        {
+            TE.OnLButtonDown -= new TerraExplorerX._ITerraExplorerEvents5_OnLButtonDownEventHandler(TE_OnLButtonDown);
+        }
     }
 }

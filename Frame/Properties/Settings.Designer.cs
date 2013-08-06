@@ -77,51 +77,39 @@ namespace Frame.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1.0.0.1")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
             }
-            set {
-                this["Version"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int LogCacheCount {
             get {
                 return ((int)(this["LogCacheCount"]));
             }
-            set {
-                this["LogCacheCount"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("T_Sys_Log")]
         public string LogTableName {
             get {
                 return ((string)(this["LogTableName"]));
             }
-            set {
-                this["LogTableName"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("iMaginary")]
         public string SkinName {
             get {
                 return ((string)(this["SkinName"]));
-            }
-            set {
-                this["SkinName"] = value;
             }
         }
     }

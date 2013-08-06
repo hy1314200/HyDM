@@ -22,7 +22,7 @@ namespace Skyline.GuiHua.Operate
         {
             get
             {
-                return m_Hook != null && m_SkylineHook != null && m_SkylineHook.TerraExplorer != null;
+                return  m_Hook != null && m_SkylineHook != null && m_SkylineHook.TerraExplorer != null;
             }
         }
 
