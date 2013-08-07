@@ -31,6 +31,7 @@ namespace Hy.Esri.DataManage.Command
             if (m_FrmAdd == null || m_FrmAdd.IsDisposed)
             {
                 m_FrmAdd = new FrmFeatureClassInfo();
+                m_FrmAdd.EditAble = true;
                 m_FrmAdd.Text = "ÐÂ½¨Ê¸Á¿Í¼²ã";
             }
             FeatureClassInfo fcInfo = new FeatureClassInfo();

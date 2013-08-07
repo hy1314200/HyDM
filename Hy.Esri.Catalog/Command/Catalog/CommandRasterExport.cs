@@ -7,6 +7,8 @@ using Hy.Esri.Catalog.UI;
 using Hy.Esri.Catalog.Utility;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
+using Hy.Esri.Utility;
+using Hy.Esri.Utility.UI;
 
 namespace Hy.Esri.Catalog.Command.Catalog
 {
@@ -25,7 +27,7 @@ namespace Hy.Esri.Catalog.Command.Catalog
             if (frmRasterExport.ShowDialog() == DialogResult.OK)
             {
                 bool isSucceed = GpTool.CopyRaster(m_HookHelper.CurrentCatalogItem.GetGpString(),
-                     WorkspaceHelper.GetGpString(frmRasterExport.Workspace, frmRasterExport.RasterCatalogName,null ),
+                     Utility.WorkspaceHelper.GetGpString(frmRasterExport.Workspace, frmRasterExport.RasterCatalogName,null ),
                      frmRasterExport.WorkspaceType==enumWorkspaceType.File,
                      frmRasterExport.RasterFormat);
 

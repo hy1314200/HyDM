@@ -54,7 +54,7 @@ namespace Hy.Esri.DataManage.UI
             {
                 m_EditAble = value;
                 this.txtName.Properties.ReadOnly = !m_EditAble;
-                this.txtSpatialReference.Properties.ReadOnly = !m_EditAble;
+                this.txtSpatialReference.EditAble = m_EditAble;
             }
         }
     }

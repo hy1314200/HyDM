@@ -19,7 +19,7 @@ namespace Hy.Esri.Catalog
             {
                 if (frmCreate.CreateNew)
                 {
-                    IWorkspace wsNew = Hy.Esri.Catalog.Utility.WorkspaceHelper.CreateWorkspace(
+                    IWorkspace wsNew = Hy.Esri.Utility.WorkspaceHelper.CreateWorkspace(
                         frmCreate.WorkspaceType, frmCreate.WorkspacePath, frmCreate.WorkspaceName);
 
                     if (wsNew == null)

@@ -28,65 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.txtSpatialReference = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpatialReference.Properties)).BeginInit();
+            this.txtSpatialReference = new Hy.Esri.DataManage.UI.UCSpatialReferece();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtSpatialReference
-            // 
-            this.txtSpatialReference.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtSpatialReference.Location = new System.Drawing.Point(60, 42);
-            this.txtSpatialReference.Name = "txtSpatialReference";
-            this.txtSpatialReference.Properties.AccessibleRole = System.Windows.Forms.AccessibleRole.Default;
-            this.txtSpatialReference.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.Default;
-            this.txtSpatialReference.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtSpatialReference.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtSpatialReference.Properties.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtSpatialReference.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtSpatialReference.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtSpatialReference.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtSpatialReference.Properties.AppearanceDisabled.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtSpatialReference.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtSpatialReference.Properties.AppearanceDisabled.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtSpatialReference.Properties.AppearanceDisabled.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtSpatialReference.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtSpatialReference.Properties.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtSpatialReference.Properties.AppearanceFocused.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtSpatialReference.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtSpatialReference.Properties.AppearanceFocused.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtSpatialReference.Properties.AppearanceFocused.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtSpatialReference.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtSpatialReference.Properties.AppearanceFocused.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtSpatialReference.Properties.AppearanceReadOnly.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.txtSpatialReference.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.txtSpatialReference.Properties.AppearanceReadOnly.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.txtSpatialReference.Properties.AppearanceReadOnly.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.txtSpatialReference.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.txtSpatialReference.Properties.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtSpatialReference.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            serializableAppearanceObject2.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            serializableAppearanceObject2.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            serializableAppearanceObject2.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            serializableAppearanceObject2.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            serializableAppearanceObject2.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.txtSpatialReference.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
-            this.txtSpatialReference.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSpatialReference.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txtSpatialReference.Properties.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
-            this.txtSpatialReference.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.txtSpatialReference.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Default;
-            this.txtSpatialReference.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtSpatialReference.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.txtSpatialReference.Size = new System.Drawing.Size(296, 21);
-            this.txtSpatialReference.TabIndex = 8;
-            this.txtSpatialReference.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
             // labelControl1
             // 
@@ -174,6 +121,15 @@
             this.txtName.TabIndex = 6;
             this.txtName.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
+            // txtSpatialReference
+            // 
+            this.txtSpatialReference.Location = new System.Drawing.Point(60, 44);
+            this.txtSpatialReference.Name = "txtSpatialReference";
+            this.txtSpatialReference.Size = new System.Drawing.Size(303, 21);
+            this.txtSpatialReference.SpatialReference = null;
+            this.txtSpatialReference.SpatialReferencePrjString = "{B286C06B-0879-11D2-AACA-00C04FA33C20}";
+            this.txtSpatialReference.TabIndex = 8;
+            // 
             // UCFeatureDataset
             // 
             this.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -191,7 +147,6 @@
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.Name = "UCFeatureDataset";
             this.Size = new System.Drawing.Size(366, 71);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpatialReference.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,9 +155,9 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.ButtonEdit txtSpatialReference;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtName;
+        private UCSpatialReferece txtSpatialReference;
     }
 }

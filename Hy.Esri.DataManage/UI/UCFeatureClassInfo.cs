@@ -91,7 +91,7 @@ namespace Hy.Esri.DataManage.UI
                 this.txtName.Properties.ReadOnly = !m_EditAble;
                 this.txtAlias.Properties.ReadOnly = !m_EditAble;
                 this.txtShapeField.Properties.ReadOnly = !m_EditAble;
-                this.txtSpatialReference.Properties.ReadOnly = !m_EditAble;
+                this.txtSpatialReference.EditAble = m_EditAble;
 
                 this.cmbGeometryType.Properties.ReadOnly = !m_EditAble;
                 this.ucFields1.EditAble = m_EditAble;

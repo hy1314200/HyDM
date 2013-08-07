@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucClassInPath1 = new Hy.Esri.Catalog.UI.UCClassInPath();
+            this.ucClassInPath1 = new Hy.Esri.Utility.UCClassInPath();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
@@ -112,7 +112,7 @@
 
         #endregion
 
-        private UCClassInPath ucClassInPath1;
+        private Hy.Esri.Utility.UCClassInPath ucClassInPath1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnOK;
     }

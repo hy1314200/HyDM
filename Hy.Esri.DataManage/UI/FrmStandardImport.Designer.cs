@@ -272,6 +272,7 @@
             this.Controls.Add(this.labelControl1);
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.Name = "FrmStandardImport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "数据标准导入";
             ((System.ComponentModel.ISupportInitialize)(this.txtSource.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();

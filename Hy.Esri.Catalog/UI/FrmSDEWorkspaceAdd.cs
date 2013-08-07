@@ -11,6 +11,7 @@ using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.DataSourcesGDB;
 using Hy.Esri.Catalog;
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.UI
 {

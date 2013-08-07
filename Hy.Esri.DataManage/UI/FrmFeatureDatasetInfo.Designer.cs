@@ -28,24 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucFeatureDataset1 = new Hy.Esri.DataManage.UI.UCFeatureDataset();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.ucFeatureDataset1 = new Hy.Esri.DataManage.UI.UCFeatureDataset();
             this.SuspendLayout();
-            // 
-            // ucFeatureDataset1
-            // 
-            this.ucFeatureDataset1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.ucFeatureDataset1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.ucFeatureDataset1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
-            this.ucFeatureDataset1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
-            this.ucFeatureDataset1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
-            this.ucFeatureDataset1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
-            this.ucFeatureDataset1.Location = new System.Drawing.Point(4, 5);
-            this.ucFeatureDataset1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
-            this.ucFeatureDataset1.Name = "ucFeatureDataset1";
-            this.ucFeatureDataset1.Size = new System.Drawing.Size(366, 71);
-            this.ucFeatureDataset1.TabIndex = 0;
             // 
             // simpleButton1
             // 
@@ -87,6 +73,20 @@
             this.simpleButton2.Text = "关闭";
             this.simpleButton2.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
+            // ucFeatureDataset1
+            // 
+            this.ucFeatureDataset1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.ucFeatureDataset1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.ucFeatureDataset1.Appearance.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Default;
+            this.ucFeatureDataset1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.Default;
+            this.ucFeatureDataset1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Default;
+            this.ucFeatureDataset1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
+            this.ucFeatureDataset1.Location = new System.Drawing.Point(4, 5);
+            this.ucFeatureDataset1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
+            this.ucFeatureDataset1.Name = "ucFeatureDataset1";
+            this.ucFeatureDataset1.Size = new System.Drawing.Size(366, 71);
+            this.ucFeatureDataset1.TabIndex = 0;
+            // 
             // FrmFeatureDatasetInfo
             // 
             this.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -103,6 +103,7 @@
             this.Controls.Add(this.ucFeatureDataset1);
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.Name = "FrmFeatureDatasetInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFeatureDatasetInfo";
             this.ResumeLayout(false);
 

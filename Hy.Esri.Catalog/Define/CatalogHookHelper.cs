@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Hy.Esri.Catalog.Utility;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.Define
 {

@@ -123,6 +123,12 @@
     <Compile Include="UI\FrmStandardImport.Designer.cs">
       <DependentUpon>FrmStandardImport.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UCSpatialReferece.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCSpatialReferece.Designer.cs">
+      <DependentUpon>UCSpatialReferece.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCStandardList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,10 @@
       <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
       <Name>Define</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hy.Esri.Utility\Hy.Esri.Utility.csproj">
+      <Project>{636D874A-6377-4AC0-BB0D-05F0E6C62D95}</Project>
+      <Name>Hy.Esri.Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hy.Metadata\Hy.Metadata.csproj">
       <Project>{547A2C4A-957F-4B5D-B190-46B9D002B044}</Project>
       <Name>Hy.Metadata</Name>
@@ -175,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmStandardImport.resx">
       <DependentUpon>FrmStandardImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCSpatialReferece.resx">
+      <DependentUpon>UCSpatialReferece.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCStandardList.resx">
       <DependentUpon>UCStandardList.cs</DependentUpon>
@@ -199,7 +212,10 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataCheck\" />
+    <Folder Include="DataImport\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

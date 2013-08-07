@@ -11,6 +11,8 @@ using Hy.Esri.Catalog.Utility;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.esriSystem;
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility;
+using Hy.Esri.Utility.UI;
 
 namespace Hy.Esri.Catalog.UI
 {
@@ -71,8 +73,8 @@ namespace Hy.Esri.Catalog.UI
                         return;
 
                     m_SDEPropertySet = frmSetting.SDEPropertySet;
-                    txtWorkspace.Text = Utility.WorkspaceHelper.PropertySetToString(m_SDEPropertySet);
-                    m_Workspace = Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.SDE, m_SDEPropertySet);
+                    txtWorkspace.Text = Hy.Esri.Utility.WorkspaceHelper.PropertySetToString(m_SDEPropertySet);
+                    m_Workspace = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.SDE, m_SDEPropertySet);
 
                     break;
 
@@ -81,7 +83,7 @@ namespace Hy.Esri.Catalog.UI
                         return;
 
                     txtWorkspace.Text = folderBrowserWorkspace.SelectedPath;
-                    m_Workspace = Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.FileGDB, folderBrowserWorkspace.SelectedPath);
+                    m_Workspace = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.FileGDB, folderBrowserWorkspace.SelectedPath);
 
                     break;
 
@@ -91,7 +93,7 @@ namespace Hy.Esri.Catalog.UI
                         return;
 
                     txtWorkspace.Text = dlgWorkspace.FileName;
-                    m_Workspace = Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.PGDB, dlgWorkspace.FileName);
+                    m_Workspace = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.PGDB, dlgWorkspace.FileName);
 
                     break;
 
@@ -100,7 +102,7 @@ namespace Hy.Esri.Catalog.UI
                         return;
 
                     txtWorkspace.Text = folderBrowserWorkspace.SelectedPath;
-                    m_Workspace = Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.File, folderBrowserWorkspace.SelectedPath);
+                    m_Workspace = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.File, folderBrowserWorkspace.SelectedPath);
 
                     break;
             }

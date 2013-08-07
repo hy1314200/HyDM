@@ -31,8 +31,8 @@ namespace Hy.Esri.DataManage.Command
             {
                 m_FrmAdd = new FrmFeatureDatasetInfo();
                 m_FrmAdd.Text = "新建矢量数据集";
+                m_FrmAdd.EditAble = true;
             }
-
             StandardItem sItem = new StandardItem();
             sItem.Name = "新建矢量数据集";
             m_FrmAdd.StandardItem = sItem;

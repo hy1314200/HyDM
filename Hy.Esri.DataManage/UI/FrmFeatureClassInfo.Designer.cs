@@ -103,6 +103,7 @@
             this.Controls.Add(this.ucFeatureClassInfo1);
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.Name = "FrmFeatureClassInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFeatureClassInfo";
             this.ResumeLayout(false);
 

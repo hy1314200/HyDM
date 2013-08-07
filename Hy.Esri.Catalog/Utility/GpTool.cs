@@ -10,6 +10,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataManagementTools;
 using ESRI.ArcGIS.Geometry;
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.Utility
 {
@@ -91,7 +92,7 @@ namespace Hy.Esri.Catalog.Utility
                     return false;
                 }
 
-                IWorkspace wsTemp = WorkspaceHelper.OpenWorkspace(enumWorkspaceType.File, strTempPath);
+                IWorkspace wsTemp =Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.File, strTempPath);
                 IFeatureClass fClassTemp = (wsTemp as IFeatureWorkspace).OpenFeatureClass("temp");
                 IFeatureCursor fCursorTemp = fClassTemp.Search(null, false);
                 IFeature fTemp = fCursorTemp.NextFeature();
