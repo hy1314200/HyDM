@@ -6,7 +6,7 @@ using ESRI.ArcGIS.Geometry;
 
 namespace Hy.Esri.DataManage.Standard
 {
-    public class StandardItem:Utility.NHibernateSet<StandardItem>
+    public class StandardItem : global::Utility.NHibernateSet<StandardItem>
     {
         public string ID { get; set; }
 

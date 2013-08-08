@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace Skyline.Commands
 {
-    public class CommandAnalysisContourRationality:SkylineBaseCommand
+    public class CommandAnalysisContourRationality:Skyline.Define.SkylineBaseCommand
     {
         public CommandAnalysisContourRationality()
         {

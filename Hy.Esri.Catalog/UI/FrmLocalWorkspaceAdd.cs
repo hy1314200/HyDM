@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ESRI.ArcGIS.Geodatabase;
 using Hy.Esri.Catalog.Utility;
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.UI
 {

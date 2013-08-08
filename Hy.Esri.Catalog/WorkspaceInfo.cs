@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog
 {

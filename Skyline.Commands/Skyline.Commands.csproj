@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analysis\CommandAnalysisBestPath.cs" />
+    <Compile Include="Analysis\CommandAnalysisHeightControl.cs" />
     <Compile Include="Analysis\Sight\CommandAnalysisMultiSightLine.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlop.cs" />
     <Compile Include="Analysis\Slope\CommandAnalysisSlopDirect.cs" />
@@ -67,16 +68,22 @@
     <Compile Include="Analysis\CommandAnalysisViewshed.cs" />
     <Compile Include="Analysis\CommandAnalysisShadow.cs" />
     <Compile Include="Analysis\Sight\CommandAnalysisSightLine.cs" />
+    <Compile Include="Analysis\CommandAnalysisSkyline.cs" />
+    <Compile Include="CommandEdit.cs" />
     <Compile Include="CommandOpenFly.cs" />
     <Compile Include="CommandInfoTree.cs" />
     <Compile Include="Analysis\CommandAnalysisLandformLine.cs" />
+    <Compile Include="Fly\CommandSpecifiedPath.cs" />
+    <Compile Include="Fly\CommandStopTracking.cs" />
+    <Compile Include="Fly\CommandHotPoint.cs" />
+    <Compile Include="Fly\CommandVideo.cs" />
     <Compile Include="Query\CommandQueryBoth.cs" />
     <Compile Include="Query\CommandQueryProperty.cs" />
     <Compile Include="Query\CommandQuerySQL.cs" />
+    <Compile Include="Fly\CommandPathDefine.cs" />
     <Compile Include="View\CommandViewPan.cs" />
     <Compile Include="View\CommandViewZoom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SkylineBaseCommand.cs" />
     <Compile Include="View\CommandViewSlide.cs" />
     <Compile Include="View\CommandViewRotation.cs" />
     <Compile Include="Measure\ToolCoordsInfo.cs" />

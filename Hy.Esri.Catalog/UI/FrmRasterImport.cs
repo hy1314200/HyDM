@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ESRI.ArcGIS.Geodatabase;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.UI
 {

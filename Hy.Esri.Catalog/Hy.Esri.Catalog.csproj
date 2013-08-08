@@ -219,24 +219,6 @@
     <Compile Include="UI\Frm3DFilesImport.Designer.cs">
       <DependentUpon>Frm3DFilesImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmFeatureClassExport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmFeatureClassExport.Designer.cs">
-      <DependentUpon>FrmFeatureClassExport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FrmFeatureClassImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmFeatureClassImport.Designer.cs">
-      <DependentUpon>FrmFeatureClassImport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FrmSDESetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmSDESetting.Designer.cs">
-      <DependentUpon>FrmSDESetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\FrmSpatialReference.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,38 +238,13 @@
     <Compile Include="UI\FrmImport3DFile.Designer.cs">
       <DependentUpon>FrmImport3DFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UCClassOutPath.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UCClassOutPath.Designer.cs">
-      <DependentUpon>UCClassOutPath.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\UCSpatialReference.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UCSpatialReference.Designer.cs">
       <DependentUpon>UCSpatialReference.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UCClassInPath.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UCClassInPath.Designer.cs">
-      <DependentUpon>UCClassInPath.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FrmRasterImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmRasterImport.Designer.cs">
-      <DependentUpon>FrmRasterImport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FrmRasteExportr.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmRasteExportr.Designer.cs">
-      <DependentUpon>FrmRasteExportr.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utility\DataConverter.cs" />
-    <Compile Include="Define\enumWorkspaceType.cs" />
     <Compile Include="Utility\File3DHelper.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -318,15 +275,6 @@
     <EmbeddedResource Include="UI\Frm3DFilesImport.resx">
       <DependentUpon>Frm3DFilesImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmFeatureClassExport.resx">
-      <DependentUpon>FrmFeatureClassExport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmFeatureClassImport.resx">
-      <DependentUpon>FrmFeatureClassImport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmSDESetting.resx">
-      <DependentUpon>FrmSDESetting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmSpatialReference.resx">
       <DependentUpon>FrmSpatialReference.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,20 +287,8 @@
     <EmbeddedResource Include="UI\FrmImport3DFile.resx">
       <DependentUpon>FrmImport3DFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UCClassOutPath.resx">
-      <DependentUpon>UCClassOutPath.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\UCSpatialReference.resx">
       <DependentUpon>UCSpatialReference.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\UCClassInPath.resx">
-      <DependentUpon>UCClassInPath.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmRasterImport.resx">
-      <DependentUpon>FrmRasterImport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmRasteExportr.resx">
-      <DependentUpon>FrmRasteExportr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -370,6 +306,10 @@
     <ProjectReference Include="..\Define\Define.csproj">
       <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
       <Name>Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hy.Esri.Utility\Hy.Esri.Utility.csproj">
+      <Project>{636D874A-6377-4AC0-BB0D-05F0E6C62D95}</Project>
+      <Name>Hy.Esri.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

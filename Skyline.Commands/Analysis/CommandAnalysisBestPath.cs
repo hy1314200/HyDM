@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Skyline.Commands
 {
-    public class CommandAnalysisBestPath:SkylineBaseCommand
+    public class CommandAnalysisBestPath:Skyline.Define.SkylineBaseCommand
     {
         public CommandAnalysisBestPath()
         {

@@ -6,7 +6,7 @@ using Hy.Metadata;
 
 namespace Hy.Esri.DataManage.Standard
 {
-    public class TableInfo : Utility.NHibernateSet<FieldInfo>
+    public class TableInfo : global:: Utility.NHibernateSet<FieldInfo>
     {
         /// <summary>
         /// 标识

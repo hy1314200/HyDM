@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewStop:SkylineBaseCommand
+    public class CommandViewStop:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewStop()
         {

@@ -10,7 +10,7 @@ using Skyline.Core.Helper;
 
 namespace Skyline.Commands
 {
-    public class CommandAnalysisSlopDirect:SkylineBaseCommand
+    public class CommandAnalysisSlopDirect:Skyline.Define.SkylineBaseCommand
     {
         public CommandAnalysisSlopDirect()
         {

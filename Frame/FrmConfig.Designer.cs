@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfig));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -63,7 +62,7 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
@@ -204,7 +203,7 @@
             this.xtraTabPage2.Controls.Add(this.ribbonControl1);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage2.Size = new System.Drawing.Size(839, 525);
+            this.xtraTabPage2.Size = new System.Drawing.Size(839, 526);
             this.xtraTabPage2.Text = "工具栏命令配置";
             this.xtraTabPage2.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -228,7 +227,7 @@
             this.splitContainerControl2.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel1;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 218);
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 222);
             this.splitContainerControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.splitContainerControl2.Name = "splitContainerControl2";
             this.splitContainerControl2.Panel1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -262,7 +261,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.tlRibbon);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
-            this.splitContainerControl2.Size = new System.Drawing.Size(839, 307);
+            this.splitContainerControl2.Size = new System.Drawing.Size(839, 304);
             this.splitContainerControl2.SplitterPosition = 276;
             this.splitContainerControl2.TabIndex = 6;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -280,7 +279,7 @@
             this.ucCommandCategory2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.ucCommandCategory2.Name = "ucCommandCategory2";
             this.ucCommandCategory2.SelectedClassInfo = null;
-            this.ucCommandCategory2.Size = new System.Drawing.Size(276, 307);
+            this.ucCommandCategory2.Size = new System.Drawing.Size(276, 304);
             this.ucCommandCategory2.TabIndex = 0;
             this.ucCommandCategory2.SelectedClassInfoChanged += new Frame.ClassInfoEventHandler(this.ucCommandCategory2_SelectedClassInfoChanged);
             this.ucCommandCategory2.ClassInfoDoubleClicked += new Frame.ClassInfoEventHandler(this.ucCommandCategory2_ClassInfoDoubleClicked);
@@ -461,7 +460,7 @@
             this.repositoryItemComboBox1,
             this.repositoryItemPictureEdit1});
             this.tlRibbon.ShowButtonMode = DevExpress.XtraTreeList.ShowButtonModeEnum.ShowForFocusedCell;
-            this.tlRibbon.Size = new System.Drawing.Size(557, 307);
+            this.tlRibbon.Size = new System.Drawing.Size(557, 304);
             this.tlRibbon.TabIndex = 0;
             this.tlRibbon.TreeLineStyle = DevExpress.XtraTreeList.LineStyle.Percent50;
             this.tlRibbon.VertScrollVisibility = DevExpress.XtraTreeList.ScrollVisibility.Auto;
@@ -684,9 +683,9 @@
             this.repositoryItemComboBox1.AppearanceReadOnly.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Default;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            serializableAppearanceObject1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            serializableAppearanceObject3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.repositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.repositoryItemComboBox1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.repositoryItemComboBox1.ExportMode = DevExpress.XtraEditors.Repository.ExportMode.Default;
@@ -749,7 +748,7 @@
             this.barBtnSave,
             this.toolStripSeparator4,
             this.barBtnRefresh});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 170);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 174);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(839, 48);
             this.toolStrip2.TabIndex = 3;
@@ -878,7 +877,7 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 145);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 149);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(839, 25);
@@ -901,7 +900,7 @@
             this.ribbonControl1.SelectedPage = this.ribbonPage1;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.Default;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
-            this.ribbonControl1.Size = new System.Drawing.Size(839, 145);
+            this.ribbonControl1.Size = new System.Drawing.Size(839, 149);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Default;
             // 
@@ -987,7 +986,7 @@
             this.xtraTabPage1.Controls.Add(this.toolStrip1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage1.Size = new System.Drawing.Size(839, 525);
+            this.xtraTabPage1.Size = new System.Drawing.Size(839, 526);
             this.xtraTabPage1.Text = "资源注册";
             this.xtraTabPage1.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -1045,7 +1044,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both;
-            this.splitContainerControl1.Size = new System.Drawing.Size(839, 477);
+            this.splitContainerControl1.Size = new System.Drawing.Size(839, 478);
             this.splitContainerControl1.SplitterPosition = 263;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -1106,7 +1105,7 @@
             this.xtraTabControl2.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.Default;
             this.xtraTabControl2.ShowTabHeader = DevExpress.Utils.DefaultBoolean.Default;
             this.xtraTabControl2.ShowToolTips = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabControl2.Size = new System.Drawing.Size(263, 477);
+            this.xtraTabControl2.Size = new System.Drawing.Size(263, 478);
             this.xtraTabControl2.TabIndex = 0;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -1148,7 +1147,7 @@
             this.xtraTabPage3.Controls.Add(this.ucCommandCategory1);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage3.Size = new System.Drawing.Size(256, 447);
+            this.xtraTabPage3.Size = new System.Drawing.Size(256, 449);
             this.xtraTabPage3.Text = "命令";
             this.xtraTabPage3.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -1165,7 +1164,7 @@
             this.ucCommandCategory1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.ucCommandCategory1.Name = "ucCommandCategory1";
             this.ucCommandCategory1.SelectedClassInfo = null;
-            this.ucCommandCategory1.Size = new System.Drawing.Size(256, 447);
+            this.ucCommandCategory1.Size = new System.Drawing.Size(256, 449);
             this.ucCommandCategory1.TabIndex = 0;
             this.ucCommandCategory1.SelectedClassInfoChanged += new Frame.ClassInfoEventHandler(this.SelectedResourceChanged);
             // 
@@ -1205,7 +1204,7 @@
             this.xtraTabPage4.Controls.Add(this.lbPlugins);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.ShowCloseButton = DevExpress.Utils.DefaultBoolean.Default;
-            this.xtraTabPage4.Size = new System.Drawing.Size(256, 447);
+            this.xtraTabPage4.Size = new System.Drawing.Size(256, 449);
             this.xtraTabPage4.Text = "插件";
             this.xtraTabPage4.TooltipIconType = DevExpress.Utils.ToolTipIconType.None;
             // 
@@ -1225,7 +1224,7 @@
             this.lbPlugins.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.lbPlugins.Name = "lbPlugins";
             this.lbPlugins.SelectionMode = System.Windows.Forms.SelectionMode.One;
-            this.lbPlugins.Size = new System.Drawing.Size(256, 447);
+            this.lbPlugins.Size = new System.Drawing.Size(256, 449);
             this.lbPlugins.SortOrder = System.Windows.Forms.SortOrder.None;
             this.lbPlugins.TabIndex = 0;
             this.lbPlugins.ToolTipIconType = DevExpress.Utils.ToolTipIconType.None;
@@ -1253,7 +1252,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Skin;
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(570, 477);
+            this.groupControl1.Size = new System.Drawing.Size(570, 478);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "信息";
             // 

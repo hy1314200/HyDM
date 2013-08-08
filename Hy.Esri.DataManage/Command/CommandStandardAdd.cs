@@ -22,6 +22,7 @@ namespace Hy.Esri.DataManage.Command
             if (m_FrmAdd == null || m_FrmAdd.IsDisposed)
             {
                 m_FrmAdd = new FrmFeatureDatasetInfo();
+                m_FrmAdd.EditAble = true;
                 m_FrmAdd.Text = "新建数据库标准";
             }
 

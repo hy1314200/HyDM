@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectSwitchTime:SkylineBaseCommand
+    public class CommandEffectSwitchTime:Skyline.Define.SkylineBaseCommand
     {
         public CommandEffectSwitchTime()
         {

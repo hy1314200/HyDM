@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Hy.Esri.Catalog.Utility;
 using DevExpress.XtraEditors;
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility.UI;
 
 namespace Hy.Esri.Catalog.Command.Catalog
 {

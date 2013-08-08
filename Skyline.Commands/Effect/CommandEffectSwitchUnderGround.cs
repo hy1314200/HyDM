@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectSwitchUnderGround:SkylineBaseCommand
+    public class CommandEffectSwitchUnderGround:Skyline.Define.SkylineBaseCommand
     {
         public CommandEffectSwitchUnderGround()
         {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Hy.Esri.Utility")]
+[assembly: AssemblyTitle("Hy.Esri.Utility.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hy-Xingzhe")]
-[assembly: AssemblyProduct("Hy.Esri.Utility")]
+[assembly: AssemblyProduct("Hy.Esri.Utility.UI")]
 [assembly: AssemblyCopyright("Copyright © Hy-Xingzhe 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

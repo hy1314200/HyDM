@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.esriSystem;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.Define
 {
@@ -86,7 +87,7 @@ namespace Hy.Esri.Catalog.Define
             {
                 if (this.m_Dataset == null)
                 {
-                    this.m_Dataset = Utility.WorkspaceHelper.OpenWorkspace(this.m_WorkspaceType, this.m_WorkapcePropertySet) as IDataset;
+                    this.m_Dataset = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(this.m_WorkspaceType, this.m_WorkapcePropertySet) as IDataset;
                 }
 
                 return this.m_Dataset;
@@ -157,7 +158,7 @@ namespace Hy.Esri.Catalog.Define
         {
             if (this.m_Dataset == null)
             {
-                this.m_Dataset = Utility.WorkspaceHelper.OpenWorkspace(this.m_WorkspaceType, this.m_WorkapcePropertySet) as IDataset;
+                this.m_Dataset = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(this.m_WorkspaceType, this.m_WorkapcePropertySet) as IDataset;
 
                 return this.m_Dataset != null; 
             }

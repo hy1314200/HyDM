@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewSwitchCollision:SkylineBaseCommand
+    public class CommandViewSwitchCollision:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewSwitchCollision()
         {

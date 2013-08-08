@@ -60,7 +60,7 @@ namespace Frame
 
             loginor.ShowMessage("正在创建GIS控件对象...");
             IHooker hooker = Environment.ResourceManager.GetHooker();
-            this.AddHooker(hooker, enumDockPosition.Center);
+            this.m_MainHookPage= this.AddHooker(hooker, enumDockPosition.Center) as XtraTabPage;
             this.Hook = hooker.Hook;
             //Control hookControl = hooker.Control;
             //if (hookControl != null)
@@ -204,10 +204,10 @@ namespace Frame
         }
 
         private Dictionary<Guid, Control> m_DictHooker = new Dictionary<Guid, Control>();
-        public void AddHooker(IHooker hooker, enumDockPosition dockPosition)
+        public Control AddHooker(IHooker hooker, enumDockPosition dockPosition)
         {
             if (hooker == null)
-                return;
+                return null;
 
             Control ctrlParent= AddControl(hooker.Control, dockPosition);
             ctrlParent.Text = hooker.Caption;
@@ -217,6 +217,7 @@ namespace Frame
             if (ctrlParent is DockPanel)
                 (ctrlParent as DockPanel).Enter+=new EventHandler(ChangeHook);
 
+            return ctrlParent;
             //hooker.Control .GotFocus += new EventHandler(ChangeHook);
         }
 
@@ -278,6 +279,29 @@ namespace Frame
         {
             this.m_PreSelectedPage = e.PrevPage;
             ChangeHook(e.Page, null);
+        }
+
+        private XtraTabPage m_MainHookPage = null; 
+        private void tabCenter_CloseButtonClick(object sender, EventArgs e)
+        {
+            if(tabCenter.TabPages.Count==1 || tabCenter.SelectedTabPage==m_MainHookPage)
+                return;
+
+            //tabCenter.SelectedTabPageIndex = tabCenter.SelectedTabPageIndex > 0 ? tabCenter.SelectedTabPageIndex - 1 : tabCenter.TabPages.Count - 1;
+            tabCenter.TabPages.Remove(tabCenter.SelectedTabPage);
+        }
+
+        private void TabPageCountChanged(object sender, ControlEventArgs e)
+        {
+            if (tabCenter.TabPages.Count > 1)
+            {
+                tabCenter.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
+                tabCenter.HeaderButtons = TabButtons.Close;
+            }
+            else
+            {
+                tabCenter.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
+            }
         }
     }
 }

@@ -27,9 +27,16 @@ namespace Frame
             }
         }
 
+        private Helper.DbLogger m_LogWriter;
         public global::Define.ILogWriter LogWriter
         {
-            get { return new Helper.DbLogger();}// Logger.Instance; }
+            get {
+                if (m_LogWriter == null)
+                    m_LogWriter = new Helper.DbLogger();
+
+                return m_LogWriter;
+            
+            }// Logger.Instance; }
         }
 
         public global::Define.IApplication Application
@@ -44,7 +51,13 @@ namespace Frame
             {
                 m_NHibernateHelper.Close();
             }
+
+            if (m_LogWriter != null)
+            {
+                m_LogWriter.Flush();
+            }
             Logger.Instance.Close();
+
         }
     }
 }

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 
 using Define;
-using Skyline.Define;
-namespace Skyline.Commands
+
+
+namespace Skyline.Define
 {
     public abstract class SkylineBaseCommand:BaseCommand
     {
@@ -14,11 +15,8 @@ namespace Skyline.Commands
         {
             get
             {
-                if (base.Enabled)
-                {
-                    return (m_SkylineHook != null && m_SkylineHook.SGWorld != null && !string.IsNullOrEmpty(m_SkylineHook.SGWorld.Project.Name));
-                }
-                return false;
+                    return base.Enabled && (m_SkylineHook != null && m_SkylineHook.SGWorld != null && !string.IsNullOrEmpty(m_SkylineHook.SGWorld.Project.Name));
+                
             }
         }
 

@@ -109,6 +109,12 @@
     <Compile Include="UI\Fly\FrmCustomPath.designer.cs">
       <DependentUpon>FrmCustomPath.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Fly\FrmHotDot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Fly\FrmHotDot.designer.cs">
+      <DependentUpon>FrmHotDot.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Fly\FrmSetPlaneParam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,11 +127,24 @@
     <Compile Include="UI\Fly\FrmStipulatePath.designer.cs">
       <DependentUpon>FrmStipulatePath.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Fly\FrmVideoCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Fly\FrmVideoCreate.Designer.cs">
+      <DependentUpon>FrmVideoCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Fly\GetPositionInfo.cs" />
     <Compile Include="UI\FrmAttributeMapQuery.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FrmAttributeMapQuery.designer.cs">
       <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmHeightControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmHeightControl.Designer.cs">
+      <DependentUpon>FrmHeightControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmQueryCoordinate.cs">
       <SubType>Form</SubType>
@@ -284,14 +303,23 @@
     <EmbeddedResource Include="UI\Fly\FrmCustomPath.resx">
       <DependentUpon>FrmCustomPath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Fly\FrmHotDot.resx">
+      <DependentUpon>FrmHotDot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Fly\FrmSetPlaneParam.resx">
       <DependentUpon>FrmSetPlaneParam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Fly\FrmStipulatePath.resx">
       <DependentUpon>FrmStipulatePath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Fly\FrmVideoCreate.resx">
+      <DependentUpon>FrmVideoCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmAttributeMapQuery.resx">
       <DependentUpon>FrmAttributeMapQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmHeightControl.resx">
+      <DependentUpon>FrmHeightControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmQueryCoordinate.resx">
       <DependentUpon>FrmQueryCoordinate.cs</DependentUpon>
@@ -360,6 +388,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GenericBlueSubtract16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericBluePause32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericBlueRightArrowNoTail32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericBlueStop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Record32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RecordStop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrackingDataAnimationTool32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

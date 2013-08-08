@@ -28,7 +28,7 @@ namespace Define
         /// 添加Hooker
         /// </summary>
         /// <param name="hooker"></param>
-        void AddHooker(IHooker hooker,enumDockPosition dockPosition);
+        Control AddHooker(IHooker hooker,enumDockPosition dockPosition);
 
         /// <summary>
         /// 激活Hook控件

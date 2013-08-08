@@ -249,7 +249,7 @@ namespace Frame
                 if (m_ExclusiveCommand != null)
                 {
                     // 必须独占的是同一对象
-                    if (cmdCurrent is IExclusive && (cmdCurrent as IExclusive).Resource == m_ExclusiveCommand.Resource)
+                    if (cmdCurrent!=m_ExclusiveCommand && cmdCurrent is IExclusive && (cmdCurrent as IExclusive).Resource == m_ExclusiveCommand.Resource)
                     {
                         if (!m_ExclusiveCommand.Release())
                         {
@@ -276,28 +276,28 @@ namespace Frame
                 // 调用Command
                 cmdCurrent.OnClick();
 
-                //if (cmdCurrent is ITool)
-                //{
-                //    ITool toolCurrent = cmdCurrent as ITool;
-                //    //// 制裁当前Tool
-                //    //if (m_ExclusiveCommand != null)
-                //    //    m_ExclusiveCommand.Release();
+                if (cmdCurrent is ITool)
+                {
+                    ITool toolCurrent = cmdCurrent as ITool;
+                    //// 制裁当前Tool
+                    //if (m_ExclusiveCommand != null)
+                    //    m_ExclusiveCommand.Release();
 
-                //    //m_ExclusiveCommand = toolCurrent;
+                    m_ExclusiveCommand = toolCurrent;
 
 
-                //    //更新状态
-                //    //foreach (BarItem barItem in m_BarItems)
-                //    //{
-                //    //    if (barItem is BarCheckItem && barItem != e.Item)
-                //    //        (barItem as BarCheckItem).Checked = false;
-                //    //}
-                //    if (e.Item is BarCheckItem)
-                //    {
-                //        (e.Item as BarCheckItem).Checked = true;
-                //    }
+                    ////更新状态
+                    ////foreach (BarItem barItem in m_BarItems)
+                    ////{
+                    ////    if (barItem is BarCheckItem && barItem != e.Item)
+                    ////        (barItem as BarCheckItem).Checked = false;
+                    ////}
+                    //if (e.Item is BarCheckItem)
+                    //{
+                    //    (e.Item as BarCheckItem).Checked = true;
+                    //}
 
-                //}
+                }
             }
             catch(Exception exp)
             {

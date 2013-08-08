@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewRotation:SkylineBaseCommand
+    public class CommandViewRotation:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewRotation()
         {

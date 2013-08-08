@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectHole:SkylineBaseCommand
+    public class CommandEffectHole:Skyline.Define.SkylineBaseCommand
     {
         public CommandEffectHole()
         {

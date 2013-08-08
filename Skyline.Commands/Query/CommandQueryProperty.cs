@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Skyline.Commands
 {
-    public class CommandQueryProperty:SkylineBaseCommand
+    public class CommandQueryProperty:Skyline.Define.SkylineBaseCommand
     {
         public CommandQueryProperty()
         {

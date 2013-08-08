@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Skyline.Commands
 {
-    public  class CommandOpenFly:SkylineBaseCommand
+    public  class CommandOpenFly:Skyline.Define.SkylineBaseCommand
     {
 
         public CommandOpenFly()

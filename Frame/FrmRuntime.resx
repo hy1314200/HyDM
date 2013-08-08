@@ -128,8 +128,8 @@
   <data name="ribbon.ApplicationIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOtQAA
-        DrUBY3GYyAAAAS9JREFUOE+FkrFxwzAMRbmJey7hKVhrFHITucil4BJ2nTql77xCNkD+/wJoWZFi3H2L
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOtAAA
+        DrQBsTZ6LAAAAS9JREFUOE+FkrFxwzAMRbmJey7hKVhrFHITucil4BJ2nTql77xCNkD+/wJoWZFi3H2L
         AIEHQHLas3wqls/Q5OIZMb8+tigstVuZIT5DU/8fNLoiubIY6tdu31BrTfF8BInixCTo8+vHytVQXMyg
         Xgk23SfCthAVexd2J4Cyx1LcZ6w121gnIC/FpK+Lb/ebAIIAcLl8aCKq1vQXoB1994K9K/ScAAWI2yPJ
         J2RMoR8EK8fUrot4VkefgP5zorQA8IkF4GVHcmvohCD9GJkdFXdg+Gw6AHQK9ioTpISmiTQBVBHP54Qz
@@ -191,7 +191,7 @@
   </data>
   <assembly alias="DevExpress.XtraEditors.v10.1" name="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd" />
   <data name="tabCenter.ClosePageButtonShowMode" type="DevExpress.XtraTab.ClosePageButtonShowMode, DevExpress.XtraEditors.v10.1">
-    <value>InTabControlHeader</value>
+    <value>InActiveTabPageHeader</value>
   </data>
   <data name="tabCenter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -201,7 +201,7 @@
     <value>Default</value>
   </data>
   <data name="tabCenter.HeaderButtons" type="DevExpress.XtraTab.TabButtons, DevExpress.XtraEditors.v10.1">
-    <value>Prev, Next, Close, Default</value>
+    <value>None</value>
   </data>
   <data name="tabCenter.HeaderButtonsShowMode" type="DevExpress.XtraTab.TabButtonShowMode, DevExpress.XtraEditors.v10.1">
     <value>WhenNeeded</value>
@@ -228,7 +228,7 @@
     <value>False</value>
   </data>
   <data name="tabCenter.ShowTabHeader" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v10.1">
-    <value>True</value>
+    <value>False</value>
   </data>
   <data name="tabCenter.ShowToolTips" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v10.1">
     <value>Default</value>
@@ -5762,15 +5762,6 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonForm, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
   </data>
-  <data name="controlContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 29</value>
-  </data>
-  <data name="controlContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 438</value>
-  </data>
-  <data name="controlContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;controlContainer1.Name" xml:space="preserve">
     <value>controlContainer1</value>
   </data>
@@ -5797,15 +5788,6 @@
   </data>
   <data name="&gt;&gt;dockPanelRight.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Docking.DockPanel, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
-  </data>
-  <data name="dockPanel1_Container.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 29</value>
-  </data>
-  <data name="dockPanel1_Container.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 438</value>
-  </data>
-  <data name="dockPanel1_Container.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;dockPanel1_Container.Name" xml:space="preserve">
     <value>dockPanel1_Container</value>
@@ -5834,15 +5816,6 @@
   <data name="&gt;&gt;dockPanelLeft.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Docking.DockPanel, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
   </data>
-  <data name="controlContainer2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 29</value>
-  </data>
-  <data name="controlContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>824, 107</value>
-  </data>
-  <data name="controlContainer2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;controlContainer2.Name" xml:space="preserve">
     <value>controlContainer2</value>
   </data>
@@ -5869,5 +5842,68 @@
   </data>
   <data name="&gt;&gt;dockPanelBottom.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Docking.DockPanel, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
+  </data>
+  <data name="controlContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="controlContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 438</value>
+  </data>
+  <data name="controlContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;controlContainer1.Name" xml:space="preserve">
+    <value>controlContainer1</value>
+  </data>
+  <data name="&gt;&gt;controlContainer1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Docking.ControlContainer, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
+  </data>
+  <data name="&gt;&gt;controlContainer1.Parent" xml:space="preserve">
+    <value>dockPanelRight</value>
+  </data>
+  <data name="&gt;&gt;controlContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="dockPanel1_Container.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="dockPanel1_Container.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 438</value>
+  </data>
+  <data name="dockPanel1_Container.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dockPanel1_Container.Name" xml:space="preserve">
+    <value>dockPanel1_Container</value>
+  </data>
+  <data name="&gt;&gt;dockPanel1_Container.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Docking.ControlContainer, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
+  </data>
+  <data name="&gt;&gt;dockPanel1_Container.Parent" xml:space="preserve">
+    <value>dockPanelLeft</value>
+  </data>
+  <data name="&gt;&gt;dockPanel1_Container.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="controlContainer2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="controlContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>824, 107</value>
+  </data>
+  <data name="controlContainer2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;controlContainer2.Name" xml:space="preserve">
+    <value>controlContainer2</value>
+  </data>
+  <data name="&gt;&gt;controlContainer2.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Docking.ControlContainer, DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd</value>
+  </data>
+  <data name="&gt;&gt;controlContainer2.Parent" xml:space="preserve">
+    <value>dockPanelBottom</value>
+  </data>
+  <data name="&gt;&gt;controlContainer2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

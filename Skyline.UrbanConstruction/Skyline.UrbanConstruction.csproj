@@ -31,8 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=940cfcde86f32efd, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +50,190 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bissiness\DisplayProxy.cs" />
+    <Compile Include="Bissiness\FrmAccessibility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bissiness\FrmAccessibility.Designer.cs">
+      <DependentUpon>FrmAccessibility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\FrmBatchModeling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bissiness\FrmBatchModeling.Designer.cs">
+      <DependentUpon>FrmBatchModeling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\FrmFloor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bissiness\FrmFloor.Designer.cs">
+      <DependentUpon>FrmFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\FrmTrafficRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bissiness\FrmTrafficRoute.Designer.cs">
+      <DependentUpon>FrmTrafficRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\FrmUrbanConstruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bissiness\FrmUrbanConstruction.Designer.cs">
+      <DependentUpon>FrmUrbanConstruction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operate\CommandTrafficRoute.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="Bissiness\Program.cs" />
+    <Compile Include="Operate\CommandAccessibility.cs" />
+    <Compile Include="Operate\CommandAchirveQuery.cs" />
+    <Compile Include="Operate\CommandEnterpriseQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bissiness\UCAgeChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCAgeChart.Designer.cs">
+      <DependentUpon>UCAgeChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCArchives.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCArchives.Designer.cs">
+      <DependentUpon>UCArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCEducational.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCEducational.Designer.cs">
+      <DependentUpon>UCEducational.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCFile.Designer.cs">
+      <DependentUpon>UCFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCFloor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCFloor.Designer.cs">
+      <DependentUpon>UCFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCProject.Designer.cs">
+      <DependentUpon>UCProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCSexChat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCSexChat.Designer.cs">
+      <DependentUpon>UCSexChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCSingleProjectBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCSingleProjectBase.Designer.cs">
+      <DependentUpon>UCSingleProjectBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCSingleProjectBuilding.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCSingleProjectBuilding.Designer.cs">
+      <DependentUpon>UCSingleProjectBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bissiness\UCSolution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bissiness\UCSolution.Designer.cs">
+      <DependentUpon>UCSolution.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bissiness\FrmAccessibility.resx">
+      <DependentUpon>FrmAccessibility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\FrmBatchModeling.resx">
+      <DependentUpon>FrmBatchModeling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\FrmFloor.resx">
+      <DependentUpon>FrmFloor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\FrmTrafficRoute.resx">
+      <DependentUpon>FrmTrafficRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\FrmUrbanConstruction.resx">
+      <DependentUpon>FrmUrbanConstruction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCAgeChart.resx">
+      <DependentUpon>UCAgeChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCArchives.resx">
+      <DependentUpon>UCArchives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCEducational.resx">
+      <DependentUpon>UCEducational.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCFile.resx">
+      <DependentUpon>UCFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCFloor.resx">
+      <DependentUpon>UCFloor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCProject.resx">
+      <DependentUpon>UCProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCSexChat.resx">
+      <DependentUpon>UCSexChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCSingleProjectBase.resx">
+      <DependentUpon>UCSingleProjectBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCSingleProjectBuilding.resx">
+      <DependentUpon>UCSingleProjectBuilding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bissiness\UCSolution.resx">
+      <DependentUpon>UCSolution.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AxTerraExplorerX">
+      <Guid>{B87695B0-65AD-11D5-85C1-0001023952C1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="TerraExplorerX">
+      <Guid>{B87695B0-65AD-11D5-85C1-0001023952C1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Define\Define.csproj">
+      <Project>{28851666-692C-4C05-90BF-51F199FC1262}</Project>
+      <Name>Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skyline.Define\Skyline.Define.csproj">
+      <Project>{D502011C-A1FF-4564-9CE0-8FDD2D774DE5}</Project>
+      <Name>Skyline.Define</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

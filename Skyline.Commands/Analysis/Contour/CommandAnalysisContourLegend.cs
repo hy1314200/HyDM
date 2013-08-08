@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Skyline.Commands
 {
-    public class CommandAnalysisContourLegend:SkylineBaseCommand
+    public class CommandAnalysisContourLegend:Skyline.Define.SkylineBaseCommand
     {
         public CommandAnalysisContourLegend()
         {

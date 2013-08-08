@@ -67,9 +67,51 @@ namespace Skyline.Core.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap GenericBluePause32 {
+            get {
+                object obj = ResourceManager.GetObject("GenericBluePause32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap GenericBlueRightArrowNoTail32 {
+            get {
+                object obj = ResourceManager.GetObject("GenericBlueRightArrowNoTail32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap GenericBlueStop32 {
+            get {
+                object obj = ResourceManager.GetObject("GenericBlueStop32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap GenericBlueSubtract16 {
             get {
                 object obj = ResourceManager.GetObject("GenericBlueSubtract16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Record32 {
+            get {
+                object obj = ResourceManager.GetObject("Record32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap RecordStop32 {
+            get {
+                object obj = ResourceManager.GetObject("RecordStop32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TrackingDataAnimationTool32 {
+            get {
+                object obj = ResourceManager.GetObject("TrackingDataAnimationTool32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

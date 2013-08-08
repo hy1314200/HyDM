@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectSwitchWater:SkylineBaseCommand
+    public class CommandEffectSwitchWater:Skyline.Define.SkylineBaseCommand
     {
         public CommandEffectSwitchWater()
         {

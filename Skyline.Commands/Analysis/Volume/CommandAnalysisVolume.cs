@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Skyline.Commands
 {
-    public class CommandAnalysisVolume:SkylineBaseCommand
+    public class CommandAnalysisVolume:Skyline.Define.SkylineBaseCommand
     {
         public CommandAnalysisVolume()
         {

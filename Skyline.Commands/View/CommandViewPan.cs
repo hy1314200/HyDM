@@ -6,7 +6,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewPan:SkylineBaseCommand
+    public class CommandViewPan:Skyline.Define.SkylineBaseCommand
     {
         public CommandViewPan()
         {

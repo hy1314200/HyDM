@@ -1,4 +1,5 @@
 ﻿using System;
+using Hy.Esri.Utility;
 namespace Hy.Esri.Catalog.Define
 {
     interface ICatalogHookHelper

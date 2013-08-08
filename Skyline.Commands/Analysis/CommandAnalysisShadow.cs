@@ -10,7 +10,7 @@ using TerraExplorerX;
 
 namespace Skyline.Commands
 {
-    public class CommandAnalysisShadow:SkylineBaseCommand
+    public class CommandAnalysisShadow:Skyline.Define.SkylineBaseCommand
     {
         public CommandAnalysisShadow()
         {

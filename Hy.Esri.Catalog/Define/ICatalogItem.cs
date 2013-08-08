@@ -6,6 +6,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using Hy.Esri.Catalog.Utility;
 using ESRI.ArcGIS.esriSystem;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.Define
 {

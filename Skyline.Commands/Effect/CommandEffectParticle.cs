@@ -11,7 +11,7 @@ using TerraExplorerX;
 
 namespace Skyline.Commands
 {
-    public class CommandEffectParticle:SkylineBaseCommand,ICommandEx
+    public class CommandEffectParticle:Skyline.Define.SkylineBaseCommand,ICommandEx
     {
         public CommandEffectParticle()
         {

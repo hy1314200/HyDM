@@ -6,7 +6,7 @@ using TerraExplorerX;
 
 namespace Skyline.Core.UI
 {
-    static class Program
+   public static class Program
     {
         static Program()
         {

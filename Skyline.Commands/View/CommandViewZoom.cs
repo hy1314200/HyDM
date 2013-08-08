@@ -9,7 +9,7 @@ using Skyline.Core;
 
 namespace Skyline.Commands
 {
-    public class CommandViewZoom:SkylineBaseCommand,ICommandEx
+    public class CommandViewZoom:Skyline.Define.SkylineBaseCommand,ICommandEx
     {
         public CommandViewZoom()
         {

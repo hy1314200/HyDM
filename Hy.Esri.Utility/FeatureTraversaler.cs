@@ -10,6 +10,8 @@ namespace Hy.Esri.Utility
     {
         public IFeatureClass Source { private get; set; }
 
+        public IQueryFilter QueryFilter { private get; set; }
+
         public void Traversal()
         {
         }

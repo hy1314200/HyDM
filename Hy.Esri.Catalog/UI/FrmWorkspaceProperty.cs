@@ -13,6 +13,7 @@ using ESRI.ArcGIS.DataSourcesGDB;
 
 using Hy.Esri.Catalog.Utility;
 using Hy.Esri.Catalog.Define;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.UI
 {
@@ -60,7 +61,7 @@ namespace Hy.Esri.Catalog.UI
 
         private void TestConn_Click(object sender, EventArgs e)
         {
-            IWorkspace wsTest = Hy.Esri.Catalog.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.SDE, this.m_WorkspaceProperty);
+            IWorkspace wsTest = Hy.Esri.Utility.WorkspaceHelper.OpenWorkspace(enumWorkspaceType.SDE, this.m_WorkspaceProperty);
             if (wsTest != null)
             {
                 XtraMessageBox.Show("连接成功!");

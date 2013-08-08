@@ -6,6 +6,7 @@ using Hy.Esri.Catalog.Command.Catalog;
 using System.Windows.Forms;
 using Hy.Esri.Catalog.Define;
 using Hy.Esri.Catalog.UI;
+using Hy.Esri.Utility;
 
 namespace Hy.Esri.Catalog.Command
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ESRI.ArcGIS.Geodatabase;
 
-namespace Utility
+namespace Hy.Esri.Utility
 {
     public class WorkspaceTraversaler
     {
