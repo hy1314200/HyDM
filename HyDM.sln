@@ -32,8 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Esri", "Esri", "{798CC11F-2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6C899FBF-3BD9-4B8A-8080-4C899354B946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DGeoViewerSystem", "..\项目\龙岩\3DGeoViewerSystem\3DGeoViewerSystem.csproj", "{80305047-7FD2-4AE7-8A5E-59225626CDF9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esri.Huidong", "Esri.HuiDong\Esri.Huidong.csproj", "{5FC3AAED-0E02-4353-AA97-EE589484CB40}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetaData", "MetaData", "{9DD2C727-8C88-4909-A805-9E89059380B3}"
@@ -64,6 +62,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Esri.Catalog", "Hy.Esri.Catalog\Hy.Esri.Catalog.csproj", "{569D2AF0-D622-4107-B78A-E736196B2537}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hy.Esri.DataManage", "Hy.Esri.DataManage\Hy.Esri.DataManage.csproj", "{B6A55DFF-3AB4-424C-BF3E-7102BD497155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DGeoViewerSystem", "..\..\Sunztech\ThreeDemain\3DGeoViewerSystem\3DGeoViewerSystem.csproj", "{80305047-7FD2-4AE7-8A5E-59225626CDF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -216,16 +216,6 @@ Global
 		{6C899FBF-3BD9-4B8A-8080-4C899354B946}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6C899FBF-3BD9-4B8A-8080-4C899354B946}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6C899FBF-3BD9-4B8A-8080-4C899354B946}.Release|x86.ActiveCfg = Release|Any CPU
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|x86.ActiveCfg = Debug|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|x86.Build.0 = Debug|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|Any CPU.ActiveCfg = Release|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|Mixed Platforms.Build.0 = Release|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|x86.ActiveCfg = Release|x86
-		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|x86.Build.0 = Release|x86
 		{5FC3AAED-0E02-4353-AA97-EE589484CB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5FC3AAED-0E02-4353-AA97-EE589484CB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FC3AAED-0E02-4353-AA97-EE589484CB40}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -342,6 +332,16 @@ Global
 		{B6A55DFF-3AB4-424C-BF3E-7102BD497155}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B6A55DFF-3AB4-424C-BF3E-7102BD497155}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B6A55DFF-3AB4-424C-BF3E-7102BD497155}.Release|x86.ActiveCfg = Release|Any CPU
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|x86.ActiveCfg = Debug|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Debug|x86.Build.0 = Debug|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|Any CPU.ActiveCfg = Release|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|Mixed Platforms.Build.0 = Release|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|x86.ActiveCfg = Release|x86
+		{80305047-7FD2-4AE7-8A5E-59225626CDF9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

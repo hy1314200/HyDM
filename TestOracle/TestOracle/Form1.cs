@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.Common;
 using System.IO;
-using NHibernate;
-using NHibernate.Cfg;
+//using NHibernate;
+//using NHibernate.Cfg;
 
 namespace TestOracle
 {
@@ -19,8 +19,12 @@ namespace TestOracle
         {
             InitializeComponent();
 
+
+
+
             DataTable dtProviderFactorys = DbProviderFactories.GetFactoryClasses();
 
+            
 
             DbConnectionStringBuilder dcsBuilder = new DbConnectionStringBuilder();
             dcsBuilder.Add("User ID", "hzzgis");
@@ -39,12 +43,19 @@ namespace TestOracle
             conStr = conStr.Replace("\"", "");
 
             DDTek.Oracle.OracleConnection orclConnection = new DDTek.Oracle.OracleConnection(conStr);
+
+            DDTek.Oracle.OracleCommand cmd = new DDTek.Oracle.OracleCommand();
+            DDTek.Oracle.OracleDataAdapter adapter = new DDTek.Oracle.OracleDataAdapter();
+            adapter.SelectCommand = cmd;
+            DbDataAdapter dAdapter = adapter;
+            DbCommand dbCommand = dAdapter.SelectCommand;
+
             orclConnection.Open();
 
-            Configuration config = new Configuration();
+            //Configuration config = new Configuration();
            
-            ISessionFactory pFactory = config.BuildSessionFactory();
-            ISession pSession= pFactory.OpenSession(orclConnection as IDbConnection);
+            //ISessionFactory pFactory = config.BuildSessionFactory();
+            //ISession pSession= pFactory.OpenSession(orclConnection as IDbConnection);
 
             //DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OracleClient");
             //IDbConnection dbConn = factory.CreateConnection();
