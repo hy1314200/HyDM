@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.BinaryFile,Model" table="BINARY_FILE" lazy="true">
+    <id name="FileId" column="FILE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">BINARY_FILE_FILE_ID</param>
+      </generator>
+    </id>
+    <property name="ProjectId" column="PROJECT_ID" type="string" />
+    <property name="FileType" column="FILE_TYPE" type="string" />
+    <property name="FileName" column="FILE_NAME" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="FilergnPath" column="FILERGN_PATH" type="string" />
+    <property name="FileLength" column="FILE_LENGTH" type="Decimal" />
+    <property name="RgnId" column="RGN_ID" type="Decimal" />
+    <property name="DataType" column="DATA_TYPE" type="Decimal" />
+    <property name="FileAddress" column="FILE_ADDRESS" type="string" />
+  </class>
+</hibernate-mapping>

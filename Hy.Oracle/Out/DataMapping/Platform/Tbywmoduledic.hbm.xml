@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbywmoduledic,Model" table="TBYWMODULEDIC" lazy="true">
+    <id name="Featureid" column="FEATUREID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">TBYWMODULEDIC_FEATUREID</param>
+      </generator>
+    </id>
+    <property name="Featurecode" column="FEATURECODE" type="string" />
+    <property name="Featurename" column="FEATURENAME" type="string" />
+    <property name="Issystem" column="ISSYSTEM" type="Decimal" />
+    <property name="UpFid" column="UP_FID" type="Decimal" />
+    <property name="Levelid" column="LEVELID" type="Decimal" />
+    <property name="Logparam" column="LOGPARAM" type="Decimal" not-null="true" />
+    <property name="Printtemplatename" column="PRINTTEMPLATENAME" type="string" />
+    <bag name="Tbrelgeoproperties" inverse="true" lazy="true" cascade="delete">
+      <key column="FEATUREID" />
+      <one-to-many class="Model.Platform.Tbrelgeoproperties,Model" />
+    </bag>
+    <bag name="Tbrelywlayers" inverse="true" lazy="true" cascade="delete">
+      <key column="FEATUREID" />
+      <one-to-many class="Model.Platform.Tbrelywlayers,Model" />
+    </bag>
+    <bag name="TbuserBookmark" inverse="true" lazy="true" cascade="delete">
+      <key column="FEATUREID" />
+      <one-to-many class="Model.Platform.TbuserBookmark,Model" />
+    </bag>
+    <bag name="TbuserThemegroups" inverse="true" lazy="true" cascade="delete">
+      <key column="SUBSYSID" />
+      <one-to-many class="Model.Platform.TbuserThemegroups,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

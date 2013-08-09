@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metatimerange,Model" table="METATIMERANGE" lazy="true">
+    <id name="RangeId" column="RANGE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METATIMERANGE_RANGE_ID</param>
+      </generator>
+    </id>
+    <property name="BeginDate" column="BEGIN_DATE" type="DateTime" />
+    <property name="EndDate" column="END_DATE" type="DateTime" />
+    <many-to-one name="Metasigninfomation" column="SIGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsstn,Model" table="HYOMSSTN" lazy="true">
+    <id name="StnId" column="STN_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSSTN_STN_ID</param>
+      </generator>
+    </id>
+    <property name="StnCode" column="STN_CODE" type="string" not-null="true" />
+    <property name="StnType" column="STN_TYPE" type="string" />
+    <property name="DayVaryValue" column="DAY_VARY_VALUE" type="Decimal" />
+    <property name="LocationLatitude" column="LOCATION_LATITUDE" type="Decimal" />
+    <property name="ManagerDept" column="MANAGER_DEPT" type="string" />
+    <property name="LocationLongitude" column="LOCATION_LONGITUDE" type="Decimal" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="LocationDescription" column="LOCATION_DESCRIPTION" type="string" />
+    <property name="StnLocation" column="STN_LOCATION" type="string" />
+    <bag name="Hyomsstnvygrel" inverse="true" lazy="true" cascade="delete">
+      <key column="STN_ID" />
+      <one-to-many class="Model.TJ.Hyomsstnvygrel,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdaoutputdef,Model" table="TBDAOUTPUTDEF" lazy="true">
+    <id name="Dsoutid" column="DSOUTID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDAOUTPUTDEF</param>
+      </generator>
+    </id>
+    <property name="Dsoname" column="DSONAME" type="string" />
+	<property name="Themeid" column="THEMEID" type="string" />
+    <property name="Dsotype" column="DSOTYPE" type="string" />
+    <property name="Dsocode" column="DSOCODE" type="string" />
+    <property name="Dsschema" column="DSSCHEMA" type="Byte[]" />
+    <property name="Xmlname" column="SELECTEDLAYERSNAME" type="string" />
+    <property name="Featureclass" column="SELECTEDFEATURENAME" type="string" />
+    <bag name="Tbdamaindef" inverse="true" lazy="true" cascade="delete">
+      <key column="DSOUTID" />
+      <one-to-many class="Model.Platform.Tbdamaindef,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadataset,Model" table="METADATASET" lazy="true">
+    <id name="DatasetId" column="DATASET_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADATASET_DATASET_ID</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="string" not-null="true" />
+    <property name="Version" column="VERSION" type="string" />
+    <many-to-one name="Metasigninfomation" column="SIGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

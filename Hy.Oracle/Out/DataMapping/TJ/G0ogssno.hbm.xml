@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0ogssno,Model" table="G0OGSSNO" lazy="true">
+    <id name="VoyageId" column="VOYAGE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0OGSSNO_VOYAGE_ID</param>
+      </generator>
+    </id>
+    <property name="Hycbaa" column="HYCBAA" type="string" not-null="true" />
+    <property name="Hycbab" column="HYCBAB" type="string" not-null="true" />
+    <property name="Hycbac" column="HYCBAC" type="DateTime" not-null="true" />
+    <property name="Hycbad" column="HYCBAD" type="DateTime" not-null="true" />
+    <property name="Hycbae" column="HYCBAE" type="Decimal" />
+    <property name="Hycbaf" column="HYCBAF" type="Decimal" not-null="true" />
+    <property name="Hycbag" column="HYCBAG" type="string" />
+    <property name="Hycbah" column="HYCBAH" type="string" />
+    <property name="Hycbai" column="HYCBAI" type="Decimal" not-null="true" />
+    <property name="Hycbaj" column="HYCBAJ" type="Decimal" />
+    <property name="Hycbak" column="HYCBAK" type="Decimal" />
+    <property name="Hycbal" column="HYCBAL" type="Decimal" not-null="true" />
+    <property name="Hycbam" column="HYCBAM" type="Decimal" />
+    <property name="Hycbap" column="HYCBAP" type="Decimal" />
+    <property name="Hycbaq" column="HYCBAQ" type="string" />
+    <property name="Hycbar" column="HYCBAR" type="Decimal" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <many-to-one name="Metadept" column="DEPT_ID" cascade="save-update" not-null="true" />
+    <many-to-one name="G0fgsrgn" column="RGN_ID" cascade="save-update" not-null="true" />
+    <bag name="G0ogsdat" inverse="true" lazy="true" cascade="delete">
+      <key column="VOYAGE_ID" />
+      <one-to-many class="Model.TJ.G0ogsdat,Model" />
+    </bag>
+    <bag name="G0ogsrsl" inverse="true" lazy="true" cascade="delete">
+      <key column="VOYAGE_ID" />
+      <one-to-many class="Model.TJ.G0ogsrsl,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

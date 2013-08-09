@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbcollectexposure,Model" table="TBCOLLECTEXPOSURE" lazy="true">
+    <id name="Exposureid" column="EXPOSUREID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBCOLLECTEXPOSURE</param>
+      </generator>
+    </id>
+    <property name="Featurename" column="FEATURENAME" type="string" />
+    <property name="Exposurefeild" column="EXPOSUREFEILD" type="string" />
+    <property name="Sdefeild" column="SDEFEILD" type="string" />
+    <property name="Dwgfeild" column="DWGFEILD" type="string" />
+    <property name="Dsoutid" column="DSOUTID" type="Decimal" />
+    <property name="Dstype" column="DSTYPE" type="string" />
+    
+  </class>
+</hibernate-mapping>

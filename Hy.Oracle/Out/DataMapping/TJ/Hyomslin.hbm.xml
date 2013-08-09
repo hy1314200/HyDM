@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomslin,Model" table="HYOMSLIN" lazy="true">
+    <id name="LineId" column="LINE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSLIN_LINE_ID</param>
+      </generator>
+    </id>
+    <property name="LineCode" column="LINE_CODE" type="string" not-null="true" />
+    <property name="LineType" column="LINE_TYPE" type="Decimal" />
+    <property name="LineProperty" column="LINE_PROPERTY" type="string" />
+    <property name="LineOrbit" column="LINE_ORBIT" type="Decimal" />
+    <property name="LineMileage" column="LINE_MILEAGE" type="Decimal" />
+    <property name="TechInstruction" column="TECH_INSTRUCTION" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <many-to-one name="Hyomsrgn" column="RGN_ID" cascade="save-update" />
+    <property name="StartLongitude" column="START_LONGITUDE" type="Decimal" />
+    <property name="StartLatitude" column="START_LATITUDE" type="Decimal" />
+    <property name="FinalLongitude" column="FINAL_LONGITUDE" type="Decimal" />
+    <property name="FinalLatitude" column="FINAL_LATITUDE" type="Decimal" />
+    <bag name="Hyomslinvygrel" inverse="true" lazy="true" cascade="delete">
+      <key column="LINE_ID" />
+      <one-to-many class="Model.TJ.Hyomslinvygrel,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbthemes,Model" table="TBTHEMES" lazy="true">
+    <id name="Themeid" column="THEMEID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">TBTHEMES_THEMEID</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbthemegroups" column="GROUPID" cascade="save-update" not-null="true" />
+    <property name="Enname" column="ENNAME" type="string" not-null="true" />
+    <property name="Chnname" column="CHNNAME" type="string" not-null="true" />
+    <property name="Themeorder" column="THEMEORDER" type="Decimal" not-null="true" />
+    <property name="Xmin" column="XMIN" type="Decimal" />
+    <property name="Xmax" column="XMAX" type="Decimal" />
+    <property name="Ymin" column="YMIN" type="Decimal" />
+    <property name="Ymax" column="YMAX" type="Decimal" />
+    <many-to-one name="Tblayouttemplate" column="TEMPLATEID" cascade="save-update" />
+    <property name="DatacatId" column="DATACAT_ID" type="Decimal" />
+    <many-to-one name="Tbdicrestype" column="WEBTYPE" cascade="save-update" />
+    <property name="Isbasemap" column="ISBASEMAP" type="Decimal" />
+    <property name="Ispub" column="ISPUB" type="string" />
+    <property name="Isquery" column="ISQUERY" type="Decimal" />
+    <property name="Weburl" column="WEBURL" type="string" />
+    <property name="Iscache" column="ISCACHE" type="string" />
+    <property name="Servicename" column="SERVICENAME" type="string" />
+    <property name="Metaid" column="METAID" type="Decimal" />
+    <property name="MXDFile" column="MXDFILE" type="Byte[]" />
+    <bag name="Tbdaoutputdef" inverse="true" lazy="true" cascade="delete">
+      <key column="THEMEID" />
+      <one-to-many class="Model.Platform.Tbdaoutputdef,Model" />
+    </bag>
+    <bag name="Tbrelgeoproperties" inverse="true" lazy="true" cascade="delete">
+      <key column="THEMEID" />
+      <one-to-many class="Model.Platform.Tbrelgeoproperties,Model" />
+    </bag>
+    <bag name="Tbthemescache" inverse="true" lazy="true" cascade="delete">
+      <key column="THEMEID" />
+      <one-to-many class="Model.Platform.Tbthemescache,Model" />
+    </bag>
+    <bag name="TbthemePhylayers" inverse="true" lazy="true" cascade="delete">
+      <key column="THEMEID" />
+      <one-to-many class="Model.Platform.TbthemePhylayers,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

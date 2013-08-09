@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicsyscontent,Model" table="TBDICSYSCONTENT" lazy="true">
+    <id name="Ctid" column="CTID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICSYSCONTENT</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdicsystype" column="DICID" cascade="save-update" />
+    <property name="Ctcode" column="CTCODE" type="string" />
+    <property name="Ctname" column="CTNAME" type="string" />
+    <property name="Ctmemo" column="CTMEMO" type="string" />
+    <property name="Ctordnum" column="CTORDNUM" type="Decimal" />
+    <property name="Ctupnum" column="CTUPNUM" type="Decimal" />
+  </class>
+</hibernate-mapping>

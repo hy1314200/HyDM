@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicgeoobjtype,Model" table="TBDICGEOOBJTYPE" lazy="true">
+    <id name="Geoobjid" column="GEOOBJID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICGEOOBJTYPE</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdicgeoobjkind" column="GEOOBJKINDNUM"  lazy="false" cascade="save-update" not-null="true" />
+    <property name="Geoobjname" column="GEOOBJNAME" type="string" not-null="true" />
+    <property name="Geoobjcode" column="GEOOBJCODE" type="string" />
+    <property name="Symbolsize" column="SYMBOLSIZE" type="Decimal" />
+    <property name="Symbolstyle" column="SYMBOLSTYLE" type="string" />
+    <property name="Font" column="FONT" type="string" />
+    <many-to-one name="Tbdicgeoobjgroups" column="GEOOBJGROUPID" cascade="save-update" />
+    <property name="Needidentify" column="NEEDIDENTIFY" type="Decimal" />
+    <property name="Issys" column="ISSYS" type="Decimal" />
+    <property name="Creater" column="CREATER" type="string" />
+    <property name="Symboltype" column="SYMBOLTYPE" type="string" />
+    <property name="Symbol" column="SYMBOL" type="Byte[]" />
+    <bag name="Tbphylayers" inverse="false" table="TBPHYLAYER_GEOOBJ" lazy="true" cascade="delete">
+      <key column="GEOOBJID" />
+      <many-to-many class="Model.Platform.Tbphylayers,Model">
+        <column name="PHYLAYERID" />
+      </many-to-many>
+    </bag>
+    <bag name="TbthemelayerGeoobg" inverse="true" lazy="true" cascade="delete">
+      <key column="GEOOBJID" />
+      <one-to-many class="Model.Platform.TbthemelayerGeoobg,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

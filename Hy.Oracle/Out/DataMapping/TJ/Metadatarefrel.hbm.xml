@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadatarefrel,Model" table="METADATAREFREL" lazy="true">
+    <id name="RelId" column="REL_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADATAREFREL_REL_ID</param>
+      </generator>
+    </id>
+    <many-to-one name="Metadataresource" column="DATASOURCE_ID" cascade="save-update" />
+    <many-to-one name="Metareference" column="REFERENCE_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

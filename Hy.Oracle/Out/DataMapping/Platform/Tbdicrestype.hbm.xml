@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicrestype,Model" table="TBDICRESTYPE" lazy="true">
+    <id name="Recclassid" column="RECCLASSID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICRESTYPE</param>
+      </generator>
+    </id>
+    <property name="Recclassname" column="RECCLASSNAME" type="string" />
+    <property name="Recmemo" column="RECMEMO" type="string" />
+    <bag name="Tbresouceinfo" inverse="true" lazy="true" cascade="delete">
+      <key column="RECCLASSID" />
+      <one-to-many class="Model.Platform.Tbresouceinfo,Model" />
+    </bag>
+    <bag name="Tbthemes" inverse="true" lazy="true" cascade="delete">
+      <key column="WEBTYPE" />
+      <one-to-many class="Model.Platform.Tbthemes,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

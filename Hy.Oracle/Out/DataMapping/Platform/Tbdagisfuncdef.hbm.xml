@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdagisfuncdef,Model" table="TBDAGISFUNCDEF" lazy="true">
+    <id name="Fdid" column="FDID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDAGISFUNCDEF</param>
+      </generator>
+    </id>
+    <property name="Fdname" column="FDNAME" type="string" />
+    <property name="Fdlabel" column="FDLABEL" type="string" />
+    <property name="Fdtype" column="FDTYPE" type="string" />
+    <property name="Fdmemo" column="FDMEMO" type="string" />
+    <bag name="Tbdagisrel" inverse="true" lazy="true" cascade="delete">
+      <key column="FDID" />
+      <one-to-many class="Model.Platform.Tbdagisrel,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

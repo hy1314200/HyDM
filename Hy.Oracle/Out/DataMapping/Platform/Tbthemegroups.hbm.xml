@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbthemegroups,Model" table="TBTHEMEGROUPS" lazy="true">
+    <id name="Groupid" column="GROUPID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">TBTHEMEGROUPS_GROUPID</param>
+      </generator>
+    </id>
+    <property name="Enname" column="ENNAME" type="string" />
+    <property name="Chnname" column="CHNNAME" type="string" not-null="true" />
+    <property name="Grouporder" column="GROUPORDER" type="Decimal" />
+    <property name="Tag" column="TAG" type="string" />
+    <property name="BaseTheme" column="BASE_THEME" type="string" />
+    <property name="DefaultTheme" column="DEFAULT_THEME" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="Fid" column="FID" type="Decimal" not-null="true" />
+    <bag name="Tbthemes" inverse="true" lazy="true" cascade="delete">
+      <key column="GROUPID" />
+      <one-to-many class="Model.Platform.Tbthemes,Model" />
+    </bag>
+    <bag name="TbuserThemegroups" inverse="true" lazy="true" cascade="delete">
+      <key column="GROUPID" />
+      <one-to-many class="Model.Platform.TbuserThemegroups,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

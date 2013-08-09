@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdainputrel,Model" table="TBDAINPUTREL" lazy="true">
+    <id name="Dsinid" column="DSINID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDAINPUTREL</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdamaindef" column="DAID" cascade="save-update" />
+    <many-to-one name="Tbdastddef" column="STDID" cascade="save-update" />
+    <property name="Dsname" column="DSNAME" type="string" />
+    <property name="Dsformat" column="DSFORMAT" type="string" />
+    <property name="Dsdatasets" column="DSDATASETS" type="string" />
+    <property name="Dskeyname" column="DSKEYNAME" type="string" />
+    <property name="Dsdmname" column="DSDMNAME" type="string" />
+    <property name="Dsparamlist" column="DSPARAMLIST" type="string" />
+  </class>
+</hibernate-mapping>

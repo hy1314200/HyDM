@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tblayouttemplate,Model" table="TBLAYOUTTEMPLATE" lazy="true">
+    <id name="Templateid" column="TEMPLATEID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBLAYOUTTEMPLATE</param>
+      </generator>
+    </id>
+    <property name="Templatename" column="TEMPLATENAME" type="string" />
+    <property name="Templatefilename" column="TEMPLATEFILENAME" type="string" />
+    <property name="PaperType" column="PAPER_TYPE" type="string" />
+    <property name="PaperDirection" column="PAPER_DIRECTION" type="Decimal" />
+    <property name="Pagewidth" column="PAGEWIDTH" type="Decimal" />
+    <property name="Pageheight" column="PAGEHEIGHT" type="Decimal" />
+    <bag name="Tbthemes" inverse="true" lazy="true" cascade="delete">
+      <key column="TEMPLATEID" />
+      <one-to-many class="Model.Platform.Tbthemes,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

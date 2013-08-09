@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosystemplatedir,Model" table="HYOSYSTEMPLATEDIR" lazy="true">
+    <id name="DirId" column="DIR_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSTEMPLATEDIR_DIR_ID</param>
+      </generator>
+    </id>
+    <property name="DirName" column="DIR_NAME" type="string" />
+    <property name="ParentDir" column="PARENT_DIR" type="Decimal" />
+    <many-to-one name="Hyosystemplate" column="TEMPLATE_ID" cascade="save-update" />
+    <bag name="Hyosystemplatefile" inverse="true" lazy="true" cascade="delete">
+      <key column="DIR_ID" />
+      <one-to-many class="Model.TJ.Hyosystemplatefile,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

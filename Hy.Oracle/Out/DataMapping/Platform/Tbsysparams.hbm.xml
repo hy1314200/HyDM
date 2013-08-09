@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbsysparams,Model" table="TBSYSPARAMS" lazy="true">
+    <id name="Paramid" column="PARAMID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBSYSPARAMS</param>
+      </generator>
+    </id>
+    <property name="Paramenname" column="PARAMENNAME" type="string" not-null="true" />
+    <property name="Paramchname" column="PARAMCHNAME" type="string" />
+    <property name="Paramvalue" column="PARAMVALUE" type="string" />
+    <property name="Hint" column="HINT" type="string" />
+    <property name="Isuse" column="ISUSE" type="Decimal" />
+  </class>
+</hibernate-mapping>

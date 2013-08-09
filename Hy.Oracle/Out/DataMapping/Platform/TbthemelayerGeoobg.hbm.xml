@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TbthemelayerGeoobg,Model" table="TBTHEMELAYER_GEOOBG" lazy="true">
+    <composite-id name="Id" class="Model.Platform.TbthemelayerGeoobgId,Model">
+      <key-many-to-one name="Tbdicgeoobjtype" class="Model.Platform.Tbdicgeoobjtype,Model" column="GEOOBJID" />
+      <key-many-to-one name="TbthemePhylayers" class="Model.Platform.TbthemePhylayers,Model" column="THEMELAYERID" />
+    </composite-id>
+    <property name="Rendervalue" column="RENDERVALUE" type="string" />
+    <many-to-one name="TbthemePhylayers" column="THEMELAYERID" cascade="save-update" not-null="true" />
+    <many-to-one name="Tbdicgeoobjtype" column="GEOOBJID" cascade="save-update" not-null="true" />
+  </class>
+</hibernate-mapping>

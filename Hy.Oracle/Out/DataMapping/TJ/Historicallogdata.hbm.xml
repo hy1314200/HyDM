@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Historicallogdata,Model" table="HISTORICALLOGDATA" lazy="true">
+    <id name="LogId" column="LOG_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HISTORICALLOGDATA_LOG_ID</param>
+      </generator>
+    </id>
+    <property name="DataType" column="DATA_TYPE" type="Decimal" />
+    <property name="RgnId" column="RGN_ID" type="Decimal" />
+    <property name="Importnum" column="IMPORTNUM" type="Decimal" />
+    <property name="Createor" column="CREATEOR" type="Decimal" />
+    <property name="CreateDate" column="CREATE_DATE" type="DateTime" />
+    <property name="HistoricalMarker" column="HISTORICAL_MARKER" type="string" />
+    <property name="UpdateMemo" column="UPDATE_MEMO" type="string" />
+    <property name="UpdateReason" column="UPDATE_REASON" type="string" />
+  </class>
+</hibernate-mapping>

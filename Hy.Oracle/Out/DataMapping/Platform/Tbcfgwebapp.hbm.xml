@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbcfgwebapp,Model" table="TBCFGWEBAPP" lazy="true">
+    <id name="Appid" column="APPID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBCFGWEBAPP</param>
+      </generator>
+    </id>
+    <property name="Appname" column="APPNAME" type="string" />
+    <property name="Appmemo" column="APPMEMO" type="string" />
+    <property name="Headertitle" column="HEADERTITLE" type="string" />
+    <property name="Logoimgurl" column="LOGOIMGURL" type="string" />
+    <property name="Footright" column="FOOTRIGHT" type="string" />
+    <property name="Webtheme" column="WEBTHEME" type="Decimal" />
+    <property name="Createdate" column="CREATEDATE" type="DateTime" />
+    <property name="Creator" column="CREATOR" type="string" />
+    <property name="Accaddress" column="ACCADDRESS" type="string" />
+    <property name="Appenname" column="APPENNAME" type="string" />
+    <property name="Appissue" column="APPISSUE" type="Decimal" />
+    <bag name="Tbrelappfeature" inverse="true" lazy="true" cascade="delete">
+      <key column="APPID" />
+      <one-to-many class="Model.Platform.Tbrelappfeature,Model" />
+    </bag>
+    <bag name="Tbrelappres" inverse="true" lazy="true" cascade="delete">
+      <key column="APPID" />
+      <one-to-many class="Model.Platform.Tbrelappres,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

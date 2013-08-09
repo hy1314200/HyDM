@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicphylayertype,Model" table="TBDICPHYLAYERTYPE" lazy="true">
+    <id name="Phylayertypeid" column="PHYLAYERTYPEID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICPHYLAYERTYPE</param>
+      </generator>
+    </id>
+    <property name="Logiclayertypeid" column="LOGICLAYERTYPEID" type="Decimal" />
+    <property name="Phylayertypecode" column="PHYLAYERTYPECODE" type="string" />
+    <property name="Phylayertypename" column="PHYLAYERTYPENAME" type="string" />
+    <property name="Deforderid" column="DEFORDERID" type="Decimal" not-null="true" />
+    <bag name="Tbphylayers" inverse="true" lazy="true" cascade="delete">
+      <key column="PHYLAYERTYPEID" />
+      <one-to-many class="Model.Platform.Tbphylayers,Model" />
+    </bag>
+    <bag name="Tbdicgeoobjkind" inverse="false" table="TBPHYLAYERTYPE_GEOOBJKIND" lazy="true" cascade="delete">
+      <key column="PHYLAYERTYPEID" />
+      <many-to-many class="Model.Platform.Tbdicgeoobjkind,Model">
+        <column name="GEOOBJKINDNUM" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

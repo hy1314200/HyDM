@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicsystype,Model" table="TBDICSYSTYPE" lazy="true">
+    <id name="Dicid" column="DICID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICSYSTYPE</param>
+      </generator>
+    </id>
+    <property name="Diccode" column="DICCODE" type="string" />
+    <property name="Dicname" column="DICNAME" type="string" />
+    <property name="Dicmemo" column="DICMEMO" type="string" />
+    <bag name="Tbdicsyscontent" inverse="true" lazy="true" cascade="delete">
+      <key column="DICID" />
+      <one-to-many class="Model.Platform.Tbdicsyscontent,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicgeoobjgroups,Model" table="TBDICGEOOBJGROUPS" lazy="true">
+    <id name="Geoobjgroupid" column="GEOOBJGROUPID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICGEOOBJGROUPS</param>
+      </generator>
+    </id>
+    <property name="Geoobjkindnum" column="GEOOBJKINDNUM" type="Decimal" not-null="true" />
+    <property name="Geoobjgroupname" column="GEOOBJGROUPNAME" type="string" not-null="true" />
+    <property name="Bz" column="BZ" type="string" />
+    <property name="Enname" column="ENNAME" type="string" not-null="true" />
+    <bag name="Tbdicgeoobjtype" inverse="true" lazy="true" cascade="delete">
+      <key column="GEOOBJGROUPID" />
+      <one-to-many class="Model.Platform.Tbdicgeoobjtype,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsstnvygrel,Model" table="HYOMSSTNVYGREL" lazy="true">
+    <id name="RelId" column="REL_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSSTNVYGREL_REL_ID</param>
+      </generator>
+    </id>
+    <property name="ChargeMan" column="CHARGE_MAN" type="string" />
+    <property name="RecordMan" column="RECORD_MAN" type="string" />
+    <property name="ExamineMan" column="EXAMINE_MAN" type="string" />
+    <property name="BeginTime" column="BEGIN_TIME" type="DateTime" />
+    <property name="EndTime" column="END_TIME" type="DateTime" />
+    <property name="Hydcbf" column="HYDCBF" type="Decimal" />
+    <property name="InstrumentType" column="INSTRUMENT_TYPE" type="string" />
+    <property name="InstrumentValue" column="INSTRUMENT_VALUE" type="Decimal" />
+    <property name="InstrumentFreqency" column="INSTRUMENT_FREQENCY" type="Decimal" />
+    <property name="InstrumentPrecision" column="INSTRUMENT_PRECISION" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <many-to-one name="Hyomsvyg" column="VOYAGE_ID" cascade="save-update" />
+    <many-to-one name="Hyomsstn" column="STN_ID" cascade="save-update" />
+    <bag name="Hyomsstnfile" inverse="true" lazy="true" cascade="delete">
+      <key column="REL_ID" />
+      <one-to-many class="Model.TJ.Hyomsstnfile,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

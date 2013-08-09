@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsrgn,Model" table="HYOMSRGN" lazy="true">
+    <id name="RgnId" column="RGN_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSRGN_RGN_ID</param>
+      </generator>
+    </id>
+    <property name="RgnCode" column="RGN_CODE" type="string" not-null="true" />
+    <property name="RgnName" column="RGN_NAME" type="string" />
+    <property name="MrgnName" column="MRGN_NAME" type="string" />
+    <property name="RgnRange" column="RGN_RANGE" type="Decimal" />
+    <property name="Scale" column="SCALE" type="string" />
+    <property name="RgnArea" column="RGN_AREA" type="Decimal" />
+    <property name="MasterLinDistince" column="MASTER_LIN_DISTINCE" type="Decimal" />
+    <property name="InspectLinDistince" column="INSPECT_LIN_DISTINCE" type="Decimal" />
+    <property name="UseCoordinate" column="USE_COORDINATE" type="Decimal" />
+    <property name="UseDem" column="USE_DEM" type="Decimal" />
+    <property name="UseWaterdeep" column="USE_WATERDEEP" type="Decimal" />
+    <property name="UseSpace" column="USE_SPACE" type="Decimal" />
+    <property name="SpaceCorrectMethod" column="SPACE_CORRECT_METHOD" type="Decimal" />
+    <property name="PcMethod" column="PC_METHOD" type="Decimal" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="LineMileage" column="LINE_MILEAGE" type="Decimal" />
+    <property name="BeginTime" column="BEGIN_TIME" type="DateTime" />
+    <property name="EndTime" column="END_TIME" type="DateTime" />
+    <property name="MasterLinNum" column="MASTER_LIN_NUM" type="Decimal" />
+    <property name="InspectLinNum" column="INSPECT_LIN_NUM" type="Decimal" />
+    <property name="ResultPrecision" column="RESULT_PRECISION" type="string" />
+    <property name="MeasureParameter" column="MEASURE_PARAMETER" type="Decimal" />
+    <property name="LineDirection" column="LINE_DIRECTION" type="string" />
+    <property name="Pkiid" column="PKIID" type="Decimal" />
+    <many-to-one name="Hyotsk" column="PROJECT_ID" cascade="save-update" />
+    <property name="DeptId" column="DEPT_ID" type="Decimal" />
+    <bag name="Hyomslin" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.Hyomslin,Model" />
+    </bag>
+    <bag name="Hyomsmap" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.Hyomsmap,Model" />
+    </bag>
+    <bag name="Hyomsrgnrange" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.Hyomsrgnrange,Model" />
+    </bag>
+    <bag name="Hyomsvyg" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.Hyomsvyg,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

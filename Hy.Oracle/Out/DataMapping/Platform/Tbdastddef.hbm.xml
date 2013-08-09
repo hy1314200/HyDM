@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdastddef,Model" table="TBDASTDDEF" lazy="true">
+    <id name="Stdid" column="STDID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDASTDDEF</param>
+      </generator>
+    </id>
+    <property name="Dsdname" column="DSDNAME" type="string" />
+    <property name="Dsdtype" column="DSDTYPE" type="string" />
+    <property name="Dsdmemo" column="DSDMEMO" type="string" />
+    <bag name="Tbdagisrel" inverse="true" lazy="true" cascade="delete">
+      <key column="STDID" />
+      <one-to-many class="Model.Platform.Tbdagisrel,Model" />
+    </bag>
+    <bag name="Tbdainputrel" inverse="true" lazy="true" cascade="delete">
+      <key column="STDID" />
+      <one-to-many class="Model.Platform.Tbdainputrel,Model" />
+    </bag>
+    <bag name="Tbdasfieldext" inverse="true" lazy="true" cascade="delete">
+      <key column="STDID" />
+      <one-to-many class="Model.Platform.Tbdasfieldext,Model" />
+    </bag>
+    <bag name="Tbdasfieldmapext" inverse="true" lazy="true" cascade="delete">
+      <key column="STDID" />
+      <one-to-many class="Model.Platform.Tbdasfieldmapext,Model" />
+    </bag>
+    <bag name="Tbdaslayerext" inverse="true" lazy="true" cascade="delete">
+      <key column="STDID" />
+      <one-to-many class="Model.Platform.Tbdaslayerext,Model" />
+    </bag>
+    <bag name="Tbdasmappingext" inverse="true" lazy="true" cascade="delete">
+      <key column="STDID" />
+      <one-to-many class="Model.Platform.Tbdasmappingext,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

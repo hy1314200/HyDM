@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metageographyref,Model" table="METAGEOGRAPHYREF" lazy="true">
+    <id name="GroRefId" column="GRO_REF_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAGEOGRAPHYREF_GRO_REF_ID</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="string" />
+    <many-to-one name="Metarefsystem" column="SYSTEM_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

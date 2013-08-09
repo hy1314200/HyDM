@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metasignreference,Model" table="METASIGNREFERENCE" lazy="true">
+    <id name="RelationId" column="RELATION_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METASIGNREFERENCE_RELATION_ID</param>
+      </generator>
+    </id>
+    <property name="ReferenceId" column="REFERENCE_ID" type="Decimal" />
+    <property name="SignId" column="SIGN_ID" type="Decimal" />
+  </class>
+</hibernate-mapping>

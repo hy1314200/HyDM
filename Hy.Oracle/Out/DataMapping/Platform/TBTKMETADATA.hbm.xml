@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TBTKMETADATA,Model" table="TBTKMETADATA" lazy="true">
+    <id name="ID" column="ID" type="int">
+      <generator class="native">
+        <param name="sequence">SEQ_TBTKMETADATA</param>
+      </generator>
+    </id>
+    <property name="Wnjtm" column="WNJTM" type="string" />
+    <property name="Njtm" column="NJTM" type="string" />
+    <property name="Enjtm" column="ENJTM" type="string" />
+    <property name="Ejtm" column="EJTM" type="string" />
+    <property name="Esjtm" column="ESJTM" type="string" />
+    <property name="Sjtm" column="SJTM" type="string" />
+    <property name="Wsjtm" column="WSJTM" type="string" />
+    <property name="Wjtm" column="WJTM" type="string" />
+
+    <property name="Tfname" column="TFNAME" type="string" />
+    <property name="Tkname" column="TKNAME" type="string" />
+
+    <property name="Cly" column="CLY" type="string" />
+    <property name="Hty" column="HTY" type="string" />
+    <property name="Jcy" column="JCY" type="string" />
+
+    <property name="Wsy" column="WSY" type="string" />
+    <property name="Wsx" column="WSX" type="string" />
+    <property name="Wny" column="WNY" type="string" />
+    <property name="Wnx" column="WNX" type="string" />
+    <property name="Enx" column="ENX" type="string" />
+    <property name="Eny" column="ENY" type="string" />
+    <property name="Esx" column="ESX" type="string" />
+    <property name="Esy" column="ESY" type="string" />
+
+    <property name="Fptime" column="FPTIME" type="string" />
+    <property name="Coor" column="COOR" type="string" />
+    <property name="Elevation" column="ELEVATION" type="string" />
+    <property name="Psty" column="PSTY" type="string" />
+
+  </class>
+</hibernate-mapping>

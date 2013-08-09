@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadataresource,Model" table="METADATARESOURCE" lazy="true">
+    <id name="DatasourceId" column="DATASOURCE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADATARESOURCE_DATASOURCE_ID</param>
+      </generator>
+    </id>
+    <property name="Description" column="DESCRIPTION" type="string" />
+    <property name="Scale" column="SCALE" type="string" />
+    <property name="ReferenceSystem" column="REFERENCE_SYSTEM" type="string" />
+    <many-to-one name="Metainformation" column="META_ID" cascade="save-update" />
+    <bag name="Metadatarefrel" inverse="true" lazy="true" cascade="delete">
+      <key column="DATASOURCE_ID" />
+      <one-to-many class="Model.TJ.Metadatarefrel,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

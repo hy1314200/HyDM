@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosystemplate,Model" table="HYOSYSTEMPLATE" lazy="true">
+    <id name="TemplateId" column="TEMPLATE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSTEMPLATE_TEMPLATE_ID</param>
+      </generator>
+    </id>
+    <property name="TemplateName" column="TEMPLATE_NAME" type="string" />
+    <property name="TemplateType" column="TEMPLATE_TYPE" type="string" />
+    <property name="TemplateDesc" column="TEMPLATE_DESC" type="string" />
+    <property name="CreateTime" column="CREATE_TIME" type="DateTime" />
+    <property name="CreatePerson" column="CREATE_PERSON" type="string" />
+    <bag name="Hyosystemplatedir" inverse="true" lazy="true" cascade="delete">
+      <key column="TEMPLATE_ID" />
+      <one-to-many class="Model.TJ.Hyosystemplatedir,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

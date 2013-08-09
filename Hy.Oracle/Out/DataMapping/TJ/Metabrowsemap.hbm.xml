@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metabrowsemap,Model" table="METABROWSEMAP" lazy="true">
+    <id name="FileId" column="FILE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METABROWSEMAP_FILE_ID</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="string" />
+    <property name="Description" column="DESCRIPTION" type="string" />
+    <many-to-one name="Metasigninfomation" column="SIGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

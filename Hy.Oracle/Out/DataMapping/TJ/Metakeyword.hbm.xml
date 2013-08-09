@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metakeyword,Model" table="METAKEYWORD" lazy="true">
+    <id name="KeywordId" column="KEYWORD_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAKEYWORD_KEYWORD_ID</param>
+      </generator>
+    </id>
+    <property name="KeywordType" column="KEYWORD_TYPE" type="Decimal" />
+    <property name="Keyworddesc" column="KEYWORDDESC" type="string" />
+    <many-to-one name="Metasigninfomation" column="SIGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

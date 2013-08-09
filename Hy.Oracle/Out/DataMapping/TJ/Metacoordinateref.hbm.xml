@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metacoordinateref,Model" table="METACOORDINATEREF" lazy="true">
+    <id name="CoordinateRefId" column="COORDINATE_REF_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METACOORDINATEREF_COORDINATE_R</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="Decimal" />
+    <property name="Type" column="TYPE" type="Decimal" />
+    <property name="ShadowPara" column="SHADOW_PARA" type="string" />
+    <many-to-one name="Metarefsystem" column="SYSTEM_ID" cascade="save-update" />
+    <property name="CoordinateName" column="COORDINATE_NAME" type="string" />
+  </class>
+</hibernate-mapping>

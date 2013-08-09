@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyotabfields,Model" table="HYOTABFIELDS" lazy="true">
+    <id name="Tabfieldid" column="TABFIELDID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOTABFIELDS_TABFIELDID</param>
+      </generator>
+    </id>
+    <property name="LayerId" column="LAYER_ID" type="Decimal" />
+    <property name="FieldList" column="FIELD_LIST" type="string" />
+    <many-to-one name="Hyodatadownload" column="DOWNLOAD_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

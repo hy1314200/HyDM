@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metaverticalrange,Model" table="METAVERTICALRANGE" lazy="true">
+    <id name="RangeId" column="RANGE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAVERTICALRANGE_RANGE_ID</param>
+      </generator>
+    </id>
+    <property name="MinCoordinate" column="MIN_COORDINATE" type="Decimal" />
+    <property name="MaxCoordinate" column="MAX_COORDINATE" type="Decimal" />
+    <property name="MeasureUnit" column="MEASURE_UNIT" type="string" />
+    <many-to-one name="Metasigninfomation" column="SIGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

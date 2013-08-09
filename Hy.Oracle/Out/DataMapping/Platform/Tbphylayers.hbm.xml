@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbphylayers,Model" table="TBPHYLAYERS" lazy="true">
+    <id name="Phylayerid" column="PHYLAYERID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBPHYLAYERS</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdicphylayertype" column="PHYLAYERTYPEID" cascade="save-update" not-null="true" />
+    <property name="Isshowinallscale" column="ISSHOWINALLSCALE" type="Decimal" not-null="true" />
+    <property name="Maxshowscale" column="MAXSHOWSCALE" type="Decimal" not-null="true" />
+    <property name="Minshowscale" column="MINSHOWSCALE" type="Decimal" not-null="true" />
+    <property name="Visible" column="VISIBLE" type="Decimal" not-null="true" />
+    <property name="Editable" column="EDITABLE" type="Decimal" not-null="true" />
+    <property name="Selectable" column="SELECTABLE" type="Decimal" not-null="true" />
+    <property name="Showmaptip" column="SHOWMAPTIP" type="Decimal" not-null="true" />
+    <property name="Mainfield" column="MAINFIELD" type="string" />
+    <property name="Showlabel" column="SHOWLABEL" type="Decimal" not-null="true" />
+    <property name="Labelfield" column="LABELFIELD" type="string" />
+    <property name="Phylayername" column="PHYLAYERNAME" type="string" />
+    <property name="Symbolic" column="SYMBOLIC" type="Decimal" not-null="true" />
+    <property name="Fcname" column="FCNAME" type="string" />
+    <property name="Filtername" column="FILTERNAME" type="string" />
+    <property name="Isvalid" column="ISVALID" type="Decimal" not-null="true" />
+    <property name="Ptrotfield" column="PTROTFIELD" type="string" />
+    <property name="Deforderid" column="DEFORDERID" type="Decimal" not-null="true" />
+    <property name="Phylayercode" column="PHYLAYERCODE" type="string" />
+    <property name="Isscalesymbol" column="ISSCALESYMBOL" type="Decimal" not-null="true" />
+    <property name="Labelrelocation" column="LABELRELOCATION" type="Decimal" />
+    <property name="Labelfontname" column="LABELFONTNAME" type="string" />
+    <property name="Labelfontsize" column="LABELFONTSIZE" type="Decimal" />
+    <property name="Isquerylayer" column="ISQUERYLAYER" type="Decimal" not-null="true" />
+    <property name="Labelmasksize" column="LABELMASKSIZE" type="Decimal" />
+    <property name="Labelmaskstyle" column="LABELMASKSTYLE" type="Decimal" />
+    <property name="Labelfontstyle" column="LABELFONTSTYLE" type="Decimal" />
+    <property name="Isneedhistory" column="ISNEEDHISTORY" type="Decimal" />
+    <property name="TransPercent" column="TRANS_PERCENT" type="Decimal" />
+    <property name="LabelFiltername" column="LABEL_FILTERNAME" type="string" />
+    <property name="Isanalyselayer" column="ISANALYSELAYER" type="Decimal" />
+    <property name="Labelfontcolor" column="LABELFONTCOLOR" type="Decimal" />
+    <property name="Viewpropurl" column="VIEWPROPURL" type="string" />
+    <property name="DatacatId" column="DATACAT_ID" type="Decimal" not-null="true" />
+    <property name="Layersynstate" column="LAYERSYNSTATE" type="Decimal" />
+    <property name="Metaid" column="METAID" type="Decimal" />
+    <property name="Datasetname" column="DATASETNAME" type="string" />
+    <bag name="Tbfielddef" inverse="true" lazy="true" cascade="delete">
+      <key column="PHYLAYERID" />
+      <one-to-many class="Model.Platform.Tbfielddef,Model" />
+    </bag>
+    <bag name="Tbhawkeye" inverse="true" lazy="true" cascade="delete">
+      <key column="PHYLAYERID" />
+      <one-to-many class="Model.Platform.Tbhawkeye,Model" />
+    </bag>
+    <bag name="Tblabelstyles" inverse="true" lazy="true" cascade="delete">
+      <key column="PHYLAYERID" />
+      <one-to-many class="Model.Platform.Tblabelstyles,Model" />
+    </bag>
+    <bag name="Tbdicgeoobjtype" inverse="false" table="TBPHYLAYER_GEOOBJ" lazy="true" cascade="delete">
+      <key column="PHYLAYERID" />
+      <many-to-many class="Model.Platform.Tbdicgeoobjtype,Model">
+        <column name="GEOOBJID" />
+      </many-to-many>
+    </bag>
+    <bag name="Tbrelywlayers" inverse="true" lazy="true" cascade="delete">
+      <key column="PHYLAYERID" />
+      <one-to-many class="Model.Platform.Tbrelywlayers,Model" />
+    </bag>
+    <bag name="TbthemePhylayers" inverse="true" lazy="true" cascade="delete">
+      <key column="PHYLAYERID" />
+      <one-to-many class="Model.Platform.TbthemePhylayers,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

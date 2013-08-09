@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{87D4E643-921F-46A6-86B9-835F2104400C}</ProjectGuid>
+    <ProjectGuid>{C5AD0906-EC65-4535-86F1-B534141639AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestOracle</RootNamespace>
-    <AssemblyName>TestOracle</AssemblyName>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Out\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -34,10 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DDTek.Oracle, Version=2.20.20.0, Culture=neutral, PublicKeyToken=c84cd5c63851e072">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\DDTek.Oracle.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,20 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TekOracle\HyOracleCommand.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TekOracle\HyOracleCommandBuilder.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TekOracle\HyOracleConnection.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TekOracle\HyOracleDataReader.cs" />
-    <Compile Include="TekOracle\HyOracleDbProviderFactory.cs" />
-    <Compile Include="TekOracle\HyOracleParameter.cs" />
-    <Compile Include="TekOracle\HyOracleParameterCollection.cs" />
-    <Compile Include="TekOracle\HyOracleTransaction.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,7 +62,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -92,7 +73,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\ddtek.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\NHibernate\nhibernate-core\src\NHibernate\NHibernate.csproj">
+      <Project>{5909BFE7-93CF-4E5F-BE22-6293368AF01D}</Project>
+      <Name>NHibernate</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

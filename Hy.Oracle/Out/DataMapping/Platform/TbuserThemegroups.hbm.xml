@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TbuserThemegroups,Model" table="TBUSER_THEMEGROUPS" lazy="true">
+    <composite-id name="Id" class="Model.Platform.TbuserThemegroupsId,Model">
+      <key-many-to-one name="Tbthemegroups" class="Model.Platform.Tbthemegroups,Model" column="GROUPID" />
+      <key-many-to-one name="Tbywmoduledic" class="Model.Platform.Tbywmoduledic,Model" column="SUBSYSID" />
+      <key-property name="Userid" column="USERID" type="Decimal" />
+    </composite-id>
+    <property name="Grouporder" column="GROUPORDER" type="Decimal" />
+    <many-to-one name="Tbywmoduledic" column="SUBSYSID" cascade="save-update" not-null="true" />
+    <many-to-one name="Tbthemegroups" column="GROUPID" cascade="save-update" not-null="true" />
+  </class>
+</hibernate-mapping>

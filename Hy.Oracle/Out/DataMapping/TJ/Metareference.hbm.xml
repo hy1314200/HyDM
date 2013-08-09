@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metareference,Model" table="METAREFERENCE" lazy="true">
+    <id name="ReferenceId" column="REFERENCE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAREFERENCE_REFERENCE_ID</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="string" />
+    <property name="RefDate" column="REF_DATE" type="DateTime" />
+    <property name="Version" column="VERSION" type="string" />
+    <property name="VersionDate" column="VERSION_DATE" type="DateTime" />
+    <property name="ChargeDept" column="CHARGE_DEPT" type="string" />
+    <property name="Express" column="EXPRESS" type="Decimal" />
+    <property name="BookNumber" column="BOOK_NUMBER" type="string" />
+    <property name="StandardNumber" column="STANDARD_NUMBER" type="string" />
+    <bag name="Metadatarefrel" inverse="true" lazy="true" cascade="delete">
+      <key column="REFERENCE_ID" />
+      <one-to-many class="Model.TJ.Metadatarefrel,Model" />
+    </bag>
+    <bag name="Metasigninfomation" inverse="true" lazy="true" cascade="delete">
+      <key column="REFERENCE_ID" />
+      <one-to-many class="Model.TJ.Metasigninfomation,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

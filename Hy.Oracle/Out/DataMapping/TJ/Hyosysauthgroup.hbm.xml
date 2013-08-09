@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosysauthgroup,Model" table="HYOSYSAUTHGROUP" lazy="true">
+    <id name="GroupId" column="GROUP_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSAUTHGROUP_GROUP_ID</param>
+      </generator>
+    </id>
+    <property name="GroupCode" column="GROUP_CODE" type="string" not-null="true" />
+    <property name="GroupName" column="GROUP_NAME" type="string" />
+    <property name="GroupDesc" column="GROUP_DESC" type="string" />
+    <bag name="Hyosysappauth" inverse="true" lazy="true" cascade="delete">
+      <key column="GROUP_ID" />
+      <one-to-many class="Model.TJ.Hyosysappauth,Model" />
+    </bag>
+    <bag name="Hyosysgroupdata" inverse="true" lazy="true" cascade="delete">
+      <key column="GROUP_ID" />
+      <one-to-many class="Model.TJ.Hyosysgroupdata,Model" />
+    </bag>
+    <bag name="Hyosysgroupuser" inverse="true" lazy="true" cascade="delete">
+      <key column="GROUP_ID" />
+      <one-to-many class="Model.TJ.Hyosysgroupuser,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

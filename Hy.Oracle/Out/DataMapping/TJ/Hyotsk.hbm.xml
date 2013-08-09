@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyotsk,Model" table="HYOTSK" lazy="true">
+    <id name="ProjectId" column="PROJECT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOTSK_PROJECT_ID</param>
+      </generator>
+    </id>
+    <property name="ProjectCode" column="PROJECT_CODE" type="string" not-null="true" />
+    <property name="ProjectName" column="PROJECT_NAME" type="string" />
+    <property name="ProjcetSource" column="PROJCET_SOURCE" type="Decimal" />
+    <property name="BeginTime" column="BEGIN_TIME" type="DateTime" />
+    <property name="EndTime" column="END_TIME" type="DateTime" />
+    <property name="SecurityClass" column="SECURITY_CLASS" type="Decimal" />
+    <property name="Xmao" column="XMAO" type="string" />
+    <property name="Xmar" column="XMAR" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <bag name="G0disrgn" inverse="true" lazy="true" cascade="delete">
+      <key column="PROJECT_ID" />
+      <one-to-many class="Model.TJ.G0disrgn,Model" />
+    </bag>
+    <bag name="G0fgsrgn" inverse="true" lazy="true" cascade="delete">
+      <key column="PROJECT_ID" />
+      <one-to-many class="Model.TJ.G0fgsrgn,Model" />
+    </bag>
+    <bag name="Hyomsrgn" inverse="true" lazy="true" cascade="delete">
+      <key column="PROJECT_ID" />
+      <one-to-many class="Model.TJ.Hyomsrgn,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

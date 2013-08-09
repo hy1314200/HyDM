@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0fgslin,Model" table="G0FGSLIN" lazy="true">
+    <id name="LineId" column="LINE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0FGSLIN_LINE_ID</param>
+      </generator>
+    </id>
+    <property name="Hyceaa" column="HYCEAA" type="string" not-null="true" />
+    <property name="Hyceab" column="HYCEAB" type="string" />
+    <property name="Hyceba" column="HYCEBA" type="Decimal" />
+    <property name="StartLongitude" column="START_LONGITUDE" type="Decimal" />
+    <property name="Shape" column="SHAPE" type="Decimal" />
+    <property name="StartLatitude" column="START_LATITUDE" type="Decimal" />
+    <property name="Hycebb" column="HYCEBB" type="Decimal" />
+    <property name="FinalLongitude" column="FINAL_LONGITUDE" type="Decimal" />
+    <property name="FinalLatitude" column="FINAL_LATITUDE" type="Decimal" />
+    <many-to-one name="G0fgsrgn" column="RGN_ID" cascade="save-update" />
+    <bag name="G0ogsrsl" inverse="true" lazy="true" cascade="delete">
+      <key column="LINE_ID" />
+      <one-to-many class="Model.TJ.G0ogsrsl,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

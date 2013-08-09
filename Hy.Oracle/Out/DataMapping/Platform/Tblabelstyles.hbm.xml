@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tblabelstyles,Model" table="TBLABELSTYLES" lazy="true">
+    <id name="Labelid" column="LABELID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBLABELSTYLES</param>
+      </generator>
+    </id>
+    <property name="LabelClassname" column="LABEL_CLASSNAME" type="string" />
+    <property name="LabelExpr" column="LABEL_EXPR" type="string" />
+    <property name="LabelMaxscale" column="LABEL_MAXSCALE" type="Decimal" />
+    <property name="LabelMinscale" column="LABEL_MINSCALE" type="Decimal" />
+    <property name="LabelFontname" column="LABEL_FONTNAME" type="string" not-null="true" />
+    <property name="LabelFontsize" column="LABEL_FONTSIZE" type="Decimal" />
+    <property name="LabelFontcolor" column="LABEL_FONTCOLOR" type="string" />
+    <property name="LabelFontstyle" column="LABEL_FONTSTYLE" type="Decimal" />
+    <property name="LabelFontposition" column="LABEL_FONTPOSITION" type="Decimal" />
+    <property name="LabelFontmask" column="LABEL_FONTMASK" type="Decimal" />
+    <property name="LabelFontmasksize" column="LABEL_FONTMASKSIZE" type="Decimal" />
+    <property name="LabelPlacement" column="LABEL_PLACEMENT" type="Decimal" />
+    <property name="LabelWhereclause" column="LABEL_WHERECLAUSE" type="string" />
+    <many-to-one name="TbthemePhylayers" column="THEMELAYERID" cascade="save-update" />
+    <many-to-one name="Tbphylayers" column="PHYLAYERID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

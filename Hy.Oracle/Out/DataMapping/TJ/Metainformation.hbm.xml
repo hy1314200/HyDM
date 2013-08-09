@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metainformation,Model" table="METAINFORMATION" lazy="true">
+    <id name="MetaId" column="META_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAINFORMATION_META_ID</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="string" />
+    <property name="CreateDate" column="CREATE_DATE" type="DateTime" />
+    <property name="Character" column="CHARACTER" type="Decimal" />
+    <property name="Language" column="LANGUAGE" type="string" />
+    <property name="StandardName" column="STANDARD_NAME" type="string" />
+    <property name="StandardVersion" column="STANDARD_VERSION" type="string" />
+    <many-to-one name="Metadept" column="DEPT_ID" cascade="save-update" />
+    <property name="DataId" column="DATA_ID" type="Decimal" />
+    <property name="DataType" column="DATA_TYPE" type="Decimal" />
+    <property name="Isnew" column="ISNEW" type="Decimal" />
+    <property name="CollectId" column="COLLECT_ID" type="Decimal" />
+    <bag name="Metacontent" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metacontent,Model" />
+    </bag>
+    <bag name="Metadataresource" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metadataresource,Model" />
+    </bag>
+    <bag name="Metadistribute" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metadistribute,Model" />
+    </bag>
+    <bag name="Metaprogress" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metaprogress,Model" />
+    </bag>
+    <bag name="Metaquality" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metaquality,Model" />
+    </bag>
+    <bag name="Metarefsystem" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metarefsystem,Model" />
+    </bag>
+    <bag name="Metasigninfomation" inverse="true" lazy="true" cascade="delete">
+      <key column="META_ID" />
+      <one-to-many class="Model.TJ.Metasigninfomation,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

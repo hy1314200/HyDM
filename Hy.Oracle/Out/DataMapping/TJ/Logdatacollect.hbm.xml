@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Logdatacollect,Model" table="LOGDATACOLLECT" lazy="true">
+    <id name="CollectId" column="COLLECT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">LOGDATACOLLECT_COLLECT_ID</param>
+      </generator>
+    </id>
+    <property name="RgnId" column="RGN_ID" type="Decimal" />
+    <property name="ChargeMan" column="CHARGE_MAN" type="string" />
+    <property name="CollectDate" column="COLLECT_DATE" type="DateTime" />
+    <property name="ResultDesc" column="RESULT_DESC" type="string" not-null="true" />
+    <property name="RawReserveDate" column="RAW_RESERVE_DATE" type="DateTime" />
+    <property name="UpDirectory" column="UP_DIRECTORY" type="string" />
+    <property name="CheckXml" column="CHECK_XML" type="string" />
+    <property name="Isverify" column="ISVERIFY" type="string" />
+    <property name="VerifyMan" column="VERIFY_MAN" type="string" />
+    <property name="VerifyDate" column="VERIFY_DATE" type="DateTime" />
+    <property name="Collectno" column="COLLECTNO" type="string" />
+    <property name="Fromdept" column="FROMDEPT" type="string" />
+    <property name="DataType" column="DATA_TYPE" type="Decimal" />
+    <property name="Phase2flag" column="PHASE2FLAG" type="Decimal" />
+    <property name="SampleGap" column="SAMPLE_GAP" type="Decimal" />
+    <property name="AbvalPower" column="ABVAL_POWER" type="Decimal" />
+    <property name="AnalyseWay" column="ANALYSE_WAY" type="Decimal" />
+    <property name="AnalyseParamstring" column="ANALYSE_PARAMSTRING" type="string" />
+    <property name="HillAzimuth" column="HILL_AZIMUTH" type="Decimal" />
+    <property name="HillAltitude" column="HILL_ALTITUDE" type="Decimal" />
+    <many-to-one name="Metacode" column="COLLECT_STATUS" cascade="save-update" />
+    <property name="Createuser" column="CREATEUSER" type="Decimal" />
+    <property name="CollectBeginDate" column="COLLECT_BEGIN_DATE" type="DateTime" />
+    <property name="ProcessBeginDate" column="PROCESS_BEGIN_DATE" type="DateTime" />
+    <property name="ProcessEndDate" column="PROCESS_END_DATE" type="DateTime" />
+    <property name="ImportBeginDate" column="IMPORT_BEGIN_DATE" type="DateTime" />
+    <property name="ImportEndDate" column="IMPORT_END_DATE" type="DateTime" />
+    <bag name="Logdatadetail" inverse="true" lazy="true" cascade="delete">
+      <key column="COLLECT_ID" />
+      <one-to-many class="Model.TJ.Logdatadetail,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

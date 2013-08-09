@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsvyg,Model" table="HYOMSVYG" lazy="true">
+    <id name="VoyageId" column="VOYAGE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSVYG_VOYAGE_ID</param>
+      </generator>
+    </id>
+    <property name="VoyageCode" column="VOYAGE_CODE" type="string" not-null="true" />
+    <property name="ShipCode" column="SHIP_CODE" type="string" />
+    <property name="BeginTime" column="BEGIN_TIME" type="DateTime" />
+    <property name="EndTime" column="END_TIME" type="DateTime" />
+    <property name="LineNum" column="LINE_NUM" type="Decimal" />
+    <property name="LineMileage" column="LINE_MILEAGE" type="Decimal" />
+    <property name="ChargeMan" column="CHARGE_MAN" type="string" />
+    <property name="WorkMan" column="WORK_MAN" type="string" />
+    <property name="InstrumentType" column="INSTRUMENT_TYPE" type="Decimal" />
+    <property name="InstrumentPrecision" column="INSTRUMENT_PRECISION" type="string" />
+    <property name="InstrumentFrequency" column="INSTRUMENT_FREQUENCY" type="Decimal" />
+    <property name="InstallType" column="INSTALL_TYPE" type="Decimal" />
+    <property name="CableLength" column="CABLE_LENGTH" type="Decimal" />
+    <property name="CorrectMethod" column="CORRECT_METHOD" type="Decimal" />
+    <property name="CorrectPrecision" column="CORRECT_PRECISION" type="string" />
+    <property name="LocationMethod" column="LOCATION_METHOD" type="Decimal" />
+    <property name="LocationInstruType" column="LOCATION_INSTRU_TYPE" type="string" />
+    <property name="LocationPrecision" column="LOCATION_PRECISION" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <many-to-one name="Hyomsrgn" column="RGN_ID" cascade="save-update" />
+    <many-to-one name="Metadept" column="DEPT_ID" cascade="save-update" />
+    <bag name="Hyomslinvygrel" inverse="true" lazy="true" cascade="delete">
+      <key column="VOYAGE_ID" />
+      <one-to-many class="Model.TJ.Hyomslinvygrel,Model" />
+    </bag>
+    <bag name="Hyomsstnvygrel" inverse="true" lazy="true" cascade="delete">
+      <key column="VOYAGE_ID" />
+      <one-to-many class="Model.TJ.Hyomsstnvygrel,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

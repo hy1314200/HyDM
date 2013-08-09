@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TbthemePhylayers,Model" table="TBTHEME_PHYLAYERS" lazy="true">
+    <id name="Themelayerid" column="THEMELAYERID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">TBTHEME_PHYLAYERS_THEMELAYERID</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbthemes" column="THEMEID" cascade="save-update" not-null="true" />
+    <many-to-one name="Tbphylayers" column="PHYLAYERID" cascade="save-update" not-null="true" />
+    <property name="Phylayerorder" column="PHYLAYERORDER" type="Decimal" not-null="true" />
+    <property name="Showinallscale" column="SHOWINALLSCALE" type="Decimal" />
+    <property name="Maxshowscale" column="MAXSHOWSCALE" type="Decimal" />
+    <property name="Minshowscale" column="MINSHOWSCALE" type="Decimal" />
+    <property name="Selectable" column="SELECTABLE" type="Decimal" />
+    <property name="Editable" column="EDITABLE" type="Decimal" />
+    <property name="Showlabel" column="SHOWLABEL" type="Decimal" />
+    <property name="Showmaptip" column="SHOWMAPTIP" type="Decimal" />
+    <property name="Mainfield" column="MAINFIELD" type="string" />
+    <property name="Labelfield" column="LABELFIELD" type="string" />
+    <property name="Maxlabelscale" column="MAXLABELSCALE" type="Decimal" />
+    <property name="Minlabelscale" column="MINLABELSCALE" type="Decimal" />
+    <property name="Isvisible" column="ISVISIBLE" type="Decimal" />
+    <property name="Rendertype" column="RENDERTYPE" type="Decimal" />
+    <property name="Renderfieldname" column="RENDERFIELDNAME" type="string" />
+    <property name="Isvalid" column="ISVALID" type="Decimal" />
+    <property name="Ptrotfield" column="PTROTFIELD" type="string" />
+    <property name="Isscalesymbol" column="ISSCALESYMBOL" type="Decimal" />
+    <property name="Isquerylayer" column="ISQUERYLAYER" type="Decimal" />
+    <property name="TransPercent" column="TRANS_PERCENT" type="Decimal" />
+    <property name="Isanalyselayer" column="ISANALYSELAYER" type="Decimal" />
+    <property name="LabelFiltername" column="LABEL_FILTERNAME" type="string" />
+    <property name="Name" column="NAME" type="string" />
+    <property name="Render" column="RENDER" type="Byte[]" />
+    <property name="Layergroupid" column="LAYERGROUPID" type="Decimal" />
+    <bag name="Tblabelstyles" inverse="true" lazy="true" cascade="delete">
+      <key column="THEMELAYERID" />
+      <one-to-many class="Model.Platform.Tblabelstyles,Model" />
+    </bag>
+    <bag name="TbthemelayerGeoobg" inverse="true" lazy="true" cascade="delete">
+      <key column="THEMELAYERID" />
+      <one-to-many class="Model.Platform.TbthemelayerGeoobg,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

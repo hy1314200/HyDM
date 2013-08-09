@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsmap,Model" table="HYOMSMAP" lazy="true">
+    <id name="MapId" column="MAP_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSMAP_MAP_ID</param>
+      </generator>
+    </id>
+    <property name="Hydhaa" column="HYDHAA" type="string" />
+    <property name="Hydhab" column="HYDHAB" type="string" />
+    <property name="MapRange" column="MAP_RANGE" type="Decimal" />
+    <property name="Coordinate" column="COORDINATE" type="Decimal" />
+    <property name="MapProjection" column="MAP_PROJECTION" type="Decimal" />
+    <property name="Chamdb" column="CHAMDB" type="Decimal" />
+    <property name="BaseLatitude" column="BASE_LATITUDE" type="Decimal" />
+    <property name="DeptCode" column="DEPT_CODE" type="string" />
+    <property name="ComputeMan" column="COMPUTE_MAN" type="string" />
+    <property name="DrawMan" column="DRAW_MAN" type="string" />
+    <property name="ExamineMan" column="EXAMINE_MAN" type="string" />
+    <property name="MeasureSupervisor" column="MEASURE_SUPERVISOR" type="string" />
+    <property name="TechChargeman" column="TECH_CHARGEMAN" type="string" />
+    <property name="DeptChargeman" column="DEPT_CHARGEMAN" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <many-to-one name="Hyomsrgn" column="RGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

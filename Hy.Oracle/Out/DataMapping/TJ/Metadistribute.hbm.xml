@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadistribute,Model" table="METADISTRIBUTE" lazy="true">
+    <id name="DistributeId" column="DISTRIBUTE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADISTRIBUTE_DISTRIBUTE_ID</param>
+      </generator>
+    </id>
+    <property name="OnlineInformation" column="ONLINE_INFORMATION" type="string" />
+    <property name="Relation" column="RELATION" type="string" />
+    <property name="OrderDesc" column="ORDER_DESC" type="string" />
+    <many-to-one name="Metainformation" column="META_ID" cascade="save-update" />
+    <bag name="Metadistributemedia" inverse="true" lazy="true" cascade="delete">
+      <key column="DISTRIBUTE_ID" />
+      <one-to-many class="Model.TJ.Metadistributemedia,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

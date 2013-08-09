@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tballdictionary,Model" table="TBALLDICTIONARY" lazy="true">
+    <id name="Dicid" column="DICID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBALLDICTIONARY</param>
+      </generator>
+    </id>
+    <property name="Dicenname" column="DICENNAME" type="string" not-null="true" />
+    <property name="Dicchname" column="DICCHNAME" type="string" />
+    <property name="Hint" column="HINT" type="string" />
+    <property name="TableType" column="TABLE_TYPE" type="string" />
+    <property name="Isedit" column="ISEDIT" type="string" />
+    <bag name="Tbdicfieldmanager" inverse="true" lazy="true" cascade="delete">
+      <key column="DICID" />
+      <one-to-many class="Model.Platform.Tbdicfieldmanager,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

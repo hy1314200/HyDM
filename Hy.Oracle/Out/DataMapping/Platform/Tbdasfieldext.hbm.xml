@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdasfieldext,Model" table="TBDASFIELDEXT" lazy="true">
+    <id name="Fieldid" column="FIELDID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDASFIELDEXT</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdaslayerext" column="LYRID" cascade="save-update" />
+    <many-to-one name="Tbdastddef" column="STDID" cascade="save-update" />
+    <property name="Fieldname" column="FIELDNAME" type="string" />
+    <property name="Fieldlabel" column="FIELDLABEL" type="string" />
+    <property name="Ispk" column="ISPK" type="Decimal" />
+    <property name="Isysdm" column="ISYSDM" type="Decimal" />
+    <property name="Fieldtype" column="FIELDTYPE" type="string" />
+    <property name="Fieldmemo" column="FIELDMEMO" type="string" />
+  </class>
+
+</hibernate-mapping>

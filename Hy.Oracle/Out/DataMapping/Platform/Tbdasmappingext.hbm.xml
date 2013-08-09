@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdasmappingext,Model" table="TBDASMAPPINGEXT" lazy="true">
+    <id name="Mappid" column="MAPPID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDASMAPPINGEXT</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdastddef" column="STDID" cascade="save-update" />
+    <property name="Oldfeaturetype" column="OLDFEATURETYPE" type="string" />
+    <property name="Oldcode" column="OLDCODE" type="string" />
+    <property name="Oldgeomtype" column="OLDGEOMTYPE" type="string" />
+    <property name="Newfeaturetype" column="NEWFEATURETYPE" type="string" />
+    <property name="Newcode" column="NEWCODE" type="string" />
+    <property name="Newgeomtype" column="NEWGEOMTYPE" type="string" />
+    <property name="Symbolindex" column="SYMBOLINDEX" type="string" />
+    <property name="Mapmemo" column="MAPMEMO" type="string" />
+  </class>
+</hibernate-mapping>

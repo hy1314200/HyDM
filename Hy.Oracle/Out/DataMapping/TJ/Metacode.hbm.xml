@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metacode,Model" table="METACODE" lazy="true">
+    <id name="CodeId" column="CODE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METACODE_CODE_ID</param>
+      </generator>
+    </id>
+    <property name="SequenceCode" column="SEQUENCE_CODE" type="string" not-null="true" />
+    <property name="ChineseName" column="CHINESE_NAME" type="string" />
+    <property name="EnglishName" column="ENGLISH_NAME" type="string" />
+    <property name="Code" column="CODE" type="string" />
+    <property name="Definition" column="DEFINITION" type="string" not-null="true" />
+    <property name="Supercode" column="SUPERCODE" type="string" />
+    <many-to-one name="Metadomaincode" column="DOMAIN_ID" cascade="save-update" />
+    <property name="Issys" column="ISSYS" type="Decimal" />
+    <bag name="Logdatacollect" inverse="true" lazy="true" cascade="delete">
+      <key column="COLLECT_STATUS" />
+      <one-to-many class="Model.TJ.Logdatacollect,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

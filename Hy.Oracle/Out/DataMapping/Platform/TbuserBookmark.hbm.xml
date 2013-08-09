@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TbuserBookmark,Model" table="TBUSER_BOOKMARK" lazy="true">
+    <id name="Bookmarkid" column="BOOKMARKID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">TBUSER_BOOKMARK_BOOKMARKID</param>
+      </generator>
+    </id>
+    <property name="Userid" column="USERID" type="Decimal" not-null="true" />
+    <property name="Bookmarkname" column="BOOKMARKNAME" type="string" not-null="true" />
+    <property name="Minx" column="MINX" type="Decimal" not-null="true" />
+    <property name="Miny" column="MINY" type="Decimal" not-null="true" />
+    <property name="Maxx" column="MAXX" type="Decimal" not-null="true" />
+    <property name="Maxy" column="MAXY" type="Decimal" not-null="true" />
+  </class>
+</hibernate-mapping>

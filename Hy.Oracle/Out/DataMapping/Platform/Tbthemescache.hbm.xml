@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbthemescache,Model" table="TBTHEMESCACHE" lazy="true">
+    <id name="Cacheid" column="CACHEID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBTHEMESCACHE</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbthemes" column="THEMEID" cascade="save-update" not-null="true" />
+    <property name="Originx" column="ORIGINX" type="Decimal" />
+    <property name="Originy" column="ORIGINY" type="Decimal" />
+    <property name="Imgformat" column="IMGFORMAT" type="string" />
+    <property name="Imgheight" column="IMGHEIGHT" type="Decimal" />
+    <property name="Imgwidth" column="IMGWIDTH" type="Decimal" />
+    <property name="Imgdpi" column="IMGDPI" type="Decimal" />
+    <property name="Top" column="TOP" type="Decimal" />
+    <property name="Bottom" column="BOTTOM" type="Decimal" />
+    <property name="Left" column="LEFT" type="Decimal" />
+    <property name="Right" column="RIGHT" type="Decimal" />
+    <property name="Scales" column="SCALES" type="string" />
+    <property name="Cachename" column="CACHENAME" type="string" />
+    <property name="Layername" column="LAYERNAME" type="string" />
+    <property name="Updatetime" column="UPDATETIME" type="DateTime" />
+  </class>
+</hibernate-mapping>

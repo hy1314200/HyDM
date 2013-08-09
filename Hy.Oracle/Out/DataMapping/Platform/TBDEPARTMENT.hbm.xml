@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TBDEPARTMENT,Model" table="TBDEPARTMENT" lazy="true">
+    <id name="DeptId" column="DEPT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDEPARTMENT</param>
+      </generator>
+    </id>
+    <property name="ChargeMan" column="Manager" type="string" />
+    <property name="DeptName" column="DEPT_NAME" type="string" />
+    <property name="Duty" column="Manager_DUTY" type="string" />
+    <property name="Post" column="Manager_ScopeOfDuty" type="string" />
+    <property name="Telephone" column="DEPT_Phone" type="string" />
+    <property name="Fax" column="DEPT_Fax" type="string" />
+    <property name="Address" column="DEPT_Address" type="string" />
+    <property name="Postcode" column="DEPT_Postcode" type="string" />
+    <property name="EMail" column="Manager_Email" type="string" />
+    <property name="Departorder" column="DEPARTORDER" type="Decimal" />
+    <bag name="tbsysuserinfo" inverse="true" lazy="true" cascade="delete">
+      <key column="DEPT_ID" />
+      <one-to-many class="Model.Platform.TBSYSUSERINFO,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

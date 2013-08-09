@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metaquality,Model" table="METAQUALITY" lazy="true">
+    <id name="QualityId" column="QUALITY_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAQUALITY_QUALITY_ID</param>
+      </generator>
+    </id>
+    <property name="Integrate" column="INTEGRATE" type="string" />
+    <property name="Logic" column="LOGIC" type="string" />
+    <property name="Accurate" column="ACCURATE" type="string" />
+    <property name="CheckDesc" column="CHECK_DESC" type="string" />
+    <property name="ExportQuality" column="EXPORT_QUALITY" type="string" />
+    <property name="AttachmentQuality" column="ATTACHMENT_QUALITY" type="string" />
+    <many-to-one name="Metainformation" column="META_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

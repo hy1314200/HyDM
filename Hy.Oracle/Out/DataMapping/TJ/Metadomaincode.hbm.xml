@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadomaincode,Model" table="METADOMAINCODE" lazy="true">
+    <id name="DomainId" column="DOMAIN_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADOMAINCODE_DOMAIN_ID</param>
+      </generator>
+    </id>
+    <property name="DomainName" column="DOMAIN_NAME" type="string" />
+    <property name="DomainDesc" column="DOMAIN_DESC" type="string" />
+    <property name="ChineseName" column="CHINESE_NAME" type="string" />
+    <property name="EnglishName" column="ENGLISH_NAME" type="string" />
+    <property name="Issys" column="ISSYS" type="Decimal" />
+    <bag name="Metacode" inverse="true" lazy="true" cascade="delete">
+      <key column="DOMAIN_ID" />
+      <one-to-many class="Model.TJ.Metacode,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

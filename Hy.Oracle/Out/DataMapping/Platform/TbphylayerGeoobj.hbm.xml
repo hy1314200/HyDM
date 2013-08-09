@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TbphylayerGeoobj,Model" table="TBPHYLAYER_GEOOBJ" lazy="true">
+    <composite-id name="Id" class="Model.Platform.TbphylayerGeoobjId,Model">
+      <key-many-to-one name="Tbdicgeoobjtype" class="Model.Platform.Tbdicgeoobjtype,Model" column="GEOOBJID" />
+      <key-many-to-one name="Tbphylayers" class="Model.Platform.Tbphylayers,Model" column="PHYLAYERID" />
+    </composite-id>
+    <many-to-one name="Tbdicgeoobjtype" column="GEOOBJID" cascade="save-update" not-null="true" />
+    <many-to-one name="Tbphylayers" column="PHYLAYERID" cascade="save-update" not-null="true" />
+  </class>
+</hibernate-mapping>

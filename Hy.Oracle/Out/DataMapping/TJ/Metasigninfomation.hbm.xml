@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metasigninfomation,Model" table="METASIGNINFOMATION" lazy="true">
+    <id name="SignId" column="SIGN_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METASIGNINFOMATION_SIGN_ID</param>
+      </generator>
+    </id>
+    <property name="Reference" column="REFERENCE" type="string" />
+    <property name="Language" column="LANGUAGE" type="string" />
+    <property name="Character" column="CHARACTER" type="Decimal" />
+    <property name="Digest" column="DIGEST" type="string" />
+    <property name="Destination" column="DESTINATION" type="string" />
+    <property name="Status" column="STATUS" type="Decimal" />
+    <property name="Express" column="EXPRESS" type="Decimal" />
+    <property name="ResolvePower" column="RESOLVE_POWER" type="string" />
+    <property name="ThemeType" column="THEME_TYPE" type="Decimal" />
+    <property name="OrbitSign" column="ORBIT_SIGN" type="string" />
+    <property name="GeographySign" column="GEOGRAPHY_SIGN" type="string" />
+    <many-to-one name="Metainformation" column="META_ID" cascade="save-update" />
+    <many-to-one name="Metareference" column="REFERENCE_ID" cascade="save-update" />
+    <property name="Scale" column="SCALE" type="string" />
+    <bag name="Metabrowsemap" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metabrowsemap,Model" />
+    </bag>
+    <bag name="Metadatalimit" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metadatalimit,Model" />
+    </bag>
+    <bag name="Metadataset" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metadataset,Model" />
+    </bag>
+    <bag name="Metageorange" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metageorange,Model" />
+    </bag>
+    <bag name="Metakeyword" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metakeyword,Model" />
+    </bag>
+    <bag name="Metamaintain" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metamaintain,Model" />
+    </bag>
+    <bag name="Metatimerange" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metatimerange,Model" />
+    </bag>
+    <bag name="Metaverticalrange" inverse="true" lazy="true" cascade="delete">
+      <key column="SIGN_ID" />
+      <one-to-many class="Model.TJ.Metaverticalrange,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

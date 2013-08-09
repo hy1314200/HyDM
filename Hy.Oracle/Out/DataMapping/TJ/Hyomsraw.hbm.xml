@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsraw,Model" table="HYOMSRAW" lazy="true">
+    <id name="DotId" column="DOT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSRAW_DOT_ID</param>
+      </generator>
+    </id>
+    <property name="DotTime" column="DOT_TIME" type="DateTime" not-null="true" />
+    <property name="DotLocation" column="DOT_LOCATION" type="Decimal" not-null="true" />
+    <property name="VoyageSpeed" column="VOYAGE_SPEED" type="Decimal" />
+    <property name="VoyageDirection" column="VOYAGE_DIRECTION" type="Decimal" />
+    <property name="MasterSurfaceHeight" column="MASTER_SURFACE_HEIGHT" type="Decimal" />
+    <property name="MasterBottomHeight" column="MASTER_BOTTOM_HEIGHT" type="Decimal" />
+    <property name="AssSurfaceHeight" column="ASS_SURFACE_HEIGHT" type="Decimal" />
+    <property name="AssBottomHeight" column="ASS_BOTTOM_HEIGHT" type="Decimal" />
+    <property name="MasterValue" column="MASTER_VALUE" type="Decimal" />
+    <property name="AssValue" column="ASS_VALUE" type="Decimal" />
+    <many-to-one name="Hyomslin" column="LINE_ID" cascade="save-update" />
+    <property name="DotSeq" column="DOT_SEQ" type="Decimal" />
+  </class>
+</hibernate-mapping>

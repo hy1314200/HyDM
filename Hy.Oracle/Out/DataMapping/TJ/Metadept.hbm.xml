@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadept,Model" table="METADEPT" lazy="true">
+    <id name="DeptId" column="DEPT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADEPT_DEPT_ID</param>
+      </generator>
+    </id>
+    <property name="ChargeMan" column="CHARGE_MAN" type="string" />
+    <property name="DeptName" column="DEPT_NAME" type="string" />
+    <property name="Duty" column="DUTY" type="string" />
+    <property name="Post" column="POST" type="string" />
+    <property name="Xmaia" column="XMAIA" type="string" />
+    <property name="Xmaif" column="XMAIF" type="string" />
+    <property name="Xmaih" column="XMAIH" type="string" />
+    <property name="Xmaic" column="XMAIC" type="Decimal" />
+    <property name="Xmaii" column="XMAII" type="string" />
+    <property name="Xmaij" column="XMAIJ" type="string" />
+    <property name="Xmaik" column="XMAIK" type="string" />
+    <property name="Xmail" column="XMAIL" type="string" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <bag name="G0ogssno" inverse="true" lazy="true" cascade="delete">
+      <key column="DEPT_ID" />
+      <one-to-many class="Model.TJ.G0ogssno,Model" />
+    </bag>
+    <bag name="Hyomsvyg" inverse="true" lazy="true" cascade="delete">
+      <key column="DEPT_ID" />
+      <one-to-many class="Model.TJ.Hyomsvyg,Model" />
+    </bag>
+    <bag name="Hyosysuser" inverse="true" lazy="true" cascade="delete">
+      <key column="DEPT_ID" />
+      <one-to-many class="Model.TJ.Hyosysuser,Model" />
+    </bag>
+    <bag name="Metacontact" inverse="true" lazy="true" cascade="delete">
+      <key column="DEPT_ID" />
+      <one-to-many class="Model.TJ.Metacontact,Model" />
+    </bag>
+    <bag name="Metainformation" inverse="true" lazy="true" cascade="delete">
+      <key column="DEPT_ID" />
+      <one-to-many class="Model.TJ.Metainformation,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

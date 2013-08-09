@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Model.Platform.Tbversioninfo,Model" table="`TBVERSIONINFO`" lazy="true">
+    <id name="Versionid" column="`VERSIONID`" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBVERSIONINFO</param>
+      </generator>
+    </id>
+    <property type="string" name="Versionno" column="`VERSIONNO`" />
+    <property type="string" name="Versionname" column="`VERSIONNAME`" />
+    <property type="DateTime" name="Versiontime" column="`VERSIONTIME`" />
+    <property type="string" name="Versioncreater" column="`VERSIONCREATER`" />
+    <property type="string" name="Versionmark" column="`VERSIONMARK`" />
+    <many-to-one name="Collectiontypeid" cascade="none" column="`COLLECTIONTYPEID`" />
+    <property type="string" name="Shr" column="`SHR`" />
+    <property type="string" name="Clr" column="`CLR`" />
+    <property type="string" name="Htr" column="`HTR`" />
+    <property type="string" name="TfName" column="`TFNAME`" />
+    <property type="string" name="CoorSystem" column="`COORSYSTEM`" />
+    <property type="double" name="MaxX" column="`MAXX`" />
+    <property type="double" name="MaxY" column="`MAXY`" />
+    <property type="double" name="MinX" column="`MINX`" />
+    <property type="double" name="MinY" column="`MINY`" />
+  </class>
+</hibernate-mapping>

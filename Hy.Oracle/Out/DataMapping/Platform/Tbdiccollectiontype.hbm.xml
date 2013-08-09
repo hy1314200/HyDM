@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Model.Platform.Tbdiccollectiontype,Model" table="`TBDICCOLLECTIONTYPE`" lazy="true">
+    <id name="Collectiontypeid" column="`COLLECTIONTYPEID`" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICCOLLECTIONTYPE</param>
+      </generator>
+    </id>
+    <property type="string" name="Collectiontypedesc" column="`COLLECTIONTYPEDESC`" />
+    <bag name="FkTbversioReferenceTbdiccol" inverse="true" lazy="true" cascade="all">
+      <key column="`COLLECTIONTYPEID`" />
+      <one-to-many class="Model.Platform.Tbversioninfo,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

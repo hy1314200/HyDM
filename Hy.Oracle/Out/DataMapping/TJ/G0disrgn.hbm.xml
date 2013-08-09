@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0disrgn,Model" table="G0DISRGN" lazy="true">
+    <id name="XmaaId" column="XMAA_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0DISRGN_XMAA_ID</param>
+      </generator>
+    </id>
+    <property name="Hyckaa" column="HYCKAA" type="string" />
+    <property name="Hyckab" column="HYCKAB" type="string" />
+    <property name="Hyckac" column="HYCKAC" type="Decimal" />
+    <property name="Chamdb" column="CHAMDB" type="string" />
+    <property name="Hyckae" column="HYCKAE" type="Decimal" />
+    <property name="Hyckaf" column="HYCKAF" type="Decimal" />
+    <property name="Hyckad" column="HYCKAD" type="Decimal" />
+    <property name="Hyckag" column="HYCKAG" type="Decimal" />
+    <property name="Hyckah" column="HYCKAH" type="Decimal" />
+    <property name="Hyckai" column="HYCKAI" type="Decimal" />
+    <property name="Hyckaj" column="HYCKAJ" type="Decimal" />
+    <property name="Hyckak" column="HYCKAK" type="Decimal" />
+    <property name="Hyckal" column="HYCKAL" type="Decimal" />
+    <property name="Hyckam" column="HYCKAM" type="Decimal" />
+    <property name="Hyckan" column="HYCKAN" type="Decimal" />
+    <property name="Hyckao" column="HYCKAO" type="DateTime" />
+    <property name="Hyckap" column="HYCKAP" type="string" />
+    <property name="Hyckaq" column="HYCKAQ" type="Decimal" />
+    <property name="Hyckar" column="HYCKAR" type="string" />
+    <property name="Pkiid" column="PKIID" type="Decimal" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <many-to-one name="Hyotsk" column="PROJECT_ID" cascade="save-update" />
+    <bag name="Hyodisrgnrange" inverse="true" lazy="true" cascade="delete">
+      <key column="XMAA_ID" />
+      <one-to-many class="Model.TJ.Hyodisrgnrange,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

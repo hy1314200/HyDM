@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdicgisfeature,Model" table="TBDICGISFEATURE" lazy="true">
+    <id name="Featureid" column="FEATUREID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICGISFEATURE</param>
+      </generator>
+    </id>
+    <property name="Featurename" column="FEATURENAME" type="string" />
+    <property name="Featurecode" column="FEATURECODE" type="string" />
+    <property name="Featurememo" column="FEATUREMEMO" type="string" />
+    <bag name="Tbrelappfeature" inverse="true" lazy="true" cascade="delete">
+      <key column="FEATUREID" />
+      <one-to-many class="Model.Platform.Tbrelappfeature,Model" />
+    </bag>
+    <bag name="Tbrelgeoproperties" inverse="false" table="TBRELTHEMEGIS" lazy="true" cascade="delete">
+      <key column="FEATUREID" />
+      <many-to-many class="Model.Platform.Tbrelgeoproperties,Model">
+        <column name="RELID" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

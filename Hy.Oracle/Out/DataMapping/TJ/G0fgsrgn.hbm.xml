@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0fgsrgn,Model" table="G0FGSRGN" lazy="true">
+    <id name="RgnId" column="RGN_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0FGSRGN_RGN_ID</param>
+      </generator>
+    </id>
+    <property name="Hycaaa" column="HYCAAA" type="string" />
+    <property name="Hycaab" column="HYCAAB" type="string" />
+    <property name="Hycaac" column="HYCAAC" type="string" />
+    <property name="RgnRange" column="RGN_RANGE" type="Decimal" />
+    <property name="Chamdb" column="CHAMDB" type="string" />
+    <property name="Hycaae" column="HYCAAE" type="Decimal" />
+    <property name="Hycaaj" column="HYCAAJ" type="Decimal" />
+    <property name="Hycaak" column="HYCAAK" type="Decimal" />
+    <property name="Hycaal" column="HYCAAL" type="Decimal" />
+    <property name="Hycaam" column="HYCAAM" type="Decimal" />
+    <property name="Hycaan" column="HYCAAN" type="Decimal" />
+    <property name="Hycaao" column="HYCAAO" type="Decimal" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <property name="Hycaad" column="HYCAAD" type="Decimal" />
+    <property name="Hycaaf" column="HYCAAF" type="DateTime" />
+    <property name="Hycaag" column="HYCAAG" type="DateTime" />
+    <property name="Hycaah" column="HYCAAH" type="Decimal" />
+    <property name="Hycaai" column="HYCAAI" type="Decimal" />
+    <property name="Hycaap" column="HYCAAP" type="Decimal" />
+    <property name="Xmdab" column="XMDAB" type="Decimal" />
+    <property name="Xmdaca" column="XMDACA" type="Decimal" />
+    <property name="Pkiid" column="PKIID" type="Decimal" />
+    <many-to-one name="Hyotsk" column="PROJECT_ID" cascade="save-update" />
+    <property name="DeptId" column="DEPT_ID" type="Decimal" />
+    <bag name="G0fgslin" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.G0fgslin,Model" />
+    </bag>
+    <bag name="G0fgsmap" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.G0fgsmap,Model" />
+    </bag>
+    <bag name="G0ogssno" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.G0ogssno,Model" />
+    </bag>
+    <bag name="Hyogsrgnrange" inverse="true" lazy="true" cascade="delete">
+      <key column="RGN_ID" />
+      <one-to-many class="Model.TJ.Hyogsrgnrange,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

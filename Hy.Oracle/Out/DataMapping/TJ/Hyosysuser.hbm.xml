@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosysuser,Model" table="HYOSYSUSER" lazy="true">
+    <id name="UserId" column="USER_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSUSER_USER_ID</param>
+      </generator>
+    </id>
+    <property name="UserCode" column="USER_CODE" type="string" not-null="true" />
+    <property name="UserName" column="USER_NAME" type="string" />
+    <property name="Password" column="PASSWORD" type="string" />
+    <property name="Telephone" column="TELEPHONE" type="string" />
+    <property name="Email" column="EMAIL" type="string" />
+    <property name="Postcode" column="POSTCODE" type="string" />
+    <property name="Address" column="ADDRESS" type="string" />
+    <property name="CreateDate" column="CREATE_DATE" type="DateTime" />
+    <property name="IsValidate" column="IS_VALIDATE" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <many-to-one name="Metadept" column="DEPT_ID" cascade="save-update" />
+    <bag name="Hyosysgroupuser" inverse="true" lazy="true" cascade="delete">
+      <key column="USER_ID" />
+      <one-to-many class="Model.TJ.Hyosysgroupuser,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

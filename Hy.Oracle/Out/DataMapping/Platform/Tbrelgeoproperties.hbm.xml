@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbrelgeoproperties,Model" table="TBRELGEOPROPERTIES" lazy="true">
+    <id name="Relid" column="RELID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBRELGEOPROPERTIES</param>
+      </generator>
+    </id>
+    <property name="Roleid" column="ROLEID" type="Decimal" />
+    <many-to-one name="Tbthemes" column="THEMEID" cascade="save-update" />
+    <many-to-one name="Tbywmoduledic" column="FEATUREID" cascade="save-update" />
+    <property name="Rightaccess" column="RIGHTACCESS" type="Decimal" />
+    <property name="Newviewpropurl" column="NEWVIEWPROPURL" type="string" />
+    <property name="InitX" column="INIT_X" type="Decimal" />
+    <property name="InitY" column="INIT_Y" type="Decimal" />
+    <property name="InitScale" column="INIT_SCALE" type="Decimal" />
+    <bag name="Tbdicgisfeature" inverse="false" table="TBRELTHEMEGIS" lazy="true" cascade="delete">
+      <key column="RELID" />
+      <many-to-many class="Model.Platform.Tbdicgisfeature,Model">
+        <column name="FEATUREID" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

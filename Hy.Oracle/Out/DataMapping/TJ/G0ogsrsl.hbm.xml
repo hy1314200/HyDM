@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0ogsrsl,Model" table="G0OGSRSL" lazy="true">
+    <id name="RelationId" column="RELATION_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0OGSRSL_RELATION_ID</param>
+      </generator>
+    </id>
+    <many-to-one name="G0fgslin" column="LINE_ID" cascade="save-update" />
+    <many-to-one name="G0ogssno" column="VOYAGE_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

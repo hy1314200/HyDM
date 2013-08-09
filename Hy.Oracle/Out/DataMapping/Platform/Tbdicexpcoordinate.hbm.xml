@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Model.Platform.Tbdicexpcoordinate,Model" table="TBDICEXPCOORDINATE" lazy="true">
+    <id name="Expcoordinateid" column="EXPCOORDINATEID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICEXPCOORDINATE</param>
+      </generator>
+    </id>
+    <!--<property name="Expcoordinateid" column="EXPCOORDINATEID" type="decimal"/>-->
+    <property name="Expcoordinatecode" column="EXPCOORDINATECODE" type="string" />
+    <property name="Expcoordinatename" column="EXPCOORDINATENAME" type="string" />
+  </class>
+</hibernate-mapping>

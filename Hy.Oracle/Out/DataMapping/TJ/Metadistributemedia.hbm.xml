@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metadistributemedia,Model" table="METADISTRIBUTEMEDIA" lazy="true">
+    <id name="MediaId" column="MEDIA_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METADISTRIBUTEMEDIA_MEDIA_ID</param>
+      </generator>
+    </id>
+    <property name="Name" column="NAME" type="Decimal" />
+    <property name="Description" column="DESCRIPTION" type="string" />
+    <many-to-one name="Metadistribute" column="DISTRIBUTE_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

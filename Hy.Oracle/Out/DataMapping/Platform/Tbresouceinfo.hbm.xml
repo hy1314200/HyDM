@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbresouceinfo,Model" table="TBRESOUCEINFO" lazy="true">
+    <id name="Recid" column="RECID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBRESOUCEINFO</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdatacata" column="DATACAT_ID" cascade="save-update" not-null="true" />
+    <many-to-one name="Tbdicrestype" column="RECCLASSID" cascade="save-update" />
+    <many-to-one name="Tbdicwaytype" column="TRDTYPEID" cascade="save-update" />
+    <property name="RecName" column="REC_NAME" type="string" />
+    <property name="DeptName" column="DEPT_NAME" type="string" />
+    <property name="RecSize" column="REC_SIZE" type="string" />
+    <property name="CrDate" column="CR_DATE" type="DateTime" not-null="true" />
+    <property name="PubDate" column="PUB_DATE" type="DateTime" />
+    <property name="PubStatus" column="PUB_STATUS" type="Decimal" not-null="true" />
+    <property name="AreaStatus" column="AREA_STATUS" type="Decimal" not-null="true" />
+    <property name="Weburl" column="WEBURL" type="string" />
+    <property name="Memo" column="MEMO" type="string" />
+    <property name="Metaid" column="METAID" type="Decimal" />
+    <property name="IsSys" column="IS_SYS" type="Decimal" not-null="true" />
+    <property name="Crperson" column="CRPERSON" type="string" not-null="true" />
+    <property name="Picpath" column="PICPATH" type="string" />
+    <bag name="Tbrelappres" inverse="true" lazy="true" cascade="delete">
+      <key column="RECID" />
+      <one-to-many class="Model.Platform.Tbrelappres,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

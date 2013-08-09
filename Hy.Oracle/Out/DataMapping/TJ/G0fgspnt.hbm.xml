@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0fgspnt,Model" table="G0FGSPNT" lazy="true">
+    <id name="BaseId" column="BASE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0FGSPNT_BASE_ID</param>
+      </generator>
+    </id>
+    <property name="Hyccaa" column="HYCCAA" type="string" not-null="true" />
+    <property name="Hyccab" column="HYCCAB" type="string" />
+    <property name="Hyccad" column="HYCCAD" type="Decimal" not-null="true" />
+    <property name="Hyccae" column="HYCCAE" type="Decimal" />
+    <property name="Hyccaf" column="HYCCAF" type="Decimal" not-null="true" />
+    <property name="Hyccag" column="HYCCAG" type="Decimal" />
+    <property name="BaseLocation" column="BASE_LOCATION" type="Decimal" />
+    <property name="Hyccah" column="HYCCAH" type="Decimal" not-null="true" />
+    <property name="Hyccai" column="HYCCAI" type="Decimal" />
+    <property name="Hyccao" column="HYCCAO" type="Byte[]" />
+    <property name="Hyccac" column="HYCCAC" type="string" />
+    <property name="Hyccaj" column="HYCCAJ" type="string" />
+    <property name="Latitude" column="LATITUDE" type="Decimal" />
+    <property name="Hyccak" column="HYCCAK" type="DateTime" />
+    <property name="Longitude" column="LONGITUDE" type="Decimal" />
+    <property name="Hyccan" column="HYCCAN" type="string" />
+    <property name="Hyccam" column="HYCCAM" type="string" />
+    <property name="Hyccal" column="HYCCAL" type="string" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <bag name="G0ogsdat" inverse="true" lazy="true" cascade="delete">
+      <key column="BASE_ID" />
+      <one-to-many class="Model.TJ.G0ogsdat,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

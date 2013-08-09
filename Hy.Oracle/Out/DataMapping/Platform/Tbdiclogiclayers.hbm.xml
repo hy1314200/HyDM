@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdiclogiclayers,Model" table="TBDICLOGICLAYERS" lazy="true">
+    <id name="Logiclayerid" column="LOGICLAYERID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICLOGICLAYERS</param>
+      </generator>
+    </id>
+    <property name="Logiclayertypeid" column="LOGICLAYERTYPEID" type="Decimal" />
+    <property name="Logiclayername" column="LOGICLAYERNAME" type="string" />
+    <property name="Deforderid" column="DEFORDERID" type="Decimal" not-null="true" />
+    <property name="Parentllayerid" column="PARENTLLAYERID" type="Decimal" not-null="true" />
+    <property name="Llayercode" column="LLAYERCODE" type="string" />
+    <property name="Mainphylayerid" column="MAINPHYLAYERID" type="Decimal" not-null="true" />
+    <property name="Mapid" column="MAPID" type="Decimal" />
+  </class>
+</hibernate-mapping>

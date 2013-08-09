@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metacontact,Model" table="METACONTACT" lazy="true">
+    <id name="ContactId" column="CONTACT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METACONTACT_CONTACT_ID</param>
+      </generator>
+    </id>
+    <property name="Telephone" column="TELEPHONE" type="string" />
+    <property name="Fax" column="FAX" type="string" />
+    <property name="Address" column="ADDRESS" type="string" />
+    <property name="City" column="CITY" type="string" />
+    <property name="District" column="DISTRICT" type="string" />
+    <property name="Country" column="COUNTRY" type="string" />
+    <property name="Postcode" column="POSTCODE" type="string" />
+    <property name="EMail" column="E_MAIL" type="string" />
+    <property name="IpAddress" column="IP_ADDRESS" type="string" />
+    <many-to-one name="Metadept" column="DEPT_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

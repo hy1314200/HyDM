@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyomsstnfile,Model" table="HYOMSSTNFILE" lazy="true">
+    <id name="FileId" column="FILE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOMSSTNFILE_FILE_ID</param>
+      </generator>
+    </id>
+    <property name="BeginTime" column="BEGIN_TIME" type="DateTime" not-null="true" />
+    <property name="FileName" column="FILE_NAME" type="string" not-null="true" />
+    <property name="FileAddress" column="FILE_ADDRESS" type="Byte[]" />
+    <property name="TechIllustrion" column="TECH_ILLUSTRION" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="EndTime" column="END_TIME" type="DateTime" />
+    <property name="FileLength" column="FILE_LENGTH" type="Decimal" />
+    <property name="RecordMan" column="RECORD_MAN" type="string" />
+    <property name="ExamineMan" column="EXAMINE_MAN" type="string" />
+    <many-to-one name="Hyomsstnvygrel" column="REL_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

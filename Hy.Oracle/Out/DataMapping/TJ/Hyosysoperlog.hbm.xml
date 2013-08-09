@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosysoperlog,Model" table="HYOSYSOPERLOG" lazy="true">
+    <id name="LogId" column="LOG_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSOPERLOG_LOG_ID</param>
+      </generator>
+    </id>
+    <property name="OperTime" column="OPER_TIME" type="DateTime" />
+    <property name="Operuser" column="OPERUSER" type="string" />
+    <property name="UseSystem" column="USE_SYSTEM" type="string" />
+    <property name="OperObject" column="OPER_OBJECT" type="string" />
+    <property name="OperType" column="OPER_TYPE" type="string" />
+    <property name="ComputerIp" column="COMPUTER_IP" type="string" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="OprResult" column="OPR_RESULT" type="string" />
+  </class>
+</hibernate-mapping>

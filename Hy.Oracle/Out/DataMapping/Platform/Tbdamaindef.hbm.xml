@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdamaindef,Model" table="TBDAMAINDEF" lazy="true">
+    <id name="Daid" column="DAID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDAMAINDEF</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdaoutputdef" column="DSOUTID" cascade="save-update" />
+    <property name="Dacaption" column="DACAPTION" type="string" />
+    <property name="Daowner" column="DAOWNER" type="string" />
+    <property name="Dadate" column="DADATE" type="DateTime" />
+    <property name="Datype" column="DATYPE" type="string" />
+    <property name="Dastatus" column="DASTATUS" type="Decimal" />
+    <property name="Dalogmemo" column="DALOGMEMO" type="Byte[]" />
+    <property name="Dashr" column="DASHR" type="string" />
+    <property name="Dashyj" column="DASHYJ" type="string" />
+    <property name="Dashsj" column="DASHSJ" type="DateTime" />
+    <!--<property name="Orderid" column="ORDERID" type="Decimal" />-->
+    <property name="Damemo" column="DAMEMO" type="string" />
+    <bag name="Tbdainputrel" inverse="true" lazy="true" cascade="delete">
+      <key column="DAID" />
+      <one-to-many class="Model.Platform.Tbdainputrel,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

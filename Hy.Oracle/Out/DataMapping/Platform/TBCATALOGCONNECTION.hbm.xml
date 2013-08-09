@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.TBCATALOGCONNECTION,Model" table="TBCATALOGCONNECTION" lazy="true">
+    <id name="Connparamid" column="CONNPARAMID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBCATALOGCONNECTION</param>
+      </generator>
+    </id>
+    <property name="Sdeserver" column="SDESERVER" type="string" />
+    <property name="Sdeinstance" column="SDEINSTANCE" type="string" />
+    <property name="Sdeversion" column="SDEVERSION" type="string" />
+    <property name="Sdeuser" column="SDEUSER" type="string" />
+    <property name="Sdepassword" column="SDEPASSWORD" type="string" />
+    <property name="Conncname" column="CONNCNAME" type="string" />
+    <property name="Database" column="DATABASE" type="string" />
+  </class>
+</hibernate-mapping>

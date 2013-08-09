@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosystemplatefile,Model" table="HYOSYSTEMPLATEFILE" lazy="true">
+    <id name="FileId" column="FILE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSTEMPLATEFILE_FILE_ID</param>
+      </generator>
+    </id>
+    <property name="FileDesc" column="FILE_DESC" type="string" />
+    <property name="FileExtension" column="FILE_EXTENSION" type="string" />
+    <property name="NameRule" column="NAME_RULE" type="string" />
+    <many-to-one name="Hyosystemplatedir" column="DIR_ID" cascade="save-update" />
+    <bag name="Hyosystemplatefield" inverse="true" lazy="true" cascade="delete">
+      <key column="FILE_ID" />
+      <one-to-many class="Model.TJ.Hyosystemplatefield,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

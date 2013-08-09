@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Model.Platform.Tbdicdatastyle,Model" table="TBDICDATASTYLE" lazy="true">
+    <id name="Datastylecode" column="DATASTYLECODE" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDICDATASTYLE</param>
+      </generator>
+    </id>
+    <property name="Datastylename" column="DATASTYLENAME" type="string" />
+  </class>
+</hibernate-mapping>

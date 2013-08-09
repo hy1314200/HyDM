@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0fgsmap,Model" table="G0FGSMAP" lazy="true">
+    <id name="MapId" column="MAP_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0FGSMAP_MAP_ID</param>
+      </generator>
+    </id>
+    <property name="Hydhaa" column="HYDHAA" type="string" />
+    <property name="Hydhab" column="HYDHAB" type="string" />
+    <property name="Shape" column="SHAPE" type="Decimal" />
+    <property name="Hycaal" column="HYCAAL" type="Decimal" />
+    <property name="Hychac" column="HYCHAC" type="Decimal" />
+    <property name="Chamdb" column="CHAMDB" type="Decimal" />
+    <property name="Hychad" column="HYCHAD" type="Decimal" />
+    <property name="Xmaia" column="XMAIA" type="string" />
+    <property name="Hychae" column="HYCHAE" type="string" />
+    <property name="Hychaf" column="HYCHAF" type="string" />
+    <property name="Hychag" column="HYCHAG" type="string" />
+    <property name="Hychah" column="HYCHAH" type="string" />
+    <property name="Hychai" column="HYCHAI" type="string" />
+    <property name="Hychaj" column="HYCHAJ" type="string" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <many-to-one name="G0fgsrgn" column="RGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

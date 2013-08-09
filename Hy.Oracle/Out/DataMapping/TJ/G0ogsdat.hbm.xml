@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.G0ogsdat,Model" table="G0OGSDAT" lazy="true">
+    <id name="CompareId" column="COMPARE_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">G0OGSDAT_COMPARE_ID</param>
+      </generator>
+    </id>
+    <property name="Hycbai" column="HYCBAI" type="string" />
+    <property name="Hycdaa" column="HYCDAA" type="DateTime" />
+    <property name="Hycdab" column="HYCDAB" type="string" />
+    <property name="Hycdac" column="HYCDAC" type="Decimal" />
+    <property name="Hycdad" column="HYCDAD" type="Decimal" />
+    <property name="Hycdae" column="HYCDAE" type="Decimal" />
+    <property name="Hycdaf" column="HYCDAF" type="Decimal" />
+    <property name="Hycdag" column="HYCDAG" type="Decimal" />
+    <property name="Hycdah" column="HYCDAH" type="Decimal" />
+    <property name="Hycdai" column="HYCDAI" type="Decimal" />
+    <property name="Hycdaj" column="HYCDAJ" type="Decimal" />
+    <property name="Hycdal" column="HYCDAL" type="Decimal" />
+    <property name="Hycdak" column="HYCDAK" type="Decimal" />
+    <property name="Hycdam" column="HYCDAM" type="Decimal" />
+    <property name="Hycdan" column="HYCDAN" type="Decimal" />
+    <property name="Hycdao" column="HYCDAO" type="Decimal" />
+    <property name="Hycdap" column="HYCDAP" type="Decimal" />
+    <property name="Hycdar" column="HYCDAR" type="Decimal" />
+    <property name="Hycdas" column="HYCDAS" type="Decimal" />
+    <property name="Hycdaq" column="HYCDAQ" type="Decimal" />
+    <property name="Pkiiz" column="PKIIZ" type="string" />
+    <property name="Hycdav" column="HYCDAV" type="Byte[]" />
+    <many-to-one name="G0ogssno" column="VOYAGE_ID" cascade="save-update" />
+    <property name="Hycdat" column="HYCDAT" type="Decimal" />
+    <many-to-one name="G0fgspnt" column="BASE_ID" cascade="save-update" />
+    <property name="Hyccaa" column="HYCCAA" type="string" />
+    <property name="Hycdau" column="HYCDAU" type="Decimal" />
+  </class>
+</hibernate-mapping>

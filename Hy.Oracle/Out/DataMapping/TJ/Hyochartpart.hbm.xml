@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyochartpart,Model" table="HYOCHARTPART" lazy="true">
+    <id name="Chartid" column="CHARTID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOCHARTPART_CHARTID</param>
+      </generator>
+    </id>
+    <property name="ChartCaption" column="CHART_CAPTION" type="string" />
+    <property name="Minx" column="MINX" type="Decimal" />
+    <property name="Miny" column="MINY" type="Decimal" />
+    <property name="Maxx" column="MAXX" type="Decimal" />
+    <property name="Maxy" column="MAXY" type="Decimal" />
+    <many-to-one name="Hyodatadownload" column="DOWNLOAD_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

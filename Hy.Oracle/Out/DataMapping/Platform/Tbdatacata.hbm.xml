@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdatacata,Model" table="TBDATACATA" lazy="true">
+    <id name="DatacatId" column="DATACAT_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDATACATA</param>
+      </generator>
+    </id>
+    <property name="PredatacatId" column="PREDATACAT_ID" type="Decimal" not-null="true" />
+    <property name="DcCode" column="DC_CODE" type="string" />
+    <property name="DatacatEnname" column="DATACAT_ENNAME" type="string" />
+    <property name="DatacatChnname" column="DATACAT_CHNNAME" type="string" not-null="true" />
+    <property name="Creator" column="CREATOR" type="string" />
+    <property name="CrDate" column="CR_DATE" type="DateTime" not-null="true" />
+    <property name="Remark" column="REMARK" type="string" />
+    <property name="Metaid" column="METAID" type="Decimal" />
+    <property name="IsSys" column="IS_SYS" type="Decimal" />
+    <property name="Ordnum" column="ORDNUM" type="Decimal" />
+    <property name="Wsurl" column="WSURL" type="string" />
+    <property name="Picpath" column="PICPATH" type="string" />
+    <bag name="Tbresouceinfo" inverse="true" lazy="true" cascade="delete">
+      <key column="DATACAT_ID" />
+      <one-to-many class="Model.Platform.Tbresouceinfo,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

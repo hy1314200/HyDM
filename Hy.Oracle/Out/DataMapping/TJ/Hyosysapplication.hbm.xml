@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyosysapplication,Model" table="HYOSYSAPPLICATION" lazy="true">
+    <id name="AppId" column="APP_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYOSYSAPPLICATION_APP_ID</param>
+      </generator>
+    </id>
+    <property name="AppName" column="APP_NAME" type="string" not-null="true" />
+    <property name="AppDesc" column="APP_DESC" type="string" />
+    <bag name="Hyosysappauth" inverse="true" lazy="true" cascade="delete">
+      <key column="APP_ID" />
+      <one-to-many class="Model.TJ.Hyosysappauth,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

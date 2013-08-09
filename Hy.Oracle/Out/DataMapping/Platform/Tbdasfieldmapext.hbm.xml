@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.Platform.Tbdasfieldmapext,Model" table="TBDASFIELDMAPEXT" lazy="true">
+    <id name="Mapfieldid" column="MAPFIELDID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">SEQ_TBDASFIELDMAPEXT</param>
+      </generator>
+    </id>
+    <many-to-one name="Tbdastddef" column="STDID" cascade="save-update" />
+    <property name="Stdlname" column="STDLNAME" type="string" />
+    <property name="Stdfname" column="STDFNAME" type="string" />
+    <property name="Fieldexpr" column="FIELDEXPR" type="string" />
+  </class>
+</hibernate-mapping>

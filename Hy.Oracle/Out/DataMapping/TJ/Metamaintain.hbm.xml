@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metamaintain,Model" table="METAMAINTAIN" lazy="true">
+    <id name="MaintainId" column="MAINTAIN_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAMAINTAIN_MAINTAIN_ID</param>
+      </generator>
+    </id>
+    <property name="UpdateFrequence" column="UPDATE_FREQUENCE" type="Decimal" />
+    <property name="UpdateRange" column="UPDATE_RANGE" type="string" />
+    <property name="Relation" column="RELATION" type="string" />
+    <many-to-one name="Metasigninfomation" column="SIGN_ID" cascade="save-update" />
+  </class>
+</hibernate-mapping>

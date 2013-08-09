@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Hyodatadownload,Model" table="HYODATADOWNLOAD" lazy="true">
+    <id name="DownloadId" column="DOWNLOAD_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">HYODATADOWNLOAD_DOWNLOAD_ID</param>
+      </generator>
+    </id>
+    <property name="Desciption" column="DESCIPTION" type="string" />
+    <property name="DownloadUser" column="DOWNLOAD_USER" type="Decimal" />
+    <property name="ReqTime" column="REQ_TIME" type="DateTime" />
+    <property name="DownloadTime" column="DOWNLOAD_TIME" type="DateTime" />
+    <property name="DownloadPassword" column="DOWNLOAD_PASSWORD" type="string" />
+    <property name="ApprovePerson" column="APPROVE_PERSON" type="string" />
+    <property name="DrawDept" column="DRAW_DEPT" type="string" />
+    <property name="ApproveTime" column="APPROVE_TIME" type="DateTime" />
+    <property name="ApproveDescription" column="APPROVE_DESCRIPTION" type="string" />
+    <property name="Datalink" column="DATALINK" type="Decimal" />
+    <property name="Minx" column="MINX" type="Decimal" />
+    <property name="Miny" column="MINY" type="Decimal" />
+    <property name="Maxx" column="MAXX" type="Decimal" />
+    <property name="Maxy" column="MAXY" type="Decimal" />
+    <property name="Exporttype" column="EXPORTTYPE" type="Decimal" />
+    <property name="Maptitle" column="MAPTITLE" type="string" />
+    <property name="DataType" column="DATA_TYPE" type="Decimal" />
+    <property name="ReportStyle" column="REPORT_STYLE" type="Decimal" />
+    <property name="Mapscale" column="MAPSCALE" type="Decimal" />
+    <property name="RgnkindId" column="RGNKIND_ID" type="Decimal" />
+    <property name="RgnName" column="RGN_NAME" type="string" />
+    <property name="MsrName" column="MSR_NAME" type="string" />
+    <property name="DataCreator" column="DATA_CREATOR" type="string" />
+    <property name="MsrDept" column="MSR_DEPT" type="string" />
+    <property name="MsrDate" column="MSR_DATE" type="string" />
+    <property name="DataAdmin" column="DATA_ADMIN" type="string" />
+    <property name="Leader" column="LEADER" type="string" />
+    <property name="MapAnno" column="MAP_ANNO" type="string" />
+    <property name="MapLayerlist" column="MAP_LAYERLIST" type="string" />
+    <property name="MapLablelist" column="MAP_LABLELIST" type="string" />
+    <property name="CheckStatus" column="CHECK_STATUS" type="Decimal" />
+    <property name="Applyno" column="APPLYNO" type="string" />
+    <property name="Applyusercode" column="APPLYUSERCODE" type="string" />
+    <property name="Applyusername" column="APPLYUSERNAME" type="string" />
+    <property name="Applycallnumber" column="APPLYCALLNUMBER" type="string" />
+    <property name="Applyemail" column="APPLYEMAIL" type="string" />
+    <property name="Applydeptname" column="APPLYDEPTNAME" type="string" />
+    <property name="Applydatause" column="APPLYDATAUSE" type="string" />
+    <property name="Commitmatiral" column="COMMITMATIRAL" type="string" />
+    <property name="Commtittype" column="COMMTITTYPE" type="string" />
+    <property name="Datasize" column="DATASIZE" type="Decimal" />
+    <property name="Mapno" column="MAPNO" type="string" />
+    <bag name="Hyochartpart" inverse="true" lazy="true" cascade="delete">
+      <key column="DOWNLOAD_ID" />
+      <one-to-many class="Model.TJ.Hyochartpart,Model" />
+    </bag>
+    <bag name="Hyotabfields" inverse="true" lazy="true" cascade="delete">
+      <key column="DOWNLOAD_ID" />
+      <one-to-many class="Model.TJ.Hyotabfields,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

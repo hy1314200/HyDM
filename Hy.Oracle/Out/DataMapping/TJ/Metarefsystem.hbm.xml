@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Metarefsystem,Model" table="METAREFSYSTEM" lazy="true">
+    <id name="SystemId" column="SYSTEM_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">METAREFSYSTEM_SYSTEM_ID</param>
+      </generator>
+    </id>
+    <many-to-one name="Metainformation" column="META_ID" cascade="save-update" />
+    <bag name="Metacoordinateref" inverse="true" lazy="true" cascade="delete">
+      <key column="SYSTEM_ID" />
+      <one-to-many class="Model.TJ.Metacoordinateref,Model" />
+    </bag>
+    <bag name="Metageographyref" inverse="true" lazy="true" cascade="delete">
+      <key column="SYSTEM_ID" />
+      <one-to-many class="Model.TJ.Metageographyref,Model" />
+    </bag>
+    <bag name="Metaverticalref" inverse="true" lazy="true" cascade="delete">
+      <key column="SYSTEM_ID" />
+      <one-to-many class="Model.TJ.Metaverticalref,Model" />
+    </bag>
+  </class>
+</hibernate-mapping>

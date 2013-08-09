@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Model.TJ.Logdatadetail,Model" table="LOGDATADETAIL" lazy="true">
+    <id name="DetailId" column="DETAIL_ID" type="Decimal">
+      <generator class="native">
+        <param name="sequence">LOGDATADETAIL_DETAIL_ID</param>
+      </generator>
+    </id>
+    <property name="DetailDesc" column="DETAIL_DESC" type="Byte[]" />
+    <many-to-one name="Logdatacollect" column="COLLECT_ID" cascade="save-update" />
+    <property name="ImptotmpDesc" column="IMPTOTMP_DESC" type="Byte[]" />
+  </class>
+</hibernate-mapping>
