@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Thumbs.db
 *.obj
 *.exe
@@ -453,3 +454,53 @@ Esri.HuiDong/UI/FrmSearchSQL.resx
 Esri.HuiDong/UI/UCCatalog.cs
 Esri.HuiDong/UI/UCCatalog.Designer.cs
 Esri.HuiDong/UI/UCCatalog.resx
+=======
+# globs, anywhere
+*.o
+*.lo
+*.la
+
+*~
+
+# filenames, anywhere
+Makefile.in
+Makefile
+.deps
+.libs
+
+# globs, in specific dirs
+/examples/*.log
+/examples/*.bmp
+
+# specific filenames
+/.cproject
+/.project
+/INSTALL
+/aclocal.m4
+/autom4te.cache/
+/build-aux/config.guess
+/build-aux/config.sub
+/build-aux/depcomp
+/build-aux/install-sh
+/build-aux/ltmain.sh
+/build-aux/mdate-sh
+/build-aux/missing
+/build-aux/snap.update-policy
+/build-aux/texinfo.tex
+/config.cache
+/config.log
+/config.status
+/configure
+/doc/LibreDWG.info
+/doc/stamp-vti
+/doc/version.texi
+/examples/get_bmp
+/examples/load_dwg
+/examples/test
+/examples/testSVG
+/libtool
+/m4
+/src/config.h
+/src/config.h.in
+/src/stamp-h1
+>>>>>>> d0b62c9e38e500fea5ad7161a4672abb0224f1c7
