@@ -1,0 +1,66 @@
+// HyDwgConvert.idl : Hy.DwgConvert 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(HyDwgConvert.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(11212A91-CAD7-40B4-A322-9F894728C161),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDwgReader : IDispatch{
+	[id(1),helpstring("获取DWG中实体数")] HRESULT GetEntityCount([out,retval] LONG* count);
+	[propput, id(2), helpstring("设置DWG文件路径")] HRESULT FileName([in] BSTR* DwgFile);
+	[id(3),helpstring("初始化，准备读取")] HRESULT Init([out,retval]VARIANT_BOOL* succeed);
+	[id(4),helpstring("关闭")] HRESULT Close(void);
+};
+[
+	object,
+	uuid(82B362A4-7827-4439-B43C-FC9471926CF2),
+	pointer_default(unique)
+]
+interface IDwgEntity : IUnknown{
+	[propget, helpstring("几何类型（描述）")] HRESULT GeometryType([out,retval] BSTR* pVal);
+	[propput, helpstring("几何类型（描述）")] HRESULT GeometryType([in] BSTR newVal);
+	[propget, helpstring("颜色索引")] HRESULT Color([out, retval] USHORT* pVal);
+	[propput, helpstring("颜色索引")] HRESULT Color([in] USHORT newVal);
+	[propget, helpstring("实体句柄")] HRESULT Handle([out, retval] BSTR* pVal);
+	[propput, helpstring("实体句柄")] HRESULT Handle([in] BSTR newVal);
+	[propget, helpstring("获取或设置当前实体的几何图形")] HRESULT Shape([out, retval] IGeometry** pVal);
+	[propput, helpstring("获取或设置当前实体的几何图形")] HRESULT Shape([in] IGeometry* newVal);
+};
+[
+	uuid(AAA94798-1C41-4359-9770-5EF0A30BAB81),
+	version(1.0),
+	helpstring("Hy.DwgConvert 1.0")
+]
+library HyDwgConvert
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriSystem.olb");
+	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriGeometry.olb");
+	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriGeodatabase.olb");
+
+	[
+		uuid(847B149E-3CC9-4F57-BB11-AA412E66C420)		
+	]
+	coclass DwgReader
+	{
+		[default] interface IDwgReader;
+	};
+	[
+		uuid(CEE471D4-E47D-489D-A699-6C2D807B1A74)		
+	]
+	coclass DwgEntity
+	{
+		[default] interface IDwgEntity;
+	};
+};
+

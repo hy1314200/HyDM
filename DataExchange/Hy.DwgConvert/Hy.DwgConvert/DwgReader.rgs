@@ -1,0 +1,26 @@
+HKCR
+{
+	PID_DwgReader.1 = s 'DwgReader Class'
+	{
+		CLSID = s '{847B149E-3CC9-4F57-BB11-AA412E66C420}'
+	}
+	PID_DwgReader = s 'DwgReader Class'
+	{		
+		CurVer = s 'PID_DwgReader.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {847B149E-3CC9-4F57-BB11-AA412E66C420} = s 'DwgReader Class'
+		{
+			ProgID = s 'PID_DwgReader.1'
+			VersionIndependentProgID = s 'PID_DwgReader'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{AAA94798-1C41-4359-9770-5EF0A30BAB81}'
+			Version = s '1.0'
+		}
+	}
+}

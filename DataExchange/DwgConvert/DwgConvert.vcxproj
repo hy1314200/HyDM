@@ -78,7 +78,7 @@
       <RegisterOutput>true</RegisterOutput>
       <AdditionalDependencies>DD_VC6MD_Br.lib;DD_VC6MD_Alloc.lib;DD_VC6MD_Gi.lib;DD_VC6MD_AcisRenderer.lib;DD_VC6MD_AcisBuilder.lib;DD_VC6MD_ModelerGeometry.lib;DD_VC6MD_Db.lib;DD_VC6MD_Ge.lib;DD_VC6MD_Gs.lib;DD_VC6MD_Root.lib;DD_VC6MD_SpatialIndex.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../bin/$(ProjectName).dll</OutputFile>
-      <AdditionalLibraryDirectories>./DwgConvert;E:\Cresh\hydm\DataExchange\CADConvertor\DwgConvert\DwgLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>./DwgConvert;DwgLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>DD_ModelerGeometry_dll.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ModuleDefinitionFile>.\DwgConvert.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>

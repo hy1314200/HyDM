@@ -1,0 +1,25 @@
+HKCR
+{
+	PID_DwgEntity.1 = s 'DwgEntity Class'
+	{
+		CLSID = s '{CEE471D4-E47D-489D-A699-6C2D807B1A74}'
+	}
+	PID_DwgEntity = s 'DwgEntity Class'
+	{		
+		CurVer = s 'PID_DwgEntity.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {CEE471D4-E47D-489D-A699-6C2D807B1A74} = s 'DwgEntity Class'
+		{
+			ProgID = s 'PID_DwgEntity.1'
+			VersionIndependentProgID = s 'PID_DwgEntity'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{AAA94798-1C41-4359-9770-5EF0A30BAB81}'
+			Version = s '1.0'
+		}
+	}
+}

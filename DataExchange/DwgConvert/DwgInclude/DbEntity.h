@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Copyright © 2002, Open Design Alliance Inc. ("Open Design")
+// Copyright ?2002, Open Design Alliance Inc. ("Open Design")
 //
 // This software is owned by Open Design, and may only be incorporated into
 // application programs owned by members of Open Design subject to a signed
@@ -12,7 +12,7 @@
 // programs incorporating this software must include the following statement
 // with their copyright notices:
 //
-//      DWGdirect © 2002 by Open Design Alliance Inc. All rights reserved.
+//      DWGdirect ?2002 by Open Design Alliance Inc. All rights reserved.
 //
 // By use of this software, you acknowledge and accept the terms of this
 // agreement.

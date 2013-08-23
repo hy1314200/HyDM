@@ -27,9 +27,9 @@ library DwgConvertLib
 {
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
-	importlib("C:\Program Files\ArcGIS\Desktop10.0\com\esriSystem.olb");
-	importlib("C:\Program Files\ArcGIS\Desktop10.0\com\esriGeometry.olb");
-	importlib("C:\Program Files\ArcGIS\Desktop10.0\com\esriGeodatabase.olb");
+	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriSystem.olb");
+	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriGeometry.olb");
+	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriGeodatabase.olb");
 
 
 
