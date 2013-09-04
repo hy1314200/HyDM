@@ -7,33 +7,19 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+
+
 [
 	object,
-	uuid(11212A91-CAD7-40B4-A322-9F894728C161),
+	uuid(A6F0CAA6-B84E-4E72-B1E4-2763242CCCDE),
 	dual,
 	nonextensible,
 	pointer_default(unique)
 ]
-interface IDwgReader : IDispatch{
-	[id(1),helpstring("获取DWG中实体数")] HRESULT GetEntityCount([out,retval] LONG* count);
-	[propput, id(2), helpstring("设置DWG文件路径")] HRESULT FileName([in] BSTR* DwgFile);
-	[id(3),helpstring("初始化，准备读取")] HRESULT Init([out,retval]VARIANT_BOOL* succeed);
-	[id(4),helpstring("关闭")] HRESULT Close(void);
-};
-[
-	object,
-	uuid(82B362A4-7827-4439-B43C-FC9471926CF2),
-	pointer_default(unique)
-]
-interface IDwgEntity : IUnknown{
-	[propget, helpstring("几何类型（描述）")] HRESULT GeometryType([out,retval] BSTR* pVal);
-	[propput, helpstring("几何类型（描述）")] HRESULT GeometryType([in] BSTR newVal);
-	[propget, helpstring("颜色索引")] HRESULT Color([out, retval] USHORT* pVal);
-	[propput, helpstring("颜色索引")] HRESULT Color([in] USHORT newVal);
-	[propget, helpstring("实体句柄")] HRESULT Handle([out, retval] BSTR* pVal);
-	[propput, helpstring("实体句柄")] HRESULT Handle([in] BSTR newVal);
-	[propget, helpstring("获取或设置当前实体的几何图形")] HRESULT Shape([out, retval] IGeometry** pVal);
-	[propput, helpstring("获取或设置当前实体的几何图形")] HRESULT Shape([in] IGeometry* newVal);
+interface IXData : IDispatch{
+	[propget, id(1), helpstring("当前（扩展）属性名")] HRESULT CurrentName([out, retval] BSTR* pVal);
+	[propget, id(2), helpstring("当前（扩展）属性值")] HRESULT CurrentValue([out, retval] VARIANT* pVal);
+	[id(3), helpstring("下一组")] HRESULT Next([out,retval] VARIANT_BOOL* pVal);
 };
 [
 	uuid(AAA94798-1C41-4359-9770-5EF0A30BAB81),
@@ -41,12 +27,61 @@ interface IDwgEntity : IUnknown{
 	helpstring("Hy.DwgConvert 1.0")
 ]
 library HyDwgConvert
-{
+{	
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
 	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriSystem.olb");
 	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriGeometry.olb");
 	importlib("C:\Program Files (x86)\ArcGIS\Desktop10.0\com\esriGeodatabase.olb");
+
+	enum enumXDataType
+	{
+		RegApp=0
+	};
+
+	[
+		object,
+		uuid(82B362A4-7827-4439-B43C-FC9471926CF2),
+		dual,
+		nonextensible,
+		pointer_default(unique)
+	]
+	interface IDwgEntity : IDispatch{
+		[propget, helpstring("几何类型（描述）")] HRESULT GeometryType([out,retval] BSTR* pVal);
+		[propput, helpstring("几何类型（描述）")] HRESULT GeometryType([in] BSTR newVal);
+		[propget, helpstring("颜色索引")] HRESULT Color([out, retval] long* pVal);
+		[propput, helpstring("颜色索引")] HRESULT Color([in] long newVal);
+		[propget, helpstring("实体句柄")] HRESULT Handle([out, retval] BSTR* pVal);
+		[propput, helpstring("实体句柄")] HRESULT Handle([in] BSTR newVal);
+		[propget, helpstring("获取或设置当前实体的几何图形")] HRESULT Shape([out, retval] IGeometry** pVal);
+		[propput, helpstring("获取或设置当前实体的几何图形")] HRESULT Shape([in] IGeometry* newVal);
+		
+		[propget, helpstring("图层")] HRESULT Layer([out,retval] BSTR* pVal);
+		[propput, helpstring("图层")] HRESULT Layer([in] BSTR newVal);
+
+		/*[propget, helpstring("扩展属性对象")] HRESULT XData([out,retval] IXData** pVal);
+		[propput, helpstring("扩展属性对象")] HRESULT XData([in] IXData* newVal);*/
+
+		[id(6),helpstring("获取指定AppName的扩展属性(集合)")] HRESULT GetXData([in]BSTR appName,[out]VARIANT* xType, [out]VARIANT xValue[]);
+
+		//[id(7),helpstring("test")] HRESULT GetList([out] list* pList);
+	};
+	
+	[
+		object,
+		uuid(11212A91-CAD7-40B4-A322-9F894728C161),
+		dual,
+		nonextensible,
+		pointer_default(unique)
+	]
+	interface IDwgReader : IDispatch{
+		[id(1),helpstring("获取DWG中实体数")] HRESULT GetEntityCount([out,retval] LONG* count);
+		[propput, id(2), helpstring("设置DWG文件路径")] HRESULT FileName([in] BSTR* DwgFile);
+		[id(3),helpstring("初始化，准备读取")] HRESULT Init([out,retval]VARIANT_BOOL* succeed);
+		[id(4),helpstring("关闭")] HRESULT Close(void);
+		[id(5),helpstring("读取Dwg实体，成功返回IDwgEntity对象，否则返回null")] HRESULT Read([out,retval] IDwgEntity** curEntity);
+		[id(6),helpstring("返回当前Cad中RegistedAppName集合")] HRESULT GetRegAppNames([out,retval] SAFEARRAY(BSTR)* pVal);
+	};
 
 	[
 		uuid(847B149E-3CC9-4F57-BB11-AA412E66C420)		
@@ -61,6 +96,13 @@ library HyDwgConvert
 	coclass DwgEntity
 	{
 		[default] interface IDwgEntity;
+	};
+	[
+		uuid(028DDEA1-D1D9-4350-802D-DDDECFBF7D22)		
+	]
+	coclass XData
+	{
+		[default] interface IXData;
 	};
 };
 

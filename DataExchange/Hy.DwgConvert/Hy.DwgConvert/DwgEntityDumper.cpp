@@ -3,10 +3,108 @@
 #include "DwgEntityDumper.h"
 //#include "XDwgDirectReader.h"
 
+
+#define  PI  3.14159265358979323846
+const double g_dAngleParam = 180 / PI;
+
 ODRX_NO_CONS_DEFINE_MEMBERS(OdDbEntity_Dumper, OdRxObject)
 
 void OdDbEntity_Dumper::dumpCommonData(OdDbEntity* pEnt)
 {
+}
+
+double OdDbEntity_Dumper::Blend(int k, int t, int* u, double v)  // calculate the blending value
+{
+    double value;
+
+    if (t == 1)			// base case for the recursion
+    {
+        if ((u[k] <= v) && (v < u[k + 1]))
+            value = 1;
+        else
+            value = 0;
+    }
+    else
+    {
+        if ((u[k + t - 1] == u[k]) && (u[k + t] == u[k + 1]))  // check for divide by zero
+        {
+            value = 0;
+        }
+        else if (u[k + t - 1] == u[k]) // if a term's denominator is zero,use just the other
+        {
+            value = (u[k + t] - v) / (u[k + t] - u[k + 1]) * Blend(k + 1, t - 1, u, v);
+        }
+        else if (u[k + t] == u[k + 1])
+        {
+            value = (v - u[k]) / (u[k + t - 1] - u[k]) * Blend(k, t - 1, u, v);
+        }
+        else
+        {
+            value = (v - u[k]) / (u[k + t - 1] - u[k]) * Blend(k, t - 1, u, v) + (u[k + t] - v) / (u[k + t] - u[k + 1]) * Blend(k + 1, t - 1, u, v);
+        }
+    }
+    return value;
+}
+
+void OdDbEntity_Dumper::ComputeIntervals(int* u, int n, int t)   // figure out the knots
+{
+    int j;
+
+    for (j = 0; j <= n + t; j++)
+    {
+        if (j < t)
+            u[j] = 0;
+        else if ((t <= j) && (j <= n))
+            u[j] = j - t + 1;
+        else if (j > n)
+            u[j] = n - t + 2;  // if n-t=-2 then we're screwed, everything goes to 0
+
+    }
+}
+void OdDbEntity_Dumper::ComputePoint(int* u, int n, int t, double v, DwgPoint* control, DwgPoint* output)
+{
+    int k;
+    double temp;
+
+    // initialize the variables that will hold our outputted DwgPoint
+    output->x = 0;
+    output->y = 0;
+    output->z = 0;
+
+    for (k = 0; k <= n; k++)
+    {
+        temp = Blend(k, t, u, v);  // same blend is used for each dimension coordinate
+        output->x = output->x + (control[k]).x * temp;
+        output->y = output->y + (control[k]).y * temp;
+        output->z = output->z + (control[k]).z * temp;
+    }
+}
+void OdDbEntity_Dumper::Bspline(int n, int t, DwgPoint* control, DwgPoint* output, int num_output)
+{
+    int* u;
+    double increment, interval;
+    DwgPoint calcxyz;
+    int output_index;
+
+    u = new int[n + t + 1];
+    ComputeIntervals(u, n, t);
+
+    increment = (double) (n - t + 2) / (num_output - 1);  // how much parameter goes up each time
+    interval = 0;
+
+    for (output_index = 0; output_index < num_output - 1; output_index++)
+    {
+        ComputePoint(u, n, t, interval, control, &calcxyz);
+        output[output_index].x = calcxyz.x;
+        output[output_index].y = calcxyz.y;
+        output[output_index].z = calcxyz.z;
+        interval = interval + increment;  // increment our parameter
+    }
+    output[num_output - 1].x = control[n].x;   // put in the last DwgPoint
+    output[num_output - 1].y = control[n].y;
+    output[num_output - 1].z = control[n].z;
+
+    delete u;
 }
 
 // this method is called for all entities for which there
@@ -20,7 +118,6 @@ IGeometry* OdDbEntity_Dumper::dump(OdDbEntity* pEnt)
     hTmp.getIntoAsciiBuffer(buff);
     CString sztemp;
     sztemp.Format("实体未解析：  %s,%s", pEnt->isA()->name(), buff);
-    m_DwgReader->WriteLog(sztemp);
 
     return 0;
 }
@@ -42,10 +139,10 @@ public:
         pPoint->PutCoords(pDbPoint->position().x, pDbPoint->position().y);
         pShape = pPoint;
         // 添加属性
-        sztemp.Format("%f", pDbPoint->position().z);
+        /*sztemp.Format("%f", pDbPoint->position().z);
         m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPointFeatureBuffer);
         sztemp.Format("%.f", pDbPoint->thickness());
-        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPointFeatureBuffer);*/
 
         return pShape.Detach();
     }
@@ -77,17 +174,17 @@ public:
         {
             pShape = pPoint;
             sztemp.Format("%f", pos2.z);
-            m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+            //m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPointFeatureBuffer);
             sztemp.Format("%.f", pLine->thickness());
-            m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+            //m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPointFeatureBuffer);
         }
         else
         {
             pShape = pPointColl;
             sztemp.Format("%f", pos2.z);
-            m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pLineFeatureBuffer);
+            //m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pLineFeatureBuffer);
             sztemp.Format("%.f", pLine->thickness());
-            m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pLineFeatureBuffer);
+            //m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pLineFeatureBuffer);
         }
         return pShape.Detach();
     }
@@ -170,12 +267,12 @@ public:
                     pConstructArc->ConstructEndPointsAngle(pFromPoint, pToPoint, esriArcCounterClockwise, incl);
                 else
                     pConstructArc->ConstructEndPointsAngle(pFromPoint, pToPoint, esriArcClockwise, incl);
-                pSegColl->AddSegment((ISegmentPtr) pConstructArc);
+                pSegColl->AddSegment((IEsriSegmentPtr) pConstructArc);
             }
         }
 
         // 同时输出面的属性
-        sztemp.Format("%f", pPoly->elevation());
+        /*sztemp.Format("%f", pPoly->elevation());
         m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pLineFeatureBuffer);
         m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
         sztemp.Format("%.f", pPoly->thickness());
@@ -183,7 +280,7 @@ public:
         m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
         sztemp.Format("%f", pPoly->defaultStartWidth());
         m_DwgReader->AddAttributes("Width", sztemp, m_DwgReader->m_pLineFeatureBuffer);
-        m_DwgReader->AddAttributes("Width", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
+        m_DwgReader->AddAttributes("Width", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);*/
         return pShape.Detach();
     }
 };
@@ -290,9 +387,9 @@ public:
                 }
                 else
                 {
-                    // Unknown entity type
-                    sztemp.Format("PolyFaceMesh      %d", pVertex->isA()->name());
-                    m_DwgReader->WriteLog(sztemp);
+                    //// Unknown entity type
+                    //sztemp.Format("PolyFaceMesh      %d", pVertex->isA()->name());
+                    //m_DwgReader->WriteLog(sztemp);
                 }
             }
         }
@@ -367,7 +464,7 @@ public:
         //pPoint->PutCoords(pText->position().x, pText->position().y);
 
         //作为属性添加
-        if (m_DwgReader->m_IsCreateAnnotation == FALSE)
+       /* if (m_DwgReader->m_IsCreateAnnotation == FALSE)
         {
             CString tempstr;
             tempstr.Format("%s", pText->textString().c_str());
@@ -410,7 +507,7 @@ public:
 
             tempstr.Format("%s", (OdDbSymbolTableRecordPtr(pText->textStyle().safeOpenObject()))->getName());
             m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-        }
+        }*/
 
         return pShape.Detach();
     }
@@ -426,405 +523,405 @@ public:
 
         CString sztemp;
         OdDbBlockReferencePtr pBlkRef = pEnt;
-        // 代表是第一个块的头信息
-        //if (m_DwgReader->m_bn + 1 == m_DwgReader->m_lBlockNum)
-        {
-            sztemp.Format("%d", m_DwgReader->m_lBlockNum);
-            m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pPointFeatureBuffer);
-            m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pLineFeatureBuffer);
-            m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pTextFeatureBuffer);
-            m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
-            m_DwgReader->m_bn = m_DwgReader->m_lBlockNum;
-            // 得到块的层名
-            m_DwgReader->m_szBlockLayer.Format("%s", pEnt->layer().c_str());
-			//m_DwgReader->m_szBlockLayer.MakeUpper();
-            
-			// 得到块的颜色
-            if (pEnt->colorIndex() > 255 || pEnt->colorIndex() < 1)
-            {
-                OdDbLayerTableRecordPtr pLayer = pEnt->layerId().safeOpenObject();
-                m_DwgReader->m_szBlockColor.Format("%d", pLayer->colorIndex());
-            }
-            else
-                m_DwgReader->m_szBlockColor.Format("%d", pEnt->colorIndex());
-            // 得到 Linetype
-            m_DwgReader->m_szBlockLT.Format("%s", pEnt->linetype().c_str());
-            m_DwgReader->m_szBlockLT.MakeUpper();
-            // 得到块名
-            m_DwgReader->m_szblockname = (OdDbBlockTableRecordPtr(pBlkRef->blockTableRecord().safeOpenObject()))->getName();
-            //m_DwgReader->m_szblockname.MakeUpper();
-        }
+   //     // 代表是第一个块的头信息
+   //     //if (m_DwgReader->m_bn + 1 == m_DwgReader->m_lBlockNum)
+   //     {
+   //         sztemp.Format("%d", m_DwgReader->m_lBlockNum);
+   //         m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+   //         m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pLineFeatureBuffer);
+   //         m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pTextFeatureBuffer);
+   //         m_DwgReader->AddAttributes("Blocknumber", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
+   //         m_DwgReader->m_bn = m_DwgReader->m_lBlockNum;
+   //         // 得到块的层名
+   //         m_DwgReader->m_szBlockLayer.Format("%s", pEnt->layer().c_str());
+			////m_DwgReader->m_szBlockLayer.MakeUpper();
+   //         
+			//// 得到块的颜色
+   //         if (pEnt->colorIndex() > 255 || pEnt->colorIndex() < 1)
+   //         {
+   //             OdDbLayerTableRecordPtr pLayer = pEnt->layerId().safeOpenObject();
+   //             m_DwgReader->m_szBlockColor.Format("%d", pLayer->colorIndex());
+   //         }
+   //         else
+   //             m_DwgReader->m_szBlockColor.Format("%d", pEnt->colorIndex());
+   //         // 得到 Linetype
+   //         m_DwgReader->m_szBlockLT.Format("%s", pEnt->linetype().c_str());
+   //         m_DwgReader->m_szBlockLT.MakeUpper();
+   //         // 得到块名
+   //         m_DwgReader->m_szblockname = (OdDbBlockTableRecordPtr(pBlkRef->blockTableRecord().safeOpenObject()))->getName();
+   //         //m_DwgReader->m_szblockname.MakeUpper();
+   //     }
 
         bool bExplode = true;
 
-        // 块打散处理
-        if (m_DwgReader->m_IsBreakBlock)
-        {
-            if (m_DwgReader->m_unExplodeBlocks.GetCount() > 0)
-            {
-                POSITION posBlockName = NULL;
+    //    // 块打散处理
+    //   if (m_DwgReader->m_IsBreakBlock)
+    //    {
+    //        if (m_DwgReader->m_unExplodeBlocks.GetCount() > 0)
+    //        {
+    //            POSITION posBlockName = NULL;
 
-				if (m_DwgReader->m_iUnbreakBlockMode == 0)
-				{
-					posBlockName = m_DwgReader->m_unExplodeBlocks.Find(m_DwgReader->m_szblockname);
-				}
-				else if (m_DwgReader->m_iUnbreakBlockMode == 1)
-				{
-					posBlockName = m_DwgReader->m_unExplodeBlocks.Find(m_DwgReader->m_szBlockLayer);
-				}
+				//if (m_DwgReader->m_iUnbreakBlockMode == 0)
+				//{
+				//	posBlockName = m_DwgReader->m_unExplodeBlocks.Find(m_DwgReader->m_szblockname);
+				//}
+				//else if (m_DwgReader->m_iUnbreakBlockMode == 1)
+				//{
+				//	posBlockName = m_DwgReader->m_unExplodeBlocks.Find(m_DwgReader->m_szBlockLayer);
+				//}
 
-				if (posBlockName != NULL)
-                {
-                    //不打散
-                    bExplode = false;
-                }
-            }
+				//if (posBlockName != NULL)
+    //            {
+    //                //不打散
+    //                bExplode = false;
+    //            }
+    //        }
 
-            if (bExplode)
-            {
-                //打散
-                OdRxObjectPtrArray pEntSet;
-                pBlkRef->explodeGeometry(pEntSet);
-                for (unsigned i = 0; i < pEntSet.size(); ++i)
-                {
-                    m_DwgReader->CleanAllFeatureBuffers();
-                    OdSmartPtr<OdDbEntity_Dumper> pEntDumper = OdDbEntityPtr(pEntSet[i]);
-                    HRESULT hr;
-                    CString sztemp;
-                    IGeometryPtr pShape;
-                    pEntDumper->m_DwgReader = m_DwgReader;
-                    pShape = pEntDumper->dump(OdDbEntityPtr(pEntSet[i]));
+    //        if (bExplode)
+    //        {
+    //            //打散
+    //            OdRxObjectPtrArray pEntSet;
+    //            pBlkRef->explodeGeometry(pEntSet);
+    //            for (unsigned i = 0; i < pEntSet.size(); ++i)
+    //            {
+    //                m_DwgReader->CleanAllFeatureBuffers();
+    //                OdSmartPtr<OdDbEntity_Dumper> pEntDumper = OdDbEntityPtr(pEntSet[i]);
+    //                HRESULT hr;
+    //                CString sztemp;
+    //                IGeometryPtr pShape;
+    //                pEntDumper->m_DwgReader = m_DwgReader;
+    //                pShape = pEntDumper->dump(OdDbEntityPtr(pEntSet[i]));
 
-                    if (pShape != NULL)
-                    {
-                        OdRxObjectPtr pExplodedEnt = pEntSet[i];
+    //                if (pShape != NULL)
+    //                {
+    //                    OdRxObjectPtr pExplodedEnt = pEntSet[i];
 
-                        // 文本
-                        CString sEntType = OdDbEntityPtr(pEntSet[i])->isA()->name();
+    //                    // 文本
+    //                    CString sEntType = OdDbEntityPtr(pEntSet[i])->isA()->name();
 
-                        if (strcmp(sEntType, "AcDbMText") == 0 || strcmp(sEntType, "AcDbText") == 0 || strcmp(sEntType, "AcDbShape") == 0)
-                        {
-                            if (m_DwgReader->m_IsCreateAnnotation)
-                            {
-                                //插入注记
-                                m_DwgReader->InsertAnnoFeature(pExplodedEnt);
-                            }
-                            else
-                            {
-                                hr = m_DwgReader->m_pTextFeatureBuffer->putref_Shape(pShape);
-                                if(SUCCEEDED(hr))
-                                {
-                                    m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Annotation", m_DwgReader->m_pTextFeatureBuffer);
-                                    // 提取块头的信息层色
-                                    m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pTextFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pTextFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pTextFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pTextFeatureBuffer);
+    //                    if (strcmp(sEntType, "AcDbMText") == 0 || strcmp(sEntType, "AcDbText") == 0 || strcmp(sEntType, "AcDbShape") == 0)
+    //                    {
+    //                        if (m_DwgReader->m_IsCreateAnnotation)
+    //                        {
+    //                            //插入注记
+    //                            m_DwgReader->InsertAnnoFeature(pExplodedEnt);
+    //                        }
+    //                        else
+    //                        {
+    //                            hr = m_DwgReader->m_pTextFeatureBuffer->putref_Shape(pShape);
+    //                            if(SUCCEEDED(hr))
+    //                            {
+    //                                m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Annotation", m_DwgReader->m_pTextFeatureBuffer);
+    //                                // 提取块头的信息层色
+    //                                m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pTextFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pTextFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pTextFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pTextFeatureBuffer);
 
-                                    //编码对照
-                                    if (m_DwgReader->CompareCodes(m_DwgReader->m_pTextFeatureBuffer))
-                                    {
-                                        hr = m_DwgReader->m_pTextFeatureCursor->InsertFeature(m_DwgReader->m_pTextFeatureBuffer, &(m_DwgReader->m_vID));
-                                        if (FAILED(hr))
-                                        {
-                                            sztemp = "Text对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                            m_DwgReader->WriteLog(sztemp);
-                                        }
-                                    }
-                                }
-								else
-								{
-									sztemp = "Text对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-									m_DwgReader->WriteLog(sztemp);
-								}
-                            }
-                        }
-                        else
-                        {
-                            esriGeometryType shapeType;
-                            pShape->get_GeometryType(&shapeType);
-                            // 嵌套的块不保留
-                            if (shapeType == esriGeometryPoint && strcmp(OdDbEntityPtr(pEntSet[i])->isA()->name(), "AcDbBlockReference") != 0)
-                            {
-                                hr = m_DwgReader->m_pPointFeatureBuffer->putref_Shape(pShape);
-                                if(SUCCEEDED(hr))
-                                {
-                                    m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Point", m_DwgReader->m_pPointFeatureBuffer);
-                                    // 提取块头的信息层色
-                                    m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pPointFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pPointFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pPointFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPointFeatureBuffer);
+    //                                //编码对照
+    //                                if (m_DwgReader->CompareCodes(m_DwgReader->m_pTextFeatureBuffer))
+    //                                {
+    //                                    hr = m_DwgReader->m_pTextFeatureCursor->InsertFeature(m_DwgReader->m_pTextFeatureBuffer, &(m_DwgReader->m_vID));
+    //                                    if (FAILED(hr))
+    //                                    {
+    //                                        sztemp = "Text对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+    //                                        m_DwgReader->WriteLog(sztemp);
+    //                                    }
+    //                                }
+    //                            }
+				//				else
+				//				{
+				//					sztemp = "Text对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+				//					m_DwgReader->WriteLog(sztemp);
+				//				}
+    //                        }
+    //                    }
+    //                    else
+    //                    {
+    //                        esriGeometryType shapeType;
+    //                        pShape->get_GeometryType(&shapeType);
+    //                        // 嵌套的块不保留
+    //                        if (shapeType == esriGeometryPoint && strcmp(OdDbEntityPtr(pEntSet[i])->isA()->name(), "AcDbBlockReference") != 0)
+    //                        {
+    //                            hr = m_DwgReader->m_pPointFeatureBuffer->putref_Shape(pShape);
+    //                            if(SUCCEEDED(hr))
+    //                            {
+    //                                m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Point", m_DwgReader->m_pPointFeatureBuffer);
+    //                                // 提取块头的信息层色
+    //                                m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pPointFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pPointFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pPointFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPointFeatureBuffer);
 
-                                    //编码对照
-                                    if (m_DwgReader->CompareCodes(m_DwgReader->m_pPointFeatureBuffer))
-                                    {
-                                        hr = m_DwgReader->m_pPointFeatureCursor->InsertFeature(m_DwgReader->m_pPointFeatureBuffer, &(m_DwgReader->m_vID));
-                                        if (FAILED(hr))
-                                        {
-                                            sztemp = "Point对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                            m_DwgReader->WriteLog(sztemp);
-                                        }
-                                    }
-                                }
-								else
-								{
-									sztemp = "Point对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-									m_DwgReader->WriteLog(sztemp);
-								}
-                            }
-                            else if (shapeType == esriGeometryPolyline)
-                            {
-                                hr = m_DwgReader->m_pLineFeatureBuffer->putref_Shape(pShape);
-                                if(SUCCEEDED(hr))
-                                {
-                                    m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Line", m_DwgReader->m_pLineFeatureBuffer);
-                                    // 提取块头的信息层色
-                                    m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pLineFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pLineFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pLineFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pLineFeatureBuffer);
+    //                                //编码对照
+    //                                if (m_DwgReader->CompareCodes(m_DwgReader->m_pPointFeatureBuffer))
+    //                                {
+    //                                    hr = m_DwgReader->m_pPointFeatureCursor->InsertFeature(m_DwgReader->m_pPointFeatureBuffer, &(m_DwgReader->m_vID));
+    //                                    if (FAILED(hr))
+    //                                    {
+    //                                        sztemp = "Point对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+    //                                        m_DwgReader->WriteLog(sztemp);
+    //                                    }
+    //                                }
+    //                            }
+				//				else
+				//				{
+				//					sztemp = "Point对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+				//					m_DwgReader->WriteLog(sztemp);
+				//				}
+    //                        }
+    //                        else if (shapeType == esriGeometryPolyline)
+    //                        {
+    //                            hr = m_DwgReader->m_pLineFeatureBuffer->putref_Shape(pShape);
+    //                            if(SUCCEEDED(hr))
+    //                            {
+    //                                m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Line", m_DwgReader->m_pLineFeatureBuffer);
+    //                                // 提取块头的信息层色
+    //                                m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pLineFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pLineFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pLineFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pLineFeatureBuffer);
 
-                                    //编码对照
-                                    if (m_DwgReader->CompareCodes(m_DwgReader->m_pLineFeatureBuffer))
-                                    {
-                                        hr = m_DwgReader->m_pLineFeatureCursor->InsertFeature(m_DwgReader->m_pLineFeatureBuffer, &(m_DwgReader->m_vID));
-                                        if (FAILED(hr))
-                                        {
-                                            sztemp = "Line对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                            m_DwgReader->WriteLog(sztemp);
-                                        }
-                                    }
-                                }
-								else
-								{
-									sztemp = "Line对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-									m_DwgReader->WriteLog(sztemp);
-								}
+    //                                //编码对照
+    //                                if (m_DwgReader->CompareCodes(m_DwgReader->m_pLineFeatureBuffer))
+    //                                {
+    //                                    hr = m_DwgReader->m_pLineFeatureCursor->InsertFeature(m_DwgReader->m_pLineFeatureBuffer, &(m_DwgReader->m_vID));
+    //                                    if (FAILED(hr))
+    //                                    {
+    //                                        sztemp = "Line对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+    //                                        m_DwgReader->WriteLog(sztemp);
+    //                                    }
+    //                                }
+    //                            }
+				//				else
+				//				{
+				//					sztemp = "Line对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+				//					m_DwgReader->WriteLog(sztemp);
+				//				}
 
-                                // 如果闭合就再生成面
-                                VARIANT_BOOL isclosed;
-                                IPolylinePtr pPolyline(CLSID_Polyline);
-                                pPolyline = pShape;
-                                pPolyline->get_IsClosed(&isclosed);
-                                if (isclosed && m_DwgReader->m_IsLine2Polygon)
-                                {
-                                    IPolygonPtr pPolygon(CLSID_Polygon);
-                                    ((ISegmentCollectionPtr) pPolygon)->AddSegmentCollection((ISegmentCollectionPtr) pPolyline);
-                                    hr = m_DwgReader->m_pPolygonFeatureBuffer->putref_Shape((IGeometryPtr) pPolygon);
-                                    if(SUCCEEDED(hr))
-                                    {
-                                        m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Polygon", m_DwgReader->m_pPolygonFeatureBuffer);
-                                        // 提取块头的信息层色
-                                        m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pPolygonFeatureBuffer);
-                                        m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pPolygonFeatureBuffer);
-                                        m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pPolygonFeatureBuffer);
-                                        m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPolygonFeatureBuffer);
-                                        //编码对照
-                                        if (m_DwgReader->CompareCodes(m_DwgReader->m_pPolygonFeatureBuffer))
-                                        {
-                                            hr = m_DwgReader->m_pPolygonFeatureCursor->InsertFeature(m_DwgReader->m_pPolygonFeatureBuffer, &(m_DwgReader->m_vID));
-                                            if (FAILED(hr))
-                                            {
-                                                sztemp = "Polyline对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                                m_DwgReader->WriteLog(sztemp);
-                                            }
-                                        }
-                                    }
-									else
-									{
-										sztemp = "Polyline对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-										m_DwgReader->WriteLog(sztemp);
-									}
-                                }
-                            }
-                            else if ((shapeType == esriGeometryPolygon) && m_DwgReader->m_IsReadPolygon)
-                            {
-                                hr = m_DwgReader->m_pPolygonFeatureBuffer->putref_Shape(pShape);
-                                if(SUCCEEDED(hr))
-                                {
-                                    m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Polygon", m_DwgReader->m_pPolygonFeatureBuffer);
-                                    // 提取块头的信息层色
-                                    m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pPolygonFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pPolygonFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pPolygonFeatureBuffer);
-                                    m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                            // 如果闭合就再生成面
+    //                            VARIANT_BOOL isclosed;
+    //                            IPolylinePtr pPolyline(CLSID_Polyline);
+    //                            pPolyline = pShape;
+    //                            pPolyline->get_IsClosed(&isclosed);
+    //                            if (isclosed && m_DwgReader->m_IsLine2Polygon)
+    //                            {
+    //                                IPolygonPtr pPolygon(CLSID_Polygon);
+    //                                ((ISegmentCollectionPtr) pPolygon)->AddSegmentCollection((ISegmentCollectionPtr) pPolyline);
+    //                                hr = m_DwgReader->m_pPolygonFeatureBuffer->putref_Shape((IGeometryPtr) pPolygon);
+    //                                if(SUCCEEDED(hr))
+    //                                {
+    //                                    m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Polygon", m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                    // 提取块头的信息层色
+    //                                    m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                    m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                    m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                    m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                    //编码对照
+    //                                    if (m_DwgReader->CompareCodes(m_DwgReader->m_pPolygonFeatureBuffer))
+    //                                    {
+    //                                        hr = m_DwgReader->m_pPolygonFeatureCursor->InsertFeature(m_DwgReader->m_pPolygonFeatureBuffer, &(m_DwgReader->m_vID));
+    //                                        if (FAILED(hr))
+    //                                        {
+    //                                            sztemp = "Polyline对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+    //                                            m_DwgReader->WriteLog(sztemp);
+    //                                        }
+    //                                    }
+    //                                }
+				//					else
+				//					{
+				//						sztemp = "Polyline对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+				//						m_DwgReader->WriteLog(sztemp);
+				//					}
+    //                            }
+    //                        }
+    //                        else if ((shapeType == esriGeometryPolygon) && m_DwgReader->m_IsReadPolygon)
+    //                        {
+    //                            hr = m_DwgReader->m_pPolygonFeatureBuffer->putref_Shape(pShape);
+    //                            if(SUCCEEDED(hr))
+    //                            {
+    //                                m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pEntSet[i]), "Polygon", m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                // 提取块头的信息层色
+    //                                m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pPolygonFeatureBuffer);
+    //                                m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPolygonFeatureBuffer);
 
-                                    //编码对照
-                                    if (m_DwgReader->CompareCodes(m_DwgReader->m_pPolygonFeatureBuffer))
-                                    {
-                                        hr = m_DwgReader->m_pPolygonFeatureCursor->InsertFeature(m_DwgReader->m_pPolygonFeatureBuffer, &(m_DwgReader->m_vID));
-                                        if (FAILED(hr))
-                                        {
-                                            sztemp = "Polygon对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                            m_DwgReader->WriteLog(sztemp);
-                                        }
-                                    }
-                                }
-								else
-								{
-									sztemp = "Polygon对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-									m_DwgReader->WriteLog(sztemp);
-								}
-                            }
-                        }
-                        if (i % m_DwgReader->m_StepNum == 0)
-                        {
-                            if (m_DwgReader->m_pPointFeatureCursor)
-                                m_DwgReader->m_pPointFeatureCursor->Flush();
-                            if (m_DwgReader->m_pTextFeatureCursor)
-                                m_DwgReader->m_pTextFeatureCursor->Flush();
-                            if (m_DwgReader->m_pLineFeatureCursor)
-                                m_DwgReader->m_pLineFeatureCursor->Flush();
-                            if (m_DwgReader->m_pAnnoFeatureCursor)
-                                m_DwgReader->m_pAnnoFeatureCursor->Flush();
-                            if (m_DwgReader->m_pPolygonFeatureCursor)
-                                m_DwgReader->m_pPolygonFeatureCursor->Flush();
-                        }
-                    }
-                }
-                if (m_DwgReader->m_pPointFeatureCursor)
-                    m_DwgReader->m_pPointFeatureCursor->Flush();
-                if (m_DwgReader->m_pTextFeatureCursor)
-                    m_DwgReader->m_pTextFeatureCursor->Flush();
-                if (m_DwgReader->m_pLineFeatureCursor)
-                    m_DwgReader->m_pLineFeatureCursor->Flush();
-                if (m_DwgReader->m_pAnnoFeatureCursor)
-                    m_DwgReader->m_pAnnoFeatureCursor->Flush();
-                if (m_DwgReader->m_pPolygonFeatureCursor)
-                    m_DwgReader->m_pPolygonFeatureCursor->Flush();
+    //                                //编码对照
+    //                                if (m_DwgReader->CompareCodes(m_DwgReader->m_pPolygonFeatureBuffer))
+    //                                {
+    //                                    hr = m_DwgReader->m_pPolygonFeatureCursor->InsertFeature(m_DwgReader->m_pPolygonFeatureBuffer, &(m_DwgReader->m_vID));
+    //                                    if (FAILED(hr))
+    //                                    {
+    //                                        sztemp = "Polygon对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+    //                                        m_DwgReader->WriteLog(sztemp);
+    //                                    }
+    //                                }
+    //                            }
+				//				else
+				//				{
+				//					sztemp = "Polygon对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+				//					m_DwgReader->WriteLog(sztemp);
+				//				}
+    //                        }
+    //                    }
+    //                    if (i % m_DwgReader->m_StepNum == 0)
+    //                    {
+    //                        if (m_DwgReader->m_pPointFeatureCursor)
+    //                            m_DwgReader->m_pPointFeatureCursor->Flush();
+    //                        if (m_DwgReader->m_pTextFeatureCursor)
+    //                            m_DwgReader->m_pTextFeatureCursor->Flush();
+    //                        if (m_DwgReader->m_pLineFeatureCursor)
+    //                            m_DwgReader->m_pLineFeatureCursor->Flush();
+    //                        if (m_DwgReader->m_pAnnoFeatureCursor)
+    //                            m_DwgReader->m_pAnnoFeatureCursor->Flush();
+    //                        if (m_DwgReader->m_pPolygonFeatureCursor)
+    //                            m_DwgReader->m_pPolygonFeatureCursor->Flush();
+    //                    }
+    //                }
+    //            }
+    //            if (m_DwgReader->m_pPointFeatureCursor)
+    //                m_DwgReader->m_pPointFeatureCursor->Flush();
+    //            if (m_DwgReader->m_pTextFeatureCursor)
+    //                m_DwgReader->m_pTextFeatureCursor->Flush();
+    //            if (m_DwgReader->m_pLineFeatureCursor)
+    //                m_DwgReader->m_pLineFeatureCursor->Flush();
+    //            if (m_DwgReader->m_pAnnoFeatureCursor)
+    //                m_DwgReader->m_pAnnoFeatureCursor->Flush();
+    //            if (m_DwgReader->m_pPolygonFeatureCursor)
+    //                m_DwgReader->m_pPolygonFeatureCursor->Flush();
 
-            }
-        }
+    //        }
+    //    }
 
-        //////////////////////////////////////////////////////////////////////////
-        //读取块属性作为文本点或注记(新增)
-        OdDbObjectIteratorPtr pIter = pBlkRef->attributeIterator();
-        for (; !pIter->done(); pIter->step())
-        {
-            OdDbAttributePtr pAttr = pIter->entity();
-            if (!pAttr.isNull())
-            {
-                if (m_DwgReader->m_IsCreateAnnotation)
-                {
-                    //插入注记对象
-                    m_DwgReader->InsertAnnoFeature(pAttr);
-                }
-                else
-                {
-					//插入文本点对象
-                    m_DwgReader->CleanFeatureBuffer(m_DwgReader->m_pTextFeatureBuffer);
+     //   //////////////////////////////////////////////////////////////////////////
+     //   //读取块属性作为文本点或注记(新增)
+     //   OdDbObjectIteratorPtr pIter = pBlkRef->attributeIterator();
+     //   for (; !pIter->done(); pIter->step())
+     //   {
+     //       OdDbAttributePtr pAttr = pIter->entity();
+     //       if (!pAttr.isNull())
+     //       {
+     //           if (m_DwgReader->m_IsCreateAnnotation)
+     //           {
+     //               //插入注记对象
+     //               m_DwgReader->InsertAnnoFeature(pAttr);
+     //           }
+     //           else
+     //           {
+					////插入文本点对象
+     //               m_DwgReader->CleanFeatureBuffer(m_DwgReader->m_pTextFeatureBuffer);
 
-                    IGeometryPtr pShape;
-                    CString sztemp;
-                    OdDbTextPtr pText = pAttr;
-                    OdGePoint3dArray array;
-                    pText->getBoundingPoints(array);
-                    IPointPtr pPoint(CLSID_Point);
-                    pShape = pPoint;
-                    // 为左下角坐标
-                    pPoint->PutCoords(pText->position().x, pText->position().y);
+     //               IGeometryPtr pShape;
+     //               CString sztemp;
+     //               OdDbTextPtr pText = pAttr;
+     //               OdGePoint3dArray array;
+     //               pText->getBoundingPoints(array);
+     //               IPointPtr pPoint(CLSID_Point);
+     //               pShape = pPoint;
+     //               // 为左下角坐标
+     //               pPoint->PutCoords(pText->position().x, pText->position().y);
 
-                    CString tempstr;
-                    tempstr.Format("%s", pText->textString().c_str());
-                    m_DwgReader->AddAttributes("TextString", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", pText->height());
-                    m_DwgReader->AddAttributes("Height", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", pText->rotation());
-                    m_DwgReader->AddAttributes("Angle", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", pText->widthFactor());
-                    m_DwgReader->AddAttributes("WidthFactor", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", pText->oblique());
-                    m_DwgReader->AddAttributes("Oblique", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%d", pText->horizontalMode());
-                    m_DwgReader->AddAttributes("HzMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%d", pText->verticalMode());
-                    m_DwgReader->AddAttributes("VtMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%.f", pText->thickness());
-                    m_DwgReader->AddAttributes("Thickness", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               CString tempstr;
+     //               tempstr.Format("%s", pText->textString().c_str());
+     //               m_DwgReader->AddAttributes("TextString", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", pText->height());
+     //               m_DwgReader->AddAttributes("Height", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", pText->rotation());
+     //               m_DwgReader->AddAttributes("Angle", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", pText->widthFactor());
+     //               m_DwgReader->AddAttributes("WidthFactor", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", pText->oblique());
+     //               m_DwgReader->AddAttributes("Oblique", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%d", pText->horizontalMode());
+     //               m_DwgReader->AddAttributes("HzMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%d", pText->verticalMode());
+     //               m_DwgReader->AddAttributes("VtMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%.f", pText->thickness());
+     //               m_DwgReader->AddAttributes("Thickness", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-                    tempstr.Format("%f", pText->alignmentPoint().x);
-                    m_DwgReader->AddAttributes("AlignPtX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", pText->alignmentPoint().y);
-                    m_DwgReader->AddAttributes("AlignPtY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", ((OdGePoint3d) array[2]).x);
-                    m_DwgReader->AddAttributes("PtMinX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", ((OdGePoint3d) array[2]).y);
-                    m_DwgReader->AddAttributes("PtMinY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", ((OdGePoint3d) array[1]).x);
-                    m_DwgReader->AddAttributes("PtMaxX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-                    tempstr.Format("%f", ((OdGePoint3d) array[1]).y);
-                    m_DwgReader->AddAttributes("PtMaxY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", pText->alignmentPoint().x);
+     //               m_DwgReader->AddAttributes("AlignPtX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", pText->alignmentPoint().y);
+     //               m_DwgReader->AddAttributes("AlignPtY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", ((OdGePoint3d) array[2]).x);
+     //               m_DwgReader->AddAttributes("PtMinX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", ((OdGePoint3d) array[2]).y);
+     //               m_DwgReader->AddAttributes("PtMinY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", ((OdGePoint3d) array[1]).x);
+     //               m_DwgReader->AddAttributes("PtMaxX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%f", ((OdGePoint3d) array[1]).y);
+     //               m_DwgReader->AddAttributes("PtMaxY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-                    OdGiTextStyle style;
-                    giFromDbTextStyle(pText->textStyle(), style);
-                    tempstr.Format("%s", style.ttfdecriptor().fileName().c_str());
-                    m_DwgReader->AddAttributes("ShapeFilename", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               OdGiTextStyle style;
+     //               giFromDbTextStyle(pText->textStyle(), style);
+     //               tempstr.Format("%s", style.ttfdecriptor().fileName().c_str());
+     //               m_DwgReader->AddAttributes("ShapeFilename", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-                    tempstr.Format("%s", style.bigFontFileName().c_str());
-                    m_DwgReader->AddAttributes("BigFontname", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%s", style.bigFontFileName().c_str());
+     //               m_DwgReader->AddAttributes("BigFontname", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-                    tempstr.Format("%s", (OdDbSymbolTableRecordPtr(pText->textStyle().safeOpenObject()))->getName());
-                    m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+     //               tempstr.Format("%s", (OdDbSymbolTableRecordPtr(pText->textStyle().safeOpenObject()))->getName());
+     //               m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-                    HRESULT hr = m_DwgReader->m_pTextFeatureBuffer->putref_Shape(pShape);
-                    if(SUCCEEDED(hr))
-                    {
-                        m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pAttr), "Annotation", m_DwgReader->m_pTextFeatureBuffer);
-                        // 提取块头的信息层色
-                        m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pTextFeatureBuffer);
-                        m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pTextFeatureBuffer);
-                        m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pTextFeatureBuffer);
-                        m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pTextFeatureBuffer);
+     //               HRESULT hr = m_DwgReader->m_pTextFeatureBuffer->putref_Shape(pShape);
+     //               if(SUCCEEDED(hr))
+     //               {
+     //                   m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pAttr), "Annotation", m_DwgReader->m_pTextFeatureBuffer);
+     //                   // 提取块头的信息层色
+     //                   m_DwgReader->AddAttributes("Layer", m_DwgReader->m_szBlockLayer, m_DwgReader->m_pTextFeatureBuffer);
+     //                   m_DwgReader->AddAttributes("Color", m_DwgReader->m_szBlockColor, m_DwgReader->m_pTextFeatureBuffer);
+     //                   m_DwgReader->AddAttributes("Linetype", m_DwgReader->m_szBlockLT, m_DwgReader->m_pTextFeatureBuffer);
+     //                   m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pTextFeatureBuffer);
 
-                        //编码对照
-                        if (m_DwgReader->CompareCodes(m_DwgReader->m_pTextFeatureBuffer))
-                        {
-                            hr = m_DwgReader->m_pTextFeatureCursor->InsertFeature(m_DwgReader->m_pTextFeatureBuffer, &(m_DwgReader->m_vID));
-                            if (FAILED(hr))
-                            {
-                                sztemp = "Text对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                m_DwgReader->WriteLog(sztemp);
-                            }
-                        }
-                    }
-					else
-					{
-						sztemp = "Text对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-						m_DwgReader->WriteLog(sztemp);
-					}
-                }
-            }
-        }
+     //                   //编码对照
+     //                   if (m_DwgReader->CompareCodes(m_DwgReader->m_pTextFeatureBuffer))
+     //                   {
+     //                       hr = m_DwgReader->m_pTextFeatureCursor->InsertFeature(m_DwgReader->m_pTextFeatureBuffer, &(m_DwgReader->m_vID));
+     //                       if (FAILED(hr))
+     //                       {
+     //                           sztemp = "Text对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+     //                           m_DwgReader->WriteLog(sztemp);
+     //                       }
+     //                   }
+     //               }
+					//else
+					//{
+					//	sztemp = "Text对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+					//	m_DwgReader->WriteLog(sztemp);
+					//}
+     //           }
+     //       }
+     //   }
 
 
-        // 生成点
+  //      // 生成点
 
-		//清空原有buffer中的数据
-		m_DwgReader->CleanAllFeatureBuffers();
+		////清空原有buffer中的数据
+		//m_DwgReader->CleanAllFeatureBuffers();
 
-		//块名
+		////块名
         OdDbBlockReferencePtr pBlkRef_h = pEnt;
-        m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPointFeatureBuffer);
+  //      m_DwgReader->AddAttributes("Blockname", m_DwgReader->m_szblockname, m_DwgReader->m_pPointFeatureBuffer);
 
         IPointPtr pPoint(CLSID_Point);
         IGeometryPtr pGeometry;
         pPoint->PutCoords(pBlkRef_h->position().x, pBlkRef_h->position().y);
         pGeometry = pPoint;
-        
-        // 目前只是设定了x方向的比例，其他方向相同。
-        sztemp.Format("%f", pBlkRef_h->scaleFactors().sx);
-        m_DwgReader->AddAttributes("Scale", sztemp, m_DwgReader->m_pPointFeatureBuffer);
-        sztemp.Format("%f", pBlkRef_h->rotation());
-        m_DwgReader->AddAttributes("Angle", sztemp, m_DwgReader->m_pPointFeatureBuffer);
-        sztemp.Format("%f", pBlkRef_h->position().z);
-        m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+  //      
+  //      // 目前只是设定了x方向的比例，其他方向相同。
+  //      sztemp.Format("%f", pBlkRef_h->scaleFactors().sx);
+  //      m_DwgReader->AddAttributes("Scale", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+  //      sztemp.Format("%f", pBlkRef_h->rotation());
+  //      m_DwgReader->AddAttributes("Angle", sztemp, m_DwgReader->m_pPointFeatureBuffer);
+  //      sztemp.Format("%f", pBlkRef_h->position().z);
+  //      m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPointFeatureBuffer);
 
-        //如果打散块则根据选项是否写入块所在的点
-        if (m_DwgReader->m_IsBreakBlock && bExplode && (!m_DwgReader->m_IsReadBlockPoint))
-        {
-            return NULL;
-        }
+  //      //如果打散块则根据选项是否写入块所在的点
+  //      if (m_DwgReader->m_IsBreakBlock && bExplode && (!m_DwgReader->m_IsReadBlockPoint))
+  //      {
+  //          return NULL;
+  //      }
 
         return pGeometry.Detach();
     }
@@ -849,7 +946,7 @@ public:
             {
                 OdGePoint3d pos = pAttr->position();
                 sztemp.Format("阵列实体： %s,%f,%f", pAttr->isA()->name(), pos.x, pos.y);
-                m_DwgReader->WriteLog(sztemp);
+                /*m_DwgReader->WriteLog(sztemp);*/
             }
         }
         return 0;
@@ -901,7 +998,7 @@ public:
                 // 15倍是考虑加密的点数，可以根据恢复的样子再增减
                 resolution = n * 15;
                 out_pts = new DwgPoint[resolution];
-                m_DwgReader->Bspline(n, t, pts, out_pts, resolution);
+                Bspline(n, t, pts, out_pts, resolution);
                 for (int i = 0; i < resolution; i++)
                 {
                     pPoint->PutCoords(out_pts[i].x, out_pts[i].y);
@@ -961,7 +1058,7 @@ public:
         if (CentralAngle < 0)
             CentralAngle = 2 * PI + CentralAngle;
         hr = pElpArc->PutCoordsByAngle(VARIANT_TRUE, pPoint, startangle, CentralAngle, rotationAng, semiMajor, minorMajorRatio);
-        pSegColl->AddSegment((ISegmentPtr) pElpArc);
+        pSegColl->AddSegment((IEsriSegmentPtr) pElpArc);
         pShape = pSegColl;
         return pShape.Detach();
     }
@@ -1043,7 +1140,7 @@ public:
     IGeometry* dump(OdDbEntity* pEnt)
     {
         dumpCommonData(pEnt);
-        CString sztemp;
+        /*CString sztemp;
         OdDbTracePtr pTrace = pEnt;
         OdGePoint3d pt;
         pTrace->getPointAt(0, pt);
@@ -1057,7 +1154,7 @@ public:
         m_DwgReader->WriteLog(sztemp);
         pTrace->getPointAt(3, pt);
         sztemp.Format("Trace实体未解析:  Point 3:%f,%f,%f", pt.x, pt.y, pt.z);
-        m_DwgReader->WriteLog(sztemp);
+        m_DwgReader->WriteLog(sztemp);*/
         return 0;
     }
 };
@@ -1074,7 +1171,7 @@ public:
         dumpCommonData(pEnt);
         CString sztemp;
         pSolid = pEnt;
-        m_DwgReader->WriteLog("3D Solid实体未解析");
+        /*m_DwgReader->WriteLog("3D Solid实体未解析");*/
         return 0;
     }
 };
@@ -1094,7 +1191,7 @@ public:
         if (pProxy->originalClassName() == "AcAdPart" && odGetSatFromProxy(pProxy, satString))
         {
             sztemp.Format("实体未解析:代理实体文件名:%s", satString.c_str());
-            m_DwgReader->WriteLog(sztemp);
+            //m_DwgReader->WriteLog(sztemp);
         }
         return 0;
     }
@@ -1189,7 +1286,7 @@ public:
 
             IPolylinePtr pPolyL_AC(CLSID_Polyline);
             ISegmentCollectionPtr pPolyLSeg_AC = pPolyL_AC;
-            pPolyLSeg_AC->AddSegment((ISegmentPtr)pLineAC);
+            pPolyLSeg_AC->AddSegment((IEsriSegmentPtr)pLineAC);
 
             AddArrow(pEnt, pPolyLSeg_AC);
             //////////////////////////////////////////////////////////////////////////
@@ -1210,7 +1307,7 @@ public:
             pLineAD->PutCoords(ptA, ptD);
             IPolylinePtr pPolyL_AD(CLSID_Polyline);
             ISegmentCollectionPtr pPolyLSeg_AD = pPolyL_AD;
-            pPolyLSeg_AD->AddSegment((ISegmentPtr)pLineAD);
+            pPolyLSeg_AD->AddSegment((IEsriSegmentPtr)pLineAD);
 
             AddArrow(pEnt, pPolyLSeg_AD);
 
@@ -1225,7 +1322,7 @@ public:
 
         CString sInfoText;
         IFeatureBuffer* pFeatBuffer;
-        m_DwgReader->m_pFeatClassLine->CreateFeatureBuffer(&pFeatBuffer);
+        //m_DwgReader->m_pFeatClassLine->CreateFeatureBuffer(&pFeatBuffer);
 
 
 
@@ -1233,13 +1330,13 @@ public:
         if (FAILED(hr))
         {
 
-            sInfoText = "Line对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+           /* sInfoText = "Line对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
             m_DwgReader->WriteLog(sInfoText);
-            m_DwgReader->m_lUnReadEntityNum++;
+            m_DwgReader->m_lUnReadEntityNum++;*/
         }
         else
         {
-            m_DwgReader->AddBaseAttributes(pEnt, "Line", pFeatBuffer);
+            //m_DwgReader->AddBaseAttributes(pEnt, "Line", pFeatBuffer);
 
             CString sDwgLayer;
             sDwgLayer.Format("%s", pEnt->layer().c_str());
@@ -1247,7 +1344,7 @@ public:
 
             //m_DwgReader->RenameEntityLayerName(sDwgLayer, pFeatBuffer);
 
-            if (m_DwgReader->CompareCodes(pFeatBuffer))
+            /*if (m_DwgReader->CompareCodes(pFeatBuffer))
             {
                 VARIANT OID;
                 hr = m_DwgReader->m_pLineFeatureCursor->InsertFeature(pFeatBuffer, &OID);
@@ -1257,7 +1354,7 @@ public:
                     m_DwgReader->WriteLog(sInfoText);
                     m_DwgReader->m_lUnReadEntityNum++;
                 }
-            }
+            }*/
         }
     }
 
@@ -1313,7 +1410,7 @@ public:
                         pCircularArc->PutCoords(pCtlPoint, pFromPoint, pToPoint, esriArcCounterClockwise);
                     else
                         pCircularArc->PutCoords(pCtlPoint, pFromPoint, pToPoint, esriArcClockwise);
-                    pSegColl->AddSegment((ISegmentPtr) pCircularArc);
+                    pSegColl->AddSegment((IEsriSegmentPtr) pCircularArc);
                 }
             }
         }
@@ -1326,7 +1423,7 @@ public:
         CalcLineArrow(pEnt, pSegColl);
 
         // 同时输出面的属性
-        sztemp.Format("%f", pPoly->elevation());
+       /* sztemp.Format("%f", pPoly->elevation());
         m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pLineFeatureBuffer);
         m_DwgReader->AddAttributes("Elevation", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
         sztemp.Format("%.f", pPoly->thickness());
@@ -1334,7 +1431,7 @@ public:
         m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
         sztemp.Format("%f", width);
         m_DwgReader->AddAttributes("Width", sztemp, m_DwgReader->m_pLineFeatureBuffer);
-        m_DwgReader->AddAttributes("Width", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
+        m_DwgReader->AddAttributes("Width", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);*/
         return pShape.Detach();
     }
 };
@@ -1406,7 +1503,7 @@ private:
                     pConstructArc->ConstructEndPointsAngle(pFromPoint, pToPoint, esriArcCounterClockwise, incl);
                 else
                     pConstructArc->ConstructEndPointsAngle(pFromPoint, pToPoint, esriArcClockwise, incl);
-                pSegColl->AddSegment((ISegmentPtr) pConstructArc);
+                pSegColl->AddSegment((IEsriSegmentPtr) pConstructArc);
             }
         }
         return pRing;
@@ -1464,8 +1561,8 @@ private:
         }
         if (FAILED(hr))
         {
-            sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
-            m_DwgReader->WriteLog(sztemp);
+            /*sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
+            m_DwgReader->WriteLog(sztemp);*/
         }
         return pElpArc;
     }
@@ -1538,7 +1635,7 @@ private:
                 n = ctrlPts.size() - 1;
                 resolution = n * 15;
                 out_pts = new DwgPoint[resolution];
-                m_DwgReader->Bspline(n, t, pts, out_pts, resolution);
+                Bspline(n, t, pts, out_pts, resolution);
                 for (int i = 0; i < resolution; i++)
                 {
                     pPoint->PutCoords(out_pts[i].x, out_pts[i].y);
@@ -1564,7 +1661,7 @@ private:
         pSegColl = pRing;
         for (EdgeArray::const_iterator edge = edges.begin(); edge != edges.end(); ++edge)
         {
-            ISegmentPtr pSeg;
+            IEsriSegmentPtr pSeg;
             OdGeCurve2d* pEdge = *edge;
             switch (pEdge->type())
             {
@@ -1597,8 +1694,8 @@ private:
                 hr = pSegColl->AddSegmentCollection(ISegmentCollectionPtr(pGeometry));
                 if (FAILED(hr))
                 {
-                    sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
-                    m_DwgReader->WriteLog(sztemp);
+                   /* sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
+                    m_DwgReader->WriteLog(sztemp);*/
                 }
                 break;
             }
@@ -1667,8 +1764,8 @@ public:
                 hr = ipGeometryCollection->AddGeometry(IGeometryPtr(dumpPolylineType(i, pHatch)));
                 if (FAILED(hr))
                 {
-                    sztemp = "hatch.Polyline要素读取失败" + m_DwgReader->CatchErrorInfo();
-                    m_DwgReader->WriteLog(sztemp);
+                   /* sztemp = "hatch.Polyline要素读取失败" + m_DwgReader->CatchErrorInfo();
+                    m_DwgReader->WriteLog(sztemp);*/
                 }
             }
             else
@@ -1676,8 +1773,8 @@ public:
                 hr = ipGeometryCollection->AddGeometry(IGeometryPtr(dumpEdgesType(i, pHatch)));
                 if (FAILED(hr))
                 {
-                    sztemp = "hatch.edges要素读取失败" + m_DwgReader->CatchErrorInfo();
-                    m_DwgReader->WriteLog(sztemp);
+                   /* sztemp = "hatch.edges要素读取失败" + m_DwgReader->CatchErrorInfo();
+                    m_DwgReader->WriteLog(sztemp);*/
                 }
             }
         }
@@ -1710,12 +1807,12 @@ public:
         double CentralAngle;
         CentralAngle = end - start;
         pCircularArc->PutCoordsByAngle(pPoint, start, CentralAngle, pArc->radius());
-        pSegColl->AddSegment((ISegmentPtr) pCircularArc);
+        pSegColl->AddSegment((IEsriSegmentPtr) pCircularArc);
         pShape = pSegColl;
 
         sztemp.Format("%.f", pArc->thickness());
-        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pLineFeatureBuffer);
-        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
+        /*m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pLineFeatureBuffer);
+        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);*/
         return pShape.Detach();
     }
 };
@@ -1737,11 +1834,11 @@ public:
         IConstructCircularArcPtr pCircle(CLSID_CircularArc);
         pPoint->PutCoords(pDbCircle->center().x, pDbCircle->center().y);
         pCircle->ConstructCircle(pPoint, pDbCircle->radius(), VARIANT_FALSE);
-        pSegColl->AddSegment((ISegmentPtr) pCircle);
+        pSegColl->AddSegment((IEsriSegmentPtr) pCircle);
         pShape = pSegColl;
-        sztemp.Format("%.f", pDbCircle->thickness());
+        /*sztemp.Format("%.f", pDbCircle->thickness());
         m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pLineFeatureBuffer);
-        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);
+        m_DwgReader->AddAttributes("Thickness", sztemp, m_DwgReader->m_pPolygonFeatureBuffer);*/
         return pShape.Detach();
     }
 };
@@ -1772,23 +1869,23 @@ public:
         {
             OdSmartPtr<OdDbEntity_Dumper> pEntDumper = OdDbEntityPtr(pEntSet[i]);
             IGeometryPtr pShape;
-            pEntDumper->m_DwgReader = m_DwgReader;
+            //pEntDumper->m_DwgReader = m_DwgReader;
             pShape = pEntDumper->dump(OdDbEntityPtr(pEntSet[i]));
             if (pShape)
             {
-                hr = m_DwgReader->m_pLineFeatureBuffer->putref_Shape(pShape);
-                if (FAILED(hr))
+                //hr = m_DwgReader->m_pLineFeatureBuffer->putref_Shape(pShape);
+               /* if (FAILED(hr))
                 {
                     sztemp = "Line读取失败" + m_DwgReader->CatchErrorInfo();
                     m_DwgReader->WriteLog(sztemp);
-                }
-                m_DwgReader->AddBaseAttributes(pEnt, "Line", m_DwgReader->m_pLineFeatureBuffer);
+                }*/
+                //m_DwgReader->AddBaseAttributes(pEnt, "Line", m_DwgReader->m_pLineFeatureBuffer);
 
-                //编码对照
-                if (m_DwgReader->CompareCodes(m_DwgReader->m_pLineFeatureBuffer))
-                {
-                    m_DwgReader->m_pLineFeatureCursor->InsertFeature(m_DwgReader->m_pLineFeatureBuffer, &(m_DwgReader->m_vID));
-                }
+                ////编码对照
+                //if (m_DwgReader->CompareCodes(m_DwgReader->m_pLineFeatureBuffer))
+                //{
+                //    m_DwgReader->m_pLineFeatureCursor->InsertFeature(m_DwgReader->m_pLineFeatureBuffer, &(m_DwgReader->m_vID));
+                //}
 
                 ipGeometryCollection->AddGeometry(pShape, NULL, NULL);
             }
@@ -1827,61 +1924,61 @@ public:
         sztemp.Format("      %f,%f", pMText->location().x, pMText->location().y);
         pPoint->PutCoords(pMText->location().x, pMText->location().y);
 
-        //作为属性添加
-        if (m_DwgReader->m_IsCreateAnnotation == FALSE)
-        {
-            CString tempstr;
-            tempstr.Format("%s", pMText->contents().c_str());
-            // 先去掉Mtext前面的类型
-            // 如：{\f方正细等线简体|b0|i0|c134|p2;新疆维吾尔自治区}
-            {
-                int index;
-                index = tempstr.Find(';');
-                int ilength = tempstr.GetLength();
-                tempstr = tempstr.Right(ilength - 1 - index);
-                index = tempstr.ReverseFind('}');
-                if (index != -1)
-                    tempstr = tempstr.Left(index);
-            }
-            m_DwgReader->AddAttributes("TextString", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pMText->textHeight());
-            m_DwgReader->AddAttributes("Height", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pMText->rotation());
-            m_DwgReader->AddAttributes("Angle", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pMText->width() / pMText->textHeight());
-            m_DwgReader->AddAttributes("WidthFactor", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", "0");
-            m_DwgReader->AddAttributes("Oblique", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%d", pMText->horizontalMode());
-            m_DwgReader->AddAttributes("HzMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%d", pMText->verticalMode());
-            m_DwgReader->AddAttributes("VtMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        ////作为属性添加
+        //if (m_DwgReader->m_IsCreateAnnotation == FALSE)
+        //{
+        //    CString tempstr;
+        //    tempstr.Format("%s", pMText->contents().c_str());
+        //    // 先去掉Mtext前面的类型
+        //    // 如：{\f方正细等线简体|b0|i0|c134|p2;新疆维吾尔自治区}
+        //    {
+        //        int index;
+        //        index = tempstr.Find(';');
+        //        int ilength = tempstr.GetLength();
+        //        tempstr = tempstr.Right(ilength - 1 - index);
+        //        index = tempstr.ReverseFind('}');
+        //        if (index != -1)
+        //            tempstr = tempstr.Left(index);
+        //    }
+        //    m_DwgReader->AddAttributes("TextString", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pMText->textHeight());
+        //    m_DwgReader->AddAttributes("Height", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pMText->rotation());
+        //    m_DwgReader->AddAttributes("Angle", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pMText->width() / pMText->textHeight());
+        //    m_DwgReader->AddAttributes("WidthFactor", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", "0");
+        //    m_DwgReader->AddAttributes("Oblique", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%d", pMText->horizontalMode());
+        //    m_DwgReader->AddAttributes("HzMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%d", pMText->verticalMode());
+        //    m_DwgReader->AddAttributes("VtMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%f", pMText->location().x);
-            m_DwgReader->AddAttributes("AlignPtX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pMText->location().y);
-            m_DwgReader->AddAttributes("AlignPtY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pMText->location().x);
+        //    m_DwgReader->AddAttributes("AlignPtX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pMText->location().y);
+        //    m_DwgReader->AddAttributes("AlignPtY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%f", ((OdGePoint3d) array[2]).x);
-            m_DwgReader->AddAttributes("PtMinX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", ((OdGePoint3d) array[2]).y);
-            m_DwgReader->AddAttributes("PtMinY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", ((OdGePoint3d) array[1]).x);
-            m_DwgReader->AddAttributes("PtMaxX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", ((OdGePoint3d) array[1]).y);
-            m_DwgReader->AddAttributes("PtMaxY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", ((OdGePoint3d) array[2]).x);
+        //    m_DwgReader->AddAttributes("PtMinX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", ((OdGePoint3d) array[2]).y);
+        //    m_DwgReader->AddAttributes("PtMinY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", ((OdGePoint3d) array[1]).x);
+        //    m_DwgReader->AddAttributes("PtMaxX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", ((OdGePoint3d) array[1]).y);
+        //    m_DwgReader->AddAttributes("PtMaxY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            OdGiTextStyle style;
-            giFromDbTextStyle(pMText->textStyle(), style);
-            tempstr.Format("%s", style.ttfdecriptor().fileName().c_str());
-            m_DwgReader->AddAttributes("ShapeFilename", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    OdGiTextStyle style;
+        //    giFromDbTextStyle(pMText->textStyle(), style);
+        //    tempstr.Format("%s", style.ttfdecriptor().fileName().c_str());
+        //    m_DwgReader->AddAttributes("ShapeFilename", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%s", style.bigFontFileName().c_str());
-            m_DwgReader->AddAttributes("BigFontname", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%s", style.bigFontFileName().c_str());
+        //    m_DwgReader->AddAttributes("BigFontname", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%s", (OdDbSymbolTableRecordPtr(pMText->textStyle().safeOpenObject()))->getName());
-            m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-        }
+        //    tempstr.Format("%s", (OdDbSymbolTableRecordPtr(pMText->textStyle().safeOpenObject()))->getName());
+        //    m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //}
         return pShape.Detach();
     }
 };
@@ -1939,8 +2036,8 @@ public:
                 hr = ipGeometryCollection->AddGeometry(pShape, NULL, NULL);
                 if (FAILED(hr))
                 {
-                    sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
-                    m_DwgReader->WriteLog(sztemp);
+                   /* sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
+                    m_DwgReader->WriteLog(sztemp);*/
                 }
             }
         }
@@ -1965,8 +2062,8 @@ public:
                 hr = ipGeometryCollection->AddGeometry(pShape, NULL, NULL);
                 if (FAILED(hr))
                 {
-                    sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
-                    m_DwgReader->WriteLog(sztemp);
+                  /*  sztemp = "要素读取失败" + m_DwgReader->CatchErrorInfo();
+                    m_DwgReader->WriteLog(sztemp);*/
                 }
             }
         }
@@ -2023,11 +2120,11 @@ public:
         CString sztemp;
         int type = pOle->getType();
 
-        OdString str = pOle->getUserType();
-        m_DwgReader->WriteLog("===== 插入外部控件实体：OLE2FRAME entity data =====");
+        //OdString str = pOle->getUserType();
+        //m_DwgReader->WriteLog("===== 插入外部控件实体：OLE2FRAME entity data =====");
 
-        sztemp.Format("      type = %s user type string", str.c_str());
-        m_DwgReader->WriteLog("===== OLE2FRAME entity data =====");
+        //sztemp.Format("      type = %s user type string", str.c_str());
+        //m_DwgReader->WriteLog("===== OLE2FRAME entity data =====");
         return 0;
     }
 };
@@ -2048,51 +2145,51 @@ public:
         pShape = pPoint;
 
         //放在文本层，作为属性添加
-        if (m_DwgReader->m_IsCreateAnnotation == FALSE)
-        {
-            CString tempstr;
-            // shapenumber为字的内容，需要根据字形库做对照表替换
-            tempstr.Format("%d", pDbShape->shapeNumber());
-            m_DwgReader->AddAttributes("TextString", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->size());
-            m_DwgReader->AddAttributes("Height", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->rotation());
-            m_DwgReader->AddAttributes("Angle", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->widthFactor());
-            m_DwgReader->AddAttributes("WidthFactor", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->oblique());
-            m_DwgReader->AddAttributes("Oblique", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%s", "1");
-            m_DwgReader->AddAttributes("HzMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%s", "0");
-            m_DwgReader->AddAttributes("VtMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%.f", pDbShape->thickness());
-            m_DwgReader->AddAttributes("Thickness", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //if (m_DwgReader->m_IsCreateAnnotation == FALSE)
+        //{
+        //    CString tempstr;
+        //    // shapenumber为字的内容，需要根据字形库做对照表替换
+        //    tempstr.Format("%d", pDbShape->shapeNumber());
+        //    m_DwgReader->AddAttributes("TextString", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->size());
+        //    m_DwgReader->AddAttributes("Height", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->rotation());
+        //    m_DwgReader->AddAttributes("Angle", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->widthFactor());
+        //    m_DwgReader->AddAttributes("WidthFactor", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->oblique());
+        //    m_DwgReader->AddAttributes("Oblique", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%s", "1");
+        //    m_DwgReader->AddAttributes("HzMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%s", "0");
+        //    m_DwgReader->AddAttributes("VtMode", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%.f", pDbShape->thickness());
+        //    m_DwgReader->AddAttributes("Thickness", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%f", pDbShape->position().x);
-            m_DwgReader->AddAttributes("AlignPtX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->position().y);
-            m_DwgReader->AddAttributes("AlignPtY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->position().x);
-            m_DwgReader->AddAttributes("PtMinX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->position().y);
-            m_DwgReader->AddAttributes("PtMinY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->position().x);
-            m_DwgReader->AddAttributes("PtMaxX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-            tempstr.Format("%f", pDbShape->position().y);
-            m_DwgReader->AddAttributes("PtMaxY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->position().x);
+        //    m_DwgReader->AddAttributes("AlignPtX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->position().y);
+        //    m_DwgReader->AddAttributes("AlignPtY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->position().x);
+        //    m_DwgReader->AddAttributes("PtMinX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->position().y);
+        //    m_DwgReader->AddAttributes("PtMinY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->position().x);
+        //    m_DwgReader->AddAttributes("PtMaxX", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%f", pDbShape->position().y);
+        //    m_DwgReader->AddAttributes("PtMaxY", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            OdGiTextStyle style;
-            giFromDbTextStyle(pDbShape->styleId(), style);
-            tempstr.Format("%s", style.ttfdecriptor().fileName().c_str());
-            m_DwgReader->AddAttributes("ShapeFilename", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    OdGiTextStyle style;
+        //    giFromDbTextStyle(pDbShape->styleId(), style);
+        //    tempstr.Format("%s", style.ttfdecriptor().fileName().c_str());
+        //    m_DwgReader->AddAttributes("ShapeFilename", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%s", style.bigFontFileName().c_str());
-            m_DwgReader->AddAttributes("BigFontname", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //    tempstr.Format("%s", style.bigFontFileName().c_str());
+        //    m_DwgReader->AddAttributes("BigFontname", tempstr, m_DwgReader->m_pTextFeatureBuffer);
 
-            tempstr.Format("%s", pDbShape->name());
-            m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
-        }
+        //    tempstr.Format("%s", pDbShape->name());
+        //    m_DwgReader->AddAttributes("ShapeName", tempstr, m_DwgReader->m_pTextFeatureBuffer);
+        //}
 
         return pShape.Detach();
     }
@@ -2127,12 +2224,12 @@ public:
             {
                 OdRxObjectPtr pExplodedEnt = pEntSet[i];
 
-                m_DwgReader->CleanAllFeatureBuffers();
+                //m_DwgReader->CleanAllFeatureBuffers();
                 OdSmartPtr<OdDbEntity_Dumper> pEntDumper = OdDbEntityPtr(pExplodedEnt);
                 HRESULT hr;
                 CString sztemp;
                 IGeometryPtr pShape;
-                pEntDumper->m_DwgReader = m_DwgReader;
+                //pEntDumper->m_DwgReader = m_DwgReader;
                 pShape = pEntDumper->dump(OdDbEntityPtr(pExplodedEnt));
 
                 if (pShape != NULL)
@@ -2144,78 +2241,78 @@ public:
                     //处理线
                     if (shapeType == esriGeometryPolyline)
                     {
-                        hr = m_DwgReader->m_pLineFeatureBuffer->putref_Shape(pShape);
-                        if (FAILED(hr))
-                        {
-                            sztemp = "Line对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-                            m_DwgReader->WriteLog(sztemp);
-                        }
-                        else
-                        {
-                            m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pExplodedEnt), "Line", m_DwgReader->m_pLineFeatureBuffer);
+                        //hr = m_DwgReader->m_pLineFeatureBuffer->putref_Shape(pShape);
+                        //if (FAILED(hr))
+                        //{
+                        //    sztemp = "Line对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+                        //    m_DwgReader->WriteLog(sztemp);
+                        //}
+                        //else
+                        //{
+                        //    m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pExplodedEnt), "Line", m_DwgReader->m_pLineFeatureBuffer);
 
-                            //编码对照
-                            if (m_DwgReader->CompareCodes(m_DwgReader->m_pLineFeatureBuffer))
-                            {
-                                hr = m_DwgReader->m_pLineFeatureCursor->InsertFeature(m_DwgReader->m_pLineFeatureBuffer, &(m_DwgReader->m_vID));
-                                if (FAILED(hr))
-                                {
-                                    sztemp = "Line对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                    m_DwgReader->WriteLog(sztemp);
-                                }
-                            }
-                        }
+                        //    //编码对照
+                        //    if (m_DwgReader->CompareCodes(m_DwgReader->m_pLineFeatureBuffer))
+                        //    {
+                        //        hr = m_DwgReader->m_pLineFeatureCursor->InsertFeature(m_DwgReader->m_pLineFeatureBuffer, &(m_DwgReader->m_vID));
+                        //        if (FAILED(hr))
+                        //        {
+                        //            /*sztemp = "Line对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+                        //            m_DwgReader->WriteLog(sztemp);*/
+                        //        }
+                        //    }
+                        //}
                     }
 
                 }
 
                 /////////////////////////////////////////////////////////////////////
                 //生成注记对象
-                CString sEntType = OdDbEntityPtr(pExplodedEnt)->isA()->name();
-                if (sEntType.Compare("AcDbMText") == 0 || sEntType.Compare("AcDbText") == 0)
-                {
-                    if (m_DwgReader->m_IsCreateAnnotation)
-                    {
-                        m_DwgReader->InsertAnnoFeature(pExplodedEnt);
-                    }
-                    else
-                    {
-                        hr = m_DwgReader->m_pTextFeatureBuffer->putref_Shape(pShape);
-                        if (FAILED(hr))
-                        {
-                            sztemp = "Text对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
-                            m_DwgReader->WriteLog(sztemp);
-                            m_DwgReader->m_lUnReadEntityNum++;
-                        }
-                        else
-                        {
-                            m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pExplodedEnt), "Annotation", m_DwgReader->m_pTextFeatureBuffer);
+                //CString sEntType = OdDbEntityPtr(pExplodedEnt)->isA()->name();
+                //if (sEntType.Compare("AcDbMText") == 0 || sEntType.Compare("AcDbText") == 0)
+                //{
+                //    if (m_DwgReader->m_IsCreateAnnotation)
+                //    {
+                //        m_DwgReader->InsertAnnoFeature(pExplodedEnt);
+                //    }
+                //    else
+                //    {
+                //        hr = m_DwgReader->m_pTextFeatureBuffer->putref_Shape(pShape);
+                //        if (FAILED(hr))
+                //        {
+                //            sztemp = "Text对象坐标不正确。" + m_DwgReader->CatchErrorInfo();
+                //            m_DwgReader->WriteLog(sztemp);
+                //            m_DwgReader->m_lUnReadEntityNum++;
+                //        }
+                //        else
+                //        {
+                //            m_DwgReader->AddBaseAttributes(OdDbEntityPtr(pExplodedEnt), "Annotation", m_DwgReader->m_pTextFeatureBuffer);
 
-                            //编码对照
-                            if (m_DwgReader->CompareCodes(m_DwgReader->m_pTextFeatureBuffer))
-                            {
-                                hr = m_DwgReader->m_pTextFeatureCursor->InsertFeature(m_DwgReader->m_pTextFeatureBuffer, &(m_DwgReader->m_vID));
-                                if (FAILED(hr))
-                                {
-                                    sztemp = "Text对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
-                                    m_DwgReader->WriteLog(sztemp);
-                                    m_DwgReader->m_lUnReadEntityNum++;
-                                }
-                            }
-                        }
-                    }
+                //            //编码对照
+                //            if (m_DwgReader->CompareCodes(m_DwgReader->m_pTextFeatureBuffer))
+                //            {
+                //                hr = m_DwgReader->m_pTextFeatureCursor->InsertFeature(m_DwgReader->m_pTextFeatureBuffer, &(m_DwgReader->m_vID));
+                //                if (FAILED(hr))
+                //                {
+                //                    sztemp = "Text对象写入到PGDB失败。" + m_DwgReader->CatchErrorInfo();
+                //                    m_DwgReader->WriteLog(sztemp);
+                //                    m_DwgReader->m_lUnReadEntityNum++;
+                //                }
+                //            }
+                //        }
+                //    }
 
-                }
-                else if (sEntType.Compare("AcDbLine") == 0)
-                {
-                    //已处理
-                }
-                else if (sEntType.Compare("AcDbBlockReference") == 0)
-                {
-                }
-                else
-                {
-                }
+                //}
+                //else if (sEntType.Compare("AcDbLine") == 0)
+                //{
+                //    //已处理
+                //}
+                //else if (sEntType.Compare("AcDbBlockReference") == 0)
+                //{
+                //}
+                //else
+                //{
+                //}
             }
         }
 

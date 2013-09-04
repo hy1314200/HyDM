@@ -2,7 +2,7 @@
 
 #pragma once
 #include "resource.h"       // Ö÷·ûºÅ
-#include "ESRI_AoInterface.h"
+
 
 #include "HyDwgConvert_i.h"
 
@@ -20,7 +20,8 @@ using namespace ATL;
 class ATL_NO_VTABLE CDwgEntity :
 	public CComObjectRootEx<CComSingleThreadModel>,
 	public CComCoClass<CDwgEntity, &CLSID_DwgEntity>,
-	public IDwgEntity
+	public IDispatchImpl<IDwgEntity, &IID_IDwgEntity, &LIBID_HyDwgConvert, /*wMajor =*/ 1, /*wMinor =*/ 0>
+
 {
 public:
 	CDwgEntity()
@@ -48,23 +49,36 @@ END_COM_MAP()
 	{
 	}
 
+public:
+	void setInnerEntity (OdDbEntityPtr oddbEntity);
+	OdDbEntityPtr getInnerEntity();
 
 private:
 	CComBSTR m_GeometryType;
 	USHORT m_Color;
 	CComBSTR m_Handle;
 	IGeometry* m_Shape;
+	CComBSTR m_Layer;
+	IXData* m_XData;
+	OdDbEntityPtr m_InnerEntity;
 public:
 
 
 	STDMETHOD(get_GeometryType)(BSTR*  pVal);
 	STDMETHOD(put_GeometryType)(BSTR  newVal);
-	STDMETHOD(get_Color)(USHORT* pVal);
-	STDMETHOD(put_Color)(USHORT newVal);
+	STDMETHOD(get_Color)(long* pVal);
+	STDMETHOD(put_Color)(long newVal);
 	STDMETHOD(get_Handle)(BSTR* pVal);
 	STDMETHOD(put_Handle)(BSTR newVal);
 	STDMETHOD(get_Shape)(IGeometry** pVal);
-	STDMETHOD(put_Shape)(IGeometry* newVal);
+	STDMETHOD(put_Shape)(IGeometry* newVal);	
+	/*STDMETHOD(get_Layer)(BSTR*  pVal);
+	STDMETHOD(put_Layer)(BSTR  newVal);*/
+	STDMETHOD(get_Layer)(BSTR* pVal);
+	STDMETHOD(put_Layer)(BSTR newVal);
+	STDMETHOD(get_XData)(IXData** pVal);
+	STDMETHOD(put_XData)(IXData* newVal);
+	STDMETHOD(GetXData)(BSTR appName,VARIANT* xType,VARIANT* xValue); /* SAFEARRAY** xType, SAFEARRAY** xValue)*/
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(DwgEntity), CDwgEntity)

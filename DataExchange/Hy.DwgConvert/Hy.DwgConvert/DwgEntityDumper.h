@@ -17,8 +17,15 @@
 
 class OdRxObject;
 class OdDbEntity;
-class XDWGReader;
 class Dumpers;
+
+
+struct DwgPoint
+{
+	double x;
+	double y;
+	double z;
+};
 
 class OdDbEntity_Dumper : public OdRxObject
 {
@@ -26,9 +33,15 @@ public:
     ODRX_DECLARE_MEMBERS(OdDbEntity_Dumper);
 
     virtual IGeometry* dump(OdDbEntity* pEnt);
-    XDWGReader *m_DwgReader;
     //读dwg实体通用信息
     void dumpCommonData(OdDbEntity* pEnt);
+
+protected:
+	void Bspline(int n, int t, DwgPoint* control, DwgPoint* output, int num_output);
+	void ComputeIntervals(int* u, int n, int t);
+	void ComputePoint(int* u, int n, int t, double v, DwgPoint* control, DwgPoint* output);
+	double Blend(int k, int t, int* u, double v);
+
 };
 class ExProtocolExtension
 {

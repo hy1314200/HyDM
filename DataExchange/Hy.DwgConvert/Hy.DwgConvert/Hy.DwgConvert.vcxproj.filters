@@ -34,22 +34,31 @@
     <ClCompile Include="DwgReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ExServices\ExHostAppServices.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ExServices\ExSystemServices.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ExServices\OdFileBuf.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ExServices\ExGiRasterImage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DwgEntity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExServices\ExHostAppServices.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="ExServices\ExUndoController.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DwgEntity.cpp">
+    <ClCompile Include="ExServices\ExSystemServices.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityAdapter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DwgEntityDumper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,6 +90,15 @@
     <ClInclude Include="ESRI_AoInterface.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="EntityAdapter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DwgEntityDumper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Hy.DwgConvert.rc">
@@ -99,6 +117,12 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include="DwgEntity.rgs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="TestEntity.rgs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="XData.rgs">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>

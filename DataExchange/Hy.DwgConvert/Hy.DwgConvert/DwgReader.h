@@ -2,7 +2,7 @@
 
 #pragma once
 #include "resource.h"       // Ö÷·ûºÅ
-
+#include "DwgEntity.h"
 
 
 #include "HyDwgConvert_i.h"
@@ -60,7 +60,8 @@ public:
 	STDMETHOD(put_FileName)(BSTR* DwgFile);
 	STDMETHOD(Init)(VARIANT_BOOL* succeed);
 	STDMETHOD(Close)(void);
-	STDMETHOD(Read)(IDwgEntity* curEntity);
+	STDMETHOD(Read)(IDwgEntity** curEntity);
+	STDMETHOD(GetRegAppNames)(SAFEARRAY** pVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(DwgReader), CDwgReader)

@@ -27,8 +27,8 @@
 #include <atlctl.h>
 
 
-#include <windows.h>
-
+//#include <windows.h>
+#include "ESRI_AoInterface.h"
 
 #include "OdaCommon.h"
 #include "DbDatabase.h"

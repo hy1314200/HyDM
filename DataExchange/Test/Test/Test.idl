@@ -1,0 +1,18 @@
+// Test.idl : Test 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(Test.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(9B9840E5-B71C-4858-BDED-B86766FEC6DC),
+	version(1.0),
+]
+library TestLib
+{
+	importlib("stdole2.tlb");
+};
+
